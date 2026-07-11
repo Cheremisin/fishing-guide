@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Греция на яхте — Семейный гид 2025</title>
+<title>Греция на яхте — Семейный гид 2026</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
 :root{
@@ -231,11 +231,64 @@ footer strong{color:var(--aqua);}
     .fish-photo-wrap,.fish-photo,.fish-svg-fallback{height:140px;}
   }
 
+
+  /* YACHTS */
+  .yacht-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;}
+  .yacht-card{border-radius:16px;overflow:hidden;border:1px solid rgba(0,0,0,.08);box-shadow:0 2px 14px rgba(0,0,0,.06);background:#fff;}
+  .yacht-hero{padding:24px;color:#fff;position:relative;}
+  .yacht-hero.cat{background:linear-gradient(135deg,#1a4a6a,#0d2d40);}
+  .yacht-hero.mono{background:linear-gradient(135deg,#2d1a5c,#1a0d3a);}
+  .yacht-week{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.7;margin-bottom:6px;}
+  .yacht-name{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;margin-bottom:2px;}
+  .yacht-model{font-size:14px;opacity:.85;margin-bottom:14px;}
+  .yacht-dates{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:5px 14px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;}
+  .yacht-silhouette{position:absolute;right:16px;top:20px;opacity:.35;}
+  .yacht-specs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(0,0,0,.06);}
+  .yspec{padding:14px 8px;text-align:center;border-right:1px solid rgba(0,0,0,.06);}
+  .yspec:last-child{border-right:none;}
+  .yspec-num{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:var(--deep);line-height:1;}
+  .yspec-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-top:4px;}
+  .yacht-body{padding:18px 20px;}
+  .yacht-feature-list{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;}
+  .yfeat{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:3px 9px;border-radius:12px;background:rgba(13,79,108,.08);color:var(--sea);}
+  .yacht-times{background:var(--sand);border-radius:10px;padding:12px 14px;margin-bottom:14px;font-size:13px;}
+  .yacht-times strong{font-family:'Montserrat',sans-serif;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--rust);display:block;margin-bottom:6px;}
+  .yacht-times-row{display:flex;justify-content:space-between;gap:10px;padding:3px 0;}
+  .yacht-links{display:flex;flex-wrap:wrap;gap:6px;}
+  .ylink{display:inline-flex;align-items:center;gap:5px;padding:7px 14px;border-radius:9px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-decoration:none;transition:opacity .15s;}
+  .ylink:hover{opacity:.85;text-decoration:none;}
+  .ylink.primary{background:var(--sea);color:#fff;}
+  .ylink.secondary{background:rgba(13,79,108,.08);color:var(--sea);}
+
+  .company-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:8px;}
+  .company-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .company-role{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:6px;}
+  .company-name{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:var(--deep);margin-bottom:12px;}
+  .company-row{display:flex;gap:10px;padding:6px 0;border-bottom:1px solid rgba(0,0,0,.05);font-size:13px;align-items:flex-start;}
+  .company-row:last-of-type{border-bottom:none;}
+  .company-icon{flex-shrink:0;width:20px;text-align:center;}
+  .company-row a{word-break:break-all;}
+
+  .marina-banner{background:linear-gradient(135deg,rgba(26,143,160,.1),rgba(62,201,214,.06));border:1px solid rgba(26,143,160,.25);border-radius:14px;padding:20px 24px;margin-bottom:24px;}
+  .marina-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--sea);margin-bottom:10px;}
+  .marina-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
+  .marina-item{background:rgba(255,255,255,.7);border-radius:10px;padding:12px;}
+  .marina-item-title{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--deep);margin-bottom:4px;}
+  .marina-item-text{font-size:12.5px;color:var(--muted);line-height:1.45;}
+  .marina-item-text a{font-weight:600;}
+
+  @media(max-width:700px){
+    .yacht-grid{grid-template-columns:1fr;}
+    .company-grid{grid-template-columns:1fr;}
+    .yacht-specs{grid-template-columns:repeat(4,1fr);}
+  }
+
 </style>
 </head>
 <body>
 
 <nav>
+  <a href="#yachts" onclick="setActive(this)">⛵ Яхты</a>
   <a href="#weather" onclick="setActive(this)">🌊 Погода</a>
   <a href="#routes" onclick="setActive(this)">🗺 Маршруты</a>
   <a href="#checklist" onclick="setActive(this)">✅ Чеклист</a>
@@ -244,7 +297,7 @@ footer strong{color:var(--aqua);}
 
 <header>
   <div class="container">
-    <div class="eyebrow">Семейный яхтинг · Лето 2025</div>
+    <div class="eyebrow">Семейный яхтинг · Лето 2026</div>
     <h1>Греция на яхте:<br><span>Саронический залив & Киклады</span></h1>
     <div class="header-pills">
       <span class="pill">📅 18 июля — 2 августа</span>
@@ -255,6 +308,150 @@ footer strong{color:var(--aqua);}
     </div>
   </div>
 </header>
+
+<section id="yachts">
+<div class="container">
+  <div class="sec-eye">Наши яхты</div>
+  <h2 class="sec-h2">Лодки, база и чартерные компании</h2>
+  <p class="sec-sub">Обе недели выходим из одной марины — Алимос (Афины). Пересадка между яхтами 25 июля происходит там же.</p>
+
+  <div class="marina-banner">
+    <div class="marina-title">⚓ Марина Алимос (Alimos Marina) — наша база на обе недели</div>
+    <div class="marina-grid">
+      <div class="marina-item">
+        <div class="marina-item-title">📍 Координаты и карта</div>
+        <div class="marina-item-text">37°54.7′N, 23°42.0′E<br><a href="https://maps.google.com/?q=37.9106,23.7005" target="_blank">Открыть в Google Maps →</a></div>
+      </div>
+      <div class="marina-item">
+        <div class="marina-item-title">✈️ Как добраться</div>
+        <div class="marina-item-text">Из аэропорта Афин: такси 35–45 мин (≈45–50€), автобус X96, или минибас для группы (≈80–100€, 8 мест).</div>
+      </div>
+      <div class="marina-item">
+        <div class="marina-item-title">🏬 Инфраструктура</div>
+        <div class="marina-item-text">Крупнейшая марина Греции (1000+ мест). Супермаркеты, рестораны, банкоматы, заправка, парковка, душ. Провизию можно заказать с доставкой на борт.</div>
+      </div>
+      <div class="marina-item">
+        <div class="marina-item-title">📞 Справочная марины</div>
+        <div class="marina-item-text">+30 210 988 0000<br>Расположение: 15 км от центра Афин, 8 км от порта Пирей.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="yacht-grid">
+
+    <div class="yacht-card">
+      <div class="yacht-hero cat">
+        <div class="yacht-silhouette">
+          <svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 10 45 L 110 45 L 100 55 L 20 55 Z" fill="#fff"/>
+            <rect x="25" y="38" width="70" height="8" rx="3" fill="#fff" opacity="0.7"/>
+            <line x1="45" y1="8" x2="45" y2="40" stroke="#fff" stroke-width="2"/>
+            <line x1="75" y1="8" x2="75" y2="40" stroke="#fff" stroke-width="2"/>
+            <path d="M 45 8 L 45 36 L 28 36 Z" fill="#fff" opacity="0.8"/>
+            <path d="M 75 8 L 75 36 L 92 36 Z" fill="#fff" opacity="0.8"/>
+          </svg>
+        </div>
+        <div class="yacht-week">Неделя 1 · 18–25 июля</div>
+        <div class="yacht-name">«Rimta»</div>
+        <div class="yacht-model">Lagoon 450 F (2019) · Катамаран</div>
+        <div class="yacht-dates">Alimos → Саронический залив → Alimos</div>
+      </div>
+      <div class="yacht-specs">
+        <div class="yspec"><div class="yspec-num">13.96</div><div class="yspec-label">метров</div></div>
+        <div class="yspec"><div class="yspec-num">4+2</div><div class="yspec-label">каюты</div></div>
+        <div class="yspec"><div class="yspec-num">4</div><div class="yspec-label">санузла</div></div>
+        <div class="yspec"><div class="yspec-num">12</div><div class="yspec-label">чел. макс</div></div>
+      </div>
+      <div class="yacht-body">
+        <div class="yacht-feature-list">
+          <span class="yfeat">Флайбридж</span><span class="yfeat">Просторный кокпит</span><span class="yfeat">Динги + мотор</span><span class="yfeat">Трамплин-сетка</span><span class="yfeat">Идеален для детей</span>
+        </div>
+        <div class="yacht-times">
+          <strong>⏰ Чек-ин / чек-аут</strong>
+          <div class="yacht-times-row"><span>Приём яхты:</span><span><b>18.07 после 17:00</b></span></div>
+          <div class="yacht-times-row"><span>Возврат в марину:</span><span><b>24.07 до 18:00</b> (ночь на борту)</span></div>
+          <div class="yacht-times-row"><span>Сдача яхты:</span><span><b>25.07 до 09:00</b></span></div>
+          <div class="yacht-times-row"><span>Депозит:</span><span><b>5 000 €</b></span></div>
+        </div>
+        <div class="yacht-links">
+          <a class="ylink primary" href="https://navigare-yachting.com/en/yacht-charter/lagoon-450-f" target="_blank">Lagoon 450F у Navigare →</a>
+          <a class="ylink secondary" href="https://www.cata-lagoon.com/en/discontinued-models/lagoon-450" target="_blank">О модели (Lagoon)</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="yacht-card">
+      <div class="yacht-hero mono">
+        <div class="yacht-silhouette">
+          <svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 12 45 Q 60 40 108 45 L 96 55 L 24 55 Z" fill="#fff"/>
+            <line x1="60" y1="3" x2="60" y2="43" stroke="#fff" stroke-width="2"/>
+            <path d="M 60 3 L 60 40 L 30 40 Z" fill="#fff" opacity="0.8"/>
+            <path d="M 60 8 L 60 40 L 88 40 Z" fill="#fff" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="yacht-week">Неделя 2 · 25 июля — 1 августа</div>
+        <div class="yacht-name">«Inspiration»</div>
+        <div class="yacht-model">Beneteau Oceanis 54 · Монохул</div>
+        <div class="yacht-dates">Alimos → Киклады → Alimos</div>
+      </div>
+      <div class="yacht-specs">
+        <div class="yspec"><div class="yspec-num">16.5</div><div class="yspec-label">метров</div></div>
+        <div class="yspec"><div class="yspec-num">4/5</div><div class="yspec-label">кают</div></div>
+        <div class="yspec"><div class="yspec-num">4</div><div class="yspec-label">санузла</div></div>
+        <div class="yspec"><div class="yspec-num">110</div><div class="yspec-label">л.с. мотор</div></div>
+      </div>
+      <div class="yacht-body">
+        <div class="yacht-feature-list">
+          <span class="yfeat">Кондиционер</span><span class="yfeat">Генератор</span><span class="yfeat">Носовая подрулька</span><span class="yfeat">Плоттер в кокпите</span><span class="yfeat">Тиковая палуба</span><span class="yfeat">Солнечные панели</span><span class="yfeat">Автопилот</span>
+        </div>
+        <div class="yacht-times">
+          <strong>⏰ Чек-ин / чек-аут</strong>
+          <div class="yacht-times-row"><span>Приём яхты:</span><span><b>25.07 в 17:00</b></span></div>
+          <div class="yacht-times-row"><span>Возврат в марину:</span><span><b>31.07 к 17:00</b> (ночь на борту)</span></div>
+          <div class="yacht-times-row"><span>Сдача яхты:</span><span><b>01.08 до 09:00</b></span></div>
+          <div class="yacht-times-row"><span>Депозит:</span><span><b>2 000 €</b> (карта/наличные)</span></div>
+        </div>
+        <div class="yacht-links">
+          <a class="ylink primary" href="https://dms-sailing.gr/charter/inspiration/" target="_blank">«Inspiration» у DMS →</a>
+          <a class="ylink secondary" href="https://www.beneteau.com/en/oceanis/oceanis-54" target="_blank">О модели (Beneteau)</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="company-grid">
+    <div class="company-card">
+      <div class="company-role">Чартерная компания · Неделя 1 (катамаран)</div>
+      <div class="company-name">Navigare Yachting Greece</div>
+      <div class="company-row"><span class="company-icon">📍</span><span>Agiou Gerasimou & Saki Karagiorga 24, Glyfada 16672, Афины<br><a href="https://maps.google.com/?q=Agiou+Gerasimou+Saki+Karagiorga+24+Glyfada+16672" target="_blank">Офис на карте →</a></span></div>
+      <div class="company-row"><span class="company-icon">⚓</span><span>База: марина Алимос · офис работает ежедневно 9:00–19:00</span></div>
+      <div class="company-row"><span class="company-icon">🌐</span><span><a href="https://navigare-yachting.com" target="_blank">navigare-yachting.com</a></span></div>
+      <div class="company-row"><span class="company-icon">📋</span><span>Брифинг и чек-ин с 17:00 в день выхода. Шкипер обязан присутствовать на брифинге.</span></div>
+      <div class="company-row"><span class="company-icon">✅</span><span>Кроулист заполнить заранее: <a href="https://crew.nausys.com/918383836/766cccf1c2eb95a60415369fe6ee4632/" target="_blank">форма crew list →</a></span></div>
+      <div class="company-row"><span class="company-icon">📄</span><span>С собой: паспорта, boarding pass, лицензия шкипера + VHF-сертификат</span></div>
+    </div>
+
+    <div class="company-card">
+      <div class="company-role">Чартерная компания · Неделя 2 (монохул)</div>
+      <div class="company-name">DMS Sailing</div>
+      <div class="company-row"><span class="company-icon">📍</span><span>32 Kotzia st., Alimos, Афины<br><a href="https://maps.google.com/?q=32+Kotzia+street+Alimos+Athens" target="_blank">Офис на карте →</a></span></div>
+      <div class="company-row"><span class="company-icon">⚓</span><span>База: марина Алимос · семейная компания, 20+ лет чартера в Греции</span></div>
+      <div class="company-row"><span class="company-icon">🌐</span><span><a href="https://dms-sailing.gr" target="_blank">dms-sailing.gr</a></span></div>
+      <div class="company-row"><span class="company-icon">🗺</span><span>Разрешённая зона: Саронический залив + Киклады. Крит — запрещён. Ночные переходы — запрещены.</span></div>
+      <div class="company-row"><span class="company-icon">⚠️</span><span>Не выходить из порта при ветре F6+ или запрете портовых властей (условие чартера).</span></div>
+      <div class="company-row"><span class="company-icon">🛠</span><span>Техподдержка: помощь в течение 24 ч при технических проблемах на маршруте.</span></div>
+    </div>
+  </div>
+
+  <div class="alert info" style="margin-top:24px">
+    <strong>💡 Логистика пересадки 25 июля:</strong> катамаран сдаём до 09:00, монохул принимаем в 17:00 — там же, в Алимосе. День на: пополнение провизии (супермаркет в марине с доставкой на борт), обед в таверне, при желании — быстрая вылазка в Афины (Акрополь 25 мин на такси).
+  </div>
+</div>
+</section>
+
+
 
 
 <section id="weather">

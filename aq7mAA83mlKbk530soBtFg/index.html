@@ -3,560 +3,933 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Рыбалка: Саронический залив & Киклады</title>
+<title>Греция на яхте — Семейный гид 2025</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap');
-:root{--sea:#0D4F6C;--deep:#08303F;--teal:#1A8FA0;--aqua:#3EC9D6;--sand:#F2E8D5;--rust:#C8562A;--white:#FAFAF8;--text:#1C2330;--muted:#556070;}
+:root{
+  --sea:#0D4F6C;--deep:#08303F;--teal:#1A8FA0;--aqua:#3EC9D6;
+  --sand:#F2E8D5;--rust:#C8562A;--sun:#F5A623;--white:#FAFAF8;
+  --text:#1C2330;--muted:#556070;--green:#2E7D52;--purple:#6c3483;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'PT Serif',Georgia,serif;background:var(--white);color:var(--text);line-height:1.65;}
+a{color:var(--teal);text-decoration:none;}
+a:hover{text-decoration:underline;}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--deep);display:flex;flex-wrap:wrap;gap:0;border-bottom:2px solid var(--teal);}
+nav a{color:rgba(255,255,255,.75);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:12px 16px;text-decoration:none;transition:all .2s;}
+nav a:hover,nav a.active{color:var(--aqua);background:rgba(255,255,255,.05);}
 
 /* HEADER */
-header{background:linear-gradient(160deg,var(--deep) 0%,var(--sea) 55%,var(--teal) 100%);color:#fff;padding:52px 40px 48px;position:relative;overflow:hidden;}
-header::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:40px;background:var(--white);clip-path:ellipse(55% 100% at 50% 100%);}
+header{background:linear-gradient(160deg,var(--deep) 0%,var(--sea) 55%,var(--teal) 100%);color:#fff;padding:56px 40px 52px;position:relative;overflow:hidden;}
+header::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:44px;background:var(--white);clip-path:ellipse(55% 100% at 50% 100%);}
 .eyebrow{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--aqua);margin-bottom:12px;}
-header h1{font-family:'Montserrat',sans-serif;font-size:clamp(24px,4vw,42px);font-weight:900;line-height:1.1;max-width:680px;}
+header h1{font-family:'Montserrat',sans-serif;font-size:clamp(24px,4vw,44px);font-weight:900;line-height:1.1;max-width:700px;}
 header h1 span{color:var(--aqua);}
-.header-meta{margin-top:16px;font-size:14px;opacity:.75;font-family:'Montserrat',sans-serif;font-weight:600;}
+.header-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+.pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:6px 14px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:rgba(255,255,255,.9);}
 
 /* LAYOUT */
 .container{max-width:1060px;margin:0 auto;padding:0 28px;}
-section{padding:52px 0;}
+section{padding:52px 0;scroll-margin-top:52px;}
 section+section{border-top:1px solid rgba(0,0,0,.07);}
 .sec-eye{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
-.sec-h2{font-family:'Montserrat',sans-serif;font-size:clamp(18px,2.5vw,26px);font-weight:900;color:var(--deep);margin-bottom:8px;}
-.sec-sub{color:var(--muted);font-size:15px;max-width:620px;margin-bottom:36px;}
+.sec-h2{font-family:'Montserrat',sans-serif;font-size:clamp(20px,2.8vw,30px);font-weight:900;color:var(--deep);margin-bottom:10px;}
+.sec-sub{color:var(--muted);font-size:15px;max-width:660px;margin-bottom:32px;}
 
-/* ── FISH CARDS ── */
-.fish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px;margin-bottom:36px;}
-.fish-card{border-radius:16px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.09);box-shadow:0 3px 14px rgba(0,0,0,.06);display:flex;flex-direction:column;}
-.fish-card.peak .fish-img-wrap::after{background:var(--rust);}
-.fish-img-wrap{position:relative;height:160px;overflow:hidden;}
-.fish-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
-.fish-card:hover .fish-img-wrap img{transform:scale(1.06);}
-.fish-img-wrap::after{content:attr(data-label);position:absolute;top:10px;right:10px;background:var(--teal);color:#fff;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;}
-.fish-body{padding:14px 16px;flex:1;display:flex;flex-direction:column;}
-.fish-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;color:var(--deep);}
-.fish-latin{font-style:italic;font-size:11px;color:var(--muted);margin-bottom:8px;}
-.fish-desc{font-size:12px;color:var(--muted);line-height:1.5;flex:1;}
-.fish-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:10px;}
-.badge{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;background:var(--sand);color:var(--deep);}
-.badge.hot{background:var(--rust);color:#fff;}
-.badge.spin{background:var(--sea);color:#fff;}
-.badge.troll{background:var(--teal);color:#fff;}
-.badge.jig{background:#5b4fcf;color:#fff;}
+/* WEATHER */
+.weather-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;}
+.weather-card{border-radius:16px;padding:24px;position:relative;overflow:hidden;}
+.weather-card.cat{background:linear-gradient(135deg,#1a4a6a,#0d2d40);color:#fff;}
+.weather-card.mono{background:linear-gradient(135deg,#2d1a5c,#1a0d3a);color:#fff;}
+.weather-week-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.7;margin-bottom:6px;}
+.weather-title{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;margin-bottom:4px;}
+.weather-dates{font-size:13px;opacity:.75;margin-bottom:16px;}
+.weather-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.wstat{text-align:center;}
+.wstat-num{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900;line-height:1;}
+.wstat-unit{font-size:11px;opacity:.6;margin-top:2px;}
+.wstat-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-top:4px;opacity:.8;}
+.weather-alert{margin-top:16px;background:rgba(255,255,255,.1);border-radius:10px;padding:12px;font-size:13px;line-height:1.5;}
+.weather-alert strong{display:block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
 
-/* ── LURE SECTION TITLE ── */
-.lure-sec-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--deep);border-bottom:3px solid var(--aqua);padding-bottom:6px;margin:40px 0 20px;display:flex;align-items:center;gap:10px;}
-.lure-sec-title .icon{background:var(--sea);color:#fff;border-radius:8px;padding:4px 11px;font-size:12px;}
+.meltemi-box{background:linear-gradient(135deg,rgba(200,86,42,.12),rgba(245,166,35,.08));border:1px solid rgba(200,86,42,.3);border-radius:14px;padding:20px 24px;margin-bottom:24px;}
+.meltemi-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--rust);margin-bottom:10px;}
+.meltemi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;}
+.meltemi-item{background:rgba(255,255,255,.6);border-radius:10px;padding:12px;}
+.meltemi-item-title{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--deep);margin-bottom:4px;}
+.meltemi-item-text{font-size:12.5px;color:var(--muted);line-height:1.4;}
 
-/* ── LURE CARDS ── */
-.lure-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;margin-bottom:8px;}
-.lure-card{border:1px solid rgba(0,0,0,.09);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.05);display:flex;flex-direction:column;}
-.lure-img-wrap{height:150px;overflow:hidden;background:#f0f4f6;}
-.lure-img-wrap img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .3s;}
-.lure-card:hover .lure-img-wrap img{transform:scale(1.08);}
-.lure-body{padding:14px 16px;flex:1;display:flex;flex-direction:column;}
-.lure-model{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;color:var(--deep);}
-.lure-brand{font-size:11px;color:var(--teal);font-family:'Montserrat',sans-serif;font-weight:600;margin-bottom:8px;}
-.lure-desc{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:10px;flex:1;}
-.lure-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px;}
-.tag{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;background:var(--sand);color:var(--deep);}
-.tag.t{background:var(--sea);color:#fff;}
-.tag.m{background:var(--rust);color:#fff;}
-.tag.s{background:#e8f4f6;color:var(--teal);}
+/* ROUTES */
+.route-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;}
+.rtab{padding:8px 18px;border-radius:20px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all .2s;}
+.rtab.active{background:var(--sea);color:#fff;border-color:var(--sea);}
+.rtab:not(.active){background:var(--sand);color:var(--deep);border-color:transparent;}
+.rtab:not(.active):hover{border-color:var(--teal);}
+.route-panel{display:none;}
+.route-panel.active{display:block;}
 
-/* ── SHOP BUTTONS ── */
-.shop-links{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto;}
-.btn{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-decoration:none;transition:opacity .15s;white-space:nowrap;}
-.btn:hover{opacity:.82;}
-.btn.oz{background:#005BFF;color:#fff;}
-.btn.wb{background:#CB11AB;color:#fff;}
-.btn.rp{background:#E63946;color:#fff;}
-.btn.yz{background:#ff7b00;color:#fff;}
-.btn.tb{background:#2E7D52;color:#fff;}
-.btn.az{background:#FF9900;color:#111;}
-.btn.mf{background:#1a1a2e;color:#fff;}
-.btn.sp{background:#455a64;color:#fff;}
+.week-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;margin-bottom:16px;}
+.week-badge.cat{background:#1a4a6a;color:#fff;}
+.week-badge.mono{background:#2d1a5c;color:#fff;}
 
-/* ── SPOTS ── */
-.spots-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
-.spot-card{background:#fff;border:1px solid rgba(0,0,0,.09);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05);}
-.spot-header{padding:14px 18px;background:var(--deep);color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
-.spot-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;}
-.spot-region{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:600;background:rgba(255,255,255,.15);border-radius:20px;padding:3px 10px;white-space:nowrap;}
-.spot-coords{padding:9px 18px;background:rgba(62,201,214,.08);border-bottom:1px solid rgba(0,0,0,.06);font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;color:var(--teal);}
-.coord-link{color:var(--teal);text-decoration:none;}
-.coord-link:hover{text-decoration:underline;}
-.spot-body{padding:15px 18px;}
-.spot-depth{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;}
-.spot-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px;}
-.spot-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.day-list{display:flex;flex-direction:column;gap:0;}
+.day-item{display:grid;grid-template-columns:80px 1fr;gap:0;border-bottom:1px solid rgba(0,0,0,.06);}
+.day-item:last-child{border-bottom:none;}
+.day-num{padding:16px 12px;background:var(--deep);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:80px;}
+.day-date{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--aqua);}
+.day-name{font-family:'Montserrat',sans-serif;font-size:10px;color:rgba(255,255,255,.6);}
+.day-body{padding:16px 20px;}
+.day-route{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--deep);margin-bottom:4px;}
+.day-info{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:8px;}
+.day-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.dtag{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:2px 8px;border-radius:12px;}
+.dtag.dist{background:#e8f4f6;color:var(--teal);}
+.dtag.anchor{background:#f0ede8;color:#7a5a2a;}
+.dtag.kid{background:#e8f0e8;color:var(--green);}
+.dtag.warn{background:rgba(200,86,42,.12);color:var(--rust);}
+.dtag.fish{background:rgba(13,79,108,.1);color:var(--sea);}
 
-/* ── TIPS ── */
-.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;}
+.place-link{display:inline-flex;align-items:center;gap:4px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:var(--teal);padding:2px 8px;background:rgba(62,201,214,.1);border-radius:12px;margin-right:6px;margin-bottom:4px;}
+.place-link:hover{background:rgba(62,201,214,.2);}
+
+/* CHECKLIST */
+.checklist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;}
+.checklist-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+.checklist-header{padding:14px 18px;display:flex;align-items:center;gap:10px;}
+.checklist-icon{font-size:22px;}
+.checklist-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:#fff;}
+.checklist-body{padding:12px 18px 16px;}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid rgba(0,0,0,.05);cursor:pointer;}
+.check-item:last-child{border-bottom:none;}
+.check-box{width:18px;height:18px;border:2px solid #ccc;border-radius:4px;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.check-item.checked .check-box{background:var(--green);border-color:var(--green);}
+.check-item.checked .check-box::after{content:'✓';color:#fff;font-size:11px;font-weight:700;}
+.check-item.checked .check-text{text-decoration:line-through;color:var(--muted);}
+.check-text{font-size:13px;line-height:1.4;}
+.check-note{font-size:11px;color:var(--muted);margin-top:2px;}
+
+/* FISH */
+.fish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.fish-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05);}
+.fish-img{width:100%;height:160px;object-fit:cover;background:#e8f4f6;display:flex;align-items:center;justify-content:center;}
+.fish-img img{width:100%;height:160px;object-fit:cover;}
+.fish-body{padding:16px;}
+.fish-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;color:var(--deep);margin-bottom:2px;}
+.fish-latin-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+.fish-latin{font-style:italic;font-size:12px;color:var(--muted);}
+.fish-wiki{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--teal);padding:2px 8px;background:rgba(62,201,214,.1);border-radius:10px;}
+.fish-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px;}
+.fish-taste{background:var(--sand);border-radius:8px;padding:10px 12px;margin-bottom:10px;}
+.fish-taste-title{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--rust);margin-bottom:4px;}
+.fish-taste-text{font-size:12.5px;color:var(--text);line-height:1.4;}
+.fish-tags{display:flex;flex-wrap:wrap;gap:4px;}
+.ftag{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:2px 8px;border-radius:12px;}
+.ftag.season{background:rgba(245,166,35,.15);color:#7a4f00;}
+.ftag.method{background:rgba(200,86,42,.12);color:var(--rust);}
+.ftag.rare{background:rgba(108,52,131,.12);color:var(--purple);}
+.ftag.common{background:rgba(46,125,82,.12);color:var(--green);}
+
+/* ALERTS */
+.alert{border-radius:0 12px 12px 0;padding:16px 20px;margin:20px 0;font-size:13.5px;}
+.alert.info{background:rgba(26,143,160,.08);border-left:4px solid var(--teal);}
+.alert.warn{background:rgba(200,86,42,.08);border-left:4px solid var(--rust);}
+.alert.success{background:rgba(46,125,82,.08);border-left:4px solid var(--green);}
+.alert strong{font-family:'Montserrat',sans-serif;display:inline;}
+
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:20px;}
 .tip{background:var(--sand);border-radius:12px;padding:18px;}
-.tip-icon{font-size:26px;margin-bottom:8px;}
+.tip-icon{font-size:24px;margin-bottom:8px;}
 .tip-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:13px;color:var(--deep);margin-bottom:5px;}
 .tip-text{font-size:12.5px;color:var(--muted);line-height:1.5;}
 
-/* ── ALERTS ── */
-.alert{background:rgba(200,86,42,.08);border-left:4px solid var(--rust);border-radius:0 10px 10px 0;padding:15px 18px;margin:22px 0;font-size:13.5px;}
-.alert strong{color:var(--rust);font-family:'Montserrat',sans-serif;}
+/* PROGRESS */
+.progress-bar{background:#e8e8e8;border-radius:10px;height:6px;margin-bottom:16px;overflow:hidden;}
+.progress-fill{height:100%;background:var(--teal);border-radius:10px;transition:width .3s;}
+#checklist-progress{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--teal);margin-bottom:8px;}
 
-/* ── REGION DIVIDER ── */
-.region-label{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--teal);letter-spacing:2.5px;text-transform:uppercase;margin:0 0 18px;}
-
-footer{background:var(--deep);color:rgba(255,255,255,.45);text-align:center;padding:28px;font-family:'Montserrat',sans-serif;font-size:12px;letter-spacing:.5px;}
+footer{background:var(--deep);color:rgba(255,255,255,.45);text-align:center;padding:28px;font-family:'Montserrat',sans-serif;font-size:12px;}
 footer strong{color:var(--aqua);}
 
-@media(max-width:600px){
-  header{padding:32px 20px 42px;}
+@media(max-width:700px){
+  header{padding:32px 20px 44px;}
   .container{padding:0 16px;}
-  section{padding:34px 0;}
-  .fish-grid,.lure-grid,.spots-grid,.tips-grid{grid-template-columns:1fr;}
+  section{padding:36px 0;}
+  .weather-grid{grid-template-columns:1fr;}
+  .day-item{grid-template-columns:60px 1fr;}
+  nav a{padding:10px 10px;font-size:10px;}
 }
 </style>
 </head>
 <body>
 
+<nav>
+  <a href="#weather" onclick="setActive(this)">🌊 Погода</a>
+  <a href="#routes" onclick="setActive(this)">🗺 Маршруты</a>
+  <a href="#checklist" onclick="setActive(this)">✅ Чеклист</a>
+  <a href="#fishing" onclick="setActive(this)">🎣 Рыбалка</a>
+</nav>
+
 <header>
   <div class="container">
-    <div class="eyebrow">Рыболовный справочник яхтсмена</div>
-    <h1>Рыбалка на яхте —<br><span>Саронический залив &amp; Киклады</span></h1>
-    <div class="header-meta">🗓 18 июля — 2 августа &nbsp;|&nbsp; 🎣 Спиннинг &amp; Троллинг &nbsp;|&nbsp; 🌊 Эгейское море</div>
+    <div class="eyebrow">Семейный яхтинг · Лето 2025</div>
+    <h1>Греция на яхте:<br><span>Саронический залив & Киклады</span></h1>
+    <div class="header-pills">
+      <span class="pill">📅 18 июля — 2 августа</span>
+      <span class="pill">⛵ Катамаран · Монохул</span>
+      <span class="pill">👨‍👩‍👧‍👦 Несколько семей</span>
+      <span class="pill">👦 Дети 7–15 лет</span>
+      <span class="pill">🌊 14 ночей</span>
+    </div>
   </div>
 </header>
 
-<!-- ══ РЫБЫ ══ -->
-<section>
-  <div class="container">
-    <div class="sec-eye">Целевые виды</div>
-    <h2 class="sec-h2">Кого ловим в июле–августе</h2>
-    <p class="sec-sub">Эгейское море прогревается до 25–27°C. Пелагики активны на рассвете и закате, днём уходят глубже к рифам.</p>
+<!-- ══ WEATHER ══ -->
+<section id="weather">
+<div class="container">
+  <div class="sec-eye">Метеорология</div>
+  <h2 class="sec-h2">Погода, ветер и волны</h2>
+  <p class="sec-sub">Июль–август — пик Мельтеми. Первая неделя на катамаране в Саронике (укрытые воды), вторая на монохуле в Кикладах — стратегически верный выбор.</p>
 
-    <div class="fish-grid">
-
-      <div class="fish-card peak">
-        <div class="fish-img-wrap" data-label="ПИК СЕЗОНА">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImcxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWE2YjhhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGQzZDUyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwZDNkNTIiLz48ZWxsaXBzZSBjeD0iMTQ1IiBjeT0iODAiIHJ4PSI5NSIgcnk9IjM4IiBmaWxsPSJ1cmwoI2cxKSIgc3Ryb2tlPSIjM0VDOUQ2IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwb2x5Z29uIHBvaW50cz0iMjQwLDgwIDI3MCw1NSAyNzUsODAgMjcwLDEwNSIgZmlsbD0iIzFhNmI4YSIgc3Ryb2tlPSIjM0VDOUQ2IiBzdHJva2Utd2lkdGg9IjEiLz48cG9seWdvbiBwb2ludHM9IjE0NSw0MiAxNTUsMjUgMTY1LDQyIiBmaWxsPSIjMmE5ZGI1Ii8+PHBvbHlnb24gcG9pbnRzPSIxMzAsMTE4IDE0MCwxMzUgMTU1LDExOCIgZmlsbD0iIzJhOWRiNSIvPjxwb2x5Z29uIHBvaW50cz0iMTAwLDEwMCA5NSwxMTggMTE1LDEwOCIgZmlsbD0iIzJhOWRiNSIvPjxjaXJjbGUgY3g9IjcyIiBjeT0iNzQiIHI9IjYiIGZpbGw9IiMzRUM5RDYiLz48Y2lyY2xlIGN4PSI3MSIgY3k9IjczIiByPSIyIiBmaWxsPSIjMGQzZDUyIi8+PHBhdGggZD0iTSA2MCA4MCBRIDUwIDgwIDQ1IDg1IiBzdHJva2U9IiMzRUM5RDYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjx0ZXh0IHg9IjE1MCIgeT0iMTUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjM0VDOUQ2IiBmb250LXNpemU9IjEwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCI+0JvQo9Ck0JDQoNCsIMK3IFBvbWF0b211cyBzYWx0YXRyaXg8L3RleHQ+PC9zdmc+" alt="Луфарь">
+  <div class="weather-grid">
+    <div class="weather-card cat">
+      <div class="weather-week-label">⛵ Неделя 1 · Катамаран</div>
+      <div class="weather-title">Саронический залив</div>
+      <div class="weather-dates">18–25 июля · Защищённые воды</div>
+      <div class="weather-stats">
+        <div class="wstat">
+          <div class="wstat-num">30–34°</div>
+          <div class="wstat-unit">°C</div>
+          <div class="wstat-label">Воздух</div>
         </div>
-        <div class="fish-body">
-          <div class="fish-name">Луфарь / Голубая рыба</div>
-          <div class="fish-latin">Pomatomus saltatrix — «Гофари»</div>
-          <div class="fish-desc">Самый активный хищник июля. Охотится стаями на закате у рифов. ⚠️ Острые зубы — снимайте плоскогубцами. Поводок обязателен!</div>
-          <div class="fish-tags"><span class="badge hot">ПИК июль</span><span class="badge spin">Спиннинг</span><span class="badge troll">Троллинг</span></div>
+        <div class="wstat">
+          <div class="wstat-num">25–27°</div>
+          <div class="wstat-unit">°C</div>
+          <div class="wstat-label">Море</div>
+        </div>
+        <div class="wstat">
+          <div class="wstat-num">F3–4</div>
+          <div class="wstat-unit">Бофорт</div>
+          <div class="wstat-label">Ветер</div>
         </div>
       </div>
-
-      <div class="fish-card peak">
-        <div class="fish-img-wrap" data-label="ПИК СЕЗОНА">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImcyIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWU1YzdhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGEyZDNkIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwYTJkM2QiLz48ZWxsaXBzZSBjeD0iMTQwIiBjeT0iNzgiIHJ4PSIxMDAiIHJ5PSIzNSIgZmlsbD0idXJsKCNnMikiIHN0cm9rZT0iIzNFQzlENiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cG9seWdvbiBwb2ludHM9IjI0MCw3OCAyNzgsNTIgMjgyLDc4IDI3OCwxMDQiIGZpbGw9IiMxZTVjN2EiIHN0cm9rZT0iIzNFQzlENiIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBvbHlnb24gcG9pbnRzPSIxNDAsNDMgMTUyLDIyIDE2Miw0MyIgZmlsbD0iIzJhOWRiNSIvPjxwb2x5Z29uIHBvaW50cz0iMTU1LDQzIDE2MCwyOCAxNjgsNDMiIGZpbGw9IiMyYTlkYjUiLz48cG9seWdvbiBwb2ludHM9IjEyNSwxMTMgMTMzLDEzMiAxNDgsMTEzIiBmaWxsPSIjMmE5ZGI1Ii8+PGxpbmUgeDE9IjExMCIgeTE9IjU1IiB4Mj0iMjQwIiB5Mj0iNjUiIHN0cm9rZT0iIzViZDRlOCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIvPjxsaW5lIHgxPSIxMTUiIHkxPSI2MiIgeDI9IjI0MCIgeTI9IjcyIiBzdHJva2U9IiMzRUM5RDYiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4zIi8+PGxpbmUgeDE9IjEyMCIgeTE9Ijk1IiB4Mj0iMjM4IiB5Mj0iODgiIHN0cm9rZT0iIzViZDRlOCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG9wYWNpdHk9IjAuNSIvPjxjaXJjbGUgY3g9IjY1IiBjeT0iNzMiIHI9IjYiIGZpbGw9IiMzRUM5RDYiLz48Y2lyY2xlIGN4PSI2NCIgY3k9IjcyIiByPSIyIiBmaWxsPSIjMGEyZDNkIi8+PHRleHQgeD0iMTUwIiB5PSIxNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMzRUM5RDYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIj7Qn9CV0JvQkNCc0JjQlNCQIMK3IFNhcmRhIHNhcmRhPC90ZXh0Pjwvc3ZnPg==" alt="Пеламида">
-        </div>
-        <div class="fish-body">
-          <div class="fish-name">Пеламида / Бонито</div>
-          <div class="fish-latin">Sarda sarda</div>
-          <div class="fish-desc">Основной объект троллинга. Сезон до сентября. Ищите стаи по птицам над водой. Быстро портится — готовьте сразу!</div>
-          <div class="fish-tags"><span class="badge hot">ПИК июль–авг</span><span class="badge troll">Троллинг</span><span class="badge spin">Спиннинг</span></div>
-        </div>
+      <div class="weather-alert">
+        <strong>✅ Оптимально для катамарана с детьми</strong>
+        Ветер 10–16 узлов, волна 0.3–0.8 м. Периодически заходит ослабленный Мельтеми до F5, но Саронический залив защищён Пелопоннесом. Дождей практически нет (0–2 дня за месяц).
       </div>
-
-      <div class="fish-card">
-        <div class="fish-img-wrap" data-label="Хороший клёв">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImczIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmQ2YjRhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMGEyZDFlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwYTJkMWUiLz48ZWxsaXBzZSBjeD0iMTQ1IiBjeT0iODAiIHJ4PSIxMTUiIHJ5PSIyMiIgZmlsbD0idXJsKCNnMykiIHN0cm9rZT0iIzNFQzlENiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cG9seWdvbiBwb2ludHM9IjI2MCw4MCAyODUsNjIgMjkwLDgwIDI4NSw5OCIgZmlsbD0iIzJkNmI0YSIgc3Ryb2tlPSIjM0VDOUQ2IiBzdHJva2Utd2lkdGg9IjEiLz48cG9seWdvbiBwb2ludHM9IjMwLDgwIDE1LDcwIDE4LDgwIDE1LDkwIiBmaWxsPSIjM0VDOUQ2IiBvcGFjaXR5PSIwLjgiLz48cG9seWdvbiBwb2ludHM9IjE0NSw1OCAxNTUsNDAgMTYyLDU4IiBmaWxsPSIjM2E4ZjYyIi8+PHBvbHlnb24gcG9pbnRzPSIxMzAsMTAyIDE0MCwxMjAgMTUyLDEwMiIgZmlsbD0iIzNhOGY2MiIvPjxwYXRoIGQ9Ik0gMzAgNzggUSA0MCA3NSA1MCA3NiIgc3Ryb2tlPSIjM0VDOUQ2IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz48cGF0aCBkPSJNIDMwIDgyIFEgNDIgODUgNTIgODQiIHN0cm9rZT0iIzNFQzlENiIgc3Ryb2tlLXdpZHRoPSIxLjUiIGZpbGw9Im5vbmUiLz48Y2lyY2xlIGN4PSI0MiIgY3k9Ijc3IiByPSI1IiBmaWxsPSIjM0VDOUQ2Ii8+PGNpcmNsZSBjeD0iNDEiIGN5PSI3NiIgcj0iMiIgZmlsbD0iIzBhMmQxZSIvPjx0ZXh0IHg9IjE1MCIgeT0iMTUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjM0VDOUQ2IiBmb250LXNpemU9IjEwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCI+0JHQkNCg0KDQkNCa0KPQlNCQIMK3IFNwaHlyYWVuYSBzcGh5cmFlbmE8L3RleHQ+PC9zdmc+" alt="Барракуда">
-        </div>
-        <div class="fish-body">
-          <div class="fish-name">Барракуда</div>
-          <div class="fish-latin">Sphyraena sphyraena</div>
-          <div class="fish-desc">Держится у скал и мысов. Активна вечером. Атакует всё блестящее. Поводок из флюорокарбона 0.8 мм обязателен.</div>
-          <div class="fish-tags"><span class="badge troll">Троллинг</span><span class="badge spin">Спиннинг</span></div>
-        </div>
-      </div>
-
-      <div class="fish-card">
-        <div class="fish-img-wrap" data-label="Трофей">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imc0IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojN2E1YTFlIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojM2QyZDBhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMxYTEyMDgiLz48ZWxsaXBzZSBjeD0iMTQ1IiBjeT0iNzgiIHJ4PSIxMDUiIHJ5PSI0MiIgZmlsbD0idXJsKCNnNCkiIHN0cm9rZT0iI0Y1QTYyMyIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cG9seWdvbiBwb2ludHM9IjI1MCw3OCAyODIsNTAgMjg3LDc4IDI4MiwxMDYiIGZpbGw9IiM3YTVhMWUiIHN0cm9rZT0iI0Y1QTYyMyIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBvbHlnb24gcG9pbnRzPSIxNDUsMzYgMTU4LDE1IDE3MCwzNiIgZmlsbD0iI2M0ODUyYSIvPjxwb2x5Z29uIHBvaW50cz0iMTI4LDEyMCAxNDAsMTQwIDE1NSwxMjAiIGZpbGw9IiNjNDg1MmEiLz48cG9seWdvbiBwb2ludHM9Ijk1LDEwNSA4OCwxMjYgMTEyLDExMiIgZmlsbD0iI2M0ODUyYSIvPjxwYXRoIGQ9Ik0gNjAgNjggUSAxNDUgNTAgMjQwIDcwIiBzdHJva2U9IiNGNUE2MjMiIHN0cm9rZS13aWR0aD0iMi41IiBmaWxsPSJub25lIiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSI2OCIgY3k9IjcyIiByPSI3IiBmaWxsPSIjRjVBNjIzIi8+PGNpcmNsZSBjeD0iNjciIGN5PSI3MSIgcj0iMi41IiBmaWxsPSIjMWExMjA4Ii8+PHRleHQgeD0iMTUwIiB5PSIxNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNGNUE2MjMiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIj7Qm9CQ0JrQldCU0KDQkCDCtyBTZXJpb2xhIGR1bWVyaWxpPC90ZXh0Pjwvc3ZnPg==" alt="Лакедра">
-        </div>
-        <div class="fish-body">
-          <div class="fish-name">Лакедра / Амберджек</div>
-          <div class="fish-latin">Seriola dumerili</div>
-          <div class="fish-desc">Трофейный хищник на скальных структурах 20–80 м. Один из сильнейших бойцов Средиземноморья. Нужен тяжёлый джиг.</div>
-          <div class="fish-tags"><span class="badge jig">Джиг 60–150г</span><span class="badge troll">Троллинг</span></div>
-        </div>
-      </div>
-
-      <div class="fish-card">
-        <div class="fish-img-wrap" data-label="Рокфишинг">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imc1IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNWEzYTFlIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmQxYTBhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMxYTBlMDUiLz48ZWxsaXBzZSBjeD0iMTQwIiBjeT0iODAiIHJ4PSI5NSIgcnk9IjQ4IiBmaWxsPSJ1cmwoI2c1KSIgc3Ryb2tlPSIjQzg1NjJBIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwb2x5Z29uIHBvaW50cz0iMjM1LDgwIDI2NSw1NSAyNzAsODAgMjY1LDEwNSIgZmlsbD0iIzVhM2ExZSIgc3Ryb2tlPSIjQzg1NjJBIiBzdHJva2Utd2lkdGg9IjEiLz48cG9seWdvbiBwb2ludHM9IjE0MCwzMiAxNTUsMTIgMTY4LDMyIiBmaWxsPSIjOGE1YTJlIiBzdHJva2U9IiNDODU2MkEiIHN0cm9rZS13aWR0aD0iMSIvPjxwb2x5Z29uIHBvaW50cz0iMTI1LDEyOCAxMzgsMTQ4IDE1NSwxMjgiIGZpbGw9IiM4YTVhMmUiLz48cG9seWdvbiBwb2ludHM9Ijg4LDExMiA4MCwxMzQgMTA4LDExOCIgZmlsbD0iIzhhNWEyZSIvPjxjaXJjbGUgY3g9IjY1IiBjeT0iNjgiIHI9IjgiIGZpbGw9IiNDODU2MkEiIG9wYWNpdHk9IjAuNyIvPjxjaXJjbGUgY3g9IjkwIiBjeT0iNTUiIHI9IjYiIGZpbGw9IiNDODU2MkEiIG9wYWNpdHk9IjAuNSIvPjxjaXJjbGUgY3g9IjY1IiBjeT0iNzIiIHI9IjciIGZpbGw9IiNDODU2MkEiLz48Y2lyY2xlIGN4PSI2NCIgY3k9IjcxIiByPSIyLjUiIGZpbGw9IiMxYTBlMDUiLz48dGV4dCB4PSIxNTAiIHk9IjE1MiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0M4NTYyQSIgZm9udC1zaXplPSIxMCIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPtCT0KDQo9Cf0JXQoCDCtyBFcGluZXBoZWx1cyBtYXJnaW5hdHVzPC90ZXh0Pjwvc3ZnPg==" alt="Групер">
-        </div>
-        <div class="fish-body">
-          <div class="fish-name">Групер / Каменный окунь</div>
-          <div class="fish-latin">Epinephelus marginatus</div>
-          <div class="fish-desc">Засадный хищник в пещерах и щелях. Силикон 8–14 см у дна у необитаемых островков. Не отпускает добычу!</div>
-          <div class="fish-tags"><span class="badge spin">Спиннинг</span><span class="badge jig">Джиг</span></div>
-        </div>
-      </div>
-
-      <div class="fish-card">
-        <div class="fish-img-wrap" data-label="Ночью">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imc2IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNGExZTZhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWUwYTJkIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwZjA1MTgiLz48ZWxsaXBzZSBjeD0iMTUwIiBjeT0iNjUiIHJ4PSIzNSIgcnk9IjUyIiBmaWxsPSJ1cmwoI2c2KSIgc3Ryb2tlPSIjOWI1OWI2IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwb2x5Z29uIHBvaW50cz0iMTM1LDE1IDE1MCw1IDE2NSwxNSAxNjAsMzAgMTQwLDMwIiBmaWxsPSIjNmEyZThhIi8+PGxpbmUgeDE9IjEyMCIgeTE9IjExNyIgeDI9IjEwNSIgeTI9IjE0OCIgc3Ryb2tlPSIjOWI1OWI2IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMTMwIiB5MT0iMTIwIiB4Mj0iMTE4IiB5Mj0iMTQ4IiBzdHJva2U9IiM5YjU5YjYiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxNDAiIHkxPSIxMjIiIHgyPSIxMzIiIHkyPSIxNTAiIHN0cm9rZT0iIzliNTliNiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjE1MCIgeTE9IjEyMyIgeDI9IjE0OCIgeTI9IjE1MiIgc3Ryb2tlPSIjOWI1OWI2IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMTYwIiB5MT0iMTIyIiB4Mj0iMTYyIiB5Mj0iMTUwIiBzdHJva2U9IiM5YjU5YjYiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxNzAiIHkxPSIxMjAiIHgyPSIxNzgiIHkyPSIxNDgiIHN0cm9rZT0iIzliNTliNiIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjE4MCIgeTE9IjExNyIgeDI9IjE5MiIgeTI9IjE0NSIgc3Ryb2tlPSIjOWI1OWI2IiBzdHJva2Utd2lkdGg9IjIiLz48Y2lyY2xlIGN4PSIxMzciIGN5PSI1NSIgcj0iOCIgZmlsbD0iI2MzOWJkMyIvPjxjaXJjbGUgY3g9IjEzNSIgY3k9IjUzIiByPSIzIiBmaWxsPSIjMGYwNTE4Ii8+PGNpcmNsZSBjeD0iMTYzIiBjeT0iNTUiIHI9IjgiIGZpbGw9IiNjMzliZDMiLz48Y2lyY2xlIGN4PSIxNjEiIGN5PSI1MyIgcj0iMyIgZmlsbD0iIzBmMDUxOCIvPjx0ZXh0IHg9IjE1MCIgeT0iMTUyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjOWI1OWI2IiBmb250LXNpemU9IjEwIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCI+0JrQkNCb0KzQnNCQ0KAgwrcgTG9saWdvIHZ1bGdhcmlzPC90ZXh0Pjwvc3ZnPg==" alt="Кальмар">
-        </div>
-        <div class="fish-body">
-          <div class="fish-name">Кальмар</div>
-          <div class="fish-latin">Loligo vulgaris</div>
-          <div class="fish-desc">Киклады — богатейшее место. Ловля на эгинг-джиги ночью у водорослей. Особенно хорошо у Пароса, Наксоса, Антипароса.</div>
-          <div class="fish-tags"><span class="badge spin">Эгинг (ночь)</span></div>
-        </div>
-      </div>
-
-      <div class="fish-card">
-        <div class="fish-img-wrap" data-label="Спиннинг">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imc3IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojM2E1YTZhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEyZDNhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwZDFhMjIiLz48ZWxsaXBzZSBjeD0iMTQyIiBjeT0iNzkiIHJ4PSI5OCIgcnk9IjQwIiBmaWxsPSJ1cmwoI2c3KSIgc3Ryb2tlPSIjM0VDOUQ2IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwb2x5Z29uIHBvaW50cz0iMjQwLDc5IDI3MCw1NSAyNzUsNzkgMjcwLDEwMyIgZmlsbD0iIzNhNWE2YSIgc3Ryb2tlPSIjM0VDOUQ2IiBzdHJva2Utd2lkdGg9IjEiLz48cG9seWdvbiBwb2ludHM9IjE0MiwzOSAxNTQsMTggMTY2LDM5IiBmaWxsPSIjNWE4YTlhIi8+PHBvbHlnb24gcG9pbnRzPSIxMjAsNDAgMTI4LDI0IDE0MCw0MCIgZmlsbD0iIzRhN2E4YSIvPjxwb2x5Z29uIHBvaW50cz0iMTI3LDExOSAxMzgsMTM4IDE1MiwxMTkiIGZpbGw9IiM1YThhOWEiLz48cG9seWdvbiBwb2ludHM9Ijk3LDEwNCA5MCwxMjQgMTE0LDExMCIgZmlsbD0iIzVhOGE5YSIvPjxwYXRoIGQ9Ik0gNjUgNjggUSAxNDUgNTIgMjQwIDcyIiBzdHJva2U9IiMzRUM5RDYiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIiBvcGFjaXR5PSIwLjQiLz48Y2lyY2xlIGN4PSI2OCIgY3k9Ijc0IiByPSI3IiBmaWxsPSIjM0VDOUQ2Ii8+PGNpcmNsZSBjeD0iNjciIGN5PSI3MyIgcj0iMi41IiBmaWxsPSIjMGQxYTIyIi8+PHRleHQgeD0iMTUwIiB5PSIxNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMzRUM5RDYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIj7QnNCe0KDQodCa0J7QmSDQntCa0KPQndCsIMK3IERpY2VudHJhcmNodXMgbGFicmF4PC90ZXh0Pjwvc3ZnPg==" alt="Морской окунь">
-        </div>
-        <div class="fish-body">
-          <div class="fish-name">Морской окунь / Лаврак</div>
-          <div class="fish-latin">Dicentrarchus labrax — «Лавраки»</div>
-          <div class="fish-desc">У каменистых берегов и в гаванях ночью. Лёгкий спиннинг с воблером. Классика береговой ловли.</div>
-          <div class="fish-tags"><span class="badge spin">Спиннинг</span></div>
-        </div>
-      </div>
-
-      <div class="fish-card">
-        <div class="fish-img-wrap" data-label="Джиг 30–80м">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMTYwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imc4IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNmEyYTRhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmQwYTFlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjMwMCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMxNTA1MTAiLz48ZWxsaXBzZSBjeD0iMTQyIiBjeT0iNzkiIHJ4PSIxMDAiIHJ5PSI0NCIgZmlsbD0idXJsKCNnOCkiIHN0cm9rZT0iI2UwNTZhMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cG9seWdvbiBwb2ludHM9IjI0Miw3OSAyNzQsNTIgMjc5LDc5IDI3NCwxMDYiIGZpbGw9IiM2YTJhNGEiIHN0cm9rZT0iI2UwNTZhMCIgc3Ryb2tlLXdpZHRoPSIxIi8+PHBvbHlnb24gcG9pbnRzPSIxNDIsMzUgMTU2LDE0IDE3MCwzNSIgZmlsbD0iIzlhM2E2YSIvPjxwb2x5Z29uIHBvaW50cz0iMTI1LDEyMyAxMzcsMTQzIDE1NCwxMjMiIGZpbGw9IiM5YTNhNmEiLz48cG9seWdvbiBwb2ludHM9IjkyLDEwNyA4NCwxMjggMTEwLDExMyIgZmlsbD0iIzlhM2E2YSIvPjxwYXRoIGQ9Ik0gNTUgNzYgUSA1OCA3MiA2NSA3NCBRIDYyIDc5IDU1IDgwIFoiIGZpbGw9IiNlMDU2YTAiLz48Y2lyY2xlIGN4PSI2OCIgY3k9IjczIiByPSI3IiBmaWxsPSIjZTA1NmEwIi8+PGNpcmNsZSBjeD0iNjciIGN5PSI3MiIgcj0iMi41IiBmaWxsPSIjMTUwNTEwIi8+PHRleHQgeD0iMTUwIiB5PSIxNTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNlMDU2YTAiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIj7QlNCV0J3QotCV0JrQoSDCtyBEZW50ZXggZGVudGV4PC90ZXh0Pjwvc3ZnPg==" alt="Дентекс">
-        </div>
-        <div class="fish-body">
-          <div class="fish-name">Дентекс / Зубан</div>
-          <div class="fish-latin">Dentex dentex</div>
-          <div class="fish-desc">Рифовый хищник, прячется под свесами. Глубоководный джиг 30–80 м. Ищите у скальных структур Кикладов.</div>
-          <div class="fish-tags"><span class="badge jig">Глубокий джиг</span><span class="badge troll">Троллинг</span></div>
-        </div>
-      </div>
-
     </div>
-    <div class="alert"><strong>⚠ Важно о регулировании:</strong> Голубой тунец для любителей <strong>запрещён</strong>. Рыба-меч — только по разрешению. Любительская спиннинговая рыбалка в открытом море лицензии не требует.</div>
+    <div class="weather-card mono">
+      <div class="weather-week-label">⛵ Неделя 2 · Монохул</div>
+      <div class="weather-title">Киклады</div>
+      <div class="weather-dates">25 июля — 2 августа · Открытый Эгей</div>
+      <div class="weather-stats">
+        <div class="wstat">
+          <div class="wstat-num">32–36°</div>
+          <div class="wstat-unit">°C</div>
+          <div class="wstat-label">Воздух</div>
+        </div>
+        <div class="wstat">
+          <div class="wstat-num">26–28°</div>
+          <div class="wstat-unit">°C</div>
+          <div class="wstat-label">Море</div>
+        </div>
+        <div class="wstat">
+          <div class="wstat-num">F4–6</div>
+          <div class="wstat-unit">Бофорт</div>
+          <div class="wstat-label">Ветер</div>
+        </div>
+      </div>
+      <div class="weather-alert">
+        <strong>⚠️ Мельтеми — главный фактор</strong>
+        Ветер 15–25 узлов, порывы до 30+ уз. Волна в открытом море 1–3 м. Переходы планировать на утро (5:00–10:00). Наветренные берега опасны — стоянки в южных бухтах островов.
+      </div>
+    </div>
   </div>
+
+  <div class="meltemi-box">
+    <div class="meltemi-title">🌬 Мельтеми — что нужно знать</div>
+    <div class="meltemi-grid">
+      <div class="meltemi-item">
+        <div class="meltemi-item-title">Когда дует</div>
+        <div class="meltemi-item-text">Июль–август — пик. Порывы 2–5 дней подряд, затем 1–2 дня затишья. Усиливается к полудню, ослабевает ночью.</div>
+      </div>
+      <div class="meltemi-item">
+        <div class="meltemi-item-title">Направление</div>
+        <div class="meltemi-item-text">Строго с севера / северо-запада. Признаки начала: кристально чистый воздух, видимость 40+ км, утренние барашки.</div>
+      </div>
+      <div class="meltemi-item">
+        <div class="meltemi-item-title">Саронический залив</div>
+        <div class="meltemi-item-text">Защищён горами Пелопоннеса. Мельтеми заходит ослабленным (F3–4), идеально для катамарана и детей.</div>
+      </div>
+      <div class="meltemi-item">
+        <div class="meltemi-item-title">Киклады</div>
+        <div class="meltemi-item-text">Полная сила F5–7. Опасные зоны: проливы Миконос–Наксос, Парос–Иос. Идти вдоль южных берегов островов.</div>
+      </div>
+      <div class="meltemi-item">
+        <div class="meltemi-item-title">Тактика переходов</div>
+        <div class="meltemi-item-text">Выход до 09:00. К 13:00 уже стоять на якоре. Никогда не выходить против Мельтеми с детьми на борту.</div>
+      </div>
+      <div class="meltemi-item">
+        <div class="meltemi-item-title">Прогноз погоды</div>
+        <div class="meltemi-item-text">Windy.com, PoseidonSea.gr (местный), HNMS (официальный). Проверять каждое утро в 7:00 перед выходом.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert warn">
+    <strong>⚠️ Для катамарана:</strong> Катамараны при сильном Мельтеми (F6+) становятся неуправляемы — широкий корпус ловит ветер боком. Саронический залив на первой неделе — идеально защищённый выбор. При Мельтеми F5+ не выходить!
+  </div>
+  <div class="alert success">
+    <strong>🌡 Хорошие новости для детей:</strong> Тёплое море (25–27°C) — купаться можно с утра до ночи. Дождей фактически нет. Закаты с якоря невероятные. Биолюминесценция в Малых Кикладах видна ночью при купании.
+  </div>
+</div>
 </section>
 
-<!-- ══ ПРИМАНКИ ══ -->
-<section>
-  <div class="container">
-    <div class="sec-eye">Арсенал приманок</div>
-    <h2 class="sec-h2">Что взять + где купить</h2>
-    <p class="sec-sub">Под каждой карточкой — прямые ссылки на российские и международные магазины.</p>
+<!-- ══ ROUTES ══ -->
+<section id="routes">
+<div class="container">
+  <div class="sec-eye">Маршруты</div>
+  <h2 class="sec-h2">Планы по неделям — 3 варианта</h2>
+  <p class="sec-sub">Неделя 1 (катамаран, 18–25 июля) — Саронический залив. Неделя 2 (монохул, 25 июля – 2 августа) — Киклады. Выберите вариант.</p>
 
-    <div class="lure-sec-title"><span class="icon">⛵</span> ТРОЛЛИНГ — в ходу между островами</div>
-    <div class="lure-grid">
-
-      <div class="lure-card">
-        <div class="lure-img-wrap">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImwxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzViYzhlOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkM2Q1MiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSIyODAiIGhlaWdodD0iMTIwIiBmaWxsPSIjZThmNGY2IiByeD0iOCIvPjxlbGxpcHNlIGN4PSIxMzgiIGN5PSI1NyIgcng9Ijg4IiByeT0iMjYiIGZpbGw9InVybCgjbDEpIiBzdHJva2U9IiMwZDRmNmMiIHN0cm9rZS13aWR0aD0iMiIvPjxlbGxpcHNlIGN4PSIxMzgiIGN5PSI1MCIgcng9Ijg1IiByeT0iMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzg4ZGRmMCIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjUiLz48Y2lyY2xlIGN4PSI3MiIgY3k9IjU3IiByPSI5IiBmaWxsPSIjYzhlOGYwIiBvcGFjaXR5PSIwLjkiLz48Y2lyY2xlIGN4PSI3MCIgY3k9IjU1IiByPSIzIiBmaWxsPSIjMGQ0ZjZjIi8+PHBvbHlnb24gcG9pbnRzPSIyMjYsNTcgMjUyLDQzIDI1Niw1NyAyNTIsNzEiIGZpbGw9IiMwZDRmNmMiIHN0cm9rZT0iIzBhMzA1MCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48Y2lyY2xlIGN4PSI3MiIgY3k9IjU3IiByPSIzIiBmaWxsPSIjMGQ0ZjZjIi8+PGxpbmUgeDE9IjcyIiB5MT0iNTciIHgyPSI3MiIgeTI9Ijc0IiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHBhdGggZD0iTSA2MCw3NCBRIDcyLDg2IDg0LDc0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMS41Ii8+PGNpcmNsZSBjeD0iMTcyIiBjeT0iNTciIHI9IjMiIGZpbGw9IiMwZDRmNmMiLz48bGluZSB4MT0iMTcyIiB5MT0iNTciIHgyPSIxNzIiIHkyPSI3NCIgc3Ryb2tlPSIjNjY2IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0gMTYwLDc0IFEgMTcyLDg2IDE4NCw3NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjY2IiBzdHJva2Utd2lkdGg9IjEuNSIvPjx0ZXh0IHg9IjE0MCIgeT0iMTA4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjMGQ0ZjZjIiBmb250LXNpemU9IjExIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjcwMCI+WW8tWnVyaSBCb25pdGEgwrcgMTMwLzE3MNC80LwgwrcgNi0xNSDRg9C3PC90ZXh0Pjwvc3ZnPg==" alt="Yo-Zuri Bonita">
-        </div>
-        <div class="lure-body">
-          <div class="lure-model">Yo-Zuri Bonita</div>
-          <div class="lure-brand">Yo-Zuri · 130 мм / 170 мм · Сталь насквозь</div>
-          <div class="lure-desc">Эталон высокоскоростного троллинга 6–15 узлов. Кованые стальные крючки. Лучшие цвета: Blue Mackerel, Red/Black, Pink/Silver.</div>
-          <div class="lure-tags"><span class="tag t">Пеламида</span><span class="tag t">Луфарь</span><span class="tag m">Троллинг</span><span class="tag s">6–15 уз</span></div>
-          <div class="shop-links">
-            <a class="btn oz" href="https://www.ozon.ru/category/voblery-11358/yo-zuri-141298669/" target="_blank">🛒 Ozon</a>
-            <a class="btn wb" href="https://www.wildberries.ru/brands/yo-zuri" target="_blank">🛒 WB</a>
-            <a class="btn yz" href="https://yozuri-russia.ru/" target="_blank">Yo-Zuri RU</a>
-            <a class="btn mf" href="https://maxfishing.ru/brands/yo-zuri/" target="_blank">MaxFishing</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lure-card">
-        <div class="lure-img-wrap">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImwyIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzQ0ODhjYyIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdHlsZT0ic3RvcC1jb2xvcjojODhjY2VlO3N0b3Atb3BhY2l0eTowLjgiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTRhN2EiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2U4ZjRmNiIgcng9IjgiLz48ZWxsaXBzZSBjeD0iMTM2IiBjeT0iNTciIHJ4PSI5MiIgcnk9IjI4IiBmaWxsPSJ1cmwoI2wyKSIgc3Ryb2tlPSIjMWE0YTdhIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNIDc4IDQ3IFEgMTM2IDMzIDE5NCA0NyIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEuNSIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iMC41Ii8+PHJlY3QgeD0iNDAiIHk9IjYzIiB3aWR0aD0iMTgiIGhlaWdodD0iOCIgcng9IjMiIGZpbGw9IiMxYTRhN2EiIHRyYW5zZm9ybT0icm90YXRlKC0xNSw0OSw2NykiLz48Y2lyY2xlIGN4PSI3MiIgY3k9IjU3IiByPSI5IiBmaWxsPSIjYzBkZGY1IiBvcGFjaXR5PSIwLjkiLz48Y2lyY2xlIGN4PSI3MCIgY3k9IjU1IiByPSIzLjUiIGZpbGw9IiMwYTJhNGEiLz48cG9seWdvbiBwb2ludHM9IjIyOCw1NyAyNTQsNDIgMjU4LDU3IDI1NCw3MiIgZmlsbD0iIzFhNGE3YSIgc3Ryb2tlPSIjMGQzNTYwIiBzdHJva2Utd2lkdGg9IjEuNSIvPjxjaXJjbGUgY3g9IjcyIiBjeT0iNTciIHI9IjMiIGZpbGw9IiMxYTRhN2EiLz48bGluZSB4MT0iNzIiIHkxPSI1NyIgeDI9IjcyIiB5Mj0iNzQiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNIDYwLDc0IFEgNzIsODYgODQsNzQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48Y2lyY2xlIGN4PSIxODIiIGN5PSI2MCIgcj0iMyIgZmlsbD0iIzFhNGE3YSIvPjxsaW5lIHgxPSIxODIiIHkxPSI2MCIgeDI9IjE4MiIgeTI9Ijc2IiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHBhdGggZD0iTSAxNzAsNzYgUSAxODIsODggMTk0LDc2IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHRleHQgeD0iMTQwIiB5PSIxMDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYTRhN2EiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIj5SYXBhbGEgWC1SYXAgTWFnbnVtIDIwLzMwIMK3INC00L4gOdC8PC90ZXh0Pjwvc3ZnPg==" alt="Rapala X-Rap Magnum">
-        </div>
-        <div class="lure-body">
-          <div class="lure-model">Rapala X-Rap Magnum 20 / 30</div>
-          <div class="lure-brand">Rapala · XRMAG20 / XRMAG30 · Заглубление до 9 м</div>
-          <div class="lure-desc">Реалистичная игра, идеален 4–8 уз. Голографический корпус. Цвета: Blue Sardine, Bunker, Chartreuse. Проверен на бонито и луфаре.</div>
-          <div class="lure-tags"><span class="tag t">Пеламида</span><span class="tag t">Барракуда</span><span class="tag m">Троллинг</span><span class="tag s">до 9 м</span></div>
-          <div class="shop-links">
-            <a class="btn rp" href="https://rapala.ru/collection/x-rap-magnum" target="_blank">🌐 Rapala.ru</a>
-            <a class="btn oz" href="https://www.ozon.ru/brand/rapala-136144343/" target="_blank">🛒 Ozon</a>
-            <a class="btn wb" href="https://www.wildberries.ru/catalog/tags/rapala-x-rap" target="_blank">🛒 WB</a>
-            <a class="btn tb" href="https://topbaits.ru/catalog/primanki/voblery/rapala/x_rap/" target="_blank">TopBaits</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lure-card">
-        <div class="lure-img-wrap">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImwzIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2FhYWFhYSIvPjxzdG9wIG9mZnNldD0iMzUlIiBzdHlsZT0ic3RvcC1jb2xvcjojZWVlZWVlIi8+PHN0b3Agb2Zmc2V0PSI2NSUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTZiOWEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwZDNkNWMiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2U4ZjRmNiIgcng9IjgiLz48ZWxsaXBzZSBjeD0iMTQwIiBjeT0iNTciIHJ4PSIxMDgiIHJ5PSIyMCIgZmlsbD0idXJsKCNsMykiIHN0cm9rZT0iIzU1NSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48ZWxsaXBzZSBjeD0iMTQwIiBjeT0iNTEiIHJ4PSIxMDUiIHJ5PSIxMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjEiIG9wYWNpdHk9IjAuNCIvPjxjaXJjbGUgY3g9IjU3IiBjeT0iNTciIHI9IjciIGZpbGw9IiNkZGQiIG9wYWNpdHk9IjAuOSIvPjxjaXJjbGUgY3g9IjU1IiBjeT0iNTUiIHI9IjIuNSIgZmlsbD0iIzIyMiIvPjxwb2x5Z29uIHBvaW50cz0iMjQ4LDU3IDI3MCw0NCAyNzMsNTcgMjcwLDcwIiBmaWxsPSIjMGQzZDVjIiBzdHJva2U9IiM1NTUiIHN0cm9rZS13aWR0aD0iMSIvPjxjaXJjbGUgY3g9IjU3IiBjeT0iNTciIHI9IjMiIGZpbGw9IiM1NTUiLz48bGluZSB4MT0iNTciIHkxPSI1NyIgeDI9IjU3IiB5Mj0iNzQiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNIDQ1LDc0IFEgNTcsODYgNjksNzQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48Y2lyY2xlIGN4PSIxNzIiIGN5PSI1NyIgcj0iMyIgZmlsbD0iIzU1NSIvPjxsaW5lIHgxPSIxNzIiIHkxPSI1NyIgeDI9IjE3MiIgeTI9Ijc0IiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHBhdGggZD0iTSAxNjAsNzQgUSAxNzIsODYgMTg0LDc0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHRleHQgeD0iMTQwIiB5PSIxMDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMwZDRmNmMiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIj5Zby1adXJpIExhc2VyIFBybyAxNjDQvNC8IMK3INC00L4gMTEg0YPQtzwvdGV4dD48L3N2Zz4=" alt="Laser Pro 160">
-        </div>
-        <div class="lure-body">
-          <div class="lure-model">Yo-Zuri Laser Pro 160</div>
-          <div class="lure-brand">Yo-Zuri · 160 мм · Рекорд скорости</div>
-          <div class="lure-desc">До 11 узлов без потери игры — идеально для парусной яхты на ходу. Цвета: Sardine, Blue Silver, Mackerel. Тянуть на переходах между островами!</div>
-          <div class="lure-tags"><span class="tag t">Пеламида</span><span class="tag t">Тунец</span><span class="tag m">Высокоскоростной</span><span class="tag s">до 11 уз</span></div>
-          <div class="shop-links">
-            <a class="btn oz" href="https://www.ozon.ru/category/voblery-11358/yo-zuri-141298669/" target="_blank">🛒 Ozon</a>
-            <a class="btn yz" href="https://yozuri-russia.ru/" target="_blank">Yo-Zuri RU</a>
-            <a class="btn sp" href="https://spinningoff.ru/primanki/voblery/voblery-yo-zuri/" target="_blank">Spinningoff</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="lure-sec-title"><span class="icon">🎣</span> СПИННИНГ — у скал и якорная ловля</div>
-    <div class="lure-grid">
-
-      <div class="lure-card">
-        <div class="lure-img-wrap">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imw0IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6IzY2YWFjYyIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMjI2NmFhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDAxYTQ0Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjI4MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNlOGY0ZjYiIHJ4PSI4Ii8+PGVsbGlwc2UgY3g9IjEzNiIgY3k9IjU3IiByeD0iMTAwIiByeT0iMzIiIGZpbGw9InVybCgjbDQpIiBzdHJva2U9IiMxYTQ0ODgiIHN0cm9rZS13aWR0aD0iMiIvPjxwYXRoIGQ9Ik0gNzAgNDUgUSAxMzYgMzAgMjAwIDQ1IiBzdHJva2U9IiNhYWRkZmYiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSJub25lIiBvcGFjaXR5PSIwLjYiLz48Y2lyY2xlIGN4PSI2NSIgY3k9IjU3IiByPSI5IiBmaWxsPSIjYmJkZGY1IiBvcGFjaXR5PSIwLjkiLz48Y2lyY2xlIGN4PSI2MyIgY3k9IjU1IiByPSIzLjUiIGZpbGw9IiMwMDFhNDQiLz48cG9seWdvbiBwb2ludHM9IjIzNiw1NyAyNjAsNDIgMjY0LDU3IDI2MCw3MiIgZmlsbD0iIzFhNDQ4OCIgc3Ryb2tlPSIjMTEyMjU1IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxjaXJjbGUgY3g9IjY1IiBjeT0iNTciIHI9IjMiIGZpbGw9IiMxYTQ0ODgiLz48bGluZSB4MT0iNjUiIHkxPSI1NyIgeDI9IjY1IiB5Mj0iNzQiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNIDUzLDc0IFEgNjUsODYgNzcsNzQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48Y2lyY2xlIGN4PSIxNzUiIGN5PSI2MCIgcj0iMyIgZmlsbD0iIzFhNDQ4OCIvPjxsaW5lIHgxPSIxNzUiIHkxPSI2MCIgeDI9IjE3NSIgeTI9Ijc2IiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHBhdGggZD0iTSAxNjMsNzYgUSAxNzUsODggMTg3LDc2IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHRleHQgeD0iMTQwIiB5PSIxMDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYTQ0ODgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIj5SYXBhbGEgTWF4UmFwIDIzIMK3IDc30LMgwrcg0KLQstC40YfQuNC90LM8L3RleHQ+PC9zdmc+" alt="Rapala MaxRap 23">
-        </div>
-        <div class="lure-body">
-          <div class="lure-model">Rapala MaxRap 23</div>
-          <div class="lure-brand">Rapala · 23 см, 77 г · Воблер-джеркбейт</div>
-          <div class="lure-desc">Лучший воблер для луфаря и барракуды в Средиземноморье по отзывам рыбаков на форумах. Агрессивный твичинг на максимальной скорости.</div>
-          <div class="lure-tags"><span class="tag t">Луфарь</span><span class="tag t">Барракуда</span><span class="tag m">Спиннинг</span><span class="tag s">Твичинг быстрый</span></div>
-          <div class="shop-links">
-            <a class="btn rp" href="https://rapala.ru/" target="_blank">🌐 Rapala.ru</a>
-            <a class="btn oz" href="https://www.ozon.ru/brand/rapala-136144343/" target="_blank">🛒 Ozon</a>
-            <a class="btn wb" href="https://www.wildberries.ru/catalog/tags/rybolovnye-instrumenty-rapala" target="_blank">🛒 WB</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lure-card">
-        <div class="lure-img-wrap">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imw1IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZjBmMGYwIi8+PHN0b3Agb2Zmc2V0PSI0MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNjMGMwYzAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiM4ODg4ODgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2U4ZjRmNiIgcng9IjgiLz48cGF0aCBkPSJNIDEzMCAxMiBRIDE1NSAxMiAxNjAgNTggUSAxNTUgMTAwIDE0MCAxMDQgUSAxMjUgMTAwIDEyMCA1OCBRIDEyNSAxMiAxMzAgMTIgWiIgZmlsbD0idXJsKCNsNSkiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTSAxMzUgMTIgUSAxNDggMTIgMTUyIDU4IFEgMTQ4IDk4IDE0MCAxMDIiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBvcGFjaXR5PSIwLjUiLz48Y2lyY2xlIGN4PSIxNDAiIGN5PSIxOCIgcj0iNCIgZmlsbD0iIzg4OCIgc3Ryb2tlPSIjNTU1IiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTQwIiB5MT0iMTIiIHgyPSIxNDAiIHkyPSI0IiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMS41Ii8+PGNpcmNsZSBjeD0iMTQwIiBjeT0iMTAyIiByPSI0IiBmaWxsPSIjODg4Ii8+PGxpbmUgeDE9IjEzMyIgeTE9IjEwNiIgeDI9IjEyNCIgeTI9IjExNiIgc3Ryb2tlPSIjODg4IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0gMTE2LDExNiBRIDEyNCwxMDggMTMyLDExNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjODg4IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxsaW5lIHgxPSIxNDciIHkxPSIxMDYiIHgyPSIxNTYiIHkyPSIxMTYiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNIDE0OCwxMTYgUSAxNTYsMTA4IDE2NCwxMTYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48dGV4dCB4PSIxNDAiIHk9IjEwOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzBkNGY2YyIgZm9udC1zaXplPSIxMSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPtCf0LjQu9GM0LrQtdGAIMK3IDIw4oCTNjDQsyDCtyDQpdGA0L7QvC/Ql9C+0LvQvtGC0L48L3RleHQ+PC9zdmc+" alt="Металлический пилькер">
-        </div>
-        <div class="lure-body">
-          <div class="lure-model">Металлический пилькер / кастинговый джиг</div>
-          <div class="lure-brand">Savage Gear / Strike Pro · 20–60 г</div>
-          <div class="lure-desc">Универсальный вариант для обловки всей толщи воды у скал. Хром/серебро — под сардину; красный/золото — хищник. Дальний заброс.</div>
-          <div class="lure-tags"><span class="tag t">Луфарь</span><span class="tag t">Лакедра</span><span class="tag t">Групер</span><span class="tag m">Кастинг/Джиг</span><span class="tag s">20–60 г</span></div>
-          <div class="shop-links">
-            <a class="btn oz" href="https://www.ozon.ru/category/rybalka-33152/?text=пилькер+морской+кастинговый" target="_blank">🛒 Ozon</a>
-            <a class="btn wb" href="https://www.wildberries.ru/catalog/sport/fishing/?search=пилькер" target="_blank">🛒 WB</a>
-            <a class="btn az" href="https://www.amazon.com/s?k=metal+cast+jig+spoon+sea+fishing+20g+40g" target="_blank">Amazon</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lure-card">
-        <div class="lure-img-wrap">
-          <img src="https://images-na.ssl-images-amazon.com/images/I/71dSCIjpidL._AC_SL1500_.jpg" alt="Силикон на джиг-головке">
-        </div>
-        <div class="lure-body">
-          <div class="lure-model">Силикон 3–5″ на джиг-головке 10–20 г</div>
-          <div class="lure-brand">Z-Man / Berkley Gulp! · Rockfishing</div>
-          <div class="lure-desc">Самая уловистая приманка у дна у скал. Berkley Gulp! пахнет натурально — находка для группера. Береговой рокфишинг у мысов.</div>
-          <div class="lure-tags"><span class="tag t">Групер</span><span class="tag t">Зубан</span><span class="tag t">Окунь</span><span class="tag m">Рокфишинг</span><span class="tag s">1–5"</span></div>
-          <div class="shop-links">
-            <a class="btn oz" href="https://www.ozon.ru/category/dzhig-primanki/" target="_blank">🛒 Ozon (джиг)</a>
-            <a class="btn wb" href="https://www.wildberries.ru/catalog/sport/fishing/" target="_blank">🛒 WB</a>
-            <a class="btn az" href="https://www.amazon.com/s?k=berkley+gulp+saltwater+shad+jig" target="_blank">Amazon Gulp!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lure-card">
-        <div class="lure-img-wrap">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imw2IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZmY4OGNjIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojNzcyMmFhIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjI4MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiMxYTBhMmUiIHJ4PSI4Ii8+PGVsbGlwc2UgY3g9IjE0MCIgY3k9IjUwIiByeD0iMjQiIHJ5PSIzOCIgZmlsbD0idXJsKCNsNikiIHN0cm9rZT0iI2NjNDRhYSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cG9seWdvbiBwb2ludHM9IjEyNiwxNiAxNDAsNiAxNTQsMTYgMTQ5LDI4IDEzMSwyOCIgZmlsbD0iI2ZmNDRhYSIgc3Ryb2tlPSIjY2M0NGFhIiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTE2IiB5MT0iODgiIHgyPSIxMDIiIHkyPSIxMTIiIHN0cm9rZT0iI2NjNDRhYSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMTI0IiB5MT0iOTEiIHgyPSIxMTIiIHkyPSIxMTIiIHN0cm9rZT0iI2NjNDRhYSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMTMyIiB5MT0iOTMiIHgyPSIxMjQiIHkyPSIxMTQiIHN0cm9rZT0iI2NjNDRhYSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMTQwIiB5MT0iOTQiIHgyPSIxMzgiIHkyPSIxMTUiIHN0cm9rZT0iI2NjNDRhYSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMTQ4IiB5MT0iOTMiIHgyPSIxNTIiIHkyPSIxMTQiIHN0cm9rZT0iI2NjNDRhYSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMTU2IiB5MT0iOTEiIHgyPSIxNjQiIHkyPSIxMTIiIHN0cm9rZT0iI2NjNDRhYSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMTY0IiB5MT0iODgiIHgyPSIxNzYiIHkyPSIxMTAiIHN0cm9rZT0iI2NjNDRhYSIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48Y2lyY2xlIGN4PSIxMzAiIGN5PSI0MyIgcj0iNiIgZmlsbD0iI2ZmYmJlZSIgb3BhY2l0eT0iMC45Ii8+PGNpcmNsZSBjeD0iMTI5IiBjeT0iNDIiIHI9IjIuNSIgZmlsbD0iIzFhMGEyZSIvPjxjaXJjbGUgY3g9IjE1MCIgY3k9IjQzIiByPSI2IiBmaWxsPSIjZmZiYmVlIiBvcGFjaXR5PSIwLjkiLz48Y2lyY2xlIGN4PSIxNDkiIGN5PSI0MiIgcj0iMi41IiBmaWxsPSIjMWEwYTJlIi8+PHRleHQgeD0iMTQwIiB5PSIxMDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNjYzQ0YWEiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIj7QrdCz0LjQvdCzLdC00LbQuNCzIFlvLVp1cmkgwrcg4oSWMi414oCTMy41PC90ZXh0Pjwvc3ZnPg==" alt="Эгинг-джиг кальмар">
-        </div>
-        <div class="lure-body">
-          <div class="lure-model">Эгинг-джиг для кальмара</div>
-          <div class="lure-brand">Yo-Zuri Ultra 3D / Yamashita EGI OH · №2.5–3.5</div>
-          <div class="lure-desc">Специализированная приманка для ночного эгинга. Ловля у рифов и водорослей. Киклады — особенно богатое место. Свободное падение + подёргивание.</div>
-          <div class="lure-tags"><span class="tag t">Кальмар</span><span class="tag t">Каракатица</span><span class="tag m">Эгинг (ночь)</span><span class="tag s">№2.5–3.5</span></div>
-          <div class="shop-links">
-            <a class="btn oz" href="https://www.ozon.ru/category/rybalka-33152/?text=эгинг+джиг+кальмар" target="_blank">🛒 Ozon</a>
-            <a class="btn yz" href="https://yozuri-russia.ru/" target="_blank">Yo-Zuri RU</a>
-            <a class="btn az" href="https://www.amazon.com/s?k=yo-zuri+ultra+3d+squid+jig+eging+2.5" target="_blank">Amazon</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lure-card">
-        <div class="lure-img-wrap">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imw3IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2ZmNjYwMCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZmZhYTAwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojY2M0NDAwIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjI4MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNlOGY0ZjYiIHJ4PSI4Ii8+PGVsbGlwc2UgY3g9IjEzOCIgY3k9IjU3IiByeD0iMTA1IiByeT0iMTkiIGZpbGw9InVybCgjbDcpIiBzdHJva2U9IiNjYzQ0MDAiIHN0cm9rZS13aWR0aD0iMiIvPjxlbGxpcHNlIGN4PSIxMzgiIGN5PSI1MSIgcng9IjEwMiIgcnk9IjExIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmRkODgiIHN0cm9rZS13aWR0aD0iMS41IiBvcGFjaXR5PSIwLjUiLz48Y2lyY2xlIGN4PSI1NiIgY3k9IjU3IiByPSI4IiBmaWxsPSIjZmZjY2FhIiBvcGFjaXR5PSIwLjkiLz48Y2lyY2xlIGN4PSI1NCIgY3k9IjU1IiByPSIzIiBmaWxsPSIjNDQwMDAwIi8+PHBvbHlnb24gcG9pbnRzPSIyNDMsNTcgMjY2LDQ0IDI2OSw1NyAyNjYsNzAiIGZpbGw9IiNjYzQ0MDAiIHN0cm9rZT0iIzg4MjIwMCIgc3Ryb2tlLXdpZHRoPSIxIi8+PGNpcmNsZSBjeD0iNTYiIGN5PSI1NyIgcj0iMyIgZmlsbD0iI2NjNDQwMCIvPjxsaW5lIHgxPSI1NiIgeTE9IjU3IiB4Mj0iNTYiIHkyPSI3NCIgc3Ryb2tlPSIjNjY2IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxwYXRoIGQ9Ik0gNDQsNzQgUSA1Niw4NiA2OCw3NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjY2IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxjaXJjbGUgY3g9IjE2OCIgY3k9IjU3IiByPSIzIiBmaWxsPSIjY2M0NDAwIi8+PGxpbmUgeDE9IjE2OCIgeTE9IjU3IiB4Mj0iMTY4IiB5Mj0iNzQiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNIDE1Niw3NCBRIDE2OCw4NiAxODAsNzQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2NiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNIDM2IDQ0IFEgNDYgMzMgNTYgNDQiIHN0cm9rZT0iIzNFQzlENiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBvcGFjaXR5PSIwLjciLz48dGV4dCB4PSIxNDAiIHk9IjEwOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2NjNDQwMCIgZm9udC1zaXplPSIxMSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiPtCi0L7Qv9Cy0L7RgtC10YAgU2Vhc3Bpbi9Yb3J1cyDCtyDQoNCw0YHRgdCy0LXRgi/Ql9Cw0LrQsNGCPC90ZXh0Pjwvc3ZnPg==" alt="Топвотер пенсил">
-        </div>
-        <div class="lure-body">
-          <div class="lure-model">Топвотер пенсил / Поппер</div>
-          <div class="lure-brand">Seaspin Mommotti 180SS / Xorus Patchinko 100</div>
-          <div class="lure-desc">Поверхностная атака на рассвете и закате у скальных мысов. «Уолкинг-дог» под водой. Рекомендован рыбаками в Эгейском море на луфаря и барракуду.</div>
-          <div class="lure-tags"><span class="tag t">Луфарь</span><span class="tag t">Барракуда</span><span class="tag m">Топвотер</span><span class="tag s">Рассвет/закат</span></div>
-          <div class="shop-links">
-            <a class="btn az" href="https://www.amazon.com/s?k=seaspin+mommotti+180" target="_blank">Amazon (Mommotti)</a>
-            <a class="btn az" href="https://www.amazon.com/s?k=xorus+patchinko+100" target="_blank">Amazon (Patchinko)</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="lure-card">
-        <div class="lure-img-wrap">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMTIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9Imw4IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZjBmMGYwIi8+PHN0b3Agb2Zmc2V0PSI0MCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNhYWNjZWUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTQ0ODgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMjgwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2U4ZjRmNiIgcng9IjgiLz48cGF0aCBkPSJNIDEyOCAxMCBRIDE1NSAxMCAxNjIgNTggUSAxNTUgMTAyIDE0MCAxMDYgUSAxMjUgMTAyIDExOCA1OCBRIDEyNSAxMCAxMjggMTAgWiIgZmlsbD0idXJsKCNsOCkiIHN0cm9rZT0iIzFhNDQ4OCIgc3Ryb2tlLXdpZHRoPSIyIi8+PHBhdGggZD0iTSAxMzMgMTAgUSAxNTAgMTAgMTU2IDU4IFEgMTUwIDEwMCAxNDAgMTA0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgb3BhY2l0eT0iMC41Ii8+PGNpcmNsZSBjeD0iMTQwIiBjeT0iMTYiIHI9IjQiIGZpbGw9IiM4ODgiIHN0cm9rZT0iIzU1NSIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjE0MCIgeTE9IjEwIiB4Mj0iMTQwIiB5Mj0iMyIgc3Ryb2tlPSIjODg4IiBzdHJva2Utd2lkdGg9IjEuNSIvPjxjaXJjbGUgY3g9IjE0MCIgY3k9IjEwNCIgcj0iNCIgZmlsbD0iIzg4OCIvPjxsaW5lIHgxPSIxMzMiIHkxPSIxMDgiIHgyPSIxMjQiIHkyPSIxMTgiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48cGF0aCBkPSJNIDExNiwxMTggUSAxMjQsMTEwIDEzMiwxMTgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzg4OCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz48bGluZSB4MT0iMTQ3IiB5MT0iMTA4IiB4Mj0iMTU2IiB5Mj0iMTE4IiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHBhdGggZD0iTSAxNDgsMTE4IFEgMTU2LDExMCAxNjQsMTE4IiBmaWxsPSJub25lIiBzdHJva2U9IiM4ODgiIHN0cm9rZS13aWR0aD0iMS41Ii8+PHRleHQgeD0iMTQwIiB5PSIxMDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxYTQ0ODgiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIj7QktC10YDRgtC40LrQsNC70YzQvdGL0Lkg0LTQttC40LMgwrcgNjDigJMxNTDQszwvdGV4dD48L3N2Zz4=" alt="Тяжёлый вертикальный джиг">
-        </div>
-        <div class="lure-body">
-          <div class="lure-model">Тяжёлый вертикальный джиг</div>
-          <div class="lure-brand">Hearty Rise / Jig It · 60–150 г</div>
-          <div class="lure-desc">Для лакедры и дентекса на 30–80 м у подводных горок Кикладов. Асимметричный профиль, быстрое падение. Серебро, розовое золото, сине-белый.</div>
-          <div class="lure-tags"><span class="tag t">Лакедра</span><span class="tag t">Зубан</span><span class="tag m">Вертикальный джиг</span><span class="tag s">60–150 г</span></div>
-          <div class="shop-links">
-            <a class="btn oz" href="https://www.ozon.ru/category/rybalka-33152/?text=морской+вертикальный+джиг+тяжелый" target="_blank">🛒 Ozon</a>
-            <a class="btn sp" href="https://fishing-shop.ru/cat/Casting-Rods" target="_blank">Hearty Rise</a>
-            <a class="btn az" href="https://www.amazon.com/s?k=slow+pitch+jig+150g+saltwater+amberjack" target="_blank">Amazon</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="alert"><strong>💡 Поводки:</strong> Луфарь и барракуда — острые зубы. Ставьте флюорокарбон 0.60–0.80 мм или стальной поводок 20–30 кг.
-    &nbsp;<a href="https://www.ozon.ru/category/rybalka-33152/?text=флюорокарбоновый+поводок+морской" style="color:var(--rust);font-weight:700" target="_blank">🛒 Поводки на Ozon →</a></div>
+  <div class="route-tabs">
+    <div class="rtab active" onclick="showRoute('classic')">⭐ Классика</div>
+    <div class="rtab" onclick="showRoute('adventure')">🏄 Приключение</div>
+    <div class="rtab" onclick="showRoute('calm')">🧘 Спокойный</div>
   </div>
+
+  <!-- CLASSIC -->
+  <div class="route-panel active" id="route-classic">
+    <div class="week-badge cat">⛵ Неделя 1 · Катамаран · 18–25 июля · Саронический залив</div>
+    <div class="day-list">
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Пт 18</div><div class="day-name">Отплытие</div></div>
+        <div class="day-body">
+          <div class="day-route">Пирей / Алимос → Эгина</div>
+          <div class="day-info">Отход после обеда. Переход ~2 часа, спокойное море. Ночёвка в <a class="place-link" href="https://maps.google.com/?q=37.748,23.432" target="_blank">📍 порту Эгины</a> или бухте Пердика. Вечером — свежие морепродукты в тавернах.</div>
+          <div class="day-tags"><span class="dtag dist">18 нм</span><span class="dtag anchor">Порт Эгины</span><span class="dtag kid">Пляж Маратон</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Сб 19</div><div class="day-name">День 2</div></div>
+        <div class="day-body">
+          <div class="day-route">Эгина → Остров Мони → Агистри</div>
+          <div class="day-info">Утренняя остановка у <a class="place-link" href="https://maps.google.com/?q=37.632,23.422" target="_blank">📍 о. Мони</a> — необитаемый остров, олени на берегу, кристальная вода, отличный снорклинг. После обеда — <a class="place-link" href="https://maps.google.com/?q=37.703,23.508" target="_blank">📍 Агистри</a>, сосновый лес до воды.</div>
+          <div class="day-tags"><span class="dtag dist">12 нм</span><span class="dtag kid">Снорклинг Мони</span><span class="dtag fish">Групер, кальмар ночью</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Вс 20</div><div class="day-name">День 3</div></div>
+        <div class="day-body">
+          <div class="day-route">Агистри → Порос</div>
+          <div class="day-info">Красивый переход мимо берегов Пелопоннеса. <a class="place-link" href="https://maps.google.com/?q=37.498,23.458" target="_blank">📍 Порос</a> — узкий пролив, венецианская атмосфера. Водный парк «Русская бухта» — дети в восторге. Рыбалка на спиннинг в проливе на закате.</div>
+          <div class="day-tags"><span class="dtag dist">22 нм</span><span class="dtag kid">Водный парк Порос</span><span class="dtag fish">Луфарь, морской окунь</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Пн 21</div><div class="day-name">День 4</div></div>
+        <div class="day-body">
+          <div class="day-route">Порос → Гидра</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.350,23.472" target="_blank">📍 Гидра</a> — машин нет, только ослы! Старинный город, несколько небольших пляжей у скал. Обойти остров пешком или на ослике — незабываемо. Ночёвка у <a class="place-link" href="https://maps.google.com/?q=37.340,23.440" target="_blank">📍 Мандраки</a> (тихая бухта, далеко от ослиного движения).</div>
+          <div class="day-tags"><span class="dtag dist">14 нм</span><span class="dtag kid">Прогулка на осликах</span><span class="dtag anchor">Мандраки, Hydra Town</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Вт 22</div><div class="day-name">День 5</div></div>
+        <div class="day-body">
+          <div class="day-route">Гидра → Докос → Спецес</div>
+          <div class="day-info">Остановка у <a class="place-link" href="https://maps.google.com/?q=37.330,23.352" target="_blank">📍 Докос</a> — необитаемый, здесь найдена древнейшая в мире затопленная лодка (4000 лет назад). Снорклинг у камней. Затем <a class="place-link" href="https://maps.google.com/?q=37.255,23.157" target="_blank">📍 Спецес</a> — роскошные особняки, велосипеды.</div>
+          <div class="day-tags"><span class="dtag dist">28 нм</span><span class="dtag kid">Велосипеды Спецес</span><span class="dtag fish">Барракуда, пеламида</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Ср 23</div><div class="day-name">День 6</div></div>
+        <div class="day-body">
+          <div class="day-route">Спецес → Ермиони → Эпидавр</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.387,23.256" target="_blank">📍 Ермиони</a> — шикарная рыбацкая деревня. Затем <a class="place-link" href="https://maps.google.com/?q=37.600,23.155" target="_blank">📍 Эпидавр</a> — знаменитый античный театр, ночные постановки в июле. Якорная стоянка в тихой бухте, экскурсия на такси.</div>
+          <div class="day-tags"><span class="dtag dist">30 нм</span><span class="dtag kid">Театр Эпидавра</span><span class="dtag anchor">Бухта Эпидавра</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Чт 24</div><div class="day-name">День 7</div></div>
+        <div class="day-body">
+          <div class="day-route">Эпидавр → Порто Хели → отдых</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.330,23.147" target="_blank">📍 Порто Хели</a> — изумительная закрытая бухта, лазурная вода. Весь день на якоре: купание, SUP, снорклинг, рыбалка. Вечером барбекю на борту. Последняя ночь катамарана.</div>
+          <div class="day-tags"><span class="dtag dist">18 нм</span><span class="dtag kid">SUP, снорклинг</span><span class="dtag fish">Спиннинг с якоря</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Пт 25</div><div class="day-name">Пересадка</div></div>
+        <div class="day-body">
+          <div class="day-route">→ Лаврио / Алимос · Смена яхты</div>
+          <div class="day-info">Возврат катамарана. Пересадка на монохул. <a class="place-link" href="https://maps.google.com/?q=37.718,24.052" target="_blank">📍 Марина Лаврио</a> — отправная точка на Киклады. Пополнение провизии, ужин в городе.</div>
+          <div class="day-tags"><span class="dtag warn">Пересадка</span><span class="dtag anchor">Лаврио/Алимос</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="week-badge mono" style="margin-top:28px">⛵ Неделя 2 · Монохул · 25 июля — 2 августа · Киклады</div>
+    <div class="day-list">
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Сб 26</div><div class="day-name">День 1</div></div>
+        <div class="day-body">
+          <div class="day-route">Лаврио → Кеа (Тзиа)</div>
+          <div class="day-info">Первый переход в Эгей — 3 часа, умеренный ветер. <a class="place-link" href="https://maps.google.com/?q=37.632,24.316" target="_blank">📍 Кеа (Иулида)</a> — малолюдный, аутентичный. Бухта Вуркари с тавернами прямо у воды. Вечером — рыбалка у мыса. Важно: выйти до 09:00!</div>
+          <div class="day-tags"><span class="dtag dist">30 нм</span><span class="dtag warn">Выход до 09:00</span><span class="dtag fish">Лакедра на джиг</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Вс 27</div><div class="day-name">День 2</div></div>
+        <div class="day-body">
+          <div class="day-route">Кеа → Сирос</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.441,24.934" target="_blank">📍 Эрмуполис (Сирос)</a> — столица Кикладов, венецианские здания, оперный театр, лучшая лукумадес (пончики с мёдом). Большой удобный порт. Дети исследуют рынок.</div>
+          <div class="day-tags"><span class="dtag dist">35 нм</span><span class="dtag kid">Рынок Сироса</span><span class="dtag anchor">Порт Эрмуполис</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Пн 28</div><div class="day-name">День 3</div></div>
+        <div class="day-body">
+          <div class="day-route">Сирос → Парос</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.085,25.152" target="_blank">📍 Парос</a> — красивый, развитый остров. Пляж Колимбитрес с фантастическими гранитными скалами и чистой водой (дети лазают по скалам). Вечером пролив на Антипарос — кальмары на эгинг ночью!</div>
+          <div class="day-tags"><span class="dtag dist">28 нм</span><span class="dtag kid">Скалы Колимбитрес</span><span class="dtag fish">Кальмар ночью у Антипароса</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Вт 29</div><div class="day-name">День 4</div></div>
+        <div class="day-body">
+          <div class="day-route">Парос → Наксос</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.105,25.375" target="_blank">📍 Наксос</a> — самый большой, самый красивый остров Кикладов. Ворота Аполлона (Портара) на рассвете. Южный берег закрыт от Мельтеми — бухта Калладос как зеркало. Супермаркет в городе, свежие овощи и сыр.</div>
+          <div class="day-tags"><span class="dtag dist">18 нм</span><span class="dtag kid">Портара, форт Паллатиа</span><span class="dtag fish">Барракуда, групер</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Ср 30</div><div class="day-name">День 5</div></div>
+        <div class="day-body">
+          <div class="day-route">Наксос → Ираклия (Малые Киклады)</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=36.844,25.476" target="_blank">📍 Ираклия</a> — жемчужина! 300 жителей, нет машин, нет туристов. Пещера Святого Иоанна с подземным озером. Лучшие рыбные воды Эгея. Ночью — биолюминесценция при купании!</div>
+          <div class="day-tags"><span class="dtag dist">22 нм</span><span class="dtag kid">Пещера Св. Иоанна</span><span class="dtag fish">⭐ Лучшее место для рыбалки</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Чт 31</div><div class="day-name">День 6</div></div>
+        <div class="day-body">
+          <div class="day-route">Ираклия → Схинуса → Кунфунисья</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=36.867,25.516" target="_blank">📍 Схинуса</a> — 250 жителей, виноградники до моря. <a class="place-link" href="https://maps.google.com/?q=36.940,25.607" target="_blank">📍 Кунфунисья</a> — самые фотографируемые пляжи Греции. Бирюзовая лагуна Пано Кунфунисья. Рыбалка весь день — групер, дентекс.</div>
+          <div class="day-tags"><span class="dtag dist">15 нм</span><span class="dtag kid">Лагуна Кунфунисья</span><span class="dtag fish">Групер, зубан (джиг)</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Пт 1/8</div><div class="day-name">День 7</div></div>
+        <div class="day-body">
+          <div class="day-route">Кунфунисья → Амаргос или обратно на Наксос</div>
+          <div class="day-info">По погоде: при слабом ветре — <a class="place-link" href="https://maps.google.com/?q=36.829,25.882" target="_blank">📍 Амаргос</a> (кинофильм «Голубая бездна» снимался здесь). При Мельтеми — остаться на Кунфунисья или вернуться на Наксос. Последняя полноценная ночь.</div>
+          <div class="day-tags"><span class="dtag dist">28–35 нм</span><span class="dtag warn">По прогнозу</span><span class="dtag fish">Открытое море — пеламида</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Сб 2/8</div><div class="day-name">Возврат</div></div>
+        <div class="day-body">
+          <div class="day-route">→ Наксос / Пирей · Сдача яхты</div>
+          <div class="day-info">Ранний выход, возврат яхты. Сдача до 17:00. Рейс или ночь в Афинах.</div>
+          <div class="day-tags"><span class="dtag warn">Ранний выход</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADVENTURE -->
+  <div class="route-panel" id="route-adventure">
+    <div class="alert info"><strong>🏄 Вариант «Приключение»</strong> — больше Кикладов, открытые переходы, дополнительные острова. Для уверенных шкиперов с опытом детей на борту.</div>
+    <div class="week-badge cat">⛵ Неделя 1 · Катамаран · Расширенный Саронический</div>
+    <div class="day-list">
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">18–19</div><div class="day-name">Пт–Сб</div></div>
+        <div class="day-body">
+          <div class="day-route">Пирей → Эгина → Агистри → Метана</div>
+          <div class="day-info">Быстрый старт. <a class="place-link" href="https://maps.google.com/?q=37.596,23.233" target="_blank">📍 Метана</a> — вулканический полуостров, горячие источники прямо у воды. Купание в термальных водах — детям понравится.</div>
+          <div class="day-tags"><span class="dtag dist">35 нм</span><span class="dtag kid">Горячие источники</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">20–21</div><div class="day-name">Вс–Пн</div></div>
+        <div class="day-body">
+          <div class="day-route">Метана → Порос → Трезена → Гидра</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.517,23.323" target="_blank">📍 Трезена</a> на материке — руины храма, бухта с пещерами. Переход в Гидру под парусом при попутном ветре.</div>
+          <div class="day-tags"><span class="dtag dist">40 нм</span><span class="dtag kid">Исторические руины</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">22–23</div><div class="day-name">Вт–Ср</div></div>
+        <div class="day-body">
+          <div class="day-route">Гидра → Докос → Эрмиони → Кранидион</div>
+          <div class="day-info">Глубокий Аргольский залив. <a class="place-link" href="https://maps.google.com/?q=37.387,23.256" target="_blank">📍 Эрмиони</a> — лучшая кухня Арголиды. <a class="place-link" href="https://maps.google.com/?q=37.382,23.153" target="_blank">📍 Кранидион</a> — нетронутая рыбацкая бухта.</div>
+          <div class="day-tags"><span class="dtag dist">35 нм</span><span class="dtag fish">Пеламида на троллинг</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">24–25</div><div class="day-name">Чт–Пт</div></div>
+        <div class="day-body">
+          <div class="day-route">Кранидион → Спецес → Пирей (смена)</div>
+          <div class="day-info">День отдыха на Спецесе. Вечером — возврат и пересадка. <a class="place-link" href="https://maps.google.com/?q=37.718,24.052" target="_blank">📍 Лаврио</a> — старт Кикладского маршрута.</div>
+          <div class="day-tags"><span class="dtag warn">Смена яхты</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="week-badge mono" style="margin-top:24px">⛵ Неделя 2 · Монохул · Глубокие Киклады</div>
+    <div class="day-list">
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">26</div><div class="day-name">День 1</div></div>
+        <div class="day-body">
+          <div class="day-route">Лаврио → Кеа → Кифнос</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.405,24.428" target="_blank">📍 Кифнос</a> — горячие источники на пляже Луtra, где пресная горячая вода смешивается с морем прямо на песке. Дети будут кричать от восторга.</div>
+          <div class="day-tags"><span class="dtag dist">45 нм</span><span class="dtag kid">⭐ Горячие источники Лутра</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">27–28</div><div class="day-name">Дни 2–3</div></div>
+        <div class="day-body">
+          <div class="day-route">Кифнос → Сeрифос → Сифнос</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.154,24.499" target="_blank">📍 Серифос</a> — крепость-хора на скале. <a class="place-link" href="https://maps.google.com/?q=36.974,24.726" target="_blank">📍 Сифнос</a> — лучшая кухня Кикладов. Котопита (пирог с курицей) и белое вино. Закрытые бухты Платис Яалос.</div>
+          <div class="day-tags"><span class="dtag dist">50 нм 2 дня</span><span class="dtag kid">Крепость Серифос</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">29–30</div><div class="day-name">Дни 4–5</div></div>
+        <div class="day-body">
+          <div class="day-route">Сифнос → Антипарос → Наксос</div>
+          <div class="day-info">Пещера Антипароса — одна из крупнейших в мире. Экскурсия 1 час. Ночью — эгинг на кальмара. <a class="place-link" href="https://maps.google.com/?q=37.105,25.375" target="_blank">📍 Наксос</a> — провизия, отдых.</div>
+          <div class="day-tags"><span class="dtag dist">55 нм 2 дня</span><span class="dtag kid">Пещера Антипароса</span><span class="dtag fish">Кальмар ночью</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">31–2/8</div><div class="day-name">Дни 6–8</div></div>
+        <div class="day-body">
+          <div class="day-route">Наксос → Малые Киклады → возврат</div>
+          <div class="day-info">Ираклия, Кунфунисья, Схинуса — нетронутые острова. Рыбалка, биолюминесценция, полная тишина. Финальный переход обратно на Наксос или Парос для сдачи яхты.</div>
+          <div class="day-tags"><span class="dtag fish">⭐ Лучшая рыбалка маршрута</span><span class="dtag kid">Биолюминесценция</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALM -->
+  <div class="route-panel" id="route-calm">
+    <div class="alert success"><strong>🧘 Вариант «Спокойный»</strong> — максимальная защита от ветра, короткие переходы, много времени на якоре. Идеален если есть совсем маленькие дети или кто-то боится моря.</div>
+    <div class="week-badge cat">⛵ Неделя 1 · Катамаран · Сароник Light</div>
+    <div class="day-list">
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">18–20</div><div class="day-name">Дни 1–3</div></div>
+        <div class="day-body">
+          <div class="day-route">Пирей → Эгина (2 ночи) → Агистри</div>
+          <div class="day-info">Не торопиться. Эгина — пистачи, Храм Афайи, пляжи Айя Марина. <a class="place-link" href="https://maps.google.com/?q=37.748,23.432" target="_blank">📍 Порт Эгины</a> — большой, удобный, рядом супермаркет. Неспешный осмотр острова на велосипедах (аренда у порта).</div>
+          <div class="day-tags"><span class="dtag dist">18 нм</span><span class="dtag kid">Велосипеды, Храм Афайи</span><span class="dtag anchor">2 ночи</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">21–22</div><div class="day-name">Дни 4–5</div></div>
+        <div class="day-body">
+          <div class="day-route">Агистри → Порос (2 ночи)</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.498,23.458" target="_blank">📍 Порос</a> — два дня. Водный парк, прогулка по лесу до монастыря Зоодохос Пигис, ужины в тавернах. Экскурсия в Эпидавр на такси.</div>
+          <div class="day-tags"><span class="dtag dist">22 нм</span><span class="dtag kid">Водный парк, монастырь</span><span class="dtag anchor">2 ночи</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">23–24</div><div class="day-name">Дни 6–7</div></div>
+        <div class="day-body">
+          <div class="day-route">Порос → Гидра → Спецес</div>
+          <div class="day-info">Гидра — один день, Спецес — один день. Без спешки. <a class="place-link" href="https://maps.google.com/?q=37.255,23.157" target="_blank">📍 Спецес</a> — Зогерия, самая красивая бухта Саронического. Кристальная вода, ресторан прямо у воды.</div>
+          <div class="day-tags"><span class="dtag dist">35 нм</span><span class="dtag kid">Зогерия (Спецес)</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">25</div><div class="day-name">Смена</div></div>
+        <div class="day-body">
+          <div class="day-route">→ Алимос · Смена на монохул</div>
+          <div class="day-tags"><span class="dtag warn">Смена яхты</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="week-badge mono" style="margin-top:24px">⛵ Неделя 2 · Монохул · Западные Киклады (укрытые)</div>
+    <div class="day-list">
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">26–27</div><div class="day-name">Дни 1–2</div></div>
+        <div class="day-body">
+          <div class="day-route">Лаврио → Кеа (2 ночи)</div>
+          <div class="day-info">Плавный вход в Эгей. <a class="place-link" href="https://maps.google.com/?q=37.632,24.316" target="_blank">📍 Кеа</a> — сосновый лес, аутентичные деревни. Бухта Ораиас Аргос — почти закрытая лагуна, идеальна при любом ветре. Рыбалка у мыса.</div>
+          <div class="day-tags"><span class="dtag dist">30 нм</span><span class="dtag anchor">2 ночи, укрытые бухты</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">28–29</div><div class="day-name">Дни 3–4</div></div>
+        <div class="day-body">
+          <div class="day-route">Кеа → Сирос → Парос</div>
+          <div class="day-info">Сирос — один день. Парос — одна ночь. Все переходы — по часовой стрелке вокруг Кикладов, по укрытым бухтам. Пролив Парос–Антипарос — самый защищённый.</div>
+          <div class="day-tags"><span class="dtag dist">60 нм 2 дня</span><span class="dtag kid">Пролив Антипароса</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">30–31</div><div class="day-name">Дни 5–6</div></div>
+        <div class="day-body">
+          <div class="day-route">Парос → Наксос (2 ночи)</div>
+          <div class="day-info">Наксос — главная база. Два дня: пляжи, город, крепость, прокат байков. Южный берег — полная защита от Мельтеми. <a class="place-link" href="https://maps.google.com/?q=36.976,25.501" target="_blank">📍 Бухта Калладос</a> — зеркало при любом ветре.</div>
+          <div class="day-tags"><span class="dtag dist">18 нм</span><span class="dtag kid">Байки, пляжи</span><span class="dtag anchor">2 ночи</span></div>
+        </div>
+      </div>
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">1–2/8</div><div class="day-name">Дни 7–8</div></div>
+        <div class="day-body">
+          <div class="day-route">Наксос → Ираклия → сдача на Наксосе</div>
+          <div class="day-info">Один день на Ираклии — самый тихий остров Греции. Ночь там. Утром возврат на Наксос и сдача яхты. Перелёт из Наксоса напрямую или паром в Пирей.</div>
+          <div class="day-tags"><span class="dtag fish">Рыбалка у Ираклии</span><span class="dtag kid">Тишина, биолюминесценция</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 </section>
 
-<!-- ══ МЕСТА ══ -->
-<section>
-  <div class="container">
-    <div class="sec-eye">GPS-точки и локации</div>
-    <h2 class="sec-h2">Лучшие места на маршруте</h2>
-    <p class="sec-sub">Нажмите на координаты — откроется Google Maps.</p>
+<!-- ══ CHECKLIST ══ -->
+<section id="checklist">
+<div class="container">
+  <div class="sec-eye">Подготовка</div>
+  <h2 class="sec-h2">Чеклист — что взять</h2>
+  <p class="sec-sub">Для семейного яхтинга с детьми 7–15 лет. Отмечайте по мере сборов.</p>
 
-    <div class="region-label">🗺 Саронический залив</div>
-    <div class="spots-grid">
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Агистри — северный мыс</div><div class="spot-region">Саронический</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.703,23.508" target="_blank">📍 37.703° N, 23.508° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">15–35 м · камень + водоросли</div>
-          <div class="spot-desc">Скалистый мыс с резким перепадом. Луфарь на закате у поверхности. Силикон у дна — окунь и мелкий групер.</div>
-          <div class="spot-tags"><span class="tag t">Луфарь</span><span class="tag t">Окунь</span><span class="tag m">Спиннинг</span></div>
-        </div>
+  <div id="checklist-progress">Отмечено: 0 из 0</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+
+  <div class="checklist-grid">
+    <div class="checklist-card">
+      <div class="checklist-header" style="background:var(--sea)">
+        <span class="checklist-icon">👕</span>
+        <span class="checklist-title">Одежда и защита</span>
       </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Мыс Пердика (Эгина)</div><div class="spot-region">Саронический</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.676,23.434" target="_blank">📍 37.676° N, 23.434° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">10–40 м · скала</div>
-          <div class="spot-desc">Рыбацкая деревня Пердика. Троллинг вдоль южного берега Эгины. Пеламида активна по утрам.</div>
-          <div class="spot-tags"><span class="tag t">Пеламида</span><span class="tag t">Барракуда</span><span class="tag m">Троллинг</span></div>
-        </div>
-      </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Остров Мони (у Эгины)</div><div class="spot-region">Саронический</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.632,23.422" target="_blank">📍 37.632° N, 23.422° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">15–50 м · скала + песок</div>
-          <div class="spot-desc">Необитаемый островок. Кальмар ночью у водорослей, групер у скальных свесов. Отличная стоянка на якоре.</div>
-          <div class="spot-tags"><span class="tag t">Кальмар</span><span class="tag t">Групер</span><span class="tag m">Эгинг ночью</span></div>
-        </div>
-      </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Пролив Порос</div><div class="spot-region">Саронический</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.498,23.458" target="_blank">📍 37.498° N, 23.458° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">5–30 м · течение!</div>
-          <div class="spot-desc">Узкий канал с постоянным течением — концентрирует хищника. Утром — окунь, в сумерках — луфарь. ⚠️ Много паромов.</div>
-          <div class="spot-tags"><span class="tag t">Морской окунь</span><span class="tag t">Луфарь</span><span class="tag m">Спиннинг с якоря</span></div>
-        </div>
-      </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Южный берег Гидры</div><div class="spot-region">Саронический</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.316,23.497" target="_blank">📍 37.316° N, 23.497° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">20–80 м · резкий дроп ⭐</div>
-          <div class="spot-desc">Крутой уход в глубину — лакедра на тяжёлый джиг. Троллинг 100–200 м от берега. Лучший спот Саронического!</div>
-          <div class="spot-tags"><span class="tag t">Лакедра</span><span class="tag t">Пеламида</span><span class="tag m">Троллинг</span><span class="tag">Джиг</span></div>
-        </div>
-      </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Северный мыс Спецес</div><div class="spot-region">Саронический</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.289,23.149" target="_blank">📍 37.289° N, 23.149° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">20–60 м</div>
-          <div class="spot-desc">Мыс с подводными рифами. Барракуда у мысов вечером. Скумбрия и пеламида в открытой воде.</div>
-          <div class="spot-tags"><span class="tag t">Барракуда</span><span class="tag t">Скумбрия</span><span class="tag m">Спиннинг</span><span class="tag m">Троллинг</span></div>
-        </div>
+      <div class="checklist-body">
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Лёгкие быстросохнущие шорты (2–3 пары)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Купальники / плавки (3–4 пары)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Лёгкие лонгсливы (защита от солнца)</div><div class="check-note">UPF 50+ для детей обязателен</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Флис / тонкая куртка для вечеров</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Непромокаемая куртка (штормовка)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Резиновые тапки / аквашузы</div><div class="check-note">На скользкой палубе и рифах</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Широкополая шляпа</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Солнцезащитные очки (с ремешком!)</div></div></div>
       </div>
     </div>
 
-    <div class="region-label" style="margin-top:40px">🗺 Киклады</div>
-    <div class="spots-grid">
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Северный мыс Кеа (Тзиа)</div><div class="spot-region">Зап. Киклады</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.682,24.311" target="_blank">📍 37.682° N, 24.311° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">20–80 м · скальный дроп</div>
-          <div class="spot-desc">Первый переход. Мыс Айос-Николаос — резкий перепад глубин прямо от берега. Один из лучших джигинговых спотов маршрута.</div>
-          <div class="spot-tags"><span class="tag t">Лакедра</span><span class="tag t">Зубан</span><span class="tag m">Вертикальный джиг</span><span class="tag m">Троллинг</span></div>
-        </div>
+    <div class="checklist-card">
+      <div class="checklist-header" style="background:var(--rust)">
+        <span class="checklist-icon">☀️</span>
+        <span class="checklist-title">Солнце и здоровье</span>
       </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Пролив Парос — Антипарос</div><div class="spot-region">Центр. Киклады</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.032,25.053" target="_blank">📍 37.032° N, 25.053° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">15–45 м · течение Мельтеми</div>
-          <div class="spot-desc">Узкий пролив с постоянным течением. Одно из лучших мест для эгинга. Кальмар ночью у Антипароса — местная традиция.</div>
-          <div class="spot-tags"><span class="tag t">Кальмар</span><span class="tag t">Луфарь</span><span class="tag m">Эгинг ночью</span><span class="tag m">Спиннинг</span></div>
-        </div>
+      <div class="checklist-body">
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Солнцезащитный крем SPF 50+ (много!)</div><div class="check-note">На яхте горит в 2 раза быстрее</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Крем после загара / пантенол</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Таблетки от морской болезни (детские!)</div><div class="check-note">Авиа-море или Драмина за 30 мин до выхода</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Пластыри от морской болезни (Scopolamine)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Аптечка: антигистамин, ибупрофен, антисептик</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Пинцет (морские ежи — обязательно!)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Термос с питьевой водой</div><div class="check-note">Дети пьют мало — заставлять!</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Репеллент от комаров</div><div class="check-note">В тавернах у воды вечером</div></div></div>
       </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Западный берег Наксоса</div><div class="spot-region">Центр. Киклады</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.052,25.314" target="_blank">📍 37.052° N, 25.314° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">20–100 м · открытый Эгей</div>
-          <div class="spot-desc">Троллинг на запад в открытое море. Барракуда вечером у скал. Реальные уловы: групер и барракуда на местных чартерах.</div>
-          <div class="spot-tags"><span class="tag t">Барракуда</span><span class="tag t">Групер</span><span class="tag t">Пеламида</span><span class="tag m">Троллинг</span></div>
-        </div>
+    </div>
+
+    <div class="checklist-card">
+      <div class="checklist-header" style="background:var(--green)">
+        <span class="checklist-icon">🤿</span>
+        <span class="checklist-title">Снаряжение для воды</span>
       </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Малые Киклады (Кунфунисья, Ираклия)</div><div class="spot-region">Малые Киклады ⭐⭐</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=36.952,25.606" target="_blank">📍 36.952° N, 25.606° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">15–60 м · нетронутые воды</div>
-          <div class="spot-desc">По оценке практиков — лучшие рыболовные воды всего Эгейского моря. Минимальное давление. Групер у стенок, кальмар ночью.</div>
-          <div class="spot-tags"><span class="tag t">Групер</span><span class="tag t">Кальмар</span><span class="tag t">Зубан</span><span class="tag m">Джиг / Эгинг</span></div>
-        </div>
+      <div class="checklist-body">
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Маска и трубка (на каждого!)</div><div class="check-note">Лучше своя, не брать на яхте</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Ласты (легкие, для детей важны)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Спасательные жилеты для детей</div><div class="check-note">Уточните размеры у чартерной компании</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Надувной матрас / поплавки</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Подводный фонарик (ночной снорклинг)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Гермомешок для телефона</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Кукан и рыболовная сетка для улова</div></div></div>
       </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Западный мыс Миконоса</div><div class="spot-region">Сев. Киклады</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.493,25.332" target="_blank">📍 37.493° N, 25.332° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">25–70 м · ⚠️ Мельтеми!</div>
-          <div class="spot-desc">При умеренном ветре — троллинг вдоль западного берега. Пеламида активна с рассвета. В сильный Мельтеми держитесь у берега.</div>
-          <div class="spot-tags"><span class="tag t">Пеламида</span><span class="tag t">Луфарь</span><span class="tag m">Троллинг</span></div>
-        </div>
+    </div>
+
+    <div class="checklist-card">
+      <div class="checklist-header" style="background:var(--sea)">
+        <span class="checklist-icon">🎣</span>
+        <span class="checklist-title">Рыболовное снаряжение</span>
       </div>
-      <div class="spot-card">
-        <div class="spot-header"><div class="spot-name">Мыс Сунион — переход в Эгей</div><div class="spot-region">Атика / переход</div></div>
-        <div class="spot-coords"><a class="coord-link" href="https://maps.google.com/?q=37.648,24.019" target="_blank">📍 37.648° N, 24.019° E → Google Maps</a></div>
-        <div class="spot-body">
-          <div class="spot-depth">30–100 м · стык течений</div>
-          <div class="spot-desc">Переходная точка из Саронического. Стык течений = концентрация пелагики. Троллинг при переходе на Кеа.</div>
-          <div class="spot-tags"><span class="tag t">Пеламида</span><span class="tag t">Луфарь</span><span class="tag m">Троллинг на переходе</span></div>
-        </div>
+      <div class="checklist-body">
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Спиннинг среднего класса 7–20 г</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Катушка с плетёнкой 0.15 мм / 15 кг</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Флюорокарбоновый поводок 0.8 мм</div><div class="check-note">Луфарь и барракуда срежут обычную леску</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Приманки для троллинга (Yo-Zuri, Rapala)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Металлические пилькеры 20–60 г</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Эгинг-джиги для кальмара №2.5–3.5</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Плоскогубцы для снятия рыбы</div><div class="check-note">Луфарь = острые зубы!</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Вертлюги, заводные кольца, запасные крючки</div></div></div>
+      </div>
+    </div>
+
+    <div class="checklist-card">
+      <div class="checklist-header" style="background:var(--purple)">
+        <span class="checklist-icon">📱</span>
+        <span class="checklist-title">Техника и документы</span>
+      </div>
+      <div class="checklist-body">
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Загранпаспорта (срок > 6 мес.)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Страховка путешественника (вкл. морской спорт)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Навигационный телефон / планшет</div><div class="check-note">Приложения: Navionics, Windy, PredictWind</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Внешний аккумулятор (powerbank)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Водонепроницаемый чехол для телефона</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Фотоаппарат / подводная камера</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Bluetooth-колонка (водозащищённая)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Евро наличные (острова часто без карт)</div></div></div>
+      </div>
+    </div>
+
+    <div class="checklist-card">
+      <div class="checklist-header" style="background:#7a4f00">
+        <span class="checklist-icon">🍱</span>
+        <span class="checklist-title">Еда и кухня</span>
+      </div>
+      <div class="checklist-body">
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Провизия на 3 дня (первый магазин — Эгина)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Перекусы для детей (орехи, батончики)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Оливковое масло (в Греции дешевле)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Фета и оливки (базовый Greek survival kit)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Доска для разделки улова</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Специи для приготовления рыбы</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Пластиковые судки с крышкой (для хранения улова)</div></div></div>
+      </div>
+    </div>
+
+    <div class="checklist-card">
+      <div class="checklist-header" style="background:#2c3e50">
+        <span class="checklist-icon">👦</span>
+        <span class="checklist-title">Для детей</span>
+      </div>
+      <div class="checklist-body">
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Настольные игры / карты</div><div class="check-note">На дни ветра, когда стоим</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Книги / планшет с кино (офлайн)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Путеводитель по рыбам Средиземноморья</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Блокнот-дневник путешественника</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Удочка-спиннинг для детей (лёгкая)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Накидка от ветра на ночные вахты</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Ночник / фонарик</div></div></div>
+      </div>
+    </div>
+
+    <div class="checklist-card">
+      <div class="checklist-header" style="background:var(--teal)">
+        <span class="checklist-icon">🚤</span>
+        <span class="checklist-title">На яхте (проверить у чартера)</span>
+      </div>
+      <div class="checklist-body">
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Леерные сетки по всему борту</div><div class="check-note">Для детей — критически важно!</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Спасательные жилеты нужных размеров</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Тент от солнца над кокпитом (бимини)</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Трап-лесенка для купания с транца</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">VHF-радио и EPIRB</div></div></div>
+        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Aptечка первой помощи (проверить состав)</div></div></div>
       </div>
     </div>
   </div>
+</div>
 </section>
 
-<!-- ══ СОВЕТЫ ══ -->
-<section>
-  <div class="container">
-    <div class="sec-eye">Практические советы</div>
-    <h2 class="sec-h2">Как поймать больше</h2>
-    <div class="tips-grid">
-      <div class="tip"><div class="tip-icon">🌅</div><div class="tip-title">Время ловли</div><div class="tip-text">Рассвет 5:30–8:00 и закат 18:00–21:00 — пик луфаря, пеламиды, барракуды. Днём переключайтесь на глубокий джиг.</div></div>
-      <div class="tip"><div class="tip-icon">💨</div><div class="tip-title">Мельтеми</div><div class="tip-text">Северный ветер 4–7 Bft в июле–августе на Кикладах. В сильный ветер рыба прижимается к наветренным берегам.</div></div>
-      <div class="tip"><div class="tip-icon">⛵</div><div class="tip-title">Троллинг на ходу</div><div class="tip-text">На 4–7 узлах опускайте Laser Pro или X-Rap Magnum на 30–50 м шнура при каждом переходе. Бесплатная рыбалка!</div></div>
-      <div class="tip"><div class="tip-icon">🪨</div><div class="tip-title">Рокфишинг</div><div class="tip-text">Необитаемые островки — золото. Минимальное давление. Якорь у скального свеса + силикон у дна = групер гарантирован.</div></div>
-      <div class="tip"><div class="tip-icon">🌙</div><div class="tip-title">Ночная рыбалка</div><div class="tip-text">Кальмар на якоре с фонарём в воду. Кефаль и окунь в гаванях с поплавком. Луфарь атакует у освещённых берегов.</div></div>
-      <div class="tip"><div class="tip-icon">🛒</div><div class="tip-title">Местные магазины</div><div class="tip-text">ΔΟΛΩΜΑ («долома») есть на Эгине, Поросе, в Наксосе. Там же — точные советы от местных рыбаков на ближайшую неделю.</div></div>
-    </div>
+<!-- ══ FISHING ══ -->
+<section id="fishing">
+<div class="container">
+  <div class="sec-eye">Рыбалка</div>
+  <h2 class="sec-h2">Рыбы Эгейского моря — кого ловим</h2>
+  <p class="sec-sub">Фотографии, описания, вкус и ссылки на Википедию. Покажи детям до выхода — пусть знают, кого ждать!</p>
+
+  <div class="alert warn">
+    <strong>⚠️ Лицензия:</strong> Любительская ловля спиннингом и троллингом в открытом море — <strong>без лицензии</strong>. Запрещено: голубой тунец, рыба-меч (без разрешения), сбор морских ежей и лобстеров. Всегда уточняйте в местном лимани (порту).
   </div>
+
+  <div class="fish-grid">
+
+    <div class="fish-card">
+      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Pomatomus_saltatrix.jpg" alt="Луфарь" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0d3d52\'/><ellipse cx=\'145\' cy=\'80\' rx=\'95\' ry=\'38\' fill=\'#1a6b8a\' stroke=\'#3EC9D6\' stroke-width=\'1.5\'/><polygon points=\'240,80 270,55 275,80 270,105\' fill=\'#1a6b8a\'/><circle cx=\'72\' cy=\'74\' r=\'6\' fill=\'#3EC9D6\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#3EC9D6\' font-size=\'12\' font-family=\'sans-serif\'>ЛУФАРЬ</text></svg>'"></div>
+      <div class="fish-body">
+        <div class="fish-name">Луфарь / Голубая рыба</div>
+        <div class="fish-latin-row">
+          <span class="fish-latin">Pomatomus saltatrix</span>
+          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D1%84%D0%B0%D1%80%D1%8C" target="_blank">Wikipedia →</a>
+        </div>
+        <div class="fish-desc">Самый активный хищник июля. По-гречески «гофари». Охотится стаями на закате у рифов и в местах слияния течений. <strong>⚠️ Острые зубы</strong> — снимать только плоскогубцами! Поводок обязателен.</div>
+        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Жирное, насыщенное мясо с ярким морским вкусом. Быстро портится — готовить сразу! Лучше всего на гриле с лимоном и оливковым маслом. Дети обычно в восторге.</div></div>
+        <div class="fish-tags"><span class="ftag season">Пик: июль–авг</span><span class="ftag method">Спиннинг</span><span class="ftag method">Троллинг</span><span class="ftag common">Очень распространён</span></div>
+      </div>
+    </div>
+
+    <div class="fish-card">
+      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sarda_sarda_2009_G1.jpg/640px-Sarda_sarda_2009_G1.jpg" alt="Пеламида" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0a2d3d\'/><ellipse cx=\'140\' cy=\'78\' rx=\'100\' ry=\'35\' fill=\'#1e5c7a\' stroke=\'#3EC9D6\' stroke-width=\'1.5\'/><polygon points=\'240,78 278,52 282,78 278,104\' fill=\'#1e5c7a\'/><circle cx=\'65\' cy=\'73\' r=\'6\' fill=\'#3EC9D6\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#3EC9D6\' font-size=\'12\' font-family=\'sans-serif\'>ПЕЛАМИДА</text></svg>'"></div>
+      <div class="fish-body">
+        <div class="fish-name">Пеламида / Бонито</div>
+        <div class="fish-latin-row">
+          <span class="fish-latin">Sarda sarda</span>
+          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D0%BB%D0%B0%D0%BC%D0%B8%D0%B4%D0%B0" target="_blank">Wikipedia →</a>
+        </div>
+        <div class="fish-desc">Основной объект троллинга. Ищите стаи по кружащим птицам над водой. Сезон до сентября. Хорошо клюёт ранним утром до 09:00, потом уходит глубже из-за жары.</div>
+        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Тёмное, жирное мясо — родственник тунца. Немного похоже на скумбрию. Идеальна на мангале, в маринаде. Можно засолить прямо на яхте — отличная закуска к узо!</div></div>
+        <div class="fish-tags"><span class="ftag season">Пик: июль–сент</span><span class="ftag method">Троллинг</span><span class="ftag common">Очень распространена</span></div>
+      </div>
+    </div>
+
+    <div class="fish-card">
+      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Great_barracuda_edit.jpg/640px-Great_barracuda_edit.jpg" alt="Барракуда" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0a2d1e\'/><ellipse cx=\'145\' cy=\'80\' rx=\'115\' ry=\'22\' fill=\'#2d6b4a\' stroke=\'#3EC9D6\' stroke-width=\'1.5\'/><circle cx=\'42\' cy=\'77\' r=\'5\' fill=\'#3EC9D6\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#3EC9D6\' font-size=\'12\' font-family=\'sans-serif\'>БАРРАКУДА</text></svg>'"></div>
+      <div class="fish-body">
+        <div class="fish-name">Барракуда</div>
+        <div class="fish-latin-row">
+          <span class="fish-latin">Sphyraena sphyraena</span>
+          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D1%80%D0%B0%D0%BA%D1%83%D0%B4%D1%8B" target="_blank">Wikipedia →</a>
+        </div>
+        <div class="fish-desc">Охотится у мысов и скал, активна вечером. Агрессивно атакует блестящие приманки. Поводок из флюорокарбона 0.8 мм обязателен — зубы острейшие. Детям показывайте с осторожностью!</div>
+        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Белое нежное мясо, без лишнего жира. Один из лучших вкусов среди морских рыб. Отлично запекается целиком с травами. В Греции подают во многих тавернах.</div></div>
+        <div class="fish-tags"><span class="ftag season">Лето–осень</span><span class="ftag method">Спиннинг</span><span class="ftag method">Троллинг</span><span class="ftag common">Распространена</span></div>
+      </div>
+    </div>
+
+    <div class="fish-card">
+      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Seriola_dumerili.jpg/640px-Seriola_dumerili.jpg" alt="Лакедра" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#1a1208\'/><ellipse cx=\'145\' cy=\'78\' rx=\'105\' ry=\'42\' fill=\'#7a5a1e\' stroke=\'#F5A623\' stroke-width=\'1.5\'/><circle cx=\'68\' cy=\'72\' r=\'7\' fill=\'#F5A623\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#F5A623\' font-size=\'12\' font-family=\'sans-serif\'>ЛАКЕДРА</text></svg>'"></div>
+      <div class="fish-body">
+        <div class="fish-name">Лакедра / Амберджек</div>
+        <div class="fish-latin-row">
+          <span class="fish-latin">Seriola dumerili</span>
+          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BA%D0%B5%D0%B4%D1%80%D0%B0" target="_blank">Wikipedia →</a>
+        </div>
+        <div class="fish-desc">Трофейный хищник на скальных структурах 20–80 м глубины. Один из сильнейших бойцов Средиземноморья. Требует тяжёлого джига 60–150 г и мощного спиннинга. Бьётся несколько минут.</div>
+        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Великолепное белое упругое мясо. В Греции ценится очень высоко — в тавернах стоит дорого. На яхте — запечь с розмарином и лимоном. Дети едят с удовольствием — нет мелких костей.</div></div>
+        <div class="fish-tags"><span class="ftag season">Весна–осень</span><span class="ftag method">Тяжёлый джиг</span><span class="ftag method">Троллинг</span><span class="ftag rare">Редкий улов</span></div>
+      </div>
+    </div>
+
+    <div class="fish-card">
+      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Epinephelus_marginatus_Melilla.jpg/640px-Epinephelus_marginatus_Melilla.jpg" alt="Групер" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#1a0e05\'/><ellipse cx=\'140\' cy=\'80\' rx=\'95\' ry=\'48\' fill=\'#5a3a1e\' stroke=\'#C8562A\' stroke-width=\'1.5\'/><circle cx=\'65\' cy=\'72\' r=\'7\' fill=\'#C8562A\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#C8562A\' font-size=\'12\' font-family=\'sans-serif\'>ГРУПЕР</text></svg>'"></div>
+      <div class="fish-body">
+        <div class="fish-name">Групер / Каменный окунь</div>
+        <div class="fish-latin-row">
+          <span class="fish-latin">Epinephelus marginatus</span>
+          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BA%D1%83%D0%BD%D1%8C" target="_blank">Wikipedia →</a>
+        </div>
+        <div class="fish-desc">Засадный хищник в пещерах и щелях. Лучшее место — необитаемые островки Малых Кикладов. Силикон 8–14 см на джиг-головке прямо у дна. Охраняемый вид — небольших выпускать!</div>
+        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Одна из самых вкусных рыб Средиземноморья. Плотное белое мясо, нежный вкус без специфического запаха. В тавернах стоит 35–50€/кг. Дети едят без капризов — никаких костей!</div></div>
+        <div class="fish-tags"><span class="ftag season">Весь год</span><span class="ftag method">Силиконовый джиг</span><span class="ftag rare">Редкий — выпускать!</span></div>
+      </div>
+    </div>
+
+    <div class="fish-card">
+      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Loligo_vulgaris.jpg/640px-Loligo_vulgaris.jpg" alt="Кальмар" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0f0518\'/><ellipse cx=\'150\' cy=\'65\' rx=\'35\' ry=\'52\' fill=\'#4a1e6a\' stroke=\'#9b59b6\' stroke-width=\'1.5\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#9b59b6\' font-size=\'12\' font-family=\'sans-serif\'>КАЛЬМАР</text></svg>'"></div>
+      <div class="fish-body">
+        <div class="fish-name">Кальмар</div>
+        <div class="fish-latin-row">
+          <span class="fish-latin">Loligo vulgaris</span>
+          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8C%D0%BC%D0%B0%D1%80_%D0%BE%D0%B1%D1%8B%D0%BA%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9" target="_blank">Wikipedia →</a>
+        </div>
+        <div class="fish-desc">Киклады — особенно богатое место. Ловля ночью на эгинг-джиги у водорослей. Лучшие места: пролив Парос–Антипарос, бухты Наксоса, Ираклия. Включите фонарь в воду — кальмары идут на свет!</div>
+        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Жареный во фритюре кальмар (каламари) — национальное блюдо Греции. Фаршированный рисом и травами — высокая кухня. Дети ловят с восторгом — и они меняют цвет при поимке!</div></div>
+        <div class="fish-tags"><span class="ftag season">Лето–осень</span><span class="ftag method">Эгинг (ночью)</span><span class="ftag common">Очень распространён</span></div>
+      </div>
+    </div>
+
+    <div class="fish-card">
+      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Dicentrarchus_labrax_1.jpg/640px-Dicentrarchus_labrax_1.jpg" alt="Лаврак" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0d1a22\'/><ellipse cx=\'142\' cy=\'79\' rx=\'98\' ry=\'40\' fill=\'#3a5a6a\' stroke=\'#3EC9D6\' stroke-width=\'1.5\'/><circle cx=\'68\' cy=\'74\' r=\'7\' fill=\'#3EC9D6\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#3EC9D6\' font-size=\'12\' font-family=\'sans-serif\'>МОРСКОЙ ОКУНЬ</text></svg>'"></div>
+      <div class="fish-body">
+        <div class="fish-name">Морской окунь / Сибас</div>
+        <div class="fish-latin-row">
+          <span class="fish-latin">Dicentrarchus labrax</span>
+          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B2%D1%80%D0%B0%D0%BA" target="_blank">Wikipedia →</a>
+        </div>
+        <div class="fish-desc">Ловится у каменистых берегов и в гаванях ночью. По-гречески «лаврáки». Лёгкий спиннинг с небольшим воблером. Отличный объект для детей — клюёт охотно, хорошо чувствуется на снасти.</div>
+        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Деликатесная рыба — именно её подают как «сибас» в ресторанах. Нежное белое мясо, почти без костей. В Греции запекают целиком в соли — незабываемо. Стоит 25–40€/кг в тавернах.</div></div>
+        <div class="fish-tags"><span class="ftag season">Весь год</span><span class="ftag method">Спиннинг</span><span class="ftag common">Распространён</span></div>
+      </div>
+    </div>
+
+    <div class="fish-card">
+      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Dentex_dentex_nm2.jpg/640px-Dentex_dentex_nm2.jpg" alt="Дентекс" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#150510\'/><ellipse cx=\'142\' cy=\'79\' rx=\'100\' ry=\'44\' fill=\'#6a2a4a\' stroke=\'#e056a0\' stroke-width=\'1.5\'/><circle cx=\'68\' cy=\'73\' r=\'7\' fill=\'#e056a0\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#e056a0\' font-size=\'12\' font-family=\'sans-serif\'>ДЕНТЕКС</text></svg>'"></div>
+      <div class="fish-body">
+        <div class="fish-name">Дентекс / Зубан</div>
+        <div class="fish-latin-row">
+          <span class="fish-latin">Dentex dentex</span>
+          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%82%D0%B5%D0%BA%D1%81" target="_blank">Wikipedia →</a>
+        </div>
+        <div class="fish-desc">Рифовый хищник, прячется под подводными свесами. Ловится на глубинах 30–80 м вертикальным джигом. Малые Киклады — лучшее место. Осторожно — острые зубы!</div>
+        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Одна из самых ценных рыб Средиземноморья. Розово-белое мясо, богатый вкус. В тавернах — 40–60€/кг. Греки запекают на углях с лимоном и каперсами. Редкий улов — повод для праздника!</div></div>
+        <div class="fish-tags"><span class="ftag season">Весна–лето</span><span class="ftag method">Вертикальный джиг</span><span class="ftag rare">Редкий трофей</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tips-grid">
+    <div class="tip"><div class="tip-icon">🌅</div><div class="tip-title">Лучшее время</div><div class="tip-text">Рассвет 05:30–08:00 и закат 18:00–21:00 — пик клёва. Днём рыба уходит в глубину — переключайтесь на снорклинг.</div></div>
+    <div class="tip"><div class="tip-icon">⛵</div><div class="tip-title">Троллинг на ходу</div><div class="tip-text">Каждый переход между островами — тяните приманку за яхтой! Yo-Zuri Laser Pro или Rapala на 30–50 м шнура. Бесплатная рыбалка в пути!</div></div>
+    <div class="tip"><div class="tip-icon">🌙</div><div class="tip-title">Ночная рыбалка</div><div class="tip-text">Кальмар — на якоре ночью с фонарём в воду. Дети в восторге! Кефаль и морской окунь — в освещённых гаванях с поплавком у дна.</div></div>
+    <div class="tip"><div class="tip-icon">🛒</div><div class="tip-title">Купить приманки</div><div class="tip-text">Ищите магазин ΔΟΛΩΜΑ (Долома = приманка). Есть на Эгине, Поросе, в Наксосе. Там же узнаете, что сейчас клюёт в конкретном месте.</div></div>
+    <div class="tip"><div class="tip-icon">🍳</div><div class="tip-title">Что делать с уловом</div><div class="tip-text">Луфарь и пеламида — готовить сразу. Несут рыбу в таверну — там часто готовят вашу рыбу за символическую плату за приготовление.</div></div>
+    <div class="tip"><div class="tip-icon">👦</div><div class="tip-title">Дети и рыбалка</div><div class="tip-text">Кальмар ночью — идеально для детей: виден, интересно тянуть. Морской окунь в гавани с поплавком — первый успех гарантирован почти везде.</div></div>
+  </div>
+</div>
 </section>
 
 <footer>
-  Рыболовный гид для яхтенного похода <strong>18 июля — 2 августа</strong> &nbsp;|&nbsp; Саронический залив &amp; Киклады<br>
-  <span style="font-size:10px;opacity:.6;margin-top:6px;display:block">Координаты приблизительные. Ссылки ведут на страницы поиска — наличие товара уточняйте на сайте. Соблюдайте законодательство Греции.</span>
+  Семейный яхтинг · <strong>18 июля — 2 августа</strong> · Греция<br>
+  <span style="opacity:.5;font-size:11px;margin-top:6px;display:block">Маршруты и прогнозы носят рекомендательный характер. Всегда проверяйте актуальный прогноз погоды перед выходом. Windy.com · PoseidonSea.gr · HNMS</span>
 </footer>
+
+<script>
+// Nav active
+function setActive(el){document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));el.classList.add('active');}
+
+// Route tabs
+function showRoute(id){
+  document.querySelectorAll('.route-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.rtab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('route-'+id).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// Checklist
+function toggle(el){
+  el.classList.toggle('checked');
+  updateProgress();
+  saveState();
+}
+
+function updateProgress(){
+  const all=document.querySelectorAll('.check-item');
+  const done=document.querySelectorAll('.check-item.checked');
+  const pct=all.length?Math.round(done.length/all.length*100):0;
+  document.getElementById('checklist-progress').textContent=`Отмечено: ${done.length} из ${all.length} (${pct}%)`;
+  document.getElementById('progress-fill').style.width=pct+'%';
+}
+
+function saveState(){
+  const states=[...document.querySelectorAll('.check-item')].map(el=>el.classList.contains('checked'));
+  try{localStorage.setItem('chk',JSON.stringify(states));}catch(e){}
+}
+
+function loadState(){
+  try{
+    const s=JSON.parse(localStorage.getItem('chk')||'[]');
+    const items=document.querySelectorAll('.check-item');
+    s.forEach((v,i)=>{if(v&&items[i])items[i].classList.add('checked');});
+    updateProgress();
+  }catch(e){}
+}
+
+// Nav highlight on scroll
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('nav a');
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});
+  navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+},{passive:true});
+
+loadState();
+updateProgress();
+</script>
 </body>
 </html>

@@ -160,6 +160,77 @@ footer strong{color:var(--aqua);}
   .day-item{grid-template-columns:60px 1fr;}
   nav a{padding:10px 10px;font-size:10px;}
 }
+
+  /* METHODS OVERVIEW */
+  .methods-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:36px;}
+  .method-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .method-icon{font-size:28px;margin-bottom:10px;}
+  .method-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--deep);margin-bottom:6px;}
+  .method-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:10px;}
+  .method-targets{display:flex;flex-wrap:wrap;gap:5px;}
+  .mt{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:2px 8px;border-radius:12px;background:rgba(13,79,108,.1);color:var(--sea);}
+
+  /* FISH CARDS */
+  .fish-section-title{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:var(--deep);margin:0 0 24px;padding-bottom:8px;border-bottom:3px solid var(--aqua);}
+  .fish-photo-wrap{position:relative;height:180px;overflow:hidden;background:#1a2a3a;}
+  .fish-photo{width:100%;height:180px;object-fit:cover;display:block;}
+  .fish-svg-fallback{width:100%;height:180px;background:#1a2a3a;align-items:center;justify-content:center;}
+  .fish-photo-label{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.6);color:var(--aqua);font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;padding:3px 8px;border-radius:20px;}
+  .fish-name-row{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:4px;}
+  .wiki-btn{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--teal);padding:3px 8px;background:rgba(62,201,214,.1);border-radius:10px;white-space:nowrap;flex-shrink:0;}
+  .wiki-btn:hover{background:rgba(62,201,214,.2);}
+  .fish-latin{font-style:italic;font-size:12px;color:var(--muted);margin-bottom:10px;}
+  .fish-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:14px;}
+
+  .fish-how-box{background:rgba(13,79,108,.05);border-radius:10px;padding:14px;margin-bottom:12px;}
+  .how-title{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--sea);margin-bottom:10px;}
+  .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .how-item{background:#fff;border-radius:8px;padding:8px 10px;}
+  .how-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px;}
+  .how-text{font-size:11.5px;color:var(--muted);line-height:1.4;}
+
+  .fish-taste-box{background:var(--sand);border-radius:8px;padding:10px 12px;margin-bottom:12px;}
+  .taste-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--rust);margin-bottom:4px;}
+  .taste-text{font-size:12.5px;color:var(--text);line-height:1.4;}
+
+  .fish-tags{display:flex;flex-wrap:wrap;gap:4px;}
+  .ftag{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:2px 8px;border-radius:12px;}
+  .ftag.peak{background:rgba(245,166,35,.18);color:#7a4f00;}
+  .ftag.method{background:rgba(200,86,42,.12);color:var(--rust);}
+  .ftag.rare{background:rgba(108,52,131,.12);color:var(--purple);}
+  .ftag.common{background:rgba(46,125,82,.12);color:var(--green);}
+
+  /* LURE TABS */
+  .lure-method-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+  .lmtab{padding:8px 18px;border-radius:20px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all .2s;background:var(--sand);color:var(--deep);}
+  .lmtab.active{background:var(--sea);color:#fff;}
+  .lure-panel{display:none;}
+  .lure-panel.active{display:block;}
+
+  .lure-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;}
+  .lure-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .lure-card-img{height:110px;display:flex;align-items:center;justify-content:center;padding:12px;}
+  .lure-info{padding:14px;}
+  .lure-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;color:var(--deep);margin-bottom:2px;}
+  .lure-spec{font-size:11px;color:var(--teal);font-family:'Montserrat',sans-serif;font-weight:600;margin-bottom:8px;}
+  .lure-how{font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:8px;}
+  .lure-target{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px;}
+  .lt{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:2px 8px;border-radius:12px;background:rgba(13,79,108,.1);color:var(--sea);}
+  .lure-shop{display:flex;flex-wrap:wrap;gap:5px;}
+  .shop-btn-sm{display:inline-flex;padding:4px 9px;border-radius:7px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-decoration:none;transition:opacity .15s;}
+  .shop-btn-sm:hover{opacity:.8;}
+  .shop-btn-sm.ozon{background:#005BFF;color:#fff;}
+  .shop-btn-sm.wb{background:#CB11AB;color:#fff;}
+  .shop-btn-sm.rp{background:#E63946;color:#fff;}
+  .shop-btn-sm.yz{background:#ff7b00;color:#fff;}
+  .shop-btn-sm.tb{background:#2E7D52;color:#fff;}
+  .shop-btn-sm.amz{background:#FF9900;color:#111;}
+
+  @media(max-width:700px){
+    .how-grid{grid-template-columns:1fr;}
+    .fish-photo-wrap,.fish-photo,.fish-svg-fallback{height:140px;}
+  }
+
 </style>
 </head>
 <body>
@@ -185,7 +256,7 @@ footer strong{color:var(--aqua);}
   </div>
 </header>
 
-<!-- ══ WEATHER ══ -->
+
 <section id="weather">
 <div class="container">
   <div class="sec-eye">Метеорология</div>
@@ -286,7 +357,7 @@ footer strong{color:var(--aqua);}
 </div>
 </section>
 
-<!-- ══ ROUTES ══ -->
+
 <section id="routes">
 <div class="container">
   <div class="sec-eye">Маршруты</div>
@@ -299,7 +370,7 @@ footer strong{color:var(--aqua);}
     <div class="rtab" onclick="showRoute('calm')">🧘 Спокойный</div>
   </div>
 
-  <!-- CLASSIC -->
+  
   <div class="route-panel active" id="route-classic">
     <div class="week-badge cat">⛵ Неделя 1 · Катамаран · 18–25 июля · Саронический залив</div>
     <div class="day-list">
@@ -438,7 +509,7 @@ footer strong{color:var(--aqua);}
     </div>
   </div>
 
-  <!-- ADVENTURE -->
+  
   <div class="route-panel" id="route-adventure">
     <div class="alert info"><strong>🏄 Вариант «Приключение»</strong> — больше Кикладов, открытые переходы, дополнительные острова. Для уверенных шкиперов с опытом детей на борту.</div>
     <div class="week-badge cat">⛵ Неделя 1 · Катамаран · Расширенный Саронический</div>
@@ -513,7 +584,7 @@ footer strong{color:var(--aqua);}
     </div>
   </div>
 
-  <!-- CALM -->
+  
   <div class="route-panel" id="route-calm">
     <div class="alert success"><strong>🧘 Вариант «Спокойный»</strong> — максимальная защита от ветра, короткие переходы, много времени на якоре. Идеален если есть совсем маленькие дети или кто-то боится моря.</div>
     <div class="week-badge cat">⛵ Неделя 1 · Катамаран · Сароник Light</div>
@@ -590,7 +661,7 @@ footer strong{color:var(--aqua);}
 </div>
 </section>
 
-<!-- ══ CHECKLIST ══ -->
+
 <section id="checklist">
 <div class="container">
   <div class="sec-eye">Подготовка</div>
@@ -735,143 +806,893 @@ footer strong{color:var(--aqua);}
 </div>
 </section>
 
-<!-- ══ FISHING ══ -->
+
+
+<!-- FISHING SECTION -->
 <section id="fishing">
 <div class="container">
   <div class="sec-eye">Рыбалка</div>
-  <h2 class="sec-h2">Рыбы Эгейского моря — кого ловим</h2>
-  <p class="sec-sub">Фотографии, описания, вкус и ссылки на Википедию. Покажи детям до выхода — пусть знают, кого ждать!</p>
+  <h2 class="sec-h2">Полный гид по рыбалке</h2>
+  <p class="sec-sub">Кого ловим, как ловим, чем ловим — подробно. Подходит как для взрослых, так и для детей 10+.</p>
 
   <div class="alert warn">
-    <strong>⚠️ Лицензия:</strong> Любительская ловля спиннингом и троллингом в открытом море — <strong>без лицензии</strong>. Запрещено: голубой тунец, рыба-меч (без разрешения), сбор морских ежей и лобстеров. Всегда уточняйте в местном лимани (порту).
+    <strong>⚠️ Правила ловли в Греции:</strong> Любительский спиннинг и троллинг в открытом море — <strong>без лицензии</strong>. Нельзя: голубой тунец, рыба-меч (без разрешения), лобстеры, морские ежи, осьминог в некоторых зонах. Уточняйте в местном лимани (порту).
   </div>
+
+  <!-- METHODS OVERVIEW -->
+  <div class="methods-grid">
+    <div class="method-card">
+      <div class="method-icon">⛵</div>
+      <div class="method-name">Троллинг</div>
+      <div class="method-desc">Ведём приманку за яхтой в движении. Скорость 4–11 узлов. Можно ловить при каждом переходе между островами — бесплатная рыбалка в пути! Лучшее время: утро до 10:00.</div>
+      <div class="method-targets"><span class="mt">Пеламида</span><span class="mt">Луфарь</span><span class="mt">Барракуда</span><span class="mt">Лакедра</span></div>
+    </div>
+    <div class="method-card">
+      <div class="method-icon">🎣</div>
+      <div class="method-name">Спиннинг с якоря</div>
+      <div class="method-desc">Стоим на якоре или у мыса — забрасываем воблер, пилькер или силикон. Активная проводка, твичинг. Лучшее время: рассвет (5:30–8:00) и закат (18:00–21:00).</div>
+      <div class="method-targets"><span class="mt">Луфарь</span><span class="mt">Барракуда</span><span class="mt">Морской окунь</span></div>
+    </div>
+    <div class="method-card">
+      <div class="method-icon">🪨</div>
+      <div class="method-name">Джиг у дна</div>
+      <div class="method-desc">Опускаем приманку на дно у скального свеса. Медленная ступенчатая проводка или вертикальный джиг. Глубина 10–80 м. Лучшие места: необитаемые островки Малых Кикладов.</div>
+      <div class="method-targets"><span class="mt">Групер</span><span class="mt">Зубан</span><span class="mt">Лакедра</span></div>
+    </div>
+    <div class="method-card">
+      <div class="method-icon">🌙</div>
+      <div class="method-name">Эгинг (кальмар)</div>
+      <div class="method-desc">Ночью на якоре. Опускаем фонарь в воду — кальмар идёт на свет. Эгинг-джиг с медленным падением и редким подёргиванием. Дети в восторге — кальмар меняет цвет!</div>
+      <div class="method-targets"><span class="mt">Кальмар</span><span class="mt">Каракатица</span></div>
+    </div>
+  </div>
+
+  <!-- FISH CARDS -->
+  <h3 class="fish-section-title">🐟 Рыбы — кого искать и как поймать</h3>
 
   <div class="fish-grid">
 
+    <!-- BLUEFISH -->
     <div class="fish-card">
-      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Pomatomus_saltatrix.jpg" alt="Луфарь" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0d3d52\'/><ellipse cx=\'145\' cy=\'80\' rx=\'95\' ry=\'38\' fill=\'#1a6b8a\' stroke=\'#3EC9D6\' stroke-width=\'1.5\'/><polygon points=\'240,80 270,55 275,80 270,105\' fill=\'#1a6b8a\'/><circle cx=\'72\' cy=\'74\' r=\'6\' fill=\'#3EC9D6\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#3EC9D6\' font-size=\'12\' font-family=\'sans-serif\'>ЛУФАРЬ</text></svg>'"></div>
-      <div class="fish-body">
-        <div class="fish-name">Луфарь / Голубая рыба</div>
-        <div class="fish-latin-row">
-          <span class="fish-latin">Pomatomus saltatrix</span>
-          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D1%84%D0%B0%D1%80%D1%8C" target="_blank">Wikipedia →</a>
+      <div class="fish-photo-wrap">
+        <img class="fish-photo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Pomatomus_saltatrix.jpg/640px-Pomatomus_saltatrix.jpg"
+          alt="Луфарь"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          loading="lazy">
+        <div class="fish-svg-fallback" style="display:none">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="300" height="160" fill="#0d3d52"/>
+            <ellipse cx="145" cy="80" rx="95" ry="38" fill="#1a6b8a" stroke="#3EC9D6" stroke-width="1.5"/>
+            <polygon points="240,80 270,55 275,80 270,105" fill="#1a6b8a" stroke="#3EC9D6" stroke-width="1"/>
+            <polygon points="145,42 155,25 165,42" fill="#2a9db5"/>
+            <polygon points="130,118 140,135 155,118" fill="#2a9db5"/>
+            <circle cx="72" cy="74" r="6" fill="#3EC9D6"/><circle cx="71" cy="73" r="2" fill="#0d3d52"/>
+            <text x="150" y="150" text-anchor="middle" fill="#3EC9D6" font-size="13" font-family="Montserrat,sans-serif" font-weight="700">ЛУФАРЬ</text>
+          </svg>
         </div>
-        <div class="fish-desc">Самый активный хищник июля. По-гречески «гофари». Охотится стаями на закате у рифов и в местах слияния течений. <strong>⚠️ Острые зубы</strong> — снимать только плоскогубцами! Поводок обязателен.</div>
-        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Жирное, насыщенное мясо с ярким морским вкусом. Быстро портится — готовить сразу! Лучше всего на гриле с лимоном и оливковым маслом. Дети обычно в восторге.</div></div>
-        <div class="fish-tags"><span class="ftag season">Пик: июль–авг</span><span class="ftag method">Спиннинг</span><span class="ftag method">Троллинг</span><span class="ftag common">Очень распространён</span></div>
+        <div class="fish-photo-label">ПИК: ИЮЛЬ–АВГУСТ</div>
+      </div>
+      <div class="fish-body">
+        <div class="fish-name-row">
+          <span class="fish-name">Луфарь / Голубая рыба</span>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9B%D1%83%D1%84%D0%B0%D1%80%D1%8C" target="_blank" class="wiki-btn">Wikipedia</a>
+        </div>
+        <div class="fish-latin">Pomatomus saltatrix · по-гречески «Гофари»</div>
+
+        <div class="fish-desc">Самый активный и распространённый хищник Эгейского моря в июле. Охотится стаями — когда нашёл одного, поймаешь десяток. Ищите птиц, кружащих над водой — там стая. <strong>Острейшие зубы</strong> — снимать только плоскогубцами!</div>
+
+        <div class="fish-how-box">
+          <div class="how-title">🎯 Как ловить</div>
+          <div class="how-grid">
+            <div class="how-item">
+              <div class="how-label">Троллинг</div>
+              <div class="how-text">Yo-Zuri Bonita или Laser Pro на 30–40 м шнура, скорость 5–8 уз. Ставить у закатных мысов. Хватает агрессивно.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Спиннинг</div>
+              <div class="how-text">Rapala MaxRap 23 или Seaspin Mommotti — быстрый твичинг на максимальной скорости. Рассвет и закат у скальных мысов.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Поводок</div>
+              <div class="how-text">Флюорокарбон 0.60–0.80 мм ОБЯЗАТЕЛЕН. Зубы срезают монолеску мгновенно.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Места</div>
+              <div class="how-text">Пролив Порос, южный берег Гидры, мысы Спецес, любые места слияния течений.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fish-taste-box">
+          <div class="taste-label">🍽 Вкус и приготовление</div>
+          <div class="taste-text">Жирное тёмное мясо с насыщенным морским вкусом — похоже на скумбрию. <strong>Готовить сразу</strong> — быстро портится! Лучше всего на решётке с лимоном и оригано. Можно слегка присолить прямо на яхте — отличная закуска к узо.</div>
+        </div>
+
+        <div class="fish-tags">
+          <span class="ftag peak">⭐ Пик июль</span>
+          <span class="ftag method">Троллинг</span>
+          <span class="ftag method">Спиннинг</span>
+          <span class="ftag common">Очень распространён</span>
+        </div>
       </div>
     </div>
 
+    <!-- BONITO -->
     <div class="fish-card">
-      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sarda_sarda_2009_G1.jpg/640px-Sarda_sarda_2009_G1.jpg" alt="Пеламида" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0a2d3d\'/><ellipse cx=\'140\' cy=\'78\' rx=\'100\' ry=\'35\' fill=\'#1e5c7a\' stroke=\'#3EC9D6\' stroke-width=\'1.5\'/><polygon points=\'240,78 278,52 282,78 278,104\' fill=\'#1e5c7a\'/><circle cx=\'65\' cy=\'73\' r=\'6\' fill=\'#3EC9D6\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#3EC9D6\' font-size=\'12\' font-family=\'sans-serif\'>ПЕЛАМИДА</text></svg>'"></div>
-      <div class="fish-body">
-        <div class="fish-name">Пеламида / Бонито</div>
-        <div class="fish-latin-row">
-          <span class="fish-latin">Sarda sarda</span>
-          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D0%BB%D0%B0%D0%BC%D0%B8%D0%B4%D0%B0" target="_blank">Wikipedia →</a>
+      <div class="fish-photo-wrap">
+        <img class="fish-photo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sarda_sarda_2009_G1.jpg/640px-Sarda_sarda_2009_G1.jpg"
+          alt="Пеламида"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          loading="lazy">
+        <div class="fish-svg-fallback" style="display:none">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="300" height="160" fill="#0a2d3d"/>
+            <ellipse cx="140" cy="78" rx="100" ry="35" fill="#1e5c7a" stroke="#3EC9D6" stroke-width="1.5"/>
+            <polygon points="240,78 278,52 282,78 278,104" fill="#1e5c7a" stroke="#3EC9D6" stroke-width="1"/>
+            <polygon points="140,43 152,22 162,43" fill="#2a9db5"/>
+            <polygon points="155,43 160,28 168,43" fill="#2a9db5"/>
+            <line x1="110" y1="55" x2="240" y2="65" stroke="#5bd4e8" stroke-width="2" opacity="0.5"/>
+            <line x1="110" y1="100" x2="240" y2="90" stroke="#5bd4e8" stroke-width="2" opacity="0.5"/>
+            <circle cx="65" cy="73" r="6" fill="#3EC9D6"/><circle cx="64" cy="72" r="2" fill="#0a2d3d"/>
+            <text x="150" y="150" text-anchor="middle" fill="#3EC9D6" font-size="13" font-family="Montserrat,sans-serif" font-weight="700">ПЕЛАМИДА</text>
+          </svg>
         </div>
-        <div class="fish-desc">Основной объект троллинга. Ищите стаи по кружащим птицам над водой. Сезон до сентября. Хорошо клюёт ранним утром до 09:00, потом уходит глубже из-за жары.</div>
-        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Тёмное, жирное мясо — родственник тунца. Немного похоже на скумбрию. Идеальна на мангале, в маринаде. Можно засолить прямо на яхте — отличная закуска к узо!</div></div>
-        <div class="fish-tags"><span class="ftag season">Пик: июль–сент</span><span class="ftag method">Троллинг</span><span class="ftag common">Очень распространена</span></div>
+        <div class="fish-photo-label">ПИК: ИЮЛЬ–СЕНТЯБРЬ</div>
+      </div>
+      <div class="fish-body">
+        <div class="fish-name-row">
+          <span class="fish-name">Пеламида / Бонито</span>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D0%BB%D0%B0%D0%BC%D0%B8%D0%B4%D0%B0" target="_blank" class="wiki-btn">Wikipedia</a>
+        </div>
+        <div class="fish-latin">Sarda sarda</div>
+
+        <div class="fish-desc">Главный объект троллинга. Родственник тунца — такая же мощная рыба, но меньших размеров (1–5 кг). Ищите стаи по кружащим чайкам над водой. Клюёт жадно, тянет хорошо. Хорошо клюёт до 10:00 утра.</div>
+
+        <div class="fish-how-box">
+          <div class="how-title">🎯 Как ловить</div>
+          <div class="how-grid">
+            <div class="how-item">
+              <div class="how-label">Троллинг (главное)</div>
+              <div class="how-text">Yo-Zuri Bonita (Blue Mackerel) или Laser Pro 160 на 30–50 м шнура. Скорость 6–10 уз. Тяните при каждом переходе — бесплатный улов!</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Спиннинг</div>
+              <div class="how-text">Металлический пилькер 30–60 г, быстрая равномерная проводка у поверхности. Цвет: хром, серебро, сине-белый.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Скорость</div>
+              <div class="how-text">6–10 узлов — оптимально. Yo-Zuri Laser Pro выдерживает до 11 узлов без потери игры.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Места</div>
+              <div class="how-text">Переходы между островами в открытом море. Особенно хорошо: мыс Сунион → Кеа, пролив у северного Миконоса.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fish-taste-box">
+          <div class="taste-label">🍽 Вкус и приготовление</div>
+          <div class="taste-text">Тёмное жирное мясо — ярче скумбрии, беднее тунца. Местные греки маринуют в уксусе и оливковом масле. На гриле с лимоном — отлично. Можно засолить прямо на яхте с крупной солью — готово через 2 часа.</div>
+        </div>
+
+        <div class="fish-tags">
+          <span class="ftag peak">⭐ Пик лето–осень</span>
+          <span class="ftag method">Троллинг</span>
+          <span class="ftag method">Пилькер</span>
+          <span class="ftag common">Очень распространена</span>
+        </div>
       </div>
     </div>
 
+    <!-- BARRACUDA -->
     <div class="fish-card">
-      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Great_barracuda_edit.jpg/640px-Great_barracuda_edit.jpg" alt="Барракуда" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0a2d1e\'/><ellipse cx=\'145\' cy=\'80\' rx=\'115\' ry=\'22\' fill=\'#2d6b4a\' stroke=\'#3EC9D6\' stroke-width=\'1.5\'/><circle cx=\'42\' cy=\'77\' r=\'5\' fill=\'#3EC9D6\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#3EC9D6\' font-size=\'12\' font-family=\'sans-serif\'>БАРРАКУДА</text></svg>'"></div>
-      <div class="fish-body">
-        <div class="fish-name">Барракуда</div>
-        <div class="fish-latin-row">
-          <span class="fish-latin">Sphyraena sphyraena</span>
-          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D1%80%D0%B0%D0%BA%D1%83%D0%B4%D1%8B" target="_blank">Wikipedia →</a>
+      <div class="fish-photo-wrap">
+        <img class="fish-photo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Great_barracuda_edit.jpg/640px-Great_barracuda_edit.jpg"
+          alt="Барракуда"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          loading="lazy">
+        <div class="fish-svg-fallback" style="display:none">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="300" height="160" fill="#0a2d1e"/>
+            <ellipse cx="145" cy="80" rx="115" ry="22" fill="#2d6b4a" stroke="#3EC9D6" stroke-width="1.5"/>
+            <polygon points="260,80 285,62 290,80 285,98" fill="#2d6b4a" stroke="#3EC9D6" stroke-width="1"/>
+            <polygon points="30,80 15,70 18,80 15,90" fill="#3EC9D6" opacity="0.8"/>
+            <circle cx="42" cy="77" r="5" fill="#3EC9D6"/><circle cx="41" cy="76" r="2" fill="#0a2d1e"/>
+            <text x="150" y="150" text-anchor="middle" fill="#3EC9D6" font-size="13" font-family="Montserrat,sans-serif" font-weight="700">БАРРАКУДА</text>
+          </svg>
         </div>
-        <div class="fish-desc">Охотится у мысов и скал, активна вечером. Агрессивно атакует блестящие приманки. Поводок из флюорокарбона 0.8 мм обязателен — зубы острейшие. Детям показывайте с осторожностью!</div>
-        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Белое нежное мясо, без лишнего жира. Один из лучших вкусов среди морских рыб. Отлично запекается целиком с травами. В Греции подают во многих тавернах.</div></div>
-        <div class="fish-tags"><span class="ftag season">Лето–осень</span><span class="ftag method">Спиннинг</span><span class="ftag method">Троллинг</span><span class="ftag common">Распространена</span></div>
+        <div class="fish-photo-label">ВЕЧЕРОМ У СКАЛ</div>
+      </div>
+      <div class="fish-body">
+        <div class="fish-name-row">
+          <span class="fish-name">Барракуда</span>
+          <a href="https://ru.wikipedia.org/wiki/%D0%91%D0%B0%D1%80%D1%80%D0%B0%D0%BA%D1%83%D0%B4%D1%8B" target="_blank" class="wiki-btn">Wikipedia</a>
+        </div>
+        <div class="fish-latin">Sphyraena sphyraena</div>
+
+        <div class="fish-desc">Засадный охотник у скал и мысов. Стоит в засаде и стремительно атакует всё блестящее. Средиземноморская барракуда меньше тропической — обычно 50–90 см. Не опасна для человека, но зубы — бритва. Активна в сумерках.</div>
+
+        <div class="fish-how-box">
+          <div class="how-title">🎯 Как ловить</div>
+          <div class="how-grid">
+            <div class="how-item">
+              <div class="how-label">Спиннинг</div>
+              <div class="how-text">Rapala CD-14 (цвет Orange Gold или Blue Mackerel). Равномерная быстрая проводка вдоль скального берега. Атакует стремительно — держите крепче!</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Топвотер</div>
+              <div class="how-text">Seaspin Mommotti 180SS или Xorus Patchinko — «уолкинг-дог» прямо у поверхности на закате. Взрыв на атаке незабываем!</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Поводок ОБЯЗАТЕЛЕН</div>
+              <div class="how-text">Флюорокарбон 0.70–0.80 мм или стальной поводок 15–20 кг. Срежет обычную леску за долю секунды.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Время и места</div>
+              <div class="how-text">Вечер после 18:00, рассвет. Скальные мысы, основания клифов. Мыс Спецес, южный берег Гидры, мысы Кеа.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fish-taste-box">
+          <div class="taste-label">🍽 Вкус и приготовление</div>
+          <div class="taste-text">Нежное белое мясо без лишнего жира — один из лучших вкусов среди морских рыб. Запекается целиком с травами. Греки готовят на углях. В тавернах стоит дорого — повод гордиться уловом!</div>
+        </div>
+
+        <div class="fish-tags">
+          <span class="ftag method">Спиннинг вечером</span>
+          <span class="ftag method">Топвотер</span>
+          <span class="ftag method">Троллинг</span>
+          <span class="ftag common">Распространена</span>
+        </div>
       </div>
     </div>
 
+    <!-- AMBERJACK -->
     <div class="fish-card">
-      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Seriola_dumerili.jpg/640px-Seriola_dumerili.jpg" alt="Лакедра" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#1a1208\'/><ellipse cx=\'145\' cy=\'78\' rx=\'105\' ry=\'42\' fill=\'#7a5a1e\' stroke=\'#F5A623\' stroke-width=\'1.5\'/><circle cx=\'68\' cy=\'72\' r=\'7\' fill=\'#F5A623\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#F5A623\' font-size=\'12\' font-family=\'sans-serif\'>ЛАКЕДРА</text></svg>'"></div>
-      <div class="fish-body">
-        <div class="fish-name">Лакедра / Амберджек</div>
-        <div class="fish-latin-row">
-          <span class="fish-latin">Seriola dumerili</span>
-          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BA%D0%B5%D0%B4%D1%80%D0%B0" target="_blank">Wikipedia →</a>
+      <div class="fish-photo-wrap">
+        <img class="fish-photo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Seriola_dumerili.jpg/640px-Seriola_dumerili.jpg"
+          alt="Лакедра"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          loading="lazy">
+        <div class="fish-svg-fallback" style="display:none">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="300" height="160" fill="#1a1208"/>
+            <ellipse cx="145" cy="78" rx="105" ry="42" fill="#7a5a1e" stroke="#F5A623" stroke-width="1.5"/>
+            <polygon points="250,78 282,50 287,78 282,106" fill="#7a5a1e" stroke="#F5A623" stroke-width="1"/>
+            <polygon points="145,36 158,15 170,36" fill="#c4852a"/>
+            <path d="M 60 68 Q 145 50 240 70" stroke="#F5A623" stroke-width="2.5" fill="none" opacity="0.6"/>
+            <circle cx="68" cy="72" r="7" fill="#F5A623"/><circle cx="67" cy="71" r="2.5" fill="#1a1208"/>
+            <text x="150" y="150" text-anchor="middle" fill="#F5A623" font-size="13" font-family="Montserrat,sans-serif" font-weight="700">ЛАКЕДРА</text>
+          </svg>
         </div>
-        <div class="fish-desc">Трофейный хищник на скальных структурах 20–80 м глубины. Один из сильнейших бойцов Средиземноморья. Требует тяжёлого джига 60–150 г и мощного спиннинга. Бьётся несколько минут.</div>
-        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Великолепное белое упругое мясо. В Греции ценится очень высоко — в тавернах стоит дорого. На яхте — запечь с розмарином и лимоном. Дети едят с удовольствием — нет мелких костей.</div></div>
-        <div class="fish-tags"><span class="ftag season">Весна–осень</span><span class="ftag method">Тяжёлый джиг</span><span class="ftag method">Троллинг</span><span class="ftag rare">Редкий улов</span></div>
+        <div class="fish-photo-label">ТРОФЕЙ КИКЛАДОВ</div>
+      </div>
+      <div class="fish-body">
+        <div class="fish-name-row">
+          <span class="fish-name">Лакедра / Амберджек</span>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%BA%D0%B5%D0%B4%D1%80%D0%B0" target="_blank" class="wiki-btn">Wikipedia</a>
+        </div>
+        <div class="fish-latin">Seriola dumerili</div>
+
+        <div class="fish-desc">Трофейный хищник на скальных структурах и подводных горках. Вес 3–20 кг. Один из сильнейших бойцов Средиземноморья — борется несколько минут. Требует серьёзного снаряжения. Взрослых детей берите смотреть!</div>
+
+        <div class="fish-how-box">
+          <div class="how-title">🎯 Как ловить</div>
+          <div class="how-grid">
+            <div class="how-item">
+              <div class="how-label">Вертикальный джиг</div>
+              <div class="how-text">Тяжёлый джиг 80–150 г. Опустить на дно (30–80 м), резкие взмахи вверх-вниз. Hearty Rise или Ocean Born. Серебристые/розовые цвета.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Снаряжение</div>
+              <div class="how-text">Мощный спиннинг PE 3–5. Плетёнка минимум 50 кг разрывная нагрузка. Качественные ассист-крючки — стандартные разогнёт!</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Троллинг</div>
+              <div class="how-text">Rapala X-Rap Magnum 30–40 на глубине 8–12 м вдоль скального берега. Скорость 4–6 уз. Реже, чем джиг, но работает.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Места</div>
+              <div class="how-text">Северный мыс Кеа, южный берег Гидры, Малые Киклады. Ищите по эхолоту скальные пики на 20–80 м.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fish-taste-box">
+          <div class="taste-label">🍽 Вкус и приготовление</div>
+          <div class="taste-text">Великолепное белое упругое мясо без мелких костей — дети едят с удовольствием! В тавернах стоит 35–50€/кг. На яхте — запечь с розмарином и лимоном в фольге. Или стейки на решётке.</div>
+        </div>
+
+        <div class="fish-tags">
+          <span class="ftag rare">🏆 Редкий трофей</span>
+          <span class="ftag method">Тяжёлый джиг</span>
+          <span class="ftag method">Троллинг глубокий</span>
+        </div>
       </div>
     </div>
 
+    <!-- GROUPER -->
     <div class="fish-card">
-      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Epinephelus_marginatus_Melilla.jpg/640px-Epinephelus_marginatus_Melilla.jpg" alt="Групер" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#1a0e05\'/><ellipse cx=\'140\' cy=\'80\' rx=\'95\' ry=\'48\' fill=\'#5a3a1e\' stroke=\'#C8562A\' stroke-width=\'1.5\'/><circle cx=\'65\' cy=\'72\' r=\'7\' fill=\'#C8562A\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#C8562A\' font-size=\'12\' font-family=\'sans-serif\'>ГРУПЕР</text></svg>'"></div>
-      <div class="fish-body">
-        <div class="fish-name">Групер / Каменный окунь</div>
-        <div class="fish-latin-row">
-          <span class="fish-latin">Epinephelus marginatus</span>
-          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BA%D1%83%D0%BD%D1%8C" target="_blank">Wikipedia →</a>
+      <div class="fish-photo-wrap">
+        <img class="fish-photo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Epinephelus_marginatus_Melilla.jpg/640px-Epinephelus_marginatus_Melilla.jpg"
+          alt="Групер"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          loading="lazy">
+        <div class="fish-svg-fallback" style="display:none">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="300" height="160" fill="#1a0e05"/>
+            <ellipse cx="140" cy="80" rx="95" ry="48" fill="#5a3a1e" stroke="#C8562A" stroke-width="1.5"/>
+            <polygon points="235,80 265,55 270,80 265,105" fill="#5a3a1e" stroke="#C8562A" stroke-width="1"/>
+            <circle cx="65" cy="68" r="8" fill="#C8562A" opacity="0.7"/>
+            <circle cx="65" cy="72" r="7" fill="#C8562A"/><circle cx="64" cy="71" r="2.5" fill="#1a0e05"/>
+            <text x="150" y="150" text-anchor="middle" fill="#C8562A" font-size="13" font-family="Montserrat,sans-serif" font-weight="700">ГРУПЕР</text>
+          </svg>
         </div>
-        <div class="fish-desc">Засадный хищник в пещерах и щелях. Лучшее место — необитаемые островки Малых Кикладов. Силикон 8–14 см на джиг-головке прямо у дна. Охраняемый вид — небольших выпускать!</div>
-        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Одна из самых вкусных рыб Средиземноморья. Плотное белое мясо, нежный вкус без специфического запаха. В тавернах стоит 35–50€/кг. Дети едят без капризов — никаких костей!</div></div>
-        <div class="fish-tags"><span class="ftag season">Весь год</span><span class="ftag method">Силиконовый джиг</span><span class="ftag rare">Редкий — выпускать!</span></div>
+        <div class="fish-photo-label">У ДНА, РОКФИШИНГ</div>
+      </div>
+      <div class="fish-body">
+        <div class="fish-name-row">
+          <span class="fish-name">Групер / Каменный окунь</span>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BE%D0%BA%D1%83%D0%BD%D1%8C" target="_blank" class="wiki-btn">Wikipedia</a>
+        </div>
+        <div class="fish-latin">Epinephelus marginatus · по-гречески «Ροφός» (рофос)</div>
+
+        <div class="fish-desc">Засадный хищник в пещерах, щелях и под скальными свесами. Охраняемый вид — небольших выпускать! Малые Киклады (Ираклия, Кунфунисья, Схинуса) — лучшие места из-за минимального рыболовного давления.</div>
+
+        <div class="fish-how-box">
+          <div class="how-title">🎯 Как ловить</div>
+          <div class="how-grid">
+            <div class="how-item">
+              <div class="how-label">Силиконовый шад</div>
+              <div class="how-text">3–5" силикон на джиг-головке 10–20 г. Berkley Gulp! (пахнет!) или Z-Man. Бросок к скале, опустить на дно, медленная ступенчатая проводка. Атакует на паузе.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Воблер / поппер</div>
+              <div class="how-text">У входа в пещеры — небольшой поппер или крупный воблер. Групер выплывает из щели на «движение у входа».</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Главный секрет</div>
+              <div class="how-text">Необитаемые островки = максимальный улов. Якорь у скального свеса, облавливаем дно вдоль стенки. Не шуметь!</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Места</div>
+              <div class="how-text">Мони (у Эгины), все острова Малых Кикладов, скальные берега Кеа. Глубина 5–30 м.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fish-taste-box">
+          <div class="taste-label">🍽 Вкус и приготовление</div>
+          <div class="taste-text">Одна из самых вкусных рыб Средиземноморья! Плотное белое мясо, деликатный вкус. В тавернах стоит 40–60€/кг. Запекают целиком в соли или с томатами и маслинами. Без костей — идеально для детей.</div>
+        </div>
+
+        <div class="fish-tags">
+          <span class="ftag rare">Выпускать мелких!</span>
+          <span class="ftag method">Силикон у дна</span>
+          <span class="ftag method">Рокфишинг</span>
+        </div>
       </div>
     </div>
 
+    <!-- SQUID -->
     <div class="fish-card">
-      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Loligo_vulgaris.jpg/640px-Loligo_vulgaris.jpg" alt="Кальмар" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0f0518\'/><ellipse cx=\'150\' cy=\'65\' rx=\'35\' ry=\'52\' fill=\'#4a1e6a\' stroke=\'#9b59b6\' stroke-width=\'1.5\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#9b59b6\' font-size=\'12\' font-family=\'sans-serif\'>КАЛЬМАР</text></svg>'"></div>
-      <div class="fish-body">
-        <div class="fish-name">Кальмар</div>
-        <div class="fish-latin-row">
-          <span class="fish-latin">Loligo vulgaris</span>
-          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8C%D0%BC%D0%B0%D1%80_%D0%BE%D0%B1%D1%8B%D0%BA%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9" target="_blank">Wikipedia →</a>
+      <div class="fish-photo-wrap">
+        <img class="fish-photo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Loligo_vulgaris.jpg/640px-Loligo_vulgaris.jpg"
+          alt="Кальмар"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          loading="lazy">
+        <div class="fish-svg-fallback" style="display:none">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="300" height="160" fill="#0f0518"/>
+            <ellipse cx="150" cy="65" rx="35" ry="52" fill="#4a1e6a" stroke="#9b59b6" stroke-width="1.5"/>
+            <polygon points="135,15 150,5 165,15 160,30 140,30" fill="#6a2e8a"/>
+            <line x1="120" y1="117" x2="105" y2="148" stroke="#9b59b6" stroke-width="2"/>
+            <line x1="130" y1="120" x2="118" y2="148" stroke="#9b59b6" stroke-width="2"/>
+            <line x1="140" y1="122" x2="132" y2="150" stroke="#9b59b6" stroke-width="2"/>
+            <line x1="150" y1="123" x2="148" y2="152" stroke="#9b59b6" stroke-width="2"/>
+            <line x1="160" y1="122" x2="162" y2="150" stroke="#9b59b6" stroke-width="2"/>
+            <line x1="170" y1="120" x2="178" y2="148" stroke="#9b59b6" stroke-width="2"/>
+            <line x1="180" y1="117" x2="192" y2="145" stroke="#9b59b6" stroke-width="2"/>
+            <circle cx="137" cy="55" r="8" fill="#c39bd3"/><circle cx="135" cy="53" r="3" fill="#0f0518"/>
+            <circle cx="163" cy="55" r="8" fill="#c39bd3"/><circle cx="161" cy="53" r="3" fill="#0f0518"/>
+            <text x="150" y="150" text-anchor="middle" fill="#9b59b6" font-size="13" font-family="Montserrat,sans-serif" font-weight="700">КАЛЬМАР</text>
+          </svg>
         </div>
-        <div class="fish-desc">Киклады — особенно богатое место. Ловля ночью на эгинг-джиги у водорослей. Лучшие места: пролив Парос–Антипарос, бухты Наксоса, Ираклия. Включите фонарь в воду — кальмары идут на свет!</div>
-        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Жареный во фритюре кальмар (каламари) — национальное блюдо Греции. Фаршированный рисом и травами — высокая кухня. Дети ловят с восторгом — и они меняют цвет при поимке!</div></div>
-        <div class="fish-tags"><span class="ftag season">Лето–осень</span><span class="ftag method">Эгинг (ночью)</span><span class="ftag common">Очень распространён</span></div>
+        <div class="fish-photo-label">НОЧЬЮ НА ЯКОРЕ</div>
+      </div>
+      <div class="fish-body">
+        <div class="fish-name-row">
+          <span class="fish-name">Кальмар</span>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BB%D1%8C%D0%BC%D0%B0%D1%80_%D0%BE%D0%B1%D1%8B%D0%BA%D0%BD%D0%BE%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9" target="_blank" class="wiki-btn">Wikipedia</a>
+        </div>
+        <div class="fish-latin">Loligo vulgaris · по-гречески «Καλαμάρι» (каламари)</div>
+
+        <div class="fish-desc">Киклады — особенно богатое место! Ночная ловля на якоре — любимое занятие детей. Кальмар меняет цвет при поимке, пускает «чернила» — незабываемое шоу. Пролив Парос–Антипарос и бухты Наксоса — топовые места.</div>
+
+        <div class="fish-how-box">
+          <div class="how-title">🎯 Как ловить (эгинг)</div>
+          <div class="how-grid">
+            <div class="how-item">
+              <div class="how-label">Снаряжение</div>
+              <div class="how-text">Лёгкий спиннинг 1–10 г, эгинг-джиг Yo-Zuri Ultra 3D или Yamashita №2.5–3.5. Плавающая леска или шнур PE 0.6.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Техника</div>
+              <div class="how-text">Заброс, дать упасть до дна (считаем секунды). 2–3 резких взмаха — пауза 3–5 сек. Кальмар хватает на паузе. Подсечка плавная — не рвать, иначе оторвётся!</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Фонарь в воду</div>
+              <div class="how-text">Водонепроницаемый фонарь опустить за борт — кальмар идёт на свет. Через 20–30 минут под фонарём их будет видно невооружённым глазом.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Время и места</div>
+              <div class="how-text">После 21:00. Пролив Антипароса, бухты Наксоса, Ираклия. У водорослей и рифов. Тихая безветренная ночь = много кальмаров.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fish-taste-box">
+          <div class="taste-label">🍽 Вкус и приготовление</div>
+          <div class="taste-text">Жареный во фритюре (каламари) — визитная карточка Греции. На яхте: нарезать кольцами, обвалять в муке, жарить на сковороде в оливковом масле 2 мин — готово! Фаршированный рисом и мятой — высокая кухня. Дети едят охотно.</div>
+        </div>
+
+        <div class="fish-tags">
+          <span class="ftag peak">⭐ Лучшее для детей</span>
+          <span class="ftag method">Эгинг ночью</span>
+          <span class="ftag common">Очень распространён</span>
+        </div>
       </div>
     </div>
 
+    <!-- SEA BASS -->
     <div class="fish-card">
-      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Dicentrarchus_labrax_1.jpg/640px-Dicentrarchus_labrax_1.jpg" alt="Лаврак" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#0d1a22\'/><ellipse cx=\'142\' cy=\'79\' rx=\'98\' ry=\'40\' fill=\'#3a5a6a\' stroke=\'#3EC9D6\' stroke-width=\'1.5\'/><circle cx=\'68\' cy=\'74\' r=\'7\' fill=\'#3EC9D6\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#3EC9D6\' font-size=\'12\' font-family=\'sans-serif\'>МОРСКОЙ ОКУНЬ</text></svg>'"></div>
-      <div class="fish-body">
-        <div class="fish-name">Морской окунь / Сибас</div>
-        <div class="fish-latin-row">
-          <span class="fish-latin">Dicentrarchus labrax</span>
-          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B2%D1%80%D0%B0%D0%BA" target="_blank">Wikipedia →</a>
+      <div class="fish-photo-wrap">
+        <img class="fish-photo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Dicentrarchus_labrax_1.jpg/640px-Dicentrarchus_labrax_1.jpg"
+          alt="Лаврак"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          loading="lazy">
+        <div class="fish-svg-fallback" style="display:none">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="300" height="160" fill="#0d1a22"/>
+            <ellipse cx="142" cy="79" rx="98" ry="40" fill="#3a5a6a" stroke="#3EC9D6" stroke-width="1.5"/>
+            <polygon points="240,79 270,55 275,79 270,103" fill="#3a5a6a" stroke="#3EC9D6" stroke-width="1"/>
+            <polygon points="142,39 154,18 166,39" fill="#5a8a9a"/>
+            <circle cx="68" cy="74" r="7" fill="#3EC9D6"/><circle cx="67" cy="73" r="2.5" fill="#0d1a22"/>
+            <text x="150" y="150" text-anchor="middle" fill="#3EC9D6" font-size="13" font-family="Montserrat,sans-serif" font-weight="700">МОРСКОЙ ОКУНЬ</text>
+          </svg>
         </div>
-        <div class="fish-desc">Ловится у каменистых берегов и в гаванях ночью. По-гречески «лаврáки». Лёгкий спиннинг с небольшим воблером. Отличный объект для детей — клюёт охотно, хорошо чувствуется на снасти.</div>
-        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Деликатесная рыба — именно её подают как «сибас» в ресторанах. Нежное белое мясо, почти без костей. В Греции запекают целиком в соли — незабываемо. Стоит 25–40€/кг в тавернах.</div></div>
-        <div class="fish-tags"><span class="ftag season">Весь год</span><span class="ftag method">Спиннинг</span><span class="ftag common">Распространён</span></div>
+        <div class="fish-photo-label">ГАВАНЯХ И У СКАЛ</div>
+      </div>
+      <div class="fish-body">
+        <div class="fish-name-row">
+          <span class="fish-name">Морской окунь / Сибас</span>
+          <a href="https://ru.wikipedia.org/wiki/%D0%9B%D0%B0%D0%B2%D1%80%D0%B0%D0%BA" target="_blank" class="wiki-btn">Wikipedia</a>
+        </div>
+        <div class="fish-latin">Dicentrarchus labrax · по-гречески «Λαβράκι» (лавраки)</div>
+
+        <div class="fish-desc">Элегантный хищник у каменистых берегов и в гаванях. По-гречески именно его знают как «лавраки» — это не тот же сибас из магазина (выращен искусственно). Дикий лаврак в разы вкуснее! Отличный объект для детей.</div>
+
+        <div class="fish-how-box">
+          <div class="how-title">🎯 Как ловить</div>
+          <div class="how-grid">
+            <div class="how-item">
+              <div class="how-label">Лёгкий спиннинг</div>
+              <div class="how-text">Небольшой воблер 7–10 см или силиконовый шад 3–4". Медленная или средняя проводка вдоль каменистого берега. Паузы у укрытий.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Гавань ночью</div>
+              <div class="how-text">Поплавочная удочка с маленьким живцом или креветкой. У освещённых причалов — отличный клёв с 22:00 до полуночи. Идеально для детей!</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Места</div>
+              <div class="how-text">Пролив Порос (с утра), гавани Гидры и Эгины ночью, скальные берега у якорных стоянок. Глубина 0.5–5 м.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Приманки</div>
+              <div class="how-text">Небольшой металлический пилькер 10–20 г, мягкий силикон. Поклёвка лёгкая — важно не прозевать.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fish-taste-box">
+          <div class="taste-label">🍽 Вкус и приготовление</div>
+          <div class="taste-text">Деликатесная нежная рыба! В греческих тавернах — самая популярная после дорады. Запекают в соли целиком — классика. В тавернах стоит 25–45€/кг. Без костей — дети едят без капризов.</div>
+        </div>
+
+        <div class="fish-tags">
+          <span class="ftag peak">👦 Хорошо для детей</span>
+          <span class="ftag method">Лёгкий спиннинг</span>
+          <span class="ftag method">Гавань ночью</span>
+          <span class="ftag common">Распространён</span>
+        </div>
       </div>
     </div>
 
+    <!-- DENTEX -->
     <div class="fish-card">
-      <div class="fish-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Dentex_dentex_nm2.jpg/640px-Dentex_dentex_nm2.jpg" alt="Дентекс" loading="lazy" onerror="this.parentElement.innerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 160\' width=\'100%\' height=\'160\'><rect width=\'300\' height=\'160\' fill=\'#150510\'/><ellipse cx=\'142\' cy=\'79\' rx=\'100\' ry=\'44\' fill=\'#6a2a4a\' stroke=\'#e056a0\' stroke-width=\'1.5\'/><circle cx=\'68\' cy=\'73\' r=\'7\' fill=\'#e056a0\'/><text x=\'150\' y=\'148\' text-anchor=\'middle\' fill=\'#e056a0\' font-size=\'12\' font-family=\'sans-serif\'>ДЕНТЕКС</text></svg>'"></div>
-      <div class="fish-body">
-        <div class="fish-name">Дентекс / Зубан</div>
-        <div class="fish-latin-row">
-          <span class="fish-latin">Dentex dentex</span>
-          <a class="fish-wiki" href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%82%D0%B5%D0%BA%D1%81" target="_blank">Wikipedia →</a>
+      <div class="fish-photo-wrap">
+        <img class="fish-photo"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Dentex_dentex_nm2.jpg/640px-Dentex_dentex_nm2.jpg"
+          alt="Дентекс"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          loading="lazy">
+        <div class="fish-svg-fallback" style="display:none">
+          <svg viewBox="0 0 300 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <rect width="300" height="160" fill="#150510"/>
+            <ellipse cx="142" cy="79" rx="100" ry="44" fill="#6a2a4a" stroke="#e056a0" stroke-width="1.5"/>
+            <polygon points="242,79 274,52 279,79 274,106" fill="#6a2a4a" stroke="#e056a0" stroke-width="1"/>
+            <polygon points="142,35 156,14 170,35" fill="#9a3a6a"/>
+            <circle cx="68" cy="73" r="7" fill="#e056a0"/><circle cx="67" cy="72" r="2.5" fill="#150510"/>
+            <text x="150" y="150" text-anchor="middle" fill="#e056a0" font-size="13" font-family="Montserrat,sans-serif" font-weight="700">ЗУБАН (ДЕНТЕКС)</text>
+          </svg>
         </div>
-        <div class="fish-desc">Рифовый хищник, прячется под подводными свесами. Ловится на глубинах 30–80 м вертикальным джигом. Малые Киклады — лучшее место. Осторожно — острые зубы!</div>
-        <div class="fish-taste"><div class="fish-taste-title">🍽 Вкус</div><div class="fish-taste-text">Одна из самых ценных рыб Средиземноморья. Розово-белое мясо, богатый вкус. В тавернах — 40–60€/кг. Греки запекают на углях с лимоном и каперсами. Редкий улов — повод для праздника!</div></div>
-        <div class="fish-tags"><span class="ftag season">Весна–лето</span><span class="ftag method">Вертикальный джиг</span><span class="ftag rare">Редкий трофей</span></div>
+        <div class="fish-photo-label">РЕДКИЙ ТРОФЕЙ</div>
+      </div>
+      <div class="fish-body">
+        <div class="fish-name-row">
+          <span class="fish-name">Дентекс / Зубан</span>
+          <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D1%82%D0%B5%D0%BA%D1%81" target="_blank" class="wiki-btn">Wikipedia</a>
+        </div>
+        <div class="fish-latin">Dentex dentex · по-гречески «Συναγρίδα» (синагрида)</div>
+
+        <div class="fish-desc">Прячется под скальными свесами и в расщелинах на глубине 30–80 м. Один из самых ценных уловов Средиземноморья. Осторожен — при малейшем шуме уходит в укрытие. Поиск по эхолоту на подводных горках.</div>
+
+        <div class="fish-how-box">
+          <div class="how-title">🎯 Как ловить</div>
+          <div class="how-grid">
+            <div class="how-item">
+              <div class="how-label">Вертикальный джиг</div>
+              <div class="how-text">Тяжёлый асимметричный джиг 60–100 г. Быстрое падение, затем медленная ступенчатая проводка. Цвета: розовое золото, серебро, сине-белый.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Где искать</div>
+              <div class="how-text">Малые Киклады (Ираклия, Кунфунисья), мыс Кеа. Ищите по эхолоту скальные структуры на 30–80 м. Утренние часы до 10:00.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Снаряжение</div>
+              <div class="how-text">Мощный спиннинг PE 2–3. Длинный флюорокарбоновый поводок 0.60 мм (2–3 м). Ассист-крючки, а не тройники.</div>
+            </div>
+            <div class="how-item">
+              <div class="how-label">Также на живца</div>
+              <div class="how-text">Местные рыбаки ловят на креветку или небольшую рыбку у дна. Если увидели дентекса на рынке — узнайте у продавца, где поймали.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fish-taste-box">
+          <div class="taste-label">🍽 Вкус и приготовление</div>
+          <div class="taste-text">Жемчужина греческой кухни! Розово-белое плотное мясо с богатым вкусом. В тавернах стоит 45–70€/кг — самая дорогая рыба в меню. На яхте — запечь в фольге с каперсами, лимоном и оливковым маслом. Редкий улов = повод для праздника!</div>
+        </div>
+
+        <div class="fish-tags">
+          <span class="ftag rare">💎 Редкий трофей</span>
+          <span class="ftag method">Вертикальный джиг 60–100г</span>
+        </div>
       </div>
     </div>
 
   </div>
 
-  <div class="tips-grid">
-    <div class="tip"><div class="tip-icon">🌅</div><div class="tip-title">Лучшее время</div><div class="tip-text">Рассвет 05:30–08:00 и закат 18:00–21:00 — пик клёва. Днём рыба уходит в глубину — переключайтесь на снорклинг.</div></div>
-    <div class="tip"><div class="tip-icon">⛵</div><div class="tip-title">Троллинг на ходу</div><div class="tip-text">Каждый переход между островами — тяните приманку за яхтой! Yo-Zuri Laser Pro или Rapala на 30–50 м шнура. Бесплатная рыбалка в пути!</div></div>
-    <div class="tip"><div class="tip-icon">🌙</div><div class="tip-title">Ночная рыбалка</div><div class="tip-text">Кальмар — на якоре ночью с фонарём в воду. Дети в восторге! Кефаль и морской окунь — в освещённых гаванях с поплавком у дна.</div></div>
-    <div class="tip"><div class="tip-icon">🛒</div><div class="tip-title">Купить приманки</div><div class="tip-text">Ищите магазин ΔΟΛΩΜΑ (Долома = приманка). Есть на Эгине, Поросе, в Наксосе. Там же узнаете, что сейчас клюёт в конкретном месте.</div></div>
-    <div class="tip"><div class="tip-icon">🍳</div><div class="tip-title">Что делать с уловом</div><div class="tip-text">Луфарь и пеламида — готовить сразу. Несут рыбу в таверну — там часто готовят вашу рыбу за символическую плату за приготовление.</div></div>
-    <div class="tip"><div class="tip-icon">👦</div><div class="tip-title">Дети и рыбалка</div><div class="tip-text">Кальмар ночью — идеально для детей: виден, интересно тянуть. Морской окунь в гавани с поплавком — первый успех гарантирован почти везде.</div></div>
+  <!-- LURES SECTION -->
+  <h3 class="fish-section-title" style="margin-top:48px">🎣 Приманки — полный арсенал</h3>
+
+  <div class="lure-method-tabs">
+    <div class="lmtab active" onclick="showLures(this,'troll')">⛵ Троллинг</div>
+    <div class="lmtab" onclick="showLures(this,'spin')">🎣 Спиннинг</div>
+    <div class="lmtab" onclick="showLures(this,'jig')">🪨 Джиг / Дно</div>
+    <div class="lmtab" onclick="showLures(this,'eging')">🌙 Эгинг</div>
   </div>
+
+  <div class="lure-panel active" id="lures-troll">
+    <div class="lure-grid">
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#1a5c8a,#0d3d52)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <ellipse cx="118" cy="50" rx="88" ry="26" fill="#1a7aaa" stroke="#5bc8e8" stroke-width="1.5"/>
+            <ellipse cx="118" cy="44" rx="85" ry="16" fill="none" stroke="#88ddf0" stroke-width="1" opacity="0.6"/>
+            <polygon points="206,50 228,38 231,50 228,62" fill="#0d3d52" stroke="#5bc8e8" stroke-width="1"/>
+            <circle cx="52" cy="50" r="8" fill="#c8e8f0" opacity="0.9"/><circle cx="50" cy="48" r="3" fill="#0d3d52"/>
+            <line x1="52" y1="50" x2="52" y2="68" stroke="#888" stroke-width="1.5"/>
+            <path d="M 40 68 Q 52 80 64 68" fill="none" stroke="#888" stroke-width="1.5"/>
+            <line x1="152" y1="50" x2="152" y2="68" stroke="#888" stroke-width="1.5"/>
+            <path d="M 140 68 Q 152 80 164 68" fill="none" stroke="#888" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Yo-Zuri Bonita</div>
+          <div class="lure-spec">130 мм / 170 мм · 6–15 узлов</div>
+          <div class="lure-how">Эталон высокоскоростного троллинга. Тяните прямо с кормы на 30–50 м шнура. Цвета: Blue Mackerel, Red/Black, Pink/Silver. Стальная проводка насквозь — не сломается.</div>
+          <div class="lure-target"><span class="lt">Пеламида</span><span class="lt">Луфарь</span><span class="lt">6–15 уз</span></div>
+          <div class="lure-shop"><a href="https://www.ozon.ru/category/voblery-11358/yo-zuri-141298669/" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://www.wildberries.ru/brands/yo-zuri" target="_blank" class="shop-btn-sm wb">WB</a><a href="https://yozuri-russia.ru/" target="_blank" class="shop-btn-sm yz">Yo-Zuri RU</a></div>
+        </div>
+      </div>
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#1a4a8a,#0d2a5c)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <ellipse cx="116" cy="50" rx="92" ry="28" fill="#3366aa" stroke="#88aadd" stroke-width="1.5"/>
+            <path d="M 58 40 Q 116 26 174 40" stroke="#aaddff" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <rect x="22" y="57" width="16" height="7" rx="3" fill="#1a4488" transform="rotate(-15,30,60)"/>
+            <circle cx="52" cy="50" r="9" fill="#bbddf5" opacity="0.9"/><circle cx="50" cy="48" r="3.5" fill="#0a2a4a"/>
+            <polygon points="208,50 228,38 231,50 228,62" fill="#1a4488" stroke="#0d3560" stroke-width="1.5"/>
+            <line x1="52" y1="50" x2="52" y2="68" stroke="#888" stroke-width="1.5"/>
+            <path d="M 40 68 Q 52 80 64 68" fill="none" stroke="#888" stroke-width="1.5"/>
+            <line x1="162" y1="53" x2="162" y2="70" stroke="#888" stroke-width="1.5"/>
+            <path d="M 150 70 Q 162 82 174 70" fill="none" stroke="#888" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Rapala X-Rap Magnum 20 / 30</div>
+          <div class="lure-spec">XRMAG20 / XRMAG30 · до 9 м глубина</div>
+          <div class="lure-how">Реалистичная игра на 4–8 уз. Голографический корпус. Цвета: Blue Sardine, Bunker, Chartreuse. Заглубляется до 9 м — достаёт пеламиду в глубине.</div>
+          <div class="lure-target"><span class="lt">Пеламида</span><span class="lt">Барракуда</span><span class="lt">Лакедра</span></div>
+          <div class="lure-shop"><a href="https://rapala.ru/collection/x-rap-magnum" target="_blank" class="shop-btn-sm rp">Rapala.ru</a><a href="https://www.ozon.ru/brand/rapala-136144343/" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://topbaits.ru/catalog/primanki/voblery/rapala/x_rap/" target="_blank" class="shop-btn-sm tb">TopBaits</a></div>
+        </div>
+      </div>
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#3a3a3a,#1a1a1a)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <ellipse cx="120" cy="50" rx="108" ry="20" fill="#888888" stroke="#cccccc" stroke-width="1"/>
+            <ellipse cx="120" cy="44" rx="105" ry="12" fill="none" stroke="#fff" stroke-width="1" opacity="0.4"/>
+            <ellipse cx="60" cy="44" rx="40" ry="14" fill="#eeeeee" opacity="0.6"/>
+            <circle cx="38" cy="50" r="7" fill="#ddd" opacity="0.9"/><circle cx="36" cy="48" r="2.5" fill="#222"/>
+            <polygon points="228,50 242,40 245,50 242,60" fill="#333" stroke="#555" stroke-width="1"/>
+            <line x1="38" y1="50" x2="38" y2="68" stroke="#888" stroke-width="1.5"/>
+            <path d="M 26 68 Q 38 80 50 68" fill="none" stroke="#888" stroke-width="1.5"/>
+            <line x1="152" y1="50" x2="152" y2="68" stroke="#888" stroke-width="1.5"/>
+            <path d="M 140 68 Q 152 80 164 68" fill="none" stroke="#888" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Yo-Zuri Laser Pro 160</div>
+          <div class="lure-spec">160 мм · рекорд — до 11 узлов!</div>
+          <div class="lure-how">Единственный выбор, когда тянете приманку прямо под парусами. Не теряет игры даже на 11 уз. Цвета: Sardine, Blue Silver. Идеален для переходов между островами.</div>
+          <div class="lure-target"><span class="lt">Пеламида</span><span class="lt">Тунец</span><span class="lt">до 11 уз!</span></div>
+          <div class="lure-shop"><a href="https://www.ozon.ru/category/voblery-11358/yo-zuri-141298669/" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://yozuri-russia.ru/" target="_blank" class="shop-btn-sm yz">Yo-Zuri RU</a></div>
+        </div>
+      </div>
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#5c1a00,#8a3a00)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <ellipse cx="118" cy="50" rx="105" ry="18" fill="#cc5500" stroke="#ffaa00" stroke-width="1.5"/>
+            <ellipse cx="118" cy="44" rx="102" ry="10" fill="none" stroke="#ffdd88" stroke-width="1" opacity="0.5"/>
+            <circle cx="36" cy="50" r="8" fill="#ffccaa" opacity="0.9"/><circle cx="34" cy="48" r="3" fill="#440000"/>
+            <polygon points="223,50 238,40 241,50 238,60" fill="#cc4400" stroke="#882200" stroke-width="1"/>
+            <line x1="36" y1="50" x2="36" y2="68" stroke="#888" stroke-width="1.5"/>
+            <path d="M 24 68 Q 36 80 48 68" fill="none" stroke="#888" stroke-width="1.5"/>
+            <line x1="148" y1="50" x2="148" y2="68" stroke="#888" stroke-width="1.5"/>
+            <path d="M 136 68 Q 148 80 160 68" fill="none" stroke="#888" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Силиконовый осьминог-тизер</div>
+          <div class="lure-spec">Flashmer / Williamson · 120–180 мм</div>
+          <div class="lure-how">Традиционная греческая приманка. Вешается на трейлер за тонущим грузом (50–80 г). Скорость 2–5 уз — медленный дипсей-троллинг у дна. Цвета: Pink/White, Blue/Silver.</div>
+          <div class="lure-target"><span class="lt">Пеламида</span><span class="lt">Лакедра</span><span class="lt">2–5 уз</span></div>
+          <div class="lure-shop"><a href="https://www.ozon.ru/category/rybalka-33152/?text=осьминог+троллинг" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://www.amazon.com/s?k=flashmer+octopus+trolling" target="_blank" class="shop-btn-sm amz">Amazon</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lure-panel" id="lures-spin">
+    <div class="lure-grid">
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#1a3a6a,#0d2040)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <ellipse cx="116" cy="50" rx="100" ry="32" fill="#2266aa" stroke="#88aaee" stroke-width="1.5"/>
+            <path d="M 46 38 Q 116 22 186 38" stroke="#aaddff" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <path d="M 46 62 Q 116 76 186 62" stroke="#aaddff" stroke-width="1" fill="none" opacity="0.3"/>
+            <circle cx="44" cy="50" r="9" fill="#bbddf5" opacity="0.9"/><circle cx="42" cy="48" r="3.5" fill="#001a44"/>
+            <polygon points="216,50 234,38 237,50 234,62" fill="#1a4488" stroke="#112255" stroke-width="1.5"/>
+            <line x1="44" y1="50" x2="44" y2="70" stroke="#888" stroke-width="1.5"/>
+            <path d="M 32 70 Q 44 82 56 70" fill="none" stroke="#888" stroke-width="1.5"/>
+            <line x1="164" y1="53" x2="164" y2="72" stroke="#888" stroke-width="1.5"/>
+            <path d="M 152 72 Q 164 84 176 72" fill="none" stroke="#888" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Rapala MaxRap 23</div>
+          <div class="lure-spec">23 см · 77 г · Джеркбейт</div>
+          <div class="lure-how">Лучший выбор для луфаря и барракуды по отзывам рыбаков в Эгейском море. Агрессивный быстрый твичинг. На максимальной скорости проводки. Цвет Clown или Blue/Silver.</div>
+          <div class="lure-target"><span class="lt">Луфарь</span><span class="lt">Барракуда</span><span class="lt">Быстрый твичинг</span></div>
+          <div class="lure-shop"><a href="https://rapala.ru/" target="_blank" class="shop-btn-sm rp">Rapala.ru</a><a href="https://www.ozon.ru/brand/rapala-136144343/" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://www.wildberries.ru/catalog/tags/rybolovnye-instrumenty-rapala" target="_blank" class="shop-btn-sm wb">WB</a></div>
+        </div>
+      </div>
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#3a3a3a,#5a5a5a)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <defs><linearGradient id="pg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f0f0f0"/><stop offset="50%" style="stop-color:#c0c0c0"/><stop offset="100%" style="stop-color:#888"/></linearGradient></defs>
+            <path d="M 100 15 Q 135 15 142 52 Q 135 88 120 92 Q 105 88 98 52 Q 105 15 100 15 Z" fill="url(#pg)" stroke="#888" stroke-width="2"/>
+            <path d="M 108 15 Q 128 15 134 52 Q 128 86 120 90" stroke="#fff" stroke-width="2" fill="none" opacity="0.5"/>
+            <circle cx="120" cy="20" r="4" fill="#888" stroke="#555" stroke-width="1"/>
+            <circle cx="120" cy="90" r="4" fill="#888"/>
+            <line x1="113" y1="93" x2="104" y2="100" stroke="#888" stroke-width="1.5"/>
+            <path d="M 96 100 Q 104 93 112 100" fill="none" stroke="#888" stroke-width="1.5"/>
+            <line x1="127" y1="93" x2="136" y2="100" stroke="#888" stroke-width="1.5"/>
+            <path d="M 128 100 Q 136 93 144 100" fill="none" stroke="#888" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Металлический пилькер / кастинговый джиг</div>
+          <div class="lure-spec">20–60 г · Хром / золото / красный</div>
+          <div class="lure-how">Дальний заброс с мыса или якорной стоянки. Обловить всю толщу воды. Хром — под сардину (луфарь, пеламида). Золото/красный — под ракообразных (групер). Быстрая равномерная проводка.</div>
+          <div class="lure-target"><span class="lt">Луфарь</span><span class="lt">Лакедра</span><span class="lt">Групер</span></div>
+          <div class="lure-shop"><a href="https://www.ozon.ru/category/rybalka-33152/?text=пилькер+морской" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://www.wildberries.ru/catalog/sport/fishing/?search=пилькер" target="_blank" class="shop-btn-sm wb">WB</a><a href="https://www.amazon.com/s?k=metal+cast+jig+spoon+sea+fishing" target="_blank" class="shop-btn-sm amz">Amazon</a></div>
+        </div>
+      </div>
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#cc4400,#ff8800)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <ellipse cx="118" cy="50" rx="105" ry="18" fill="#ff6600" stroke="#ffaa00" stroke-width="2"/>
+            <ellipse cx="118" cy="44" rx="102" ry="10" fill="none" stroke="#ffee88" stroke-width="1.5" opacity="0.5"/>
+            <circle cx="35" cy="50" r="8" fill="#ffccaa" opacity="0.9"/><circle cx="33" cy="48" r="3" fill="#440000"/>
+            <polygon points="223,50 240,39 243,50 240,61" fill="#cc4400" stroke="#882200" stroke-width="1"/>
+            <path d="M 15 37 Q 25 26 35 37" stroke="#3EC9D6" stroke-width="2" fill="none" opacity="0.8"/>
+            <line x1="35" y1="50" x2="35" y2="68" stroke="#888" stroke-width="1.5"/>
+            <path d="M 23 68 Q 35 80 47 68" fill="none" stroke="#888" stroke-width="1.5"/>
+            <line x1="148" y1="50" x2="148" y2="68" stroke="#888" stroke-width="1.5"/>
+            <path d="M 136 68 Q 148 80 160 68" fill="none" stroke="#888" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Топвотер пенсил / поппер</div>
+          <div class="lure-spec">Seaspin Mommotti 180SS · Xorus Patchinko 100</div>
+          <div class="lure-how">Поверхностная атака на рассвете и закате у скальных мысов. Техника «уолкинг-дог» — боковые рывки удилищем при подмотке. Взрыв барракуды или луфаря на поверхности — незабываемо!</div>
+          <div class="lure-target"><span class="lt">Луфарь</span><span class="lt">Барракуда</span><span class="lt">Рассвет/закат</span></div>
+          <div class="lure-shop"><a href="https://www.amazon.com/s?k=seaspin+mommotti+180" target="_blank" class="shop-btn-sm amz">Amazon Mommotti</a><a href="https://www.amazon.com/s?k=xorus+patchinko+100" target="_blank" class="shop-btn-sm amz">Amazon Patchinko</a></div>
+        </div>
+      </div>
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#1a3a1a,#2a5a2a)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <ellipse cx="80" cy="50" rx="55" ry="28" fill="#2a7a2a" stroke="#88cc88" stroke-width="1.5" opacity="0.9"/>
+            <path d="M 30 52 Q 80 36 130 52" stroke="#aaeaaa" stroke-width="1.5" fill="none" opacity="0.5"/>
+            <circle cx="46" cy="48" r="8" fill="#aaeeaa" opacity="0.9"/><circle cx="44" cy="46" r="3" fill="#0a1a0a"/>
+            <line x1="80" y1="78" x2="80" y2="95" stroke="#888" stroke-width="1.5"/>
+            <circle cx="80" cy="72" r="4" fill="#888"/>
+            <line x1="73" y1="95" x2="60" y2="100" stroke="#888" stroke-width="1.5"/>
+            <path d="M 52 100 Q 60 93 68 100" fill="none" stroke="#888" stroke-width="1.5"/>
+            <line x1="87" y1="95" x2="100" y2="100" stroke="#888" stroke-width="1.5"/>
+            <path d="M 92 100 Q 100 93 108 100" fill="none" stroke="#888" stroke-width="1.5"/>
+            <text x="178" y="45" text-anchor="middle" fill="#aaeaaa" font-size="12" font-family="sans-serif">3–5"</text>
+            <text x="178" y="62" text-anchor="middle" fill="#88cc88" font-size="11" font-family="sans-serif">Силикон</text>
+            <text x="178" y="77" text-anchor="middle" fill="#88cc88" font-size="11" font-family="sans-serif">+ джиг-голова</text>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Силикон 3–5" на джиг-головке</div>
+          <div class="lure-spec">Z-Man / Berkley Gulp! · 10–20 г голова</div>
+          <div class="lure-how">Самая уловистая приманка у дна! Berkley Gulp! пахнет натурально — групер не устоит. Заброс к скале → дать упасть на дно → медленные ступеньки. Атака на паузе. Для детей — простая техника!</div>
+          <div class="lure-target"><span class="lt">Групер</span><span class="lt">Зубан</span><span class="lt">Морской окунь</span></div>
+          <div class="lure-shop"><a href="https://www.ozon.ru/category/dzhig-primanki/" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://www.amazon.com/s?k=berkley+gulp+saltwater+shad" target="_blank" class="shop-btn-sm amz">Amazon Gulp!</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lure-panel" id="lures-jig">
+    <div class="lure-grid">
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#1a2a5c,#2a3a7a)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <defs><linearGradient id="jg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#f0f0f0"/><stop offset="40%" style="stop-color:#aaccee"/><stop offset="100%" style="stop-color:#1a4488"/></linearGradient></defs>
+            <path d="M 108 8 Q 138 8 146 52 Q 138 94 122 98 Q 106 94 98 52 Q 106 8 108 8 Z" fill="url(#jg)" stroke="#1a4488" stroke-width="2"/>
+            <path d="M 115 8 Q 132 8 138 52 Q 132 92 122 96" stroke="#fff" stroke-width="2" fill="none" opacity="0.5"/>
+            <circle cx="122" cy="14" r="4" fill="#888" stroke="#555" stroke-width="1"/>
+            <line x1="122" y1="8" x2="122" y2="2" stroke="#888" stroke-width="1.5"/>
+            <circle cx="122" cy="96" r="4" fill="#888"/>
+            <line x1="115" y1="99" x2="106" y2="100" stroke="#888" stroke-width="1.5"/>
+            <path d="M 98 100 Q 106 94 114 100" fill="none" stroke="#888" stroke-width="1.5"/>
+            <line x1="129" y1="99" x2="138" y2="100" stroke="#888" stroke-width="1.5"/>
+            <path d="M 130 100 Q 138 94 146 100" fill="none" stroke="#888" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Тяжёлый вертикальный джиг</div>
+          <div class="lure-spec">Hearty Rise / Jig It · 60–150 г</div>
+          <div class="lure-how">Для лакедры и дентекса на 30–80 м. Опустить на дно → резкие взмахи удилищем вверх → дать упасть. Лакедра атакует на взмахе. Цвета: серебро, розовое золото, сине-белый.</div>
+          <div class="lure-target"><span class="lt">Лакедра</span><span class="lt">Зубан</span><span class="lt">30–80 м</span></div>
+          <div class="lure-shop"><a href="https://www.ozon.ru/category/rybalka-33152/?text=морской+вертикальный+джиг" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://fishing-shop.ru/cat/Casting-Rods" target="_blank" class="shop-btn-sm tb">Hearty Rise</a><a href="https://www.amazon.com/s?k=slow+pitch+jig+150g+amberjack" target="_blank" class="shop-btn-sm amz">Amazon</a></div>
+        </div>
+      </div>
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1a4e)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <defs><linearGradient id="eg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ff88cc"/><stop offset="100%" style="stop-color:#7722aa"/></linearGradient></defs>
+            <ellipse cx="120" cy="46" rx="24" ry="38" fill="url(#eg)" stroke="#cc44aa" stroke-width="1.5"/>
+            <polygon points="106,12 120,4 134,12 129,24 111,24" fill="#ff44aa" stroke="#cc44aa" stroke-width="1"/>
+            <line x1="100" y1="84" x2="86" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="108" y1="87" x2="96" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="116" y1="89" x2="108" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="124" y1="89" x2="122" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="132" y1="87" x2="136" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="140" y1="84" x2="150" y2="99" stroke="#cc44aa" stroke-width="1.5"/>
+            <circle cx="110" cy="40" r="6" fill="#ffbbee" opacity="0.9"/><circle cx="109" cy="39" r="2.5" fill="#1a0a2e"/>
+            <circle cx="130" cy="40" r="6" fill="#ffbbee" opacity="0.9"/><circle cx="129" cy="39" r="2.5" fill="#1a0a2e"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Эгинг-джиг для кальмара</div>
+          <div class="lure-spec">Yo-Zuri Ultra 3D / Yamashita · №2.5–3.5</div>
+          <div class="lure-how">Ночная ловля кальмара. Опустить до дна, 2–3 резких взмаха, пауза 5–10 сек. Кальмар хватает щупальцами за крючки-«ёжик» на паузе. Не подсекать резко — оторвётся!</div>
+          <div class="lure-target"><span class="lt">Кальмар</span><span class="lt">Каракатица</span><span class="lt">Ночью</span></div>
+          <div class="lure-shop"><a href="https://www.ozon.ru/category/rybalka-33152/?text=эгинг+джиг+кальмар" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://yozuri-russia.ru/" target="_blank" class="shop-btn-sm yz">Yo-Zuri RU</a><a href="https://www.amazon.com/s?k=yo-zuri+ultra+3d+squid+jig+eging" target="_blank" class="shop-btn-sm amz">Amazon</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lure-panel" id="lures-eging">
+    <div class="alert info"><strong>🌙 Эгинг — ловля кальмара ночью:</strong> Встаньте на якорь в укрытой бухте после 21:00. Опустите за борт яркий фонарик — через 20–30 минут кальмары подтянутся к свету. Это видно невооружённым глазом! Тогда забрасывайте эгинг-джиг прямо в скопление. Отличное занятие для детей — кальмар меняет цвет, брызгает чернилами, его интересно рассматривать.</div>
+    <div class="lure-grid">
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#1a0a2e,#2d1a4e)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <defs><linearGradient id="eg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ff88cc"/><stop offset="100%" style="stop-color:#7722aa"/></linearGradient></defs>
+            <ellipse cx="120" cy="46" rx="24" ry="38" fill="url(#eg2)" stroke="#cc44aa" stroke-width="1.5"/>
+            <polygon points="106,12 120,4 134,12 129,24 111,24" fill="#ff44aa" stroke="#cc44aa" stroke-width="1"/>
+            <line x1="100" y1="84" x2="86" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="108" y1="87" x2="96" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="116" y1="89" x2="108" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="124" y1="89" x2="122" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="132" y1="87" x2="136" y2="100" stroke="#cc44aa" stroke-width="1.5"/>
+            <line x1="140" y1="84" x2="150" y2="99" stroke="#cc44aa" stroke-width="1.5"/>
+            <circle cx="110" cy="40" r="6" fill="#ffbbee" opacity="0.9"/><circle cx="109" cy="39" r="2.5" fill="#1a0a2e"/>
+            <circle cx="130" cy="40" r="6" fill="#ffbbee" opacity="0.9"/><circle cx="129" cy="39" r="2.5" fill="#1a0a2e"/>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Yo-Zuri Ultra 3D Cloth M2</div>
+          <div class="lure-spec">№2.5 (10г) / №3.0 (15г) / №3.5 (20г)</div>
+          <div class="lure-how">Тканевое покрытие создаёт натуральную текстуру. Медленное падение (1 м/сек) — кальмар атакует при погружении. Начните с №3.0 — универсальный размер для Эгейского моря.</div>
+          <div class="lure-target"><span class="lt">Кальмар</span><span class="lt">Каракатица</span></div>
+          <div class="lure-shop"><a href="https://yozuri-russia.ru/" target="_blank" class="shop-btn-sm yz">Yo-Zuri RU</a><a href="https://www.ozon.ru/category/rybalka-33152/?text=эгинг+yo-zuri" target="_blank" class="shop-btn-sm ozon">Ozon</a></div>
+        </div>
+      </div>
+      <div class="lure-card">
+        <div class="lure-card-img" style="background:linear-gradient(135deg,#0a1a3a,#1a3a5c)">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg" width="200" height="80">
+            <circle cx="80" cy="50" r="24" fill="none" stroke="#3EC9D6" stroke-width="2" stroke-dasharray="4 3" opacity="0.8"/>
+            <circle cx="80" cy="50" r="15" fill="#0d3d52" stroke="#3EC9D6" stroke-width="1"/>
+            <text x="80" y="55" text-anchor="middle" fill="#3EC9D6" font-size="13" font-weight="700" font-family="sans-serif">💡</text>
+            <text x="160" y="35" fill="#3EC9D6" font-size="12" font-family="sans-serif">Фонарь</text>
+            <text x="160" y="50" fill="#3EC9D6" font-size="12" font-family="sans-serif">в воду</text>
+            <line x1="104" y1="50" x2="135" y2="42" stroke="#3EC9D6" stroke-width="1" stroke-dasharray="3 2"/>
+            <text x="160" y="68" fill="#88ddff" font-size="11" font-family="sans-serif">кальмары</text>
+            <text x="160" y="82" fill="#88ddff" font-size="11" font-family="sans-serif">идут на свет</text>
+          </svg>
+        </div>
+        <div class="lure-info">
+          <div class="lure-name">Подводный фонарь (тизер)</div>
+          <div class="lure-spec">Зелёный или белый · 50–100 м шнура</div>
+          <div class="lure-how">Главный секрет греческой ночной рыбалки! Фонарь опустить на 2–5 м глубины за кормой. Через 20–30 мин кальмары собираются стаями. Затем эгинг-джиг прямо в скопление.</div>
+          <div class="lure-target"><span class="lt">Кальмар ×10</span><span class="lt">Ночью</span></div>
+          <div class="lure-shop"><a href="https://www.ozon.ru/category/rybalka-33152/?text=подводный+фонарь+рыбалка" target="_blank" class="shop-btn-sm ozon">Ozon</a><a href="https://www.amazon.com/s?k=underwater+fishing+light+squid" target="_blank" class="shop-btn-sm amz">Amazon</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tips-grid" style="margin-top:32px">
+    <div class="tip"><div class="tip-icon">⏰</div><div class="tip-title">Расписание клёва</div><div class="tip-text">05:30–08:00 рассвет — луфарь, пеламида. 18:00–21:00 закат — барракуда, луфарь. После 21:00 — кальмар. Остальное время — джиг у дна.</div></div>
+    <div class="tip"><div class="tip-icon">🦅</div><div class="tip-title">Птицы = рыба</div><div class="tip-text">Кружащие чайки над водой — там стая пеламиды или луфаря. Немедленно разворачивайте яхту и начинайте троллинг или кидайте пилькер!</div></div>
+    <div class="tip"><div class="tip-icon">🌬</div><div class="tip-title">Мельтеми помогает</div><div class="tip-text">В ветреную погоду луфарь активнее — волны создают суматоху, где легче охотиться. Держитесь у защищённых берегов и ловите на наветренной стороне мысов.</div></div>
+    <div class="tip"><div class="tip-icon">🏪</div><div class="tip-title">Местные магазины</div><div class="tip-text">ΔΟΛΩΜΑ (Долома) — рыболовный магазин. Есть на Эгине, Поросе, в Наксосе. Там скажут, что сейчас клюёт. Продавцы — лучший источник актуальной информации!</div></div>
+    <div class="tip"><div class="tip-icon">🍳</div><div class="tip-title">Таверна готовит улов</div><div class="tip-text">Принесите улов в таверну — во многих бухтах за символическую плату (~2–3€) приготовят вашу рыбу. Незабываемый ужин с собственным уловом!</div></div>
+    <div class="tip"><div class="tip-icon">👦</div><div class="tip-title">Детям рекомендуем</div><div class="tip-text">Кальмар ночью (простая техника, зрелищно), морской окунь в гавани с поплавком, троллинг на переходе. Дайте ребёнку удержать удилище при поклёвке — это на всю жизнь!</div></div>
+  </div>
+
 </div>
 </section>
+
 
 <footer>
   Семейный яхтинг · <strong>18 июля — 2 августа</strong> · Греция<br>
@@ -927,6 +1748,14 @@ window.addEventListener('scroll',()=>{
   sections.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});
   navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
 },{passive:true});
+
+
+function showLures(el, id) {
+  document.querySelectorAll('.lure-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.lmtab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('lures-'+id).classList.add('active');
+  el.classList.add('active');
+}
 
 loadState();
 updateProgress();

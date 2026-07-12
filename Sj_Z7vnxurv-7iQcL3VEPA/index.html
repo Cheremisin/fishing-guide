@@ -454,6 +454,48 @@ footer strong{color:var(--aqua);}
     .prov-table th,.prov-table td{padding:8px 9px;}
   }
 
+
+  /* TROLLING ANALYSIS */
+  .troll-intro{background:linear-gradient(135deg,rgba(13,79,108,.07),rgba(62,201,214,.04));border:1px solid rgba(13,79,108,.18);border-radius:16px;padding:22px 26px;margin-bottom:28px;}
+  .troll-intro-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--sea);margin-bottom:12px;}
+  .relief-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;}
+  .relief-item{background:#fff;border-radius:10px;padding:13px 15px;}
+  .relief-icon{font-size:20px;margin-bottom:6px;}
+  .relief-name{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--deep);margin-bottom:4px;}
+  .relief-text{font-size:12px;color:var(--muted);line-height:1.45;}
+
+  .troll-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);margin-bottom:10px;}
+  .troll-table th{background:var(--deep);color:#fff;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:10px 12px;text-align:left;}
+  .troll-table td{padding:12px;font-size:12.8px;border-bottom:1px solid rgba(0,0,0,.06);vertical-align:top;line-height:1.5;}
+  .troll-table tr:last-child td{border-bottom:none;}
+  .troll-table tr:nth-child(even){background:rgba(13,79,108,.02);}
+  .tspot-name{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--deep);font-size:13px;display:block;margin-bottom:3px;}
+  .tspot-coord{font-family:'Montserrat',sans-serif;font-size:10.5px;color:var(--teal);font-weight:700;}
+  .detour{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+  .detour.zero{background:rgba(46,125,82,.13);color:var(--green);}
+  .detour.small{background:rgba(245,166,35,.18);color:#7a4f00;}
+  .detour.big{background:rgba(200,86,42,.13);color:var(--rust);}
+
+  .honest-box{background:rgba(200,86,42,.06);border:1px solid rgba(200,86,42,.25);border-radius:14px;padding:20px 24px;margin:24px 0;}
+  .honest-title{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--rust);margin-bottom:10px;}
+  .honest-text{font-size:13.5px;line-height:1.65;color:var(--text);}
+  .honest-text p{margin-bottom:10px;}
+  .honest-text p:last-child{margin-bottom:0;}
+  .honest-text b{font-family:'Montserrat',sans-serif;}
+
+  .wreck-card{background:linear-gradient(135deg,#0d2d40,#08303F);color:#fff;border-radius:16px;padding:22px 26px;margin:24px 0;}
+  .wreck-title{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;margin-bottom:4px;color:var(--aqua);}
+  .wreck-sub{font-size:12.5px;opacity:.75;margin-bottom:14px;font-family:'Montserrat',sans-serif;}
+  .wreck-text{font-size:13.5px;line-height:1.6;opacity:.95;margin-bottom:14px;}
+  .wreck-links{display:flex;flex-wrap:wrap;gap:7px;}
+  .wreck-btn{display:inline-flex;padding:6px 12px;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:700;text-decoration:none;background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.2);}
+  .wreck-btn:hover{background:rgba(255,255,255,.22);text-decoration:none;}
+
+  @media(max-width:700px){
+    .troll-table{font-size:11px;}
+    .troll-table th,.troll-table td{padding:8px 8px;}
+  }
+
 </style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -473,6 +515,7 @@ footer strong{color:var(--aqua);}
   <a href="#fish" onclick="setActive(this)">🐟 Рыбы</a>
   <a href="#lures" onclick="setActive(this)">🎣 Приманки</a>
   <a href="#spots" onclick="setActive(this)">📍 Места ловли</a>
+  <a href="#trolling" onclick="setActive(this)">🎯 Троллинг: разбор</a>
   <a href="#shops" onclick="setActive(this)">🛒 Магазины</a>
 </nav>
 
@@ -1170,6 +1213,7 @@ footer strong{color:var(--aqua);}
     <div class="mtab" onclick="showMapRoute(this,'w1')">⛵ Неделя 1 · Сароник</div>
     <div class="mtab" onclick="showMapRoute(this,'w2')">⛵ Неделя 2 · Киклады</div>
     <div class="mtab" onclick="showMapRoute(this,'fish')">🎣 Места ловли</div>
+    <div class="mtab" onclick="showMapRoute(this,'sights')">🏛 Что посмотреть</div>
   </div>
 
   <div id="map"></div>
@@ -1179,6 +1223,7 @@ footer strong{color:var(--aqua);}
     <div class="legend-item"><span class="legend-line" style="background:#9b59b6"></span> Неделя 2 · монохул (Западные Киклады)</div>
     <div class="legend-item"><span class="legend-dot" style="background:#C8562A"></span> База — марина Алимос</div>
     <div class="legend-item"><span class="legend-dot" style="background:#2E7D52"></span> Рыболовное место</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#F5A623"></span> Достопримечательность на суше</div>
   </div>
 
   <div class="alert info" style="margin-top:20px">
@@ -2523,6 +2568,142 @@ footer strong{color:var(--aqua);}
 </div>
 </section>
 
+
+<section id="trolling">
+<div class="container">
+  <div class="sec-eye">Аналитика</div>
+  <h2 class="sec-h2">Где ловить троллингом на переходах</h2>
+  <p class="sec-sub">Разбор по рельефу дна и течениям: где отклониться от прямого курса, а где рыба сама выйдет на вас.</p>
+
+  <div class="troll-intro">
+    <div class="troll-intro-title">📐 Как читать рельеф: четыре структуры, которые собирают рыбу</div>
+    <div class="relief-grid">
+      <div class="relief-item">
+        <div class="relief-icon">⛰</div>
+        <div class="relief-name">Банки и подводные горки</div>
+        <div class="relief-text">Изолированные возвышенности. Течение обтекает их снизу вверх, поднимает планктон — приходит малёк, за ним хищник. Ключевой объект для сериолы и зубана.</div>
+      </div>
+      <div class="relief-item">
+        <div class="relief-icon">📉</div>
+        <div class="relief-name">Свалы глубин</div>
+        <div class="relief-text">Резкий перепад — например, с 40 м на 90 м. Пелагический хищник патрулирует вдоль свала, как по дороге. <strong>Троллинг ведём вдоль изобаты, а не поперёк.</strong></div>
+      </div>
+      <div class="relief-item">
+        <div class="relief-icon">🗿</div>
+        <div class="relief-name">Мысы и проливы</div>
+        <div class="relief-text">Сужение = ускорение течения. Малька выносит потоком, хищник ждёт на выходе. Самая надёжная структура на нашем маршруте.</div>
+      </div>
+      <div class="relief-item">
+        <div class="relief-icon">🚢</div>
+        <div class="relief-name">Затонувшие объекты</div>
+        <div class="relief-text">Искусственный риф: укрытие для малька, столовая для хищника. В Эгейском море их много — часть отмечена на Navionics.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="honest-box">
+    <div class="honest-title">🎯 Честно о том, что можно и чего нельзя найти в открытых источниках</div>
+    <div class="honest-text">
+      <p><b>Чего нет:</b> точных GPS-марок банок в Сароническом заливе и Кикладах в открытом доступе не существует. Греческие рыбаки их не публикуют — это ровно то знание, которое не отдают. Сервисы вроде Fishbrain показывают уловы, но точки размыты и требуют подписки.</p>
+      <p><b>Что есть и работает:</b> батиметрия. У вас на борту плоттер с картой Navionics — это и есть ваш главный источник. Ищите на карте <b>изобаты 30–70 м рядом со скальным берегом</b>, изолированные пятна мелководья посреди глубины, резкие свалы. Всё, что перечислено ниже — это структуры, читаемые по карте и подтверждённые общей логикой + отчётами греческих рыбаков.</p>
+      <p><b>И главное:</b> никакая карта не побьёт <b>птиц над водой</b>. Кружащая и пикирующая стая чаек — это «котёл», там пеламида или малый тунец бьют малька прямо сейчас. Увидели — разворачивайте яхту немедленно, это точнее любых координат.</p>
+    </div>
+  </div>
+
+  <div class="prov-group-title">🗺 Точки на переходах — неделя 1 (Саронический залив)</div>
+  <table class="troll-table">
+    <tr><th style="width:26%">Место</th><th style="width:13%">Отклонение</th><th>Что там по рельефу и как ловить</th></tr>
+    <tr>
+      <td><span class="tspot-name">о. Флевес</span><span class="tspot-coord">37.766, 23.755</span></td>
+      <td><span class="detour zero">0 миль</span><br><span style="font-size:11px;color:var(--muted)">прямо по курсу</span></td>
+      <td>Первый островок на выходе из Алимоса. Скальный берег с резким свалом, вокруг течение из залива. <strong>Проходите не по прямой на Эгину, а обогните остров с юга, вдоль свала.</strong> Приманки за 40–50 м. Утренний выход — лучшее время.</td>
+    </tr>
+    <tr>
+      <td><span class="tspot-name">Мыс Сунион / о. Патроклос</span><span class="tspot-coord">37.656, 24.014</span></td>
+      <td><span class="detour small">+6–8 миль</span><br><span style="font-size:11px;color:var(--muted)">если идёте на юг</span></td>
+      <td>Классическая структура: выступающий мыс + скальный островок Патроклос + свал. Течение огибает мыс, малька прижимает к скалам. Работает по барракуде и пеламиде. <strong>Бонус: обед на якоре под храмом Посейдона</strong> — отклонение окупается дважды.</td>
+    </tr>
+    <tr>
+      <td><span class="tspot-name">Пролив Порос — материк</span><span class="tspot-coord">37.500, 23.450</span></td>
+      <td><span class="detour zero">0 миль</span><br><span style="font-size:11px;color:var(--muted)">на маршруте</span></td>
+      <td>Узкое горло, вода гоняется туда-сюда, скорость течения максимальная в заливе. Классика по луфарю и лаврaку. Ловить <strong>на рассвете и в последний час перед закатом</strong> — днём пусто. Спиннинг работает лучше троллинга: пролив тесный.</td>
+    </tr>
+    <tr>
+      <td><span class="tspot-name">Пролив Гидра — Докос</span><span class="tspot-coord">37.338, 23.325</span></td>
+      <td><span class="detour zero">0 миль</span><br><span style="font-size:11px;color:var(--muted)">на маршруте</span></td>
+      <td>Глубокий пролив между островами, свалы с обеих сторон уходят за 100 м. Течение сильное. Лучшее место Сароники под <strong>сериолу и глубокий троллинг</strong> (Rapala CD-18). Ведите вдоль южного берега Докоса по изобате 40–60 м.</td>
+    </tr>
+    <tr>
+      <td><span class="tspot-name">Юго-запад Эгины (о. Мони)</span><span class="tspot-coord">37.703, 23.430</span></td>
+      <td><span class="detour zero">0 миль</span><br><span style="font-size:11px;color:var(--muted)">стоянка</span></td>
+      <td>Не троллинг, а джиг и рокфишинг с якоря. Скальное дно, укрытия, минимум прессинга. Групер и каменный окунь на силикон у самого дна. Вечером — сабики на ставриду с борта.</td>
+    </tr>
+  </table>
+
+  <div class="prov-group-title">🗺 Точки на переходах — неделя 2 (Киклады)</div>
+  <table class="troll-table">
+    <tr><th style="width:26%">Место</th><th style="width:13%">Отклонение</th><th>Что там по рельефу и как ловить</th></tr>
+    <tr>
+      <td><span class="tspot-name">⭐ Пролив Кеи (Kea Channel)</span><span class="tspot-coord">37.660, 24.210</span></td>
+      <td><span class="detour zero">0 миль</span><br><span style="font-size:11px;color:var(--muted)">обязательно по пути</span></td>
+      <td><strong>Главная точка всего маршрута.</strong> Пролив между Макронисосом и Кеей, у самого мыса Сунион. Классический бутылочный горлышко: течение из Саронического залива в открытый Эгей разгоняется, глубины скачут с 60 до 130 м. Малька несёт потоком, пеламида и малый тунец пасутся здесь стаями. <strong>Тяните приманки весь пролив, не сворачивая. Скорость 6–8 узлов, Yo-Zuri Bonita или Laser Pro за 40 м.</strong></td>
+    </tr>
+    <tr>
+      <td><span class="tspot-name">Мыс Тамелос (юг Кеи)</span><span class="tspot-coord">37.540, 24.290</span></td>
+      <td><span class="detour small">+4–5 миль</span></td>
+      <td>Южная оконечность Кеи — выступающий мыс на стыке двух водных масс. Скальный свал, течение. Луфарь и сериола. Отклонение небольшое, если идёте с Кеи на Китнос.</td>
+    </tr>
+    <tr>
+      <td><span class="tspot-name">Северо-запад Китноса</span><span class="tspot-coord">37.475, 24.395</span></td>
+      <td><span class="detour zero">0 миль</span><br><span style="font-size:11px;color:var(--muted)">на подходе</span></td>
+      <td>Свалы 20–50 м вдоль скального берега. Вертикальный джиг по зубану на рассвете, пока не пришёл ветер. Хорошо совмещается с ночёвкой в Мерихасе.</td>
+    </tr>
+    <tr>
+      <td><span class="tspot-name">Пролив Кея — Китнос</span><span class="tspot-coord">37.560, 24.360</span></td>
+      <td><span class="detour zero">0 миль</span><br><span style="font-size:11px;color:var(--muted)">на маршруте</span></td>
+      <td>Второй по значимости пролив маршрута. Течение, свалы, открытая вода. Тяните троллинг весь переход — это ваш «рабочий» участок между двумя стоянками.</td>
+    </tr>
+    <tr>
+      <td><span class="tspot-name">Юг Сироса, мыс Вигла</span><span class="tspot-coord">37.360, 24.920</span></td>
+      <td><span class="detour small">+3–4 мили</span></td>
+      <td>Скальные банки к югу от острова, изолированные возвышенности на 30–60 м. Лучшая структура под <strong>сериолу и зубана</strong> на всём кикладском отрезке. Ищите по плоттеру пики, вставайте в дрейф, работайте вертикальным джигом 80–150 г.</td>
+    </tr>
+    <tr>
+      <td><span class="tspot-name">Проход Серифос — Китнос</span><span class="tspot-coord">37.300, 24.470</span></td>
+      <td><span class="detour zero">0 миль</span><br><span style="font-size:11px;color:var(--muted)">возвратный переход</span></td>
+      <td>Длинный открытый переход в среду — <strong>полный день троллинга</strong>. Ведите по изобате 50–80 м вдоль восточных берегов. Смотрите на птиц: в открытой воде «котлы» видно за милю.</td>
+    </tr>
+  </table>
+
+  <div class="wreck-card">
+    <div class="wreck-title">🚢 HMHS Britannic — систершип «Титаника» под килем</div>
+    <div class="wreck-sub">Пролив Кеи · 37°42′N, 24°17′E · глубина ~120 м</div>
+    <div class="wreck-text">
+      Когда будете идти через пролив Кеи, вы буквально пройдёте над самым большим целым пассажирским лайнером на дне мирового океана. «Британник» — младшая сестра «Титаника», работал госпитальным судном, подорвался на мине 21 ноября 1916 года и затонул за 55 минут. Спасли 1036 человек из 1066 — первыми к месту подошли <strong>рыбаки с Кеи на своих каиках</strong>. Обнаружил его Жак Кусто в 1975-м.<br><br>
+      Ловить над ним смысла нет — 120 м слишком глубоко для троллинга. Но детям показать точку на плоттере стоит: под вами лежит корабль длиной 269 метров. Погружения к нему — только технические дайверы с тримиксом и разрешением властей: это военное захоронение.
+    </div>
+    <div class="wreck-links">
+      <a class="wreck-btn" href="https://maps.google.com/?q=37.7014,24.2839" target="_blank">📍 Точка на карте</a>
+      <a class="wreck-btn" href="https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D0%B8%D0%BA" target="_blank">Wikipedia</a>
+    </div>
+  </div>
+
+  <div class="honest-box">
+    <div class="honest-title">⚠️ Поправка к ожиданиям: луфарь в Саронике — не гарантия</div>
+    <div class="honest-text">
+      <p>В первых версиях гида луфарь был указан как «очень распространённый». Проверил по греческим источникам — <b>картина сложнее.</b> Греческие рыбаки-подводники прямо пишут, что встречи с луфарём <b>в Сароническом заливе довольно редки</b>, а надёжные места — это Эвбейский залив, южная Арголида и Ионическое море. То есть на луфаря в Саронике рассчитывать можно, но <b>строить на нём план не стоит</b>.</p>
+      <p><b>Что действительно надёжно в июле на нашем маршруте:</b> пеламида и малый тунец в проливе Кеи (это ваша основная рыба), барракуда у скальных мысов на закате, кальмар ночью на якоре, ставрида на сабики под фонарём. Групер и зубан — при работе джигом у дна, но это требует терпения.</p>
+      <p><b>Про цвет приманок:</b> греки для луфаря ставят в первую очередь <b>белый</b> в любом типе приманки, затем реалистичное серебро. Не розовый и не кислотный — это работает по пеламиде, а по луфарю первым идёт белый.</p>
+    </div>
+  </div>
+
+  <div class="alert success">
+    <strong>📋 Практический вывод, если совсем коротко:</strong> тяните троллинг на <strong>каждом</strong> переходе, это ничего не стоит. Обязательно отработайте <strong>пролив Кеи</strong> — это единственная точка, ради которой стоит подстроить время выхода (быть там утром). Заложите <strong>+6–8 миль на мыс Сунион</strong> — там и рыба, и храм Посейдона. Всё остальное — работайте по плоттеру: изобата 30–70 м вдоль скального берега, и смотрите на птиц.
+  </div>
+</div>
+</section>
+
+
 <section id="shops">
 <div class="container">
   <div class="sec-eye">Снаряжение</div>
@@ -2628,7 +2809,7 @@ function showPlan(el, id){
 }
 
 // ============ MAP ============
-var map, w1Layer, w2Layer, fishLayer;
+var map, w1Layer, w2Layer, fishLayer, sightsLayer;
 
 function initMap(){
   if (typeof L === 'undefined') return;
@@ -2723,6 +2904,32 @@ function initMap(){
       .addTo(fishLayer);
   });
 
+
+  // ---- LAND SIGHTS ----
+  var sightPoints = [
+    {c:[37.754,23.533], n:'Храм Афайи', d:'Дорический храм 500 г. до н.э. на сосновом холме. Часть «священного треугольника» с Парфеноном и Сунионом.', a:'Якорь в Айя-Марина, или порт Эгины + такси 15 мин.'},
+    {c:[37.703,23.430], n:'о. Мони — олени', d:'Необитаемый заповедник: олени, павлины, козы подходят к людям. Снорклинг у скал.', a:'Якорь в бухте, на берег на динги.'},
+    {c:[37.596,23.079], n:'Театр Эпидавра', d:'ЮНЕСКО. Идеальная акустика — монету слышно на 55-м ряду. В июле вечерние античные спектакли.', a:'Якорь в Палеа-Эпидаврос + такси 15 мин.'},
+    {c:[37.350,23.466], n:'Гидра — город без машин', d:'Автомобили запрещены полностью: только ослики и лодки. Каменные особняки XVIII века.', a:'Швартовка в гавани (тесно!) или якорь в Мандраки.'},
+    {c:[37.498,23.458], n:'Порос — Русская бухта', d:'Остатки российской военно-морской базы XIX века. Рядом Love Bay — крошечная бухта в соснах.', a:'Швартовка на набережной или якорь в бухте.'},
+    {c:[37.255,23.157], n:'Спецес — Зогерия', d:'Красивейшая бухта Сароники. Старая гавань: верфи, где до сих пор строят деревянные лодки.', a:'Якорь в Зогерии или швартовка в Старой гавани.'},
+    {c:[37.650,24.025], n:'Храм Посейдона (Сунион)', d:'444 г. до н.э. Белый мрамор на обрыве. Лорд Байрон вырезал имя на колонне. Ночью подсвечен.', a:'Якорь прямо в бухте под храмом.'},
+    {c:[37.435,24.383], n:'⭐ Коса Колона (Китнос)', d:'Песчаная коса между двумя морями — купание с обеих сторон одновременно. Лучшая якорная Эгеиды.', a:'Якорь с подветренной стороны косы.'},
+    {c:[37.436,24.432], n:'Горячие источники Лутра', d:'Термальная вода 38–52°C выходит на пляже и стекает в море. Бесплатно, круглосуточно.', a:'Швартовка в гавани Лутры, 200 м пешком.'},
+    {c:[37.441,24.941], n:'Эрмуполис (Сирос)', d:'Столица Киклад: мраморная площадь Мяули, оперный театр Аполлона — копия Ла Скала.', a:'Швартовка в главном порту.'},
+    {c:[37.155,24.505], n:'Хора Серифоса', d:'Белый город на отвесной скале, 200 м над морем. Венецианская крепость. Лучший закат маршрута.', a:'Ливади + автобус 10 мин или пешком 45 мин.'},
+    {c:[37.663,24.318], n:'Лев Кеи', d:'Архаичная фигура VI в. до н.э., вырезана в скале, 9 м длиной, с загадочной улыбкой.', a:'Швартовка в Вуркари, такси в Иулиду + 15 мин пешком.'},
+    {c:[37.9715,23.7267], n:'Акрополь (Афины)', d:'В день пересадки 25 июля есть окно 6–7 часов. Успеваете Акрополь + музей + обед в Плаке.', a:'Такси от Алимоса ~25 мин.'},
+    {c:[37.7014,24.2839], n:'🚢 Британник (под водой)', d:'Систершип «Титаника», 269 м, лежит на 120 м. Крупнейший целый лайнер на дне мирового океана.', a:'Проходите прямо над ним в проливе Кеи.'}
+  ];
+
+  sightsLayer = L.layerGroup();
+  sightPoints.forEach(function(p){
+    L.marker(p.c, {icon:dot('#F5A623', 13)})
+      .bindPopup('<b>'+p.n+'</b><br>'+p.d+'<span class="popup-meta">⚓ '+p.a+'</span>')
+      .addTo(sightsLayer);
+  });
+
   w1Layer.addTo(map);
   w2Layer.addTo(map);
 }
@@ -2731,12 +2938,13 @@ function showMapRoute(el, which){
   document.querySelectorAll('.mtab').forEach(function(t){t.classList.remove('active');});
   el.classList.add('active');
   if(!map) return;
-  [w1Layer, w2Layer, fishLayer].forEach(function(l){ if(l && map.hasLayer(l)) map.removeLayer(l); });
+  [w1Layer, w2Layer, fishLayer, sightsLayer].forEach(function(l){ if(l && map.hasLayer(l)) map.removeLayer(l); });
 
   if(which==='both'){ w1Layer.addTo(map); w2Layer.addTo(map); map.setView([37.55,24.05], 8); }
   else if(which==='w1'){ w1Layer.addTo(map); map.setView([37.60,23.45], 9); }
   else if(which==='w2'){ w2Layer.addTo(map); map.setView([37.55,24.30], 9); }
   else if(which==='fish'){ fishLayer.addTo(map); map.setView([37.55,24.05], 8); }
+  else if(which==='sights'){ sightsLayer.addTo(map); map.setView([37.60,24.00], 8); }
 }
 
 if(document.readyState==='loading'){

@@ -309,6 +309,33 @@ footer strong{color:var(--aqua);}
     .spots-table th,.spots-table td{padding:8px 8px;}
   }
 
+
+  /* SIGHTS */
+  .sights-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;}
+  .sfilter{padding:8px 18px;border-radius:20px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all .2s;background:var(--sand);color:var(--deep);}
+  .sfilter.active{background:var(--sea);color:#fff;}
+  .sights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;}
+  .sight-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.05);display:flex;flex-direction:column;}
+  .sight-card.hidden{display:none;}
+  .sight-photo-wrap{position:relative;height:180px;overflow:hidden;background:#1a2a3a;}
+  .sight-photo{width:100%;height:180px;object-fit:cover;display:block;}
+  .sight-fallback{width:100%;height:180px;background:linear-gradient(135deg,#1a4a6a,#0d2d40);display:none;align-items:center;justify-content:center;color:var(--aqua);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;text-align:center;padding:16px;}
+  .sight-badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.65);color:#fff;font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:1px;padding:4px 9px;border-radius:20px;}
+  .sight-badge.w1{background:rgba(26,74,106,.9);}
+  .sight-badge.w2{background:rgba(45,26,92,.9);}
+  .sight-body{padding:16px;flex:1;display:flex;flex-direction:column;}
+  .sight-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:15px;color:var(--deep);margin-bottom:3px;}
+  .sight-loc{font-family:'Montserrat',sans-serif;font-size:11px;color:var(--teal);font-weight:600;margin-bottom:9px;}
+  .sight-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:10px;flex:1;}
+  .sight-access{background:var(--sand);border-radius:8px;padding:9px 11px;margin-bottom:10px;}
+  .sight-access-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--rust);margin-bottom:3px;}
+  .sight-access-text{font-size:12px;color:var(--text);line-height:1.4;}
+  .sight-links{display:flex;flex-wrap:wrap;gap:5px;}
+  .sight-btn{display:inline-flex;padding:5px 10px;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-decoration:none;transition:opacity .15s;}
+  .sight-btn:hover{opacity:.85;text-decoration:none;}
+  .sight-btn.map{background:var(--sea);color:#fff;}
+  .sight-btn.wiki{background:rgba(62,201,214,.15);color:var(--teal);}
+
 </style>
 </head>
 <body>
@@ -317,6 +344,7 @@ footer strong{color:var(--aqua);}
   <a href="#yachts" onclick="setActive(this)">⛵ Яхты</a>
   <a href="#weather" onclick="setActive(this)">🌊 Погода</a>
   <a href="#routes" onclick="setActive(this)">🗺 Маршруты</a>
+  <a href="#sights" onclick="setActive(this)">🏛 Что посмотреть</a>
   <a href="#checklist" onclick="setActive(this)">✅ Чеклист</a>
   <a href="#fish" onclick="setActive(this)">🐟 Рыбы</a>
   <a href="#lures" onclick="setActive(this)">🎣 Приманки</a>
@@ -329,7 +357,7 @@ footer strong{color:var(--aqua);}
     <div class="eyebrow">Семейный яхтинг · Рыбалка · Лето 2026</div>
     <h1>Греция на яхте:<br><span>Саронический залив & Киклады</span></h1>
     <div class="header-pills">
-      <span class="pill">📅 18 июля — 2 августа</span>
+      <span class="pill">📅 18 июля — 1 августа</span>
       <span class="pill">⛵ Катамаран · Монохул</span>
       <span class="pill">👨‍👩‍👧‍👦 Несколько семей</span>
       <span class="pill">👦 Дети 7–15 лет</span>
@@ -519,7 +547,7 @@ footer strong{color:var(--aqua);}
     <div class="weather-card mono">
       <div class="weather-week-label">⛵ Неделя 2 · Монохул</div>
       <div class="weather-title">Киклады</div>
-      <div class="weather-dates">25 июля — 2 августа · Открытый Эгей</div>
+      <div class="weather-dates">25 июля — 1 августа · Открытый Эгей</div>
       <div class="weather-stats">
         <div class="wstat">
           <div class="wstat-num">32–36°</div>
@@ -588,7 +616,7 @@ footer strong{color:var(--aqua);}
 <div class="container">
   <div class="sec-eye">Маршруты</div>
   <h2 class="sec-h2">Планы по неделям — 3 варианта</h2>
-  <p class="sec-sub">Неделя 1 (катамаран, 18–25 июля) — Саронический залив. Неделя 2 (монохул, 25 июля – 2 августа) — Киклады. Выберите вариант.</p>
+  <p class="sec-sub">Неделя 1 (катамаран, 18–25 июля) — Саронический залив. Неделя 2 (монохул, 25 июля – 1 августа) — Киклады. Выберите вариант.</p>
 
   <div class="route-tabs">
     <div class="rtab active" onclick="showRoute('classic')">⭐ Классика</div>
@@ -666,70 +694,71 @@ footer strong{color:var(--aqua);}
       </div>
     </div>
 
-    <div class="week-badge mono" style="margin-top:28px">⛵ Неделя 2 · Монохул · 25 июля — 2 августа · Киклады</div>
+    <div class="week-badge mono" style="margin-top:28px">⛵ Неделя 2 · Монохул · 25 июля — 1 августа · Западные Киклады</div>
+    <div class="alert warn" style="margin-top:0"><strong>⚠️ Реалистичность маршрута:</strong> возврат в Алимос обязателен <strong>31.07 к 17:00</strong>. Наксос и Малые Киклады — ~100 миль в одну сторону, за 6 ходовых дней туда-обратно только измотаться. Идём кругом по Западным Кикладам.</div>
     <div class="day-list">
+      <div class="day-item">
+        <div class="day-num"><div class="day-date">Пт 25</div><div class="day-name">Посадка</div></div>
+        <div class="day-body">
+          <div class="day-route">Алимос · приём яхты в 17:00</div>
+          <div class="day-info">Брифинг, загрузка провизии, ночь в марине. Ужин в таверне Алимоса.</div>
+          <div class="day-tags"><span class="dtag anchor">Ночь в марине</span></div>
+        </div>
+      </div>
       <div class="day-item">
         <div class="day-num"><div class="day-date">Сб 26</div><div class="day-name">День 1</div></div>
         <div class="day-body">
-          <div class="day-route">Лаврио → Кеа (Тзиа)</div>
-          <div class="day-info">Первый переход в Эгей — 3 часа, умеренный ветер. <a class="place-link" href="https://maps.google.com/?q=37.632,24.316" target="_blank">📍 Кеа (Иулида)</a> — малолюдный, аутентичный. Бухта Вуркари с тавернами прямо у воды. Вечером — рыбалка у мыса. Важно: выйти до 09:00!</div>
-          <div class="day-tags"><span class="dtag dist">30 нм</span><span class="dtag warn">Выход до 09:00</span><span class="dtag fish">Лакедра на джиг</span></div>
+          <div class="day-route">Алимос → мыс Сунион → Кея (Вуркари)</div>
+          <div class="day-info">Обед на якоре под <a class="place-link" href="https://maps.google.com/?q=37.650,24.025" target="_blank">📍 храмом Посейдона</a>. Далее пролив Кеи — главный «коридор» пеламиды, обязательно тянем троллинг. Ночь в <a class="place-link" href="https://maps.google.com/?q=37.663,24.318" target="_blank">📍 Вуркари</a>: уютная гавань, таверны у причала.</div>
+          <div class="day-tags"><span class="dtag dist">35 нм</span><span class="dtag fish">⭐ Коридор пеламиды</span><span class="dtag kid">Храм Посейдона</span></div>
         </div>
       </div>
       <div class="day-item">
         <div class="day-num"><div class="day-date">Вс 27</div><div class="day-name">День 2</div></div>
         <div class="day-body">
-          <div class="day-route">Кеа → Сирос</div>
-          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.441,24.934" target="_blank">📍 Эрмуполис (Сирос)</a> — столица Кикладов, венецианские здания, оперный театр, лучшая лукумадес (пончики с мёдом). Большой удобный порт. Дети исследуют рынок.</div>
-          <div class="day-tags"><span class="dtag dist">35 нм</span><span class="dtag kid">Рынок Сироса</span><span class="dtag anchor">Порт Эрмуполис</span></div>
+          <div class="day-route">Кея → Китнос (Колона + Лутра)</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.435,24.383" target="_blank">📍 Бухта Колона</a> — песчаная коса между двумя морями, одна из лучших якорных Эгеиды, дети купаются с обеих сторон косы. Вечером <a class="place-link" href="https://maps.google.com/?q=37.436,24.432" target="_blank">📍 Лутра</a> — горячие источники прямо на пляже.</div>
+          <div class="day-tags"><span class="dtag dist">18 нм</span><span class="dtag kid">⭐ Коса Колона</span><span class="dtag kid">Горячие источники</span></div>
         </div>
       </div>
       <div class="day-item">
         <div class="day-num"><div class="day-date">Пн 28</div><div class="day-name">День 3</div></div>
         <div class="day-body">
-          <div class="day-route">Сирос → Парос</div>
-          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.085,25.152" target="_blank">📍 Парос</a> — красивый, развитый остров. Пляж Колимбитрес с фантастическими гранитными скалами и чистой водой (дети лазают по скалам). Вечером пролив на Антипарос — кальмары на эгинг ночью!</div>
-          <div class="day-tags"><span class="dtag dist">28 нм</span><span class="dtag kid">Скалы Колимбитрес</span><span class="dtag fish">Кальмар ночью у Антипароса</span></div>
+          <div class="day-route">Китнос → Сирос (Эрмуполис)</div>
+          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.441,24.941" target="_blank">📍 Эрмуполис</a> — столица Киклад: венецианские дома, мраморная площадь Мяули, оперный театр Аполлона. Большой удобный порт, полноценный супермаркет, лукумадес детям.</div>
+          <div class="day-tags"><span class="dtag dist">22 нм</span><span class="dtag anchor">Порт Эрмуполис</span><span class="dtag kid">Театр, рынок</span></div>
         </div>
       </div>
       <div class="day-item">
         <div class="day-num"><div class="day-date">Вт 29</div><div class="day-name">День 4</div></div>
         <div class="day-body">
-          <div class="day-route">Парос → Наксос</div>
-          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.105,25.375" target="_blank">📍 Наксос</a> — самый большой, самый красивый остров Кикладов. Ворота Аполлона (Портара) на рассвете. Южный берег закрыт от Мельтеми — бухта Калладос как зеркало. Супермаркет в городе, свежие овощи и сыр.</div>
-          <div class="day-tags"><span class="dtag dist">18 нм</span><span class="dtag kid">Портара, форт Паллатиа</span><span class="dtag fish">Барракуда, групер</span></div>
+          <div class="day-route">Сирос → Серифос (Ливади)</div>
+          <div class="day-info">Длинный переход на юго-запад — полный день троллинга. <a class="place-link" href="https://maps.google.com/?q=37.146,24.522" target="_blank">📍 Ливади</a> — просторная бухта; Хора на скале как орлиное гнездо, подъём на автобусе. Закат оттуда — лучший на маршруте.</div>
+          <div class="day-tags"><span class="dtag dist">32 нм</span><span class="dtag fish">День троллинга</span><span class="dtag kid">Хора-крепость</span></div>
         </div>
       </div>
       <div class="day-item">
         <div class="day-num"><div class="day-date">Ср 30</div><div class="day-name">День 5</div></div>
         <div class="day-body">
-          <div class="day-route">Наксос → Ираклия (Малые Киклады)</div>
-          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=36.844,25.476" target="_blank">📍 Ираклия</a> — жемчужина! 300 жителей, нет машин, нет туристов. Пещера Святого Иоанна с подземным озером. Лучшие рыбные воды Эгея. Ночью — биолюминесценция при купании!</div>
-          <div class="day-tags"><span class="dtag dist">22 нм</span><span class="dtag kid">Пещера Св. Иоанна</span><span class="dtag fish">⭐ Лучшее место для рыбалки</span></div>
+          <div class="day-route">Серифос → Китнос (Мерихас) или сразу к Эгине</div>
+          <div class="day-info">Возвратный переход на север. По прогнозу: при слабом ветре тянем сразу на <a class="place-link" href="https://maps.google.com/?q=37.703,23.430" target="_blank">📍 Эгину/Мони</a>, при Мельтеми — ночуем в укрытой гавани <a class="place-link" href="https://maps.google.com/?q=37.399,24.400" target="_blank">📍 Мерихас</a> (Китнос).</div>
+          <div class="day-tags"><span class="dtag dist">25–40 нм</span><span class="dtag warn">Решение по прогнозу</span><span class="dtag fish">Троллинг на переходе</span></div>
         </div>
       </div>
       <div class="day-item">
         <div class="day-num"><div class="day-date">Чт 31</div><div class="day-name">День 6</div></div>
         <div class="day-body">
-          <div class="day-route">Ираклия → Схинуса → Кунфунисья</div>
-          <div class="day-info"><a class="place-link" href="https://maps.google.com/?q=36.867,25.516" target="_blank">📍 Схинуса</a> — 250 жителей, виноградники до моря. <a class="place-link" href="https://maps.google.com/?q=36.940,25.607" target="_blank">📍 Кунфунисья</a> — самые фотографируемые пляжи Греции. Бирюзовая лагуна Пано Кунфунисья. Рыбалка весь день — групер, дентекс.</div>
-          <div class="day-tags"><span class="dtag dist">15 нм</span><span class="dtag kid">Лагуна Кунфунисья</span><span class="dtag fish">Групер, зубан (джиг)</span></div>
+          <div class="day-route">→ Алимос · возврат к 17:00</div>
+          <div class="day-info">Утренний переход, последнее купание по пути у о. Флевес. Швартовка в Алимосе <strong>до 17:00 — обязательное условие договора</strong>. Прощальный ужин на борту или в таверне марины.</div>
+          <div class="day-tags"><span class="dtag dist">30–45 нм</span><span class="dtag warn">Возврат до 17:00!</span></div>
         </div>
       </div>
       <div class="day-item">
-        <div class="day-num"><div class="day-date">Пт 1/8</div><div class="day-name">День 7</div></div>
+        <div class="day-num"><div class="day-date">Пт 1/8</div><div class="day-name">Сдача</div></div>
         <div class="day-body">
-          <div class="day-route">Кунфунисья → Амаргос или обратно на Наксос</div>
-          <div class="day-info">По погоде: при слабом ветре — <a class="place-link" href="https://maps.google.com/?q=36.829,25.882" target="_blank">📍 Амаргос</a> (кинофильм «Голубая бездна» снимался здесь). При Мельтеми — остаться на Кунфунисья или вернуться на Наксос. Последняя полноценная ночь.</div>
-          <div class="day-tags"><span class="dtag dist">28–35 нм</span><span class="dtag warn">По прогнозу</span><span class="dtag fish">Открытое море — пеламида</span></div>
-        </div>
-      </div>
-      <div class="day-item">
-        <div class="day-num"><div class="day-date">Сб 2/8</div><div class="day-name">Возврат</div></div>
-        <div class="day-body">
-          <div class="day-route">→ Наксос / Пирей · Сдача яхты</div>
-          <div class="day-info">Ранний выход, возврат яхты. Сдача до 17:00. Рейс или ночь в Афинах.</div>
-          <div class="day-tags"><span class="dtag warn">Ранний выход</span></div>
+          <div class="day-route">Алимос · сдача яхты до 09:00</div>
+          <div class="day-info">Выгрузка вещей, чек-аут, возврат депозита. Трансфер в аэропорт (35–45 мин).</div>
+          <div class="day-tags"><span class="dtag warn">До 09:00</span></div>
         </div>
       </div>
     </div>
@@ -888,6 +917,245 @@ footer strong{color:var(--aqua);}
 </section>
 
 
+
+<section id="sights">
+<div class="container">
+  <div class="sec-eye">Что посмотреть</div>
+  <h2 class="sec-h2">Достопримечательности и красивые места</h2>
+  <p class="sec-sub">Всё, куда можно подойти на яхте или дойти пешком/на такси от якорной стоянки. Фильтр по неделям.</p>
+
+  <div class="sights-filter">
+    <div class="sfilter active" onclick="filterSights(this,'all')">Все</div>
+    <div class="sfilter" onclick="filterSights(this,'w1')">Неделя 1 · Сароник</div>
+    <div class="sfilter" onclick="filterSights(this,'w2')">Неделя 2 · Киклады</div>
+    <div class="sfilter" onclick="filterSights(this,'nature')">🏝 Природа и бухты</div>
+    <div class="sfilter" onclick="filterSights(this,'history')">🏛 История</div>
+  </div>
+
+  <div class="sights-grid">
+
+    <div class="sight-card" data-week="w1" data-type="history">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Temple_of_Aphaea_%28Aegina%29.jpg/640px-Temple_of_Aphaea_%28Aegina%29.jpg" alt="Храм Афайи" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Храм Афайи · Эгина</div>
+        <div class="sight-badge w1">НЕДЕЛЯ 1</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Храм Афайи</div>
+        <div class="sight-loc">📍 Эгина · 37.754, 23.533</div>
+        <div class="sight-desc">Один из лучше всего сохранившихся дорических храмов Греции (500 г. до н.э.), стоит на сосновом холме с видом на весь Саронический залив. Вместе с Парфеноном и храмом Посейдона образует «священный треугольник».</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Якорь в Айя-Марина (бухта прямо под холмом) или в порту Эгины + такси 15 мин.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.754,23.533" target="_blank">На карте</a>
+          <a class="sight-btn wiki" href="https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%B0%D0%BC_%D0%90%D1%84%D0%B0%D0%B9%D0%B8" target="_blank">Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w1" data-type="nature">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Moni_island_Aegina.jpg/640px-Moni_island_Aegina.jpg" alt="Остров Мони" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Остров Мони · необитаемый</div>
+        <div class="sight-badge w1">НЕДЕЛЯ 1</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Остров Мони</div>
+        <div class="sight-loc">📍 у Эгины · 37.703, 23.430</div>
+        <div class="sight-desc">Необитаемый заповедный островок. По берегу свободно ходят олени, павлины и козы — подходят к людям. Кристальная вода, сосны до самой воды, отличный снорклинг у скал. Одно из самых любимых детьми мест Сароники.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Якорь прямо в бухте острова, на берег — на динги. Дневная стоянка, ночевать неудобно.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.703,23.430" target="_blank">На карте</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w1" data-type="history">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Theatre_of_Epidaurus_%28interior%29%2C_Sanctuary_of_Asclepius_at_Epidaurus%2C_Greece_%2814115396652%29.jpg/640px-Theatre_of_Epidaurus_%28interior%29%2C_Sanctuary_of_Asclepius_at_Epidaurus%2C_Greece_%2814115396652%29.jpg" alt="Театр Эпидавра" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Театр Эпидавра · ЮНЕСКО</div>
+        <div class="sight-badge w1">НЕДЕЛЯ 1</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Античный театр Эпидавра</div>
+        <div class="sight-loc">📍 Пелопоннес · 37.596, 23.079</div>
+        <div class="sight-desc">Объект ЮНЕСКО, идеальная акустика: монету, брошенную в центре орхестры, слышно на последнем 55-м ряду. В июле — Афинский фестиваль, вечерние античные постановки под открытым небом. Вмещает 14 000 зрителей.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Якорь в Палеа-Эпидаврос, оттуда такси 15 мин. Билеты на спектакли — бронировать заранее.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.596,23.079" target="_blank">На карте</a>
+          <a class="sight-btn wiki" href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BF%D0%B8%D0%B4%D0%B0%D0%B2%D1%80" target="_blank">Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w1" data-type="nature">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Hydra_Port_-_Greece.jpg/640px-Hydra_Port_-_Greece.jpg" alt="Гидра" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Гидра · остров без машин</div>
+        <div class="sight-badge w1">НЕДЕЛЯ 1</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Город Гидра</div>
+        <div class="sight-loc">📍 Гидра · 37.350, 23.466</div>
+        <div class="sight-desc">Остров, где полностью запрещены автомобили — весь транспорт это ослики и лодки. Амфитеатр каменных особняков XVIII века вокруг подковообразной гавани. Ощущение, что попал на два века назад.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Швартовка в главной гавани (тесно, приходить пораньше) или якорь в бухте Мандраки в 1 км.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.350,23.466" target="_blank">На карте</a>
+          <a class="sight-btn wiki" href="https://ru.wikipedia.org/wiki/%D0%98%D0%B4%D1%80%D0%B0_(%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2)" target="_blank">Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w1" data-type="nature">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Poros_town.jpg/640px-Poros_town.jpg" alt="Порос" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Порос · Русская бухта</div>
+        <div class="sight-badge w1">НЕДЕЛЯ 1</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Порос и «Русская бухта»</div>
+        <div class="sight-loc">📍 Порос · 37.498, 23.458</div>
+        <div class="sight-desc">Город амфитеатром над узким проливом, часовая башня на вершине. Рядом — Русская бухта (Russian Bay), остатки российской военно-морской базы XIX века, и Love Bay: крошечная бухта в соснах, вода как стекло.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Швартовка на городской набережной (вода, топливо) или якорь в Русской бухте / Love Bay.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.498,23.458" target="_blank">На карте</a>
+          <a class="sight-btn wiki" href="https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D1%80%D0%BE%D1%81" target="_blank">Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w1" data-type="nature">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Spetses_Old_Harbour.jpg/640px-Spetses_Old_Harbour.jpg" alt="Спецес" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Спецес · Старая гавань</div>
+        <div class="sight-badge w1">НЕДЕЛЯ 1</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Спецес и бухта Зогерия</div>
+        <div class="sight-loc">📍 Спецес · 37.255, 23.157</div>
+        <div class="sight-desc">Аристократический остров: особняки судовладельцев, конные экипажи, велосипеды вместо машин. Старая гавань — верфи, где до сих пор строят деревянные лодки. Бухта Зогерия — считается красивейшей в Сароническом заливе.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Якорь в Зогерии (сосны, бирюзовая вода, таверна на берегу) или швартовка в Старой гавани.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.255,23.157" target="_blank">На карте</a>
+          <a class="sight-btn wiki" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BF%D0%B5%D1%86%D0%B5%D1%81" target="_blank">Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w2" data-type="history">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Temple_of_Poseidon_at_Sounion.jpg/640px-Temple_of_Poseidon_at_Sounion.jpg" alt="Храм Посейдона" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Храм Посейдона · Сунион</div>
+        <div class="sight-badge w2">НЕДЕЛЯ 2</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Храм Посейдона на мысе Сунион</div>
+        <div class="sight-loc">📍 мыс Сунион · 37.650, 24.025</div>
+        <div class="sight-desc">Белые мраморные колонны на обрыве над морем — 444 г. до н.э. Вид с яхты снизу вверх сильнее, чем с суши. Ночью подсвечен. На одной из колонн вырезал своё имя лорд Байрон.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Якорь прямо в бухте под храмом (защита от северного ветра). Обед на борту с видом.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.650,24.025" target="_blank">На карте</a>
+          <a class="sight-btn wiki" href="https://ru.wikipedia.org/wiki/%D0%A5%D1%80%D0%B0%D0%BC_%D0%9F%D0%BE%D1%81%D0%B5%D0%B9%D0%B4%D0%BE%D0%BD%D0%B0_(%D0%A1%D1%83%D0%BD%D0%B8%D0%BE%D0%BD)" target="_blank">Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w2" data-type="nature">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Kolona_beach_Kythnos.jpg/640px-Kolona_beach_Kythnos.jpg" alt="Коса Колона" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Коса Колона · Китнос</div>
+        <div class="sight-badge w2">НЕДЕЛЯ 2</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Коса Колона ⭐</div>
+        <div class="sight-loc">📍 Китнос · 37.435, 24.383</div>
+        <div class="sight-desc">Узкая песчаная коса соединяет остров Китнос с островком Айос-Лукас — море с обеих сторон, купаться можно одновременно в двух заливах. Считается одной из лучших якорных стоянок всей Эгеиды. Обязательный пункт маршрута.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Якорь с подветренной стороны косы — при Мельтеми с юга, иначе с севера. Песок, держит отлично.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.435,24.383" target="_blank">На карте</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w2" data-type="nature">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Loutra_Kythnos.jpg/640px-Loutra_Kythnos.jpg" alt="Лутра" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Лутра · горячие источники</div>
+        <div class="sight-badge w2">НЕДЕЛЯ 2</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Горячие источники Лутра</div>
+        <div class="sight-loc">📍 Китнос · 37.436, 24.432</div>
+        <div class="sight-desc">Термальная вода (~38–52°C) выходит прямо на пляже и стекает в море — можно лежать в горячем ручье, где он смешивается с морской водой. Детям обычно нравится больше всего на маршруте. Работает круглосуточно и бесплатно.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Швартовка в гавани Лутры (есть вода на причале), источники — 200 м пешком.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.436,24.432" target="_blank">На карте</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w2" data-type="history">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Ermoupoli_Syros_Greece.jpg/640px-Ermoupoli_Syros_Greece.jpg" alt="Эрмуполис" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Эрмуполис · столица Киклад</div>
+        <div class="sight-badge w2">НЕДЕЛЯ 2</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Эрмуполис на Сиросе</div>
+        <div class="sight-loc">📍 Сирос · 37.441, 24.941</div>
+        <div class="sight-desc">Не белёные кубики, а неоклассическая архитектура: мраморная площадь Мяули, ратуша, миниатюрный оперный театр Аполлона — копия Ла Скала. Два холма-близнеца: католический Ано-Сирос и православная Ветрония. Живой город, не туристическая декорация.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Швартовка в главном порту — просторно, есть вода, топливо, супермаркеты.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.441,24.941" target="_blank">На карте</a>
+          <a class="sight-btn wiki" href="https://ru.wikipedia.org/wiki/%D0%AD%D1%80%D0%BC%D1%83%D0%BF%D0%BE%D0%BB%D0%B8%D1%81" target="_blank">Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w2" data-type="history">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Serifos_Chora.jpg/640px-Serifos_Chora.jpg" alt="Хора Серифоса" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Хора Серифоса · на скале</div>
+        <div class="sight-badge w2">НЕДЕЛЯ 2</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Хора Серифоса</div>
+        <div class="sight-loc">📍 Серифос · 37.155, 24.505</div>
+        <div class="sight-desc">Белый город лепится к отвесной скале на высоте 200 м — снизу выглядит как снежная шапка на вершине. Наверху руины венецианской крепости и вид на половину Эгейского моря. Лучший закат маршрута.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Якорь/швартовка в Ливади, наверх — автобус (10 мин) или пешком по старой каменной лестнице (~45 мин).</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.155,24.505" target="_blank">На карте</a>
+          <a class="sight-btn wiki" href="https://ru.wikipedia.org/wiki/%D0%A1%D0%B5%D1%80%D0%B8%D1%84%D0%BE%D1%81" target="_blank">Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sight-card" data-week="w2" data-type="nature">
+      <div class="sight-photo-wrap">
+        <img class="sight-photo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Vourkari_Kea.jpg/640px-Vourkari_Kea.jpg" alt="Вуркари" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="sight-fallback">Вуркари · Кея</div>
+        <div class="sight-badge w2">НЕДЕЛЯ 2</div>
+      </div>
+      <div class="sight-body">
+        <div class="sight-name">Вуркари и Лев Кеи</div>
+        <div class="sight-loc">📍 Кея · 37.663, 24.318</div>
+        <div class="sight-desc">Уютная защищённая гавань с тавернами прямо у воды — любимая стоянка афинских яхтсменов. Рядом, над Иулидой, вырезанный в скале «Лев Кеи» — архаичная фигура VI века до н.э., 9 метров длиной, с загадочной улыбкой.</div>
+        <div class="sight-access"><div class="sight-access-label">Как попасть</div><div class="sight-access-text">Швартовка в Вуркари, до Льва — такси в Иулиду + 15 мин пешком по тропе.</div></div>
+        <div class="sight-links">
+          <a class="sight-btn map" href="https://maps.google.com/?q=37.663,24.318" target="_blank">На карте</a>
+          <a class="sight-btn wiki" href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D0%B0" target="_blank">Wikipedia</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="alert info" style="margin-top:24px">
+    <strong>🏛 Акрополь в день пересадки:</strong> 25 июля катамаран сдаём в 09:00, монохул принимаем в 17:00 — есть окно 6–7 часов. Такси от Алимоса до Акрополя ~25 мин. Успеваем Акрополь + музей Акрополя + обед в Плаке и обратно к брифингу.
+  </div>
+</div>
+</section>
+
+
 <section id="checklist">
 <div class="container">
   <div class="sec-eye">Подготовка</div>
@@ -940,7 +1208,6 @@ footer strong{color:var(--aqua);}
       <div class="checklist-body">
         <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Маска и трубка (на каждого!)</div><div class="check-note">Лучше своя, не брать на яхте</div></div></div>
         <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Ласты (легкие, для детей важны)</div></div></div>
-        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Спасательные жилеты для детей</div><div class="check-note">Уточните размеры у чартерной компании</div></div></div>
         <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Надувной матрас / поплавки</div></div></div>
         <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Подводный фонарик (ночной снорклинг)</div></div></div>
         <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Гермомешок для телефона</div></div></div>
@@ -1021,7 +1288,6 @@ footer strong{color:var(--aqua);}
       </div>
       <div class="checklist-body">
         <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Леерные сетки по всему борту</div><div class="check-note">Для детей — критически важно!</div></div></div>
-        <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Спасательные жилеты нужных размеров</div></div></div>
         <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Тент от солнца над кокпитом (бимини)</div></div></div>
         <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">Трап-лесенка для купания с транца</div></div></div>
         <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><div><div class="check-text">VHF-радио и EPIRB</div></div></div>
@@ -1680,7 +1946,7 @@ footer strong{color:var(--aqua);}
 
 
 <footer>
-  Семейный яхтинг · <strong>18 июля — 2 августа</strong> · Греция<br>
+  Семейный яхтинг · <strong>18 июля — 1 августа</strong> · Греция<br>
   <span style="opacity:.5;font-size:11px;margin-top:6px;display:block">Маршруты и прогнозы носят рекомендательный характер. Всегда проверяйте актуальный прогноз погоды перед выходом. Windy.com · PoseidonSea.gr · HNMS</span>
 </footer>
 
@@ -1734,6 +2000,18 @@ window.addEventListener('scroll',()=>{
   navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
 },{passive:true});
 
+
+
+function filterSights(el, type){
+  document.querySelectorAll('.sfilter').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.sight-card').forEach(c=>{
+    const w = c.getAttribute('data-week');
+    const t = c.getAttribute('data-type');
+    const show = (type==='all') || (w===type) || (t===type);
+    c.classList.toggle('hidden', !show);
+  });
+}
 
 function showLures(el, id) {
   document.querySelectorAll('.lure-panel').forEach(p=>p.classList.remove('active'));

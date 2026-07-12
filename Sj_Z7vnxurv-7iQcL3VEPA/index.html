@@ -542,6 +542,58 @@ footer strong{color:var(--aqua);}
 
   @media(max-width:700px){ .customs-cols{grid-template-columns:1fr;} }
 
+
+  /* ANCHORAGES */
+  .anch-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+  .afilter{padding:8px 16px;border-radius:20px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;cursor:pointer;transition:all .2s;background:var(--sand);color:var(--deep);}
+  .afilter.active{background:var(--sea);color:#fff;}
+  .anch-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px;}
+  .anch-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.05);}
+  .anch-card.hidden{display:none;}
+  .anch-head{padding:13px 16px;color:#fff;}
+  .anch-head.top{background:linear-gradient(135deg,#2E7D52,#1a4a32);}
+  .anch-head.good{background:linear-gradient(135deg,#1a4a6a,#0d2d40);}
+  .anch-head.care{background:linear-gradient(135deg,#8a4a1e,#5c2d0f);}
+  .anch-name-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+  .anch-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;}
+  .anch-coord{font-family:'Montserrat',sans-serif;font-size:10px;opacity:.8;font-weight:600;white-space:nowrap;}
+  .anch-type{font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.75;margin-top:3px;}
+  .anch-body{padding:14px 16px;}
+  .anch-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:12px;}
+  .anch-specs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:11px;}
+  .anch-spec{background:rgba(13,79,108,.05);border-radius:7px;padding:7px 9px;}
+  .anch-spec-l{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--teal);margin-bottom:2px;}
+  .anch-spec-v{font-size:11.5px;color:var(--text);line-height:1.35;}
+  .anch-warn{background:rgba(200,86,42,.09);border-left:3px solid var(--rust);border-radius:0 8px 8px 0;padding:9px 11px;font-size:12px;line-height:1.45;margin-bottom:10px;}
+  .anch-warn b{font-family:'Montserrat',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--rust);display:block;margin-bottom:2px;}
+  .anch-link{display:inline-flex;padding:5px 11px;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;background:var(--sea);color:#fff;text-decoration:none;}
+  .anch-link:hover{opacity:.85;text-decoration:none;}
+
+  /* DINING */
+  .dine-legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:20px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:600;color:var(--muted);}
+  .dine-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;}
+  .dine-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:17px 19px;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .dine-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:3px;}
+  .dine-name{font-family:'Montserrat',sans-serif;font-weight:800;font-size:14.5px;color:var(--deep);}
+  .dine-price{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;padding:3px 8px;border-radius:10px;white-space:nowrap;}
+  .dine-price.cheap{background:rgba(46,125,82,.14);color:var(--green);}
+  .dine-price.mid{background:rgba(245,166,35,.18);color:#7a4f00;}
+  .dine-where{font-family:'Montserrat',sans-serif;font-size:11px;color:var(--teal);font-weight:600;margin-bottom:9px;}
+  .dine-desc{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:10px;}
+  .dine-try{background:var(--sand);border-radius:8px;padding:9px 11px;margin-bottom:10px;font-size:12.5px;line-height:1.45;}
+  .dine-try b{font-family:'Montserrat',sans-serif;font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--rust);display:block;margin-bottom:3px;}
+  .dine-links{display:flex;gap:6px;flex-wrap:wrap;}
+  .dine-btn{display:inline-flex;padding:5px 11px;border-radius:8px;font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-decoration:none;background:rgba(13,79,108,.09);color:var(--sea);}
+  .dine-btn:hover{background:rgba(13,79,108,.16);text-decoration:none;}
+
+  .dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:8px;}
+  .dish{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:11px;padding:13px 15px;}
+  .dish-gr{font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:800;color:var(--deep);margin-bottom:2px;}
+  .dish-ru{font-size:11px;color:var(--teal);font-family:'Montserrat',sans-serif;font-weight:600;margin-bottom:5px;}
+  .dish-d{font-size:12px;color:var(--muted);line-height:1.4;}
+
+  @media(max-width:700px){ .anch-specs{grid-template-columns:1fr;} }
+
 </style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -556,6 +608,8 @@ footer strong{color:var(--aqua);}
   <a href="#plans" onclick="setActive(this)">🌬 Запасные планы</a>
   <a href="#map-section" onclick="setActive(this)">🧭 Карта</a>
   <a href="#sights" onclick="setActive(this)">🏛 Что посмотреть</a>
+  <a href="#anchorages" onclick="setActive(this)">⚓ Стоянки</a>
+  <a href="#dining" onclick="setActive(this)">🍽 Таверны</a>
   <a href="#provisions" onclick="setActive(this)">🛒 Провизия</a>
   <a href="#checklist" onclick="setActive(this)">✅ Чеклист</a>
   <a href="#safety" onclick="setActive(this)">🦺 Безопасность</a>
@@ -1535,14 +1589,17 @@ footer strong{color:var(--aqua);}
 <div class="container">
   <div class="sec-eye">Навигация</div>
   <h2 class="sec-h2">Маршрут на карте</h2>
-  <p class="sec-sub">Обе недели с точками стоянок, дистанциями и рыболовными местами. Кликните маркер для деталей.</p>
+  <p class="sec-sub">Маршруты, запасной план при Мельтеми, якорные стоянки, рыболовные места, достопримечательности и таверны. Кликните маркер для деталей.</p>
 
   <div class="map-tabs">
     <div class="mtab active" onclick="showMapRoute(this,'both')">Обе недели</div>
     <div class="mtab" onclick="showMapRoute(this,'w1')">⛵ Неделя 1 · Сароник</div>
     <div class="mtab" onclick="showMapRoute(this,'w2')">⛵ Неделя 2 · Киклады</div>
     <div class="mtab" onclick="showMapRoute(this,'fish')">🎣 Места ловли</div>
+    <div class="mtab" onclick="showMapRoute(this,'plan_b')">🌬 План Б · Арголида</div>
+    <div class="mtab" onclick="showMapRoute(this,'anchor')">⚓ Стоянки</div>
     <div class="mtab" onclick="showMapRoute(this,'sights')">🏛 Что посмотреть</div>
+    <div class="mtab" onclick="showMapRoute(this,'dine')">🍽 Таверны</div>
   </div>
 
   <div id="map"></div>
@@ -1552,7 +1609,10 @@ footer strong{color:var(--aqua);}
     <div class="legend-item"><span class="legend-line" style="background:#9b59b6"></span> Неделя 2 · монохул (Западные Киклады)</div>
     <div class="legend-item"><span class="legend-dot" style="background:#C8562A"></span> База — марина Алимос</div>
     <div class="legend-item"><span class="legend-dot" style="background:#2E7D52"></span> Рыболовное место</div>
-    <div class="legend-item"><span class="legend-dot" style="background:#F5A623"></span> Достопримечательность на суше</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#F5A623"></span> Достопримечательность</div>
+    <div class="legend-item"><span class="legend-line" style="background:#2E7D52"></span> План Б · Арголида (при Мельтеми)</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#1A8FA0"></span> Якорная стоянка</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#C8562A"></span> Таверна</div>
   </div>
 
   <div class="alert info" style="margin-top:20px">
@@ -1798,6 +1858,480 @@ footer strong{color:var(--aqua);}
   </div>
 </div>
 </section>
+
+
+<section id="anchorages">
+<div class="container">
+  <div class="sec-eye">Стоянки</div>
+  <h2 class="sec-h2">Якорные стоянки и швартовки</h2>
+  <p class="sec-sub">Собрано из лоций, круизных вики и отчётов шкиперов. Указаны грунт, защита от ветра и реальные подводные камни — в прямом и переносном смысле.</p>
+
+  <div class="alert warn">
+    <strong>⚠️ Три правила, которые спасают ночь:</strong> <strong>1)</strong> В июле в порты приходить <strong>до 14:00</strong> — иначе места не будет, особенно на Гидре, Поросе и Спецесе. <strong>2)</strong> Забронировать место в большинстве мест нельзя, работает «кто первый». <strong>3)</strong> На травяном грунте якорь <strong>только кажется</strong> забравшим и вылетает при первом же шквале — <strong>ныряйте и проверяйте глазами</strong>. Это не паранойя, это стандартная практика в Кикладах.
+  </div>
+
+  <div class="anch-filter">
+    <div class="afilter active" onclick="filterAnch(this,'all')">Все</div>
+    <div class="afilter" onclick="filterAnch(this,'sar')">Саронический залив</div>
+    <div class="afilter" onclick="filterAnch(this,'cyc')">Киклады</div>
+    <div class="afilter" onclick="filterAnch(this,'arg')">Арголида (план Б)</div>
+    <div class="afilter" onclick="filterAnch(this,'meltemi')">🌬 Держат Мельтеми</div>
+  </div>
+
+  <div class="anch-grid">
+
+    <div class="anch-card" data-reg="sar" data-melt="no">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Эгина · порт</span><span class="anch-coord">37.748, 23.427</span></div>
+        <div class="anch-type">Швартовка кормой · город</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Первая ночь маршрута. Удобный, хорошо защищённый порт с полной инфраструктурой: супермаркеты, банкоматы, рынок. Знаменитые фисташки.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок/ил, держит хорошо</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая, кроме западных</div></div>
+        </div>
+        <div class="anch-warn"><b>Внимание</b>В сезон забивается. Приходить пораньше или уходить в Пердику.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.748,23.427" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-melt="no">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Пердика (юг Эгины)</span><span class="anch-coord">37.700, 23.463</span></div>
+        <div class="anch-type">Швартовка кормой · рыбацкая деревня</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Куда лучше идти вместо порта Эгины. Тихая гавань, дружелюбный причал, ряд закатных таверн прямо у воды. Отсюда 5 минут до острова Мони.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок, хорошо держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая</div></div>
+        </div>
+        <div class="anch-warn"><b>Совет шкиперов</b>Волна от паромов. Заводите <strong>длинные кормовые концы</strong> — они гасят рывки.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.700,23.463" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-melt="no">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">о. Мони</span><span class="anch-coord">37.703, 23.430</span></div>
+        <div class="anch-type">Якорь · дневная стоянка</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Необитаемый островок: олени, павлины, прозрачная вода с песчаными пятнами. Классика обеденной стоянки и снорклинга. Ночевать неудобно — на ночь уходим в Пердику.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песчаные пятна среди травы</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Глубина</div><div class="anch-spec-v">5–10 м</div></div>
+        </div>
+        <div class="anch-warn"><b>Техника</b>Ищите <strong>именно песчаные пятна</strong> — на траве не заберёт. Вода прозрачная, всё видно сверху.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.703,23.430" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-melt="yes">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Бухта Висти (север Пороса)</span><span class="anch-coord">37.529, 23.437</span></div>
+        <div class="anch-type">Якорь · укрытая бухта</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Жемчужина Пороса и, пожалуй, лучшая якорная Сароники. Тесная бухта в соснах, бирюзовая прозрачная вода, <strong>круговая защита почти от всех ветров</strong>. Тихо и красиво.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Хорошо держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Почти круговая, открыта узко на СВ</div></div>
+        </div>
+        <div class="anch-warn"><b>Как найти</b>Вход <strong>трудно разглядеть</strong> с моря. Ориентируйтесь на островок Висти — он выведет вас во вход.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.529,23.437" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-melt="no">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Русская бухта (Порос)</span><span class="anch-coord">37.512,23.434</span></div>
+        <div class="anch-type">Якорь · обед и купание</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Бывшая российская военно-морская база XIX века, белая церковь на островке Даскалио. Надёжная обеденная стоянка на песке. Рядом Love Bay — крошечная бухта в соснах.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок; есть травяные пятна</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Приём</div><div class="anch-spec-v">Хороший, если обойти траву</div></div>
+        </div>
+        <div class="anch-warn"><b>Опасность</b>В бухте есть <strong>риф</strong>. Заходите внимательно, можно завести конец на скалы.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.512,23.434" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-melt="no">
+      <div class="anch-head care">
+        <div class="anch-name-row"><span class="anch-name">Порос · городская набережная</span><span class="anch-coord">37.498, 23.451</span></div>
+        <div class="anch-type">Швартовка кормой · вода, топливо</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Швартуетесь кормой и выходите прямо в таверну. Вода и топливо на причале — <strong>ключевая точка пополнения</strong> в середине маршрута.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Течение</div><div class="anch-spec-v">Заметное в проливе</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Трафик</div><div class="anch-spec-v">Постоянные паромы</div></div>
+        </div>
+        <div class="anch-warn"><b>Заход</b>Пролив узкий, <strong>течение плюс частые паромы</strong>. Заходите с положительным углом, якорь готовьте заранее, отдавайте уверенно.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.498,23.451" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-melt="no">
+      <div class="anch-head care">
+        <div class="anch-name-row"><span class="anch-name">⚠️ Гидра · гавань</span><span class="anch-coord">37.350, 23.466</span></div>
+        <div class="anch-type">Швартовка · самый сложный порт маршрута</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Красивейшая гавань Греции — и самая нервная. Порт <strong>крошечный</strong>, при сильном ветре встать безопасно почти невозможно.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Мест</div><div class="anch-spec-v">Очень мало</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Приходить</div><div class="anch-spec-v">До 13:00, не позже</div></div>
+        </div>
+        <div class="anch-warn"><b>Главная проблема — якоря</b>Цепи <strong>постоянно перепутываются</strong>. Ваш якорь может выдернуть чужая лодка, поднимая свой. Следить за положением <strong>весь день</strong>. Запасной вариант — бухта Мандраки в 1 км или западный берег острова.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.350,23.466" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-melt="yes">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ о. Докос</span><span class="anch-coord">37.334, 23.331</span></div>
+        <div class="anch-type">Якорь · ночёвка в тишине</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Необитаемый остров. Широкая природная бухта, <strong>отличное укрытие</strong>. Ни зданий, ни огней — только море, холмы и звёзды. Одна из самых запоминающихся ночёвок маршрута, детям точно понравится.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит отлично</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая, в т.ч. от Мельтеми</div></div>
+        </div>
+        <div class="anch-warn"><b>Учтите</b>Никакой инфраструктуры. Всё своё: вода, еда, свет.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.334,23.331" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-melt="no">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Зогерия (Спецес)</span><span class="anch-coord">37.276, 23.121</span></div>
+        <div class="anch-type">Якорь · красивейшая бухта Сароники</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Любимая якорная шкиперов. Сосны до самой воды, изумрудная бухта, таверна на берегу. Отличное купание и снорклинг.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая от северных</div></div>
+        </div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.276,23.121" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-melt="no">
+      <div class="anch-head care">
+        <div class="anch-name-row"><span class="anch-name">Спецес · Старая гавань (Балтиза)</span><span class="anch-coord">37.263, 23.158</span></div>
+        <div class="anch-type">Якорь + концы на берег</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Историческая гавань с верфями, где до сих пор строят деревянные лодки. Атмосферно, но швартовка нетривиальная.</div>
+        <div class="anch-warn"><b>Особенность</b><strong>Причала как такового нет.</strong> Отдаёте якорь и заводите концы на стены, скалы или между ними. Нужна пара крепких рук и динги.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.263,23.158" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-melt="yes">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Сунион (под храмом)</span><span class="anch-coord">37.650, 24.021</span></div>
+        <div class="anch-type">Якорь · обед или ночёвка</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Якорь прямо под храмом Посейдона. Вид снизу вверх сильнее, чем с суши, ночью храм подсвечен. Классическая первая ночь кикладского маршрута.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Глубина</div><div class="anch-spec-v">6–10 м</div></div>
+        </div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.650,24.021" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-melt="yes">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Вуркари (Кея)</span><span class="anch-coord">37.663, 24.318</span></div>
+        <div class="anch-type">Швартовка кормой · лэйзи-лайны</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Социальный порт Кеи: таверны прямо у причала, любимая стоянка афинских яхтсменов. <strong>Лучшая защита от северного Мельтеми</strong> на острове.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Швартовка</div><div class="anch-spec-v">Лэйзи-лайны, небольшая плата</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Отличная от N</div></div>
+        </div>
+        <div class="anch-warn"><b>Альтернатива</b>Причал Кориссии бесплатный, но <strong>открыт при северном ветре свыше 18 узлов</strong>. При Мельтеми — только Вуркари.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.663,24.318" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-melt="yes">
+      <div class="anch-head care">
+        <div class="anch-name-row"><span class="anch-name">⭐⚠️ Колона / Фикиада (Китнос)</span><span class="anch-coord">37.415, 24.367</span></div>
+        <div class="anch-type">Якорь · знаменитая песчаная коса</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Икона Эгеиды: песчаная коса соединяет остров с островком Айос-Лукас, море с обеих сторон. Фикиада (западная сторона) <strong>отлично защищена и от Мельтеми, и от южных ветров</strong>. Купание с обеих сторон косы — детям восторг.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок <strong>с травой</strong></div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Тактика</div><div class="anch-spec-v">По ветру: север или юг косы</div></div>
+        </div>
+        <div class="anch-warn"><b>🔴 Критично: якорь врёт</b>На дне <strong>трава</strong>. Якорь <strong>выглядит забравшим, но вылетает при первом сильном шквале</strong>. <strong>Обязательно нырните и проверьте глазами.</strong> Со стороны Колоны при северном ветре качает — заводите длинные концы на скалы.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.415,24.367" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-melt="yes">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">Лутра (Китнос)</span><span class="anch-coord">37.436, 24.432</span></div>
+        <div class="anch-type">Мини-марина · горячие источники</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Термальные источники прямо на пляже — вода 38–52°C стекает в море. <strong>Лучшая защита от Мельтеми на всём острове.</strong> Вода и электричество на причале.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Мест</div><div class="anch-spec-v">Мало — бронировать заранее</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Сервис</div><div class="anch-spec-v">Вода, электричество, таверны</div></div>
+        </div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.436,24.432" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-melt="yes">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">Мерихас (Китнос)</span><span class="anch-coord">37.399, 24.400</span></div>
+        <div class="anch-type">Главный порт · план Б при ветре</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Главный порт острова. По оценке лоций — <strong>лучшее всепогодное укрытие на Китносе</strong>. Топливо, вода, супермаркеты, банк, таверны.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Глубина</div><div class="anch-spec-v">2–6 м</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Швартовка</div><div class="anch-spec-v">Кормой к причалу</div></div>
+        </div>
+        <div class="anch-warn"><b>Запасной вариант</b>Если пойдёт западная зыбь — бухта Апокруси в 1 миле севернее спокойнее. Грунт травяной, якорь проверять.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.399,24.400" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-melt="yes">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Эрмуполис (Сирос)</span><span class="anch-coord">37.442, 24.943</span></div>
+        <div class="anch-type">Городской причал · самая лёгкая швартовка</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Шкиперы называют это <strong>самой лёгкой швартовкой на Кикладах</strong>: бесплатно, места много, просторно. Столица Киклад — полноценные супермаркеты, топливо, вода, рынок.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Стоимость</div><div class="anch-spec-v">Бесплатно</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Мест</div><div class="anch-spec-v">Много даже в сезон</div></div>
+        </div>
+        <div class="anch-warn"><b>Тише и уютнее</b>Если хочется ужин на борту в тишине — бухта Финикас на западе острова, песок, 8 м.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.442,24.943" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-melt="yes">
+      <div class="anch-head care">
+        <div class="anch-name-row"><span class="anch-name">Ливади (Серифос)</span><span class="anch-coord">37.146, 24.522</span></div>
+        <div class="anch-type">Единственная гавань острова</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Единственный порт Серифоса. Кормой к южной стороне причала или на якорь в бухте. Наверху — Хора-крепость на скале, лучший закат маршрута.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая от Мельтеми</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Минусы</div><div class="anch-spec-v">Людно и шумно</div></div>
+        </div>
+        <div class="anch-warn"><b>Нюансы</b>Защита от Мельтеми хорошая, но <strong>шквалы всё равно сильные</strong>. С северной стороны причала грунт держит хуже — при сильном северном туда не вставать. При юго-восточном в бухту заходит серьёзная зыбь.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.146,24.522" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-melt="yes">
+      <div class="anch-head care">
+        <div class="anch-name-row"><span class="anch-name">⚠️ Бухта Кутала (Серифос)</span><span class="anch-coord">37.129, 24.462</span></div>
+        <div class="anch-type">Якорь · юг острова</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Широкая бухта на юге, <strong>сильная защита от Мельтеми</strong>. Красиво и пусто.</div>
+        <div class="anch-warn"><b>🔴 Катабатические шквалы</b>Главная опасность: ветер срывается с гор и бьёт вниз — <strong>от 0 до 25 узлов за секунды</strong>. Лоции рекомендуют <strong>два якоря</strong>. С детьми на борту — лучше выбрать Ливади.</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.129,24.462" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="arg" data-melt="yes">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Порто Хели</span><span class="anch-coord">37.323, 23.146</span></div>
+        <div class="anch-type">Якорь · закрытая лагуна</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Огромная почти замкнутая бухта — внутри как озеро при любом ветре снаружи. <strong>Идеальное убежище при Мельтеми.</strong> Целый день на якоре: SUP, снорклинг, рыбалка, барбекю.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Круговая, отличная</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит хорошо</div></div>
+        </div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.323,23.146" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="arg" data-melt="yes">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">Ермиони (Мандракия)</span><span class="anch-coord">37.383, 23.250</span></div>
+        <div class="anch-type">Порт + якорь · убежище от севера</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Аутентичный рыбацкий городок, мыс Бисти с пиниями. Южный порт Мандракия <strong>укрыт от северных ветров</strong> — лоции прямо рекомендуют Ермиони как убежище при сильном севере.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Очень хорошая от N</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Альтернатива</div><div class="anch-spec-v">Якорь в бухте у главного порта</div></div>
+        </div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.383,23.250" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="arg" data-melt="no">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Палеа-Эпидаврос</span><span class="anch-coord">37.632, 23.156</span></div>
+        <div class="anch-type">Якорь · античный театр + затонувший город</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-desc">Театр Эпидавра — 15 минут на такси. А прямо у пляжа под водой лежит <strong>затонувший римский город</strong> — снорклинг над руинами II века прямо с борта.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок, держит хорошо</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Бонус</div><div class="anch-spec-v">Снорклинг над руинами</div></div>
+        </div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.632,23.156" target="_blank">На карте</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+
+<section id="dining">
+<div class="container">
+  <div class="sec-eye">Где поесть</div>
+  <h2 class="sec-h2">Таверны: вкусно, по-местному, недорого</h2>
+  <p class="sec-sub">Семейные заведения, куда ходят сами греки. Все — в пешей доступности от стоянок.</p>
+
+  <div class="dine-legend">
+    <span>💰 <b>€</b> — до 20 € на человека</span>
+    <span>💰 <b>€€</b> — 20–35 € на человека</span>
+    <span style="color:var(--rust)">🐟 Свежая рыба везде считается по весу — <b>спрашивайте цену за кг до заказа</b></span>
+  </div>
+
+  <div class="dine-grid">
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">Nontas</span><span class="dine-price cheap">€</span></div>
+      <div class="dine-where">📍 Пердика, Эгина · у самой воды</div>
+      <div class="dine-desc">Семейная таверна <strong>с 1936 года</strong>, четвёртое поколение. Рецензенты пишут прямо: «идите туда, куда ходят пожилые греки — не ошибётесь». Порции огромные, в конце угощают йогуртом с айвовым вареньем за счёт заведения.</div>
+      <div class="dine-try"><b>Обязательно попробовать</b>Фисташковый скордалья (чесночный соус с фисташками Эгины) и кальмар с фисташковым песто — такого больше нигде нет.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=Nontas+Perdika+Aegina" target="_blank">На карте</a></div>
+    </div>
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">Remetzo</span><span class="dine-price cheap">€</span></div>
+      <div class="dine-where">📍 Пердика, Эгина · у причала</div>
+      <div class="dine-desc">Соседи Nontas по набережной. Рыбу и осьминога выбираете сами из холодильника. Быстро обслуживают <strong>даже большие компании</strong> — для наших 11 человек это существенно.</div>
+      <div class="dine-try"><b>Заказать</b>Баклажаны и «пьяная» саганаки. Свежий улов дня — на гриле.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=Remetzo+Perdika+Aegina" target="_blank">На карте</a></div>
+    </div>
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">Vatzoulias</span><span class="dine-price cheap">€</span></div>
+      <div class="dine-where">📍 Эгина-город · 10 мин пешком от порта</div>
+      <div class="dine-desc">Спросите местного, где лучшая таверна Эгины — почти наверняка назовут её. Сад с жасмином и жимолостью. <strong>Не туристическое место</strong>: работает только на ужин и всего несколько вечеров в неделю. Уточняйте заранее.</div>
+      <div class="dine-try"><b>Классика</b>Мусака с корицей и воздушным бешамелем, телятина в красном соусе, кабачковые крокеты.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=Vatzoulias+Aegina" target="_blank">На карте</a></div>
+    </div>
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">Tholos</span><span class="dine-price cheap">€</span></div>
+      <div class="dine-where">📍 Эгина, дорога к храму Афайи</div>
+      <div class="dine-desc">Таверна, куда ездят сами островитяне. В сосновом лесу под храмом Афайи, вид через деревья на море. Овощи свои или местные. <strong>Удобно совместить с поездкой к храму.</strong></div>
+      <div class="dine-try"><b>Здесь про мясо</b>Гриль на углях, телятина в травяном томатном соусе с макаронами.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=Tholos+taverna+Aegina" target="_blank">На карте</a></div>
+    </div>
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">Таверны набережной</span><span class="dine-price cheap">€</span></div>
+      <div class="dine-where">📍 Порос · швартовка кормой</div>
+      <div class="dine-desc">Особенность Пороса: <strong>швартуетесь кормой и сходите прямо за столик</strong>. Яхта в трёх метрах, на фоне гор Пелопоннеса. Порос славится морепродуктами — здесь их берут местные.</div>
+      <div class="dine-try"><b>Что брать</b>Осьминог на гриле, свежая рыба дня, кальмары. Мезедес с узо на закате.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=Poros+waterfront+tavernas" target="_blank">На карте</a></div>
+    </div>
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">To Dromaki</span><span class="dine-price mid">€€</span></div>
+      <div class="dine-where">📍 Камини, Гидра · столики на песке</div>
+      <div class="dine-desc">Несколько столиков стоят <strong>прямо на песке</strong>, ноги в паре сантиметров от воды. Закат отсюда — то, ради чего едут. Есть веганские мезедес.</div>
+      <div class="dine-try"><b>Заказать</b>Дорада на гриле, креветки саганаки, мусака. К этому — узо или местная рецина.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=To+Dromaki+Kamini+Hydra" target="_blank">На карте</a></div>
+    </div>
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">Таверны Ермиони</span><span class="dine-price cheap">€</span></div>
+      <div class="dine-where">📍 Ермиони, Арголида (план Б)</div>
+      <div class="dine-desc">Считается <strong>лучшей кухней Арголиды</strong>. Настоящий рыбацкий городок без туристического налёта — рыбу приносят с лодок, которые вы видите из-за столика. Цены заметно ниже островных.</div>
+      <div class="dine-try"><b>Местное</b>Улов дня на углях, мидии, свежий хлеб. Всё простое и очень честное.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=Ermioni+tavernas" target="_blank">На карте</a></div>
+    </div>
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">Таверны у причала</span><span class="dine-price cheap">€</span></div>
+      <div class="dine-where">📍 Вуркари, Кея</div>
+      <div class="dine-desc">Уютная гавань, где швартуются афинские яхтсмены — а они знают, где есть. Рыбные таверны прямо у воды, вид на лодки. <strong>Кея почти не тронута массовым туризмом</strong>, цены нормальные.</div>
+      <div class="dine-try"><b>Взять</b>Свежая рыба, осьминог, местный сыр. Спросите, что поймали утром.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=Vourkari+Kea+tavernas" target="_blank">На карте</a></div>
+    </div>
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">Steki</span><span class="dine-price cheap">€</span></div>
+      <div class="dine-where">📍 Китнос · рекомендация круизной вики</div>
+      <div class="dine-desc">Таверна, которую отдельно отмечают в круизных лоциях как «отличную еду». Место семейное, хозяйка Мосхула. <strong>Могут прислать такси</strong> из Лутры или от Апокруси — звоните заранее.</div>
+      <div class="dine-try"><b>Кикладское</b>Сфугато (сырный пирог Китноса) — местная классика. Плюс всё домашнее.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=Steki+taverna+Kythnos" target="_blank">На карте</a></div>
+    </div>
+
+    <div class="dine-card">
+      <div class="dine-top"><span class="dine-name">Таверны Эрмуполиса</span><span class="dine-price cheap">€</span></div>
+      <div class="dine-where">📍 Сирос · вокруг площади Мяули</div>
+      <div class="dine-desc">Сирос — <strong>живой город, а не декорация для туристов</strong>, и цены соответствующие. Ищите заведения в переулках за мраморной площадью Мяули, не на первой линии.</div>
+      <div class="dine-try"><b>Обязательно</b>Лукумадес (пончики в меду) — детям. Местный сыр сан-михали. Луканико (колбаска) с Сироса.</div>
+      <div class="dine-links"><a class="dine-btn" href="https://maps.google.com/?q=Ermoupoli+Syros+tavernas" target="_blank">На карте</a></div>
+    </div>
+
+  </div>
+
+  <div class="prov-group-title" style="margin-top:34px">🍽 Что заказывать — шпаргалка по меню</div>
+  <div class="dish-grid">
+    <div class="dish"><div class="dish-gr">Χωριάτικη</div><div class="dish-ru">Хориатики</div><div class="dish-d">Греческий салат. Без листьев салата — только овощи и целый кусок феты сверху. 6–9 €.</div></div>
+    <div class="dish"><div class="dish-gr">Μουσακάς</div><div class="dish-ru">Мусака</div><div class="dish-d">Баклажаны, картофель, фарш, бешамель. Сытно, детям заходит. 9–13 €.</div></div>
+    <div class="dish"><div class="dish-gr">Καλαμαράκια</div><div class="dish-ru">Каламаракья</div><div class="dish-d">Кальмары во фритюре. Дети едят все и всегда. 10–14 €.</div></div>
+    <div class="dish"><div class="dish-gr">Χταπόδι στα κάρβουνα</div><div class="dish-ru">Хтаподи ста карвуна</div><div class="dish-d">Осьминог на углях. Главная закуска к узо. 12–18 €.</div></div>
+    <div class="dish"><div class="dish-gr">Σαγανάκι</div><div class="dish-ru">Саганаки</div><div class="dish-d">Жареный сыр, иногда поджигают у стола. Дети в восторге. 7–9 €.</div></div>
+    <div class="dish"><div class="dish-gr">Τζατζίκι</div><div class="dish-ru">Дзадзики</div><div class="dish-d">Йогурт с огурцом и чесноком. Берут к любому мясу. 4–6 €.</div></div>
+    <div class="dish"><div class="dish-gr">Γίγαντες</div><div class="dish-ru">Йигандес</div><div class="dish-d">Крупная фасоль в томате, запечённая. Дёшево, сытно, вегетарианцам. 6–8 €.</div></div>
+    <div class="dish"><div class="dish-gr">Σουβλάκι / Γύρος</div><div class="dish-ru">Сувлаки / Гирос</div><div class="dish-d">Самая дешёвая нормальная еда в Греции. Обед для всей компании за копейки. 3–5 €.</div></div>
+    <div class="dish"><div class="dish-gr">Ψάρι στη σχάρα</div><div class="dish-ru">Псари сти схара</div><div class="dish-d">Рыба на гриле. <strong>Считается по весу</strong> — 40–70 €/кг. Спрашивайте цену заранее!</div></div>
+    <div class="dish"><div class="dish-gr">Λουκουμάδες</div><div class="dish-ru">Лукумадес</div><div class="dish-d">Пончики в меду с корицей. Десерт, ради которого дети простят вам любой переход. 5–7 €.</div></div>
+  </div>
+
+  <div class="alert success" style="margin-top:24px">
+    <strong>💡 Как есть вкусно и не разориться на 11 человек:</strong> заказывайте <strong>много мезедес на общий стол</strong> вместо индивидуальных горячих — это и дешевле, и по-гречески правильно. Салаты, дзадзики, йигандес, саганаки, каламари, плюс одну-две крупные рыбы на всех. Выходит 15–22 € с человека против 35+ при заказе «каждому по стейку». Домашнее вино в графине (χύμα, «хима») — 6–10 € за литр и обычно вполне достойное.
+  </div>
+
+  <div class="alert info">
+    <strong>🎣 Свой улов в таверне:</strong> во многих местах вашу рыбу приготовят за символическую плату (2–5 € за приготовление). Не стесняйтесь спрашивать — для греков это нормальная практика, а не наглость. Заранее выпотрошите и уберите на лёд.
+  </div>
+
+  <div class="alert warn">
+    <strong>⚠️ Ловушка со свежей рыбой:</strong> рыба в меню часто идёт <strong>без цены — она считается по весу</strong>, 40–70 €/кг в зависимости от вида. Крупный дентекс или групер на компанию легко превращается в счёт на 100+ €. <strong>Всегда спрашивайте цену за килограмм и вес конкретной рыбы до того, как её унесут на гриль.</strong> Это не бестактность, так делают все местные.
+  </div>
+</div>
+</section>
+
+
 
 
 
@@ -3138,7 +3672,7 @@ function showPlan(el, id){
 }
 
 // ============ MAP ============
-var map, w1Layer, w2Layer, fishLayer, sightsLayer;
+var map, w1Layer, w2Layer, fishLayer, sightsLayer, anchorLayer, dineLayer, planBLayer;
 
 function initMap(){
   if (typeof L === 'undefined') return;
@@ -3259,6 +3793,74 @@ function initMap(){
       .addTo(sightsLayer);
   });
 
+
+  // ---- PLAN B: ARGOLIC (Meltemi backup) ----
+  var planBPoints = [
+    {c:ALIMOS,          n:'Алимос',              d:'База. Уходим в Арголиду вместо Киклад.', m:'Старт'},
+    {c:[37.632,23.156], n:'Палеа-Эпидаврос',     d:'Античный театр ЮНЕСКО + затонувший римский город под водой.', m:'День 1 · 32 нм'},
+    {c:[37.498,23.451], n:'Порос',               d:'Вода, топливо. Рыбалка в проливе на закате.', m:'День 2 · 20 нм'},
+    {c:[37.383,23.250], n:'Ермиони',             d:'Лучшая кухня Арголиды. Укрытие от северных ветров.', m:'День 3 · 18 нм'},
+    {c:[37.323,23.146], n:'Порто Хели',          d:'Закрытая лагуна — штиль при любом ветре. День на якоре.', m:'День 4 · 12 нм'},
+    {c:[37.276,23.121], n:'Спецес (Зогерия)',    d:'Красивейшая бухта Сароники.', m:'День 5 · 8 нм'},
+    {c:[37.350,23.466], n:'Гидра',               d:'Остров без машин.', m:'День 5 · 17 нм'},
+    {c:ALIMOS,          n:'Алимос · возврат',    d:'Возврат 31.07 до 17:00.', m:'Финиш · 42 нм'}
+  ];
+
+  // ---- ANCHORAGES ----
+  var anchorPoints = [
+    {c:[37.748,23.427], n:'Эгина · порт',            d:'Швартовка кормой. Хорошая защита, полная инфраструктура. В сезон забивается — приходить рано.'},
+    {c:[37.700,23.463], n:'Пердика (Эгина)',         d:'Лучше порта: тихо, таверны у воды. Волна от паромов — заводите длинные кормовые концы.'},
+    {c:[37.703,23.430], n:'о. Мони',                 d:'Дневная стоянка. Олени, снорклинг. Ищите ПЕСЧАНЫЕ пятна — на траве не заберёт.'},
+    {c:[37.529,23.437], n:'⭐ Бухта Висти (Порос)',   d:'Лучшая якорная Сароники. Круговая защита, сосны, бирюза. Вход трудно найти — ориентир островок Висти.'},
+    {c:[37.512,23.434], n:'Русская бухта (Порос)',   d:'Обед и купание. Песок, но есть РИФ — заходить внимательно.'},
+    {c:[37.498,23.451], n:'Порос · набережная',      d:'Вода и топливо. Течение в проливе + паромы: якорь готовить заранее.'},
+    {c:[37.350,23.466], n:'⚠️ Гидра · гавань',       d:'Крошечный порт. ЯКОРЯ ПОСТОЯННО ПУТАЮТСЯ — следить весь день. Приходить до 13:00.'},
+    {c:[37.334,23.331], n:'⭐ о. Докос',              d:'Необитаемый. Отличное укрытие, полная тишина, звёзды. Инфраструктуры нет.'},
+    {c:[37.276,23.121], n:'⭐ Зогерия (Спецес)',      d:'Красивейшая бухта Сароники. Сосны, изумрудная вода, таверна на берегу.'},
+    {c:[37.263,23.158], n:'Спецес · Старая гавань',  d:'Причала нет: якорь + концы на скалы и стены.'},
+    {c:[37.650,24.021], n:'⭐ Сунион (под храмом)',   d:'Якорь под храмом Посейдона, песок 6–10 м. Ночью подсветка.'},
+    {c:[37.663,24.318], n:'⭐ Вуркари (Кея)',         d:'Лучшая защита от Мельтеми на Кее. Лэйзи-лайны. Кориссия бесплатна, но открыта при N >18 уз.'},
+    {c:[37.415,24.367], n:'⚠️ Колона/Фикиада',       d:'Икона Эгеиды. НО: трава на дне, якорь ВРЁТ. Обязательно нырнуть и проверить!'},
+    {c:[37.436,24.432], n:'Лутра (Китнос)',          d:'Горячие источники. Лучшая защита от Мельтеми на острове. Мест мало.'},
+    {c:[37.399,24.400], n:'Мерихас (Китнос)',        d:'Лучшее всепогодное укрытие острова. Топливо, вода, супермаркет.'},
+    {c:[37.442,24.943], n:'⭐ Эрмуполис (Сирос)',     d:'Самая лёгкая швартовка на Кикладах: бесплатно, места много.'},
+    {c:[37.146,24.522], n:'Ливади (Серифос)',        d:'Единственная гавань. Защита от Мельтеми есть, но шквалы сильные. Людно.'},
+    {c:[37.129,24.462], n:'⚠️ Кутала (Серифос)',     d:'КАТАБАТИЧЕСКИЕ ШКВАЛЫ: 0→25 узлов за секунды. Нужно два якоря. С детьми — лучше Ливади.'},
+    {c:[37.323,23.146], n:'⭐ Порто Хели',            d:'Закрытая лагуна. Штиль внутри при любом ветре снаружи. Идеально при Мельтеми.'},
+    {c:[37.383,23.250], n:'Ермиони (Мандракия)',     d:'Убежище от северных ветров. Лучшая кухня Арголиды.'},
+    {c:[37.632,23.156], n:'Палеа-Эпидаврос',         d:'Театр 15 мин на такси. Снорклинг над затонувшим римским городом прямо с борта.'}
+  ];
+
+  // ---- TAVERNAS ----
+  var dinePoints = [
+    {c:[37.700,23.463], n:'Nontas · Пердика',        d:'Семейная с 1936 года. Фисташковый скордалья, кальмар с фисташковым песто. €'},
+    {c:[37.700,23.463], n:'Remetzo · Пердика',       d:'Рыбу выбираете из холодильника. Быстро кормят большие компании. €'},
+    {c:[37.746,23.430], n:'Vatzoulias · Эгина',      d:'Местные называют лучшей на острове. Только ужин, не каждый день. €'},
+    {c:[37.754,23.520], n:'Tholos · Эгина',          d:'Куда ездят островитяне. В сосновом лесу у храма Афайи. Мясо на углях. €'},
+    {c:[37.498,23.451], n:'Набережная · Порос',      d:'Швартуетесь кормой — и сразу за столик. Морепродукты. €'},
+    {c:[37.345,23.455], n:'To Dromaki · Гидра',      d:'Столики прямо на песке, ноги у воды. Закат. €€'},
+    {c:[37.383,23.250], n:'Таверны · Ермиони',       d:'Лучшая кухня Арголиды. Рыба с лодок, которые видно от столика. €'},
+    {c:[37.663,24.318], n:'Причал · Вуркари (Кея)',  d:'Где едят афинские яхтсмены. Свежая рыба, нормальные цены. €'},
+    {c:[37.410,24.430], n:'Steki · Китнос',          d:'Отмечена в круизных лоциях. Сфугато — местный сырный пирог. €'},
+    {c:[37.442,24.943], n:'Эрмуполис · Сирос',       d:'Живой город. Ищите в переулках за площадью Мяули. Лукумадес! €'}
+  ];
+
+  planBLayer = buildRoute(planBPoints, '#2E7D52');
+
+  anchorLayer = L.layerGroup();
+  anchorPoints.forEach(function(p){
+    L.marker(p.c, {icon:dot('#1A8FA0', 13)})
+      .bindPopup('<b>⚓ '+p.n+'</b><br>'+p.d)
+      .addTo(anchorLayer);
+  });
+
+  dineLayer = L.layerGroup();
+  dinePoints.forEach(function(p){
+    L.marker(p.c, {icon:dot('#C8562A', 13)})
+      .bindPopup('<b>🍽 '+p.n+'</b><br>'+p.d)
+      .addTo(dineLayer);
+  });
+
   w1Layer.addTo(map);
   w2Layer.addTo(map);
 }
@@ -3267,18 +3869,33 @@ function showMapRoute(el, which){
   document.querySelectorAll('.mtab').forEach(function(t){t.classList.remove('active');});
   el.classList.add('active');
   if(!map) return;
-  [w1Layer, w2Layer, fishLayer, sightsLayer].forEach(function(l){ if(l && map.hasLayer(l)) map.removeLayer(l); });
+  [w1Layer, w2Layer, fishLayer, sightsLayer, anchorLayer, dineLayer, planBLayer].forEach(function(l){ if(l && map.hasLayer(l)) map.removeLayer(l); });
 
   if(which==='both'){ w1Layer.addTo(map); w2Layer.addTo(map); map.setView([37.55,24.05], 8); }
   else if(which==='w1'){ w1Layer.addTo(map); map.setView([37.60,23.45], 9); }
   else if(which==='w2'){ w2Layer.addTo(map); map.setView([37.55,24.30], 9); }
+  else if(which==='plan_b'){ planBLayer.addTo(map); map.setView([37.60,23.40], 9); }
   else if(which==='fish'){ fishLayer.addTo(map); map.setView([37.55,24.05], 8); }
+  else if(which==='anchor'){ anchorLayer.addTo(map); map.setView([37.55,23.90], 8); }
   else if(which==='sights'){ sightsLayer.addTo(map); map.setView([37.60,24.00], 8); }
+  else if(which==='dine'){ dineLayer.addTo(map); map.setView([37.55,23.85], 8); }
 }
 
 if(document.readyState==='loading'){
   document.addEventListener('DOMContentLoaded', initMap);
 } else { initMap(); }
+
+
+function filterAnch(el, f){
+  document.querySelectorAll('.afilter').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');
+  document.querySelectorAll('.anch-card').forEach(function(c){
+    var reg = c.getAttribute('data-reg');
+    var melt = c.getAttribute('data-melt');
+    var show = (f==='all') || (reg===f) || (f==='meltemi' && melt==='yes');
+    c.classList.toggle('hidden', !show);
+  });
+}
 
 function filterSights(el, type){
   document.querySelectorAll('.sfilter').forEach(t=>t.classList.remove('active'));

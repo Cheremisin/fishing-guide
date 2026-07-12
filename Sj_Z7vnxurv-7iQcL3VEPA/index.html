@@ -336,7 +336,68 @@ footer strong{color:var(--aqua);}
   .sight-btn.map{background:var(--sea);color:#fff;}
   .sight-btn.wiki{background:rgba(62,201,214,.15);color:var(--teal);}
 
+
+  /* SAFETY */
+  .sos-banner{background:linear-gradient(135deg,#8B1E1E,#5c0f0f);color:#fff;border-radius:16px;padding:22px 26px;margin-bottom:28px;}
+  .sos-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
+  .sos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;}
+  .sos-item{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:12px 14px;}
+  .sos-num{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;line-height:1;margin-bottom:4px;}
+  .sos-label{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;opacity:.85;}
+  .sos-note{font-size:12px;opacity:.8;margin-top:4px;line-height:1.4;}
+  .mayday-box{background:rgba(0,0,0,.25);border-radius:10px;padding:14px 16px;margin-top:14px;font-family:'Montserrat',sans-serif;font-size:12.5px;line-height:1.75;}
+  .mayday-box b{color:#ffcf6b;}
+
+  .risk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;margin-bottom:28px;}
+  .risk-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.04);}
+  .risk-head{padding:12px 16px;display:flex;align-items:center;gap:9px;color:#fff;}
+  .risk-head.high{background:#B23A1E;}
+  .risk-head.mid{background:#C88A2A;}
+  .risk-head.low{background:var(--teal);}
+  .risk-icon{font-size:19px;}
+  .risk-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;}
+  .risk-body{padding:14px 16px;}
+  .risk-what{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:10px;}
+  .risk-rule{background:rgba(46,125,82,.07);border-left:3px solid var(--green);border-radius:0 8px 8px 0;padding:9px 12px;font-size:12.5px;line-height:1.45;}
+  .risk-rule b{font-family:'Montserrat',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--green);display:block;margin-bottom:3px;}
+
+  .kids-rules{background:linear-gradient(135deg,rgba(26,143,160,.09),rgba(62,201,214,.05));border:1px solid rgba(26,143,160,.25);border-radius:16px;padding:24px 26px;margin-bottom:28px;}
+  .kids-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--sea);margin-bottom:6px;}
+  .kids-sub{font-size:13px;color:var(--muted);margin-bottom:16px;}
+  .kids-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;}
+  .kid-rule{background:#fff;border-radius:10px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;}
+  .kid-rule-num{font-family:'Montserrat',sans-serif;font-weight:900;font-size:15px;color:var(--aqua);flex-shrink:0;line-height:1.3;}
+  .kid-rule-text{font-size:12.5px;line-height:1.45;}
+  .kid-rule-text b{font-family:'Montserrat',sans-serif;font-size:12px;color:var(--deep);display:block;margin-bottom:2px;}
+
+  .brief-box{background:var(--sand);border-radius:14px;padding:20px 24px;}
+  .brief-title{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--deep);margin-bottom:12px;}
+  .brief-cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;}
+  .brief-col-title{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--rust);margin-bottom:7px;}
+  .brief-col ul{list-style:none;padding:0;margin:0;}
+  .brief-col li{font-size:12.5px;line-height:1.5;padding:3px 0 3px 16px;position:relative;color:var(--text);}
+  .brief-col li::before{content:'▸';position:absolute;left:0;color:var(--teal);font-weight:700;}
+
+  /* MAP */
+  .map-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+  .mtab{padding:8px 18px;border-radius:20px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all .2s;background:var(--sand);color:var(--deep);}
+  .mtab.active{background:var(--sea);color:#fff;}
+  #map{height:520px;border-radius:16px;border:1px solid rgba(0,0,0,.1);box-shadow:0 2px 14px rgba(0,0,0,.07);z-index:1;}
+  .map-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:600;color:var(--muted);}
+  .legend-item{display:flex;align-items:center;gap:6px;}
+  .legend-line{width:22px;height:3px;border-radius:2px;}
+  .legend-dot{width:11px;height:11px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2);}
+  .leaflet-popup-content{font-family:'PT Serif',serif;font-size:13px;line-height:1.5;margin:12px 14px;}
+  .leaflet-popup-content b{font-family:'Montserrat',sans-serif;font-size:13px;color:var(--deep);}
+  .popup-meta{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--teal);margin-top:4px;display:block;}
+
+  @media(max-width:700px){
+    #map{height:400px;}
+  }
+
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 
@@ -344,8 +405,10 @@ footer strong{color:var(--aqua);}
   <a href="#yachts" onclick="setActive(this)">⛵ Яхты</a>
   <a href="#weather" onclick="setActive(this)">🌊 Погода</a>
   <a href="#routes" onclick="setActive(this)">🗺 Маршруты</a>
+  <a href="#map-section" onclick="setActive(this)">🧭 Карта</a>
   <a href="#sights" onclick="setActive(this)">🏛 Что посмотреть</a>
   <a href="#checklist" onclick="setActive(this)">✅ Чеклист</a>
+  <a href="#safety" onclick="setActive(this)">🦺 Безопасность</a>
   <a href="#fish" onclick="setActive(this)">🐟 Рыбы</a>
   <a href="#lures" onclick="setActive(this)">🎣 Приманки</a>
   <a href="#spots" onclick="setActive(this)">📍 Места ловли</a>
@@ -918,6 +981,36 @@ footer strong{color:var(--aqua);}
 
 
 
+
+<section id="map-section">
+<div class="container">
+  <div class="sec-eye">Навигация</div>
+  <h2 class="sec-h2">Маршрут на карте</h2>
+  <p class="sec-sub">Обе недели с точками стоянок, дистанциями и рыболовными местами. Кликните маркер для деталей.</p>
+
+  <div class="map-tabs">
+    <div class="mtab active" onclick="showMapRoute(this,'both')">Обе недели</div>
+    <div class="mtab" onclick="showMapRoute(this,'w1')">⛵ Неделя 1 · Сароник</div>
+    <div class="mtab" onclick="showMapRoute(this,'w2')">⛵ Неделя 2 · Киклады</div>
+    <div class="mtab" onclick="showMapRoute(this,'fish')">🎣 Места ловли</div>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="map-legend">
+    <div class="legend-item"><span class="legend-line" style="background:#3EC9D6"></span> Неделя 1 · катамаран (Саронический залив)</div>
+    <div class="legend-item"><span class="legend-line" style="background:#9b59b6"></span> Неделя 2 · монохул (Западные Киклады)</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#C8562A"></span> База — марина Алимос</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#2E7D52"></span> Рыболовное место</div>
+  </div>
+
+  <div class="alert info" style="margin-top:20px">
+    <strong>📐 Итого по дистанциям:</strong> Неделя 1 — около 145 миль за 7 дней (короткие переходы 12–30 нм, комфортно с детьми). Неделя 2 — около 165 миль за 6 ходовых дней, с обязательным возвратом в Алимос 31.07 к 17:00.
+  </div>
+</div>
+</section>
+
+
 <section id="sights">
 <div class="container">
   <div class="sec-eye">Что посмотреть</div>
@@ -1297,6 +1390,211 @@ footer strong{color:var(--aqua);}
   </div>
 </div>
 </section>
+
+
+<section id="safety">
+<div class="container">
+  <div class="sec-eye">Безопасность</div>
+  <h2 class="sec-h2">Опасности на яхте и правила экипажа</h2>
+  <p class="sec-sub">Прочитать всем до выхода, включая детей. Разберите вслух на первом брифинге — это 20 минут, которые могут спасти жизнь.</p>
+
+  <div class="sos-banner">
+    <div class="sos-title">🆘 Экстренные номера — записать в телефон каждому</div>
+    <div class="sos-grid">
+      <div class="sos-item">
+        <div class="sos-num">112</div>
+        <div class="sos-label">Единый экстренный</div>
+        <div class="sos-note">Работает с любого телефона, в т.ч. без SIM</div>
+      </div>
+      <div class="sos-item">
+        <div class="sos-num">108</div>
+        <div class="sos-label">Береговая охрана</div>
+        <div class="sos-note">Спасение на море, Греция</div>
+      </div>
+      <div class="sos-item">
+        <div class="sos-num">CH 16</div>
+        <div class="sos-label">VHF аварийный канал</div>
+        <div class="sos-note">Постоянно включён на приём</div>
+      </div>
+      <div class="sos-item">
+        <div class="sos-num">166</div>
+        <div class="sos-label">Скорая помощь</div>
+        <div class="sos-note">На берегу</div>
+      </div>
+    </div>
+    <div class="mayday-box">
+      <b>Как подать сигнал бедствия по VHF (канал 16):</b><br>
+      «MAYDAY, MAYDAY, MAYDAY — <b>[название яхты] ×3</b> — наши координаты <b>[широта/долгота с плоттера]</b> — характер бедствия <b>[тонем / человек за бортом / пожар]</b> — на борту <b>[количество] человек</b> — требуется немедленная помощь. Приём.»<br>
+      <span style="opacity:.75;font-size:12px">Координаты — самое важное. Показать всем взрослым, где они на плоттере, ещё на брифинге.</span>
+    </div>
+  </div>
+
+  <h3 class="fish-section-title">⚠️ Главные опасности на борту</h3>
+
+  <div class="risk-grid">
+
+    <div class="risk-card">
+      <div class="risk-head high"><span class="risk-icon">🌊</span><span class="risk-title">Человек за бортом (MOB)</span></div>
+      <div class="risk-body">
+        <div class="risk-what">Самая серьёзная опасность. В Эгейском море при Мельтеми волна и ветер уносят человека быстрее, чем кажется — за минуту можно потерять его из виду. Ночью шансы падают многократно.</div>
+        <div class="risk-rule"><b>Правило</b>Кричать «ЧЕЛОВЕК ЗА БОРТОМ!». Один человек — <strong>только показывает пальцем и не отводит глаз</strong>, больше ничего не делает. Нажать MOB на плоттере. Бросить спасательный круг. Заглушить мотор при манёвре — винт убивает.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head high"><span class="risk-icon">💥</span><span class="risk-title">Гик (главная травма)</span></div>
+      <div class="risk-body">
+        <div class="risk-what">При повороте фордевинд гик перелетает через кокпит с огромной силой. Удар по голове — нокаут или перелом, человека может выбросить за борт. Это причина №1 травм на яхтах.</div>
+        <div class="risk-rule"><b>Правило</b>Услышал «ПОВОРОТ!» / «GYBE!» — <strong>сразу сесть и пригнуть голову</strong>. Никогда не стоять в зоне хода гика. Детям объяснить отдельно и проверить, что поняли.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head high"><span class="risk-icon">🪢</span><span class="risk-title">Лебёдки и снасти под нагрузкой</span></div>
+      <div class="risk-body">
+        <div class="risk-what">Шкот под нагрузкой затягивает пальцы в лебёдку мгновенно — типичная травма ампутация. Трос под нагрузкой при обрыве бьёт как хлыст.</div>
+        <div class="risk-rule"><b>Правило</b>Детям <strong>лебёдки трогать нельзя вообще</strong>. Взрослым — пальцы всегда снаружи барабана, ладонь плашмя. Не стоять на линии натянутого троса.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head high"><span class="risk-icon">🔥</span><span class="risk-title">Газ и пожар на камбузе</span></div>
+      <div class="risk-body">
+        <div class="risk-what">Газ тяжелее воздуха — при утечке скапливается в трюме и не выветривается. Искра = взрыв. Пожар на яхте развивается за минуты, эвакуироваться некуда.</div>
+        <div class="risk-rule"><b>Правило</b>Газовый вентиль <strong>перекрывать после каждой готовки</strong>. Не оставлять плиту без присмотра. Знать, где огнетушители (обычно: камбуз, каюты, кокпит) — проверить на брифинге.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head mid"><span class="risk-icon">⚓</span><span class="risk-title">Якорь и цепь</span></div>
+      <div class="risk-body">
+        <div class="risk-what">Цепь уходит с огромной скоростью и силой. Нога или рука в бухте цепи = тяжёлая травма. Ночью якорь может «поползти» при усилении ветра.</div>
+        <div class="risk-rule"><b>Правило</b>При отдаче/выборке якоря на баке — <strong>только взрослые</strong>, дети в кокпите. При Мельтеми — якорная вахта, проверять снос по ориентирам на берегу.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head mid"><span class="risk-icon">🛟</span><span class="risk-title">Купание с борта</span></div>
+      <div class="risk-body">
+        <div class="risk-what">Течение между островами сносит быстрее, чем человек плывёт. Яхту на якоре сносит ветром — заплыв «от лодки» может стать заплывом без возврата. Винт под водой невидим.</div>
+        <div class="risk-rule"><b>Правило</b>Купаться <strong>только с заглушенным двигателем</strong> и опущенным трапом. Никогда не купаться в одиночку и никогда — если яхта на ходу. Дети — только под наблюдением взрослого, который сам не в воде.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head mid"><span class="risk-icon">🚤</span><span class="risk-title">Динги (тендер)</span></div>
+      <div class="risk-body">
+        <div class="risk-what">Ночью в темноте динги легко перевернуть или потерять берег из виду. Подвесной мотор — винт на уровне ног. Перегруз — частая причина ЧП.</div>
+        <div class="risk-rule"><b>Правило</b>Жилеты в динги <strong>обязательны всем</strong>. Ночью — фонарь и телефон в гермопакете. Не превышать число мест. Ключ-выключатель (kill cord) на запястье рулевого.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head mid"><span class="risk-icon">🌬</span><span class="risk-title">Мельтеми</span></div>
+      <div class="risk-body">
+        <div class="risk-what">Северный ветер в Кикладах усиливается к полудню до 6–7 баллов за пару часов. Наветренный берег становится смертельной ловушкой. Волна 2–3 м.</div>
+        <div class="risk-rule"><b>Правило</b>Прогноз <strong>каждое утро в 07:00</strong> (Windy, PoseidonSea.gr). Переходы до 09:00, к 13:00 на якоре. При F6+ выход из порта запрещён условиями чартера. Не геройствовать: пропущенный остров лучше, чем ЧП.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head low"><span class="risk-icon">🦔</span><span class="risk-title">Морские ежи</span></div>
+      <div class="risk-body">
+        <div class="risk-what">На всех скальных берегах Греции. Иглы ломаются в коже, вызывают воспаление. Самая частая «медицинская» неприятность отпуска.</div>
+        <div class="risk-rule"><b>Правило</b>Аквашузы при выходе на скалы и купании у камней — <strong>всем, всегда</strong>. При попадании: пинцет, антисептик, тёплая вода. Глубокие иглы — к врачу.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head low"><span class="risk-icon">☀️</span><span class="risk-title">Солнце и обезвоживание</span></div>
+      <div class="risk-body">
+        <div class="risk-what">На воде ультрафиолет отражается и бьёт вдвое сильнее. Ветер обманывает — жара не чувствуется, ожог приходит незаметно. Дети обезвоживаются быстрее взрослых.</div>
+        <div class="risk-rule"><b>Правило</b>SPF 50+ каждые 2 часа, головной убор, лонгслив UPF. <strong>Заставлять детей пить</strong> — сами не просят. Тень в кокпите (бимини) в пик жары 12:00–16:00.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head low"><span class="risk-icon">🤢</span><span class="risk-title">Морская болезнь</span></div>
+      <div class="risk-body">
+        <div class="risk-what">У детей чаще, чем у взрослых. Обезвоживание от рвоты на жаре опасно. Внизу в каюте всегда хуже, чем наверху.</div>
+        <div class="risk-rule"><b>Правило</b>Таблетки <strong>за 30–60 мин до выхода</strong>, а не когда укачало. При симптомах: наверх, смотреть на горизонт, свежий воздух, маленькие глотки воды. Не читать и не в телефон.</div>
+      </div>
+    </div>
+
+    <div class="risk-card">
+      <div class="risk-head low"><span class="risk-icon">🎣</span><span class="risk-title">Рыболовные крючки и зубы</span></div>
+      <div class="risk-body">
+        <div class="risk-what">Тройники при забросе и вываживании — травма глаз и рук. Луфарь и барракуда перекусывают палец: их зубы реально острые.</div>
+        <div class="risk-rule"><b>Правило</b>При забросе — <strong>смотреть, кто сзади</strong>. Рыбу снимать только плоскогубцами, никогда руками. Крючок в теле глубоко — не вытаскивать, к врачу.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="kids-rules">
+    <div class="kids-title">👦 Семь правил для детей — разобрать вслух на брифинге</div>
+    <div class="kids-sub">Простые формулировки, которые ребёнок 7–15 лет запомнит и реально выполнит.</div>
+    <div class="kids-list">
+      <div class="kid-rule"><span class="kid-rule-num">1</span><div class="kid-rule-text"><b>Одна рука для себя</b>Всегда держись хотя бы одной рукой за что-то прочное, когда идёшь по палубе.</div></div>
+      <div class="kid-rule"><span class="kid-rule-num">2</span><div class="kid-rule-text"><b>Не выходи на нос без взрослого</b>Когда яхта идёт — только кокпит. На бак — только со взрослым и когда разрешили.</div></div>
+      <div class="kid-rule"><span class="kid-rule-num">3</span><div class="kid-rule-text"><b>Услышал «Поворот!» — сядь и пригнись</b>Гик перелетает быстро и бьёт сильно. Сесть — и голову вниз.</div></div>
+      <div class="kid-rule"><span class="kid-rule-num">4</span><div class="kid-rule-text"><b>Лебёдки — не игрушка</b>Не крутить, не трогать, не наматывать. Пальцы затягивает мгновенно.</div></div>
+      <div class="kid-rule"><span class="kid-rule-num">5</span><div class="kid-rule-text"><b>В воду — только когда разрешил капитан</b>Мотор должен быть выключен. Один в воду не прыгает никто.</div></div>
+      <div class="kid-rule"><span class="kid-rule-num">6</span><div class="kid-rule-text"><b>Увидел человека в воде — кричи и показывай пальцем</b>Кричи «Человек за бортом!» и не отводи руку и глаза. Это твоя единственная задача.</div></div>
+      <div class="kid-rule"><span class="kid-rule-num">7</span><div class="kid-rule-text"><b>Ночью на палубе — только со взрослым</b>Даже просто посмотреть на звёзды. Темнота на воде обманывает.</div></div>
+    </div>
+  </div>
+
+  <div class="brief-box">
+    <div class="brief-title">📋 Брифинг при приёме яхты — что обязательно найти и показать всем</div>
+    <div class="brief-cols">
+      <div class="brief-col">
+        <div class="brief-col-title">Спасение</div>
+        <ul>
+          <li>Спасательный плот: где, как спускать</li>
+          <li>Спасательные круги и подкова в кокпите</li>
+          <li>Кнопка MOB на плоттере</li>
+          <li>Ракетницы и фальшфейеры: срок годности</li>
+          <li>EPIRB — аварийный радиобуй</li>
+        </ul>
+      </div>
+      <div class="brief-col">
+        <div class="brief-col-title">Пожар и вода</div>
+        <ul>
+          <li>Огнетушители: сколько и где</li>
+          <li>Противопожарное одеяло на камбузе</li>
+          <li>Газовый вентиль и как перекрыть</li>
+          <li>Ручная и электрическая помпа</li>
+          <li>Кингстоны и аварийные пробки</li>
+        </ul>
+      </div>
+      <div class="brief-col">
+        <div class="brief-col-title">Связь и навигация</div>
+        <ul>
+          <li>VHF: как включить, канал 16, DSC-кнопка</li>
+          <li>Плоттер: где смотреть координаты</li>
+          <li>Ходовые огни и якорный огонь</li>
+          <li>Телефон базы чартера (записать всем)</li>
+        </ul>
+      </div>
+      <div class="brief-col">
+        <div class="brief-col-title">Аптечка и прочее</div>
+        <ul>
+          <li>Аптечка: где, что внутри, срок годности</li>
+          <li>Аварийный румпель (при отказе штурвала)</li>
+          <li>Инструмент, кусачки для такелажа</li>
+          <li>Запуск двигателя и остановка</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert warn" style="margin-top:24px">
+    <strong>⚠️ Главное правило шкипера:</strong> при сомнениях — не выходить. Пропущенный остров, скучный день на якоре, испорченный план — всё это несравнимо дешевле, чем один инцидент с ребёнком в открытом море. Условия чартера прямо запрещают выход при ветре свыше 6 баллов и ночные переходы.
+  </div>
+</div>
+</section>
+
 
 
 
@@ -2001,6 +2299,123 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 
 
+
+
+// ============ MAP ============
+var map, w1Layer, w2Layer, fishLayer;
+
+function initMap(){
+  if (typeof L === 'undefined') return;
+  map = L.map('map', {scrollWheelZoom:false}).setView([37.55, 24.05], 8);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    maxZoom: 18
+  }).addTo(map);
+
+  function dot(color, size){
+    size = size || 11;
+    return L.divIcon({
+      className:'',
+      html:'<div style="width:'+size+'px;height:'+size+'px;border-radius:50%;background:'+color+';border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.25)"></div>',
+      iconSize:[size,size], iconAnchor:[size/2,size/2]
+    });
+  }
+  function base(color){
+    return L.divIcon({
+      className:'',
+      html:'<div style="width:17px;height:17px;border-radius:50%;background:'+color+';border:3px solid #fff;box-shadow:0 0 0 2px '+color+'"></div>',
+      iconSize:[17,17], iconAnchor:[8.5,8.5]
+    });
+  }
+
+  var ALIMOS = [37.9106, 23.7005];
+
+  // ---- WEEK 1: Saronic (catamaran) ----
+  var w1Points = [
+    {c:ALIMOS,          n:'Марина Алимос',        d:'База обеих недель. Чек-ин катамарана 18.07 после 17:00.', m:'Старт'},
+    {c:[37.748,23.432], n:'Эгина',                d:'Порт, фисташки, храм Афайи на холме.', m:'День 1 · 18 нм'},
+    {c:[37.703,23.430], n:'о. Мони',              d:'Необитаемый: олени, павлины, снорклинг.', m:'День 2 · 12 нм'},
+    {c:[37.703,23.508], n:'Агистри',              d:'Сосновый лес до самой воды.', m:'День 2'},
+    {c:[37.498,23.458], n:'Порос',                d:'Русская бухта, Love Bay, водный парк.', m:'День 3 · 22 нм'},
+    {c:[37.350,23.466], n:'Гидра',                d:'Остров без машин — только ослики.', m:'День 4 · 14 нм'},
+    {c:[37.330,23.352], n:'о. Докос',             d:'Необитаемый, древнейшее кораблекрушение.', m:'День 5'},
+    {c:[37.255,23.157], n:'Спецес',               d:'Бухта Зогерия — красивейшая в Саронике.', m:'День 5 · 28 нм'},
+    {c:[37.596,23.079], n:'Эпидавр',              d:'Античный театр ЮНЕСКО, вечерние спектакли.', m:'День 6 · 30 нм'},
+    {c:[37.330,23.147], n:'Порто Хели',           d:'Закрытая лагуна, день на якоре.', m:'День 7 · 18 нм'},
+    {c:ALIMOS,          n:'Алимос · сдача',       d:'Возврат 24.07 до 18:00, сдача 25.07 до 09:00.', m:'Финиш'}
+  ];
+
+  // ---- WEEK 2: Western Cyclades (monohull) ----
+  var w2Points = [
+    {c:ALIMOS,          n:'Марина Алимос',        d:'Приём монохула 25.07 в 17:00.', m:'Старт'},
+    {c:[37.650,24.025], n:'мыс Сунион',           d:'Храм Посейдона. Якорь под храмом, обед на борту.', m:'День 1'},
+    {c:[37.663,24.318], n:'Кея · Вуркари',        d:'Пролив Кеи — коридор пеламиды. Лев Кеи в скале.', m:'День 1 · 35 нм'},
+    {c:[37.435,24.383], n:'Китнос · Колона',      d:'Песчаная коса между двумя морями. Лучшая якорная.', m:'День 2 · 18 нм'},
+    {c:[37.436,24.432], n:'Китнос · Лутра',       d:'Горячие источники прямо на пляже.', m:'День 2'},
+    {c:[37.441,24.941], n:'Сирос · Эрмуполис',    d:'Столица Киклад: мрамор, опера, неоклассика.', m:'День 3 · 22 нм'},
+    {c:[37.146,24.522], n:'Серифос · Ливади',     d:'Хора-крепость на скале. Лучший закат маршрута.', m:'День 4 · 32 нм'},
+    {c:[37.399,24.400], n:'Китнос · Мерихас',     d:'Укрытая гавань — план Б при Мельтеми.', m:'День 5 · 25–40 нм'},
+    {c:ALIMOS,          n:'Алимос · возврат',     d:'ОБЯЗАТЕЛЬНО 31.07 до 17:00. Сдача 01.08 до 09:00.', m:'Финиш'}
+  ];
+
+  // ---- FISHING SPOTS ----
+  var fishPoints = [
+    {c:[37.766,23.755], n:'о. Флевес',            d:'Троллинг: луфарь, пеламида на выходе из Алимоса.'},
+    {c:[37.656,24.014], n:'Патроклос / Сунион',   d:'Троллинг, спиннинг: барракуда, зубан у скал.'},
+    {c:[37.703,23.430], n:'о. Мони (Эгина)',      d:'Спиннинг: каменные окуни, сфирена. Вечером сабики.'},
+    {c:[37.500,23.450], n:'Пролив Порос',         d:'Спиннинг: луфарь на течении, утро и закат.'},
+    {c:[37.338,23.325], n:'Докос — Идра',         d:'Троллинг: пеламида, сериола на свалах.'},
+    {c:[37.660,24.210], n:'Пролив Кея—Макронисос',d:'⭐ Главный коридор пеламиды и малых тунцов.'},
+    {c:[37.540,24.290], n:'мыс Тамелос (Кея)',    d:'Троллинг: луфарь, сериола на стыке течений.'},
+    {c:[37.475,24.395], n:'Китнос, сев.-зап.',    d:'Джиг по свалам 20–50 м: зубан.'},
+    {c:[37.146,24.522], n:'Серифос · Ливади',     d:'Спиннинг: барракуда, окуни вечером с борта.'},
+    {c:[37.360,24.920], n:'Юг Сироса (Вигла)',    d:'Троллинг, джиг: сериола, зубан на банках.'}
+  ];
+
+  function buildRoute(points, color){
+    var group = L.layerGroup();
+    var latlngs = points.map(function(p){ return p.c; });
+    L.polyline(latlngs, {color:color, weight:3, opacity:.75, dashArray:'6,7'}).addTo(group);
+    points.forEach(function(p, i){
+      var isBase = (p.c[0]===ALIMOS[0] && p.c[1]===ALIMOS[1]);
+      var icon = isBase ? base('#C8562A') : dot(color);
+      L.marker(p.c, {icon:icon})
+        .bindPopup('<b>'+p.n+'</b><br>'+p.d+'<span class="popup-meta">'+(p.m||'')+'</span>')
+        .addTo(group);
+    });
+    return group;
+  }
+
+  w1Layer = buildRoute(w1Points, '#3EC9D6');
+  w2Layer = buildRoute(w2Points, '#9b59b6');
+
+  fishLayer = L.layerGroup();
+  fishPoints.forEach(function(p){
+    L.marker(p.c, {icon:dot('#2E7D52', 13)})
+      .bindPopup('<b>🎣 '+p.n+'</b><br>'+p.d)
+      .addTo(fishLayer);
+  });
+
+  w1Layer.addTo(map);
+  w2Layer.addTo(map);
+}
+
+function showMapRoute(el, which){
+  document.querySelectorAll('.mtab').forEach(function(t){t.classList.remove('active');});
+  el.classList.add('active');
+  if(!map) return;
+  [w1Layer, w2Layer, fishLayer].forEach(function(l){ if(l && map.hasLayer(l)) map.removeLayer(l); });
+
+  if(which==='both'){ w1Layer.addTo(map); w2Layer.addTo(map); map.setView([37.55,24.05], 8); }
+  else if(which==='w1'){ w1Layer.addTo(map); map.setView([37.60,23.45], 9); }
+  else if(which==='w2'){ w2Layer.addTo(map); map.setView([37.55,24.30], 9); }
+  else if(which==='fish'){ fishLayer.addTo(map); map.setView([37.55,24.05], 8); }
+}
+
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded', initMap);
+} else { initMap(); }
 
 function filterSights(el, type){
   document.querySelectorAll('.sfilter').forEach(t=>t.classList.remove('active'));

@@ -594,6 +594,17 @@ footer strong{color:var(--aqua);}
 
   @media(max-width:700px){ .anch-specs{grid-template-columns:1fr;} }
 
+
+  .anch-badges{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px;}
+  .anch-badge{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;padding:2px 7px;border-radius:10px;text-transform:uppercase;letter-spacing:.5px;}
+  .anch-badge.wild{background:rgba(46,125,82,.14);color:var(--green);}
+  .anch-badge.bk{background:rgba(26,143,160,.14);color:var(--teal);}
+  .anch-badge.ml{background:rgba(200,86,42,.13);color:var(--rust);}
+  .anch-when{font-size:12px;color:var(--muted);margin-bottom:8px;padding:7px 10px;background:rgba(245,166,35,.09);border-radius:7px;}
+  .anch-when b{font-family:'Montserrat',sans-serif;color:#7a4f00;}
+  .anch-bkfor{font-size:11.5px;color:var(--muted);margin-bottom:9px;line-height:1.4;}
+  .anch-bkfor b{font-family:'Montserrat',sans-serif;font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--teal);}
+
 </style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1612,6 +1623,7 @@ footer strong{color:var(--aqua);}
     <div class="legend-item"><span class="legend-dot" style="background:#F5A623"></span> Достопримечательность</div>
     <div class="legend-item"><span class="legend-line" style="background:#2E7D52"></span> План Б · Арголида (при Мельтеми)</div>
     <div class="legend-item"><span class="legend-dot" style="background:#1A8FA0"></span> Якорная стоянка</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#2E7D52"></span> Дикая / безлюдная бухта</div>
     <div class="legend-item"><span class="legend-dot" style="background:#C8562A"></span> Таверна</div>
   </div>
 
@@ -1863,345 +1875,791 @@ footer strong{color:var(--aqua);}
 <section id="anchorages">
 <div class="container">
   <div class="sec-eye">Стоянки</div>
-  <h2 class="sec-h2">Якорные стоянки и швартовки</h2>
-  <p class="sec-sub">Собрано из лоций, круизных вики и отчётов шкиперов. Указаны грунт, защита от ветра и реальные подводные камни — в прямом и переносном смысле.</p>
+  <h2 class="sec-h2">Якорные стоянки: 40 вариантов</h2>
+  <p class="sec-sub">Из лоций, круизных вики и отчётов шкиперов. С запасными вариантами на случай, когда основное место занято, и дикими бухтами, куда почти никто не заходит.</p>
 
   <div class="alert warn">
-    <strong>⚠️ Три правила, которые спасают ночь:</strong> <strong>1)</strong> В июле в порты приходить <strong>до 14:00</strong> — иначе места не будет, особенно на Гидре, Поросе и Спецесе. <strong>2)</strong> Забронировать место в большинстве мест нельзя, работает «кто первый». <strong>3)</strong> На травяном грунте якорь <strong>только кажется</strong> забравшим и вылетает при первом же шквале — <strong>ныряйте и проверяйте глазами</strong>. Это не паранойя, это стандартная практика в Кикладах.
+    <strong>⚠️ Три правила, которые спасают ночь:</strong> <strong>1)</strong> В июле в порты приходить <strong>до 14:00</strong>, на Гидру — <strong>до 13:00</strong>. Бронировать в большинстве мест нельзя, работает «кто первый». <strong>2)</strong> На травяном грунте якорь <strong>только кажется</strong> забравшим и вылетает при первом шквале — <strong>ныряйте и проверяйте глазами</strong>. В Кикладах это стандартная практика, а не паранойя. <strong>3)</strong> Всегда держите в голове <strong>запасной вариант</strong> — фильтр ниже покажет, куда уходить, если место занято.
   </div>
 
   <div class="anch-filter">
-    <div class="afilter active" onclick="filterAnch(this,'all')">Все</div>
-    <div class="afilter" onclick="filterAnch(this,'sar')">Саронический залив</div>
+    <div class="afilter active" onclick="filterAnch(this,'all')">Все 40</div>
+    <div class="afilter" onclick="filterAnch(this,'sar')">Сароник</div>
     <div class="afilter" onclick="filterAnch(this,'cyc')">Киклады</div>
-    <div class="afilter" onclick="filterAnch(this,'arg')">Арголида (план Б)</div>
+    <div class="afilter" onclick="filterAnch(this,'arg')">Арголида</div>
+    <div class="afilter" onclick="filterAnch(this,'wild')">🏝 Дикие и безлюдные</div>
+    <div class="afilter" onclick="filterAnch(this,'backup')">🔄 Запасные</div>
     <div class="afilter" onclick="filterAnch(this,'meltemi')">🌬 Держат Мельтеми</div>
   </div>
 
   <div class="anch-grid">
 
-    <div class="anch-card" data-reg="sar" data-melt="no">
+    <div class="anch-card" data-reg="sar" data-wild="0" data-backup="0" data-melt="0">
       <div class="anch-head good">
         <div class="anch-name-row"><span class="anch-name">Эгина · порт</span><span class="anch-coord">37.748, 23.427</span></div>
         <div class="anch-type">Швартовка кормой · город</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Первая ночь маршрута. Удобный, хорошо защищённый порт с полной инфраструктурой: супермаркеты, банкоматы, рынок. Знаменитые фисташки.</div>
+        <div class="anch-badges"></div>
+        <div class="anch-desc">Первая ночь маршрута. Полная инфраструктура: супермаркеты, банкоматы, рынок, фисташки.</div>
         <div class="anch-specs">
           <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок/ил, держит хорошо</div></div>
           <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая, кроме западных</div></div>
         </div>
-        <div class="anch-warn"><b>Внимание</b>В сезон забивается. Приходить пораньше или уходить в Пердику.</div>
+        <div class="anch-warn"><b>Важно</b>В сезон забивается. Приходить <b>до 14:00</b> или сразу идти в Пердику.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 14:00</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.748,23.427" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="sar" data-melt="no">
+    <div class="anch-card" data-reg="sar" data-wild="0" data-backup="1" data-melt="0">
       <div class="anch-head good">
-        <div class="anch-name-row"><span class="anch-name">Пердика (юг Эгины)</span><span class="anch-coord">37.700, 23.463</span></div>
+        <div class="anch-name-row"><span class="anch-name">Пердика (юг Эгины)</span><span class="anch-coord">37.7, 23.463</span></div>
         <div class="anch-type">Швартовка кормой · рыбацкая деревня</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Куда лучше идти вместо порта Эгины. Тихая гавань, дружелюбный причал, ряд закатных таверн прямо у воды. Отсюда 5 минут до острова Мони.</div>
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Куда лучше идти вместо порта Эгины: тихо, дружелюбный причал, ряд закатных таверн у воды. 5 минут до Мони.</div>
         <div class="anch-specs">
           <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок, хорошо держит</div></div>
           <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая</div></div>
         </div>
-        <div class="anch-warn"><b>Совет шкиперов</b>Волна от паромов. Заводите <strong>длинные кормовые концы</strong> — они гасят рывки.</div>
-        <a class="anch-link" href="https://maps.google.com/?q=37.700,23.463" target="_blank">На карте</a>
+        <div class="anch-warn"><b>Важно</b>Волна от паромов — заводите <b>длинные кормовые концы</b>, они гасят рывки.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 15:00</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Эгина-порт</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.7,23.463" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="sar" data-melt="no">
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="0" data-melt="0">
       <div class="anch-head good">
-        <div class="anch-name-row"><span class="anch-name">о. Мони</span><span class="anch-coord">37.703, 23.430</span></div>
+        <div class="anch-name-row"><span class="anch-name">о. Мони</span><span class="anch-coord">37.703, 23.43</span></div>
         <div class="anch-type">Якорь · дневная стоянка</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Необитаемый островок: олени, павлины, прозрачная вода с песчаными пятнами. Классика обеденной стоянки и снорклинга. Ночевать неудобно — на ночь уходим в Пердику.</div>
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span></div>
+        <div class="anch-desc">Необитаемый островок: олени, павлины, прозрачная вода. Классика обеда и снорклинга.</div>
         <div class="anch-specs">
           <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песчаные пятна среди травы</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Глубина</div><div class="anch-spec-v">5–10 м</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Дневная; на ночь — в Пердику</div></div>
         </div>
-        <div class="anch-warn"><b>Техника</b>Ищите <strong>именно песчаные пятна</strong> — на траве не заберёт. Вода прозрачная, всё видно сверху.</div>
-        <a class="anch-link" href="https://maps.google.com/?q=37.703,23.430" target="_blank">На карте</a>
+        <div class="anch-warn"><b>Важно</b>Ищите <b>именно песчаные пятна</b> — на траве не заберёт. Вода прозрачная, всё видно сверху.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>Днём</b></div>
+        
+        <a class="anch-link" href="https://maps.google.com/?q=37.703,23.43" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="sar" data-melt="yes">
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="1" data-melt="0">
       <div class="anch-head top">
-        <div class="anch-name-row"><span class="anch-name">⭐ Бухта Висти (север Пороса)</span><span class="anch-coord">37.529, 23.437</span></div>
+        <div class="anch-name-row"><span class="anch-name">⭐ Апонисос (Агистри)</span><span class="anch-coord">37.686, 23.335</span></div>
+        <div class="anch-type">Якорь · дикая бухта</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">ЖЕМЧУЖИНА. Юго-запад Агистри: изумрудная вода в девственном сосновом лесу, рядом островок Дорусса. Самая экзотическая вода Сароники — и мало кто из афинян о ней знает.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок среди травы</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая от N</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Инфраструктуры нет. Красота стоит того, чтобы прийти пораньше — по выходным приходят афиняне.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 13:00 в выходные</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Порт Эгины, Пердика</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.686,23.335" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="1" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Драгонера (Агистри)</span><span class="anch-coord">37.694, 23.32</span></div>
+        <div class="anch-type">Якорь · галечная бухта в соснах</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Тихая галечная бухта в густом сосновом лесу на западе Агистри. Идеально для купания в тишине.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Смешанный, 6–14 м; держит по-разному</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Открыта на ЮВ</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Грунт <b>неоднородный</b> — приём зависит от того, попали ли на песок. Проверяйте.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>Днём или на ночь в штиль</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Апонисос</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.694,23.32" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="0" data-melt="1">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Бухта Висти (Порос)</span><span class="anch-coord">37.529, 23.437</span></div>
         <div class="anch-type">Якорь · укрытая бухта</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Жемчужина Пороса и, пожалуй, лучшая якорная Сароники. Тесная бухта в соснах, бирюзовая прозрачная вода, <strong>круговая защита почти от всех ветров</strong>. Тихо и красиво.</div>
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Лучшая якорная Сароники. Тесная бухта в соснах, бирюзовая прозрачная вода, круговая защита почти от всех ветров.</div>
         <div class="anch-specs">
           <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Хорошо держит</div></div>
           <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Почти круговая, открыта узко на СВ</div></div>
         </div>
-        <div class="anch-warn"><b>Как найти</b>Вход <strong>трудно разглядеть</strong> с моря. Ориентируйтесь на островок Висти — он выведет вас во вход.</div>
+        <div class="anch-warn"><b>Важно</b>Вход <b>трудно разглядеть</b> с моря. Ориентируйтесь на островок Висти — он выведет вас во вход.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.529,23.437" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="sar" data-melt="no">
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="1" data-melt="1">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Геролимани (Порос)</span><span class="anch-coord">37.535, 23.45</span></div>
+        <div class="anch-type">Якорь · круговая защита</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Мало кто знает. Круговая защита и <b>чистейшая вода Пороса</b>. Тихо, красиво, никого.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит хорошо, 5–8 м</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Круговая</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Становитесь в северо-восточном рукаве, 5–8 м. Можно завести конец на берег.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Висти, набережная Пороса</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.535,23.45" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-wild="0" data-backup="1" data-melt="0">
       <div class="anch-head good">
-        <div class="anch-name-row"><span class="anch-name">Русская бухта (Порос)</span><span class="anch-coord">37.512,23.434</span></div>
+        <div class="anch-name-row"><span class="anch-name">Барбария (Порос)</span><span class="anch-coord">37.531, 23.455</span></div>
+        <div class="anch-type">Якорь · пляж и таверна</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Приятный пляж с итальянскими кипарисами, летом работает таверна. 50 минут пешком до храма Посейдона.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок/трава, держит хорошо</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Открыта на север</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Отлично при восточном или западном ветре. <b>При северном — уходить.</b></div>
+        <div class="anch-when">🕐 Когда приходить: <b>При E/W ветре</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Висти</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.531,23.455" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-wild="0" data-backup="0" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Русская бухта (Порос)</span><span class="anch-coord">37.512, 23.434</span></div>
         <div class="anch-type">Якорь · обед и купание</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Бывшая российская военно-морская база XIX века, белая церковь на островке Даскалио. Надёжная обеденная стоянка на песке. Рядом Love Bay — крошечная бухта в соснах.</div>
+        <div class="anch-badges"></div>
+        <div class="anch-desc">Бывшая российская военно-морская база XIX века, белая церковь на островке Даскалио. Рядом Love Bay в соснах.</div>
         <div class="anch-specs">
           <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок; есть травяные пятна</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Приём</div><div class="anch-spec-v">Хороший, если обойти траву</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Приличная</div></div>
         </div>
-        <div class="anch-warn"><b>Опасность</b>В бухте есть <strong>риф</strong>. Заходите внимательно, можно завести конец на скалы.</div>
+        <div class="anch-warn"><b>Важно</b>В бухте есть <b>риф</b>. Заходите внимательно, можно завести конец на скалы.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>Днём</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.512,23.434" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="sar" data-melt="no">
+    <div class="anch-card" data-reg="sar" data-wild="0" data-backup="0" data-melt="0">
       <div class="anch-head care">
-        <div class="anch-name-row"><span class="anch-name">Порос · городская набережная</span><span class="anch-coord">37.498, 23.451</span></div>
+        <div class="anch-name-row"><span class="anch-name">Порос · набережная</span><span class="anch-coord">37.498, 23.451</span></div>
         <div class="anch-type">Швартовка кормой · вода, топливо</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Швартуетесь кормой и выходите прямо в таверну. Вода и топливо на причале — <strong>ключевая точка пополнения</strong> в середине маршрута.</div>
+        <div class="anch-badges"></div>
+        <div class="anch-desc">Швартуетесь кормой и выходите прямо в таверну. Вода и топливо — ключевая точка пополнения на маршруте.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Течение</div><div class="anch-spec-v">Заметное в проливе</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Трафик</div><div class="anch-spec-v">Постоянные паромы</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая внутри пролива</div></div>
         </div>
-        <div class="anch-warn"><b>Заход</b>Пролив узкий, <strong>течение плюс частые паромы</strong>. Заходите с положительным углом, якорь готовьте заранее, отдавайте уверенно.</div>
+        <div class="anch-warn"><b>Важно</b>Пролив узкий: <b>течение плюс частые паромы</b>. Заходить с положительным углом, якорь готовить заранее.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 14:00</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.498,23.451" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="sar" data-melt="no">
+    <div class="anch-card" data-reg="sar" data-wild="0" data-backup="0" data-melt="0">
       <div class="anch-head care">
-        <div class="anch-name-row"><span class="anch-name">⚠️ Гидра · гавань</span><span class="anch-coord">37.350, 23.466</span></div>
+        <div class="anch-name-row"><span class="anch-name">⚠️ Гидра · гавань</span><span class="anch-coord">37.35, 23.466</span></div>
         <div class="anch-type">Швартовка · самый сложный порт маршрута</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Красивейшая гавань Греции — и самая нервная. Порт <strong>крошечный</strong>, при сильном ветре встать безопасно почти невозможно.</div>
+        <div class="anch-badges"></div>
+        <div class="anch-desc">Красивейшая гавань Греции — и самая нервная. Порт крошечный, при сильном ветре встать безопасно почти невозможно.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Мест</div><div class="anch-spec-v">Очень мало</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Приходить</div><div class="anch-spec-v">До 13:00, не позже</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит, но тесно</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая, если встали</div></div>
         </div>
-        <div class="anch-warn"><b>Главная проблема — якоря</b>Цепи <strong>постоянно перепутываются</strong>. Ваш якорь может выдернуть чужая лодка, поднимая свой. Следить за положением <strong>весь день</strong>. Запасной вариант — бухта Мандраки в 1 км или западный берег острова.</div>
-        <a class="anch-link" href="https://maps.google.com/?q=37.350,23.466" target="_blank">На карте</a>
+        <div class="anch-warn"><b>Важно</b><b>ЯКОРЯ ПОСТОЯННО ПУТАЮТСЯ.</b> Ваш якорь может выдернуть соседняя лодка, поднимая свой. Следить <b>весь день</b>. Приходить <b>до 13:00</b>, иначе места не будет.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 13:00, не позже</b></div>
+        
+        <a class="anch-link" href="https://maps.google.com/?q=37.35,23.466" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="sar" data-melt="yes">
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="1" data-melt="0">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Агиос Николаос (Гидра)</span><span class="anch-coord">37.312, 23.437</span></div>
+        <div class="anch-type">Якорь · только с моря</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Дикая галечная бухта на юго-западе Гидры, <b>добраться можно только морем</b>. Лесистые холмы, полное уединение. Спасение, когда порт Гидры забит.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит; глубины большие</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">От северных хорошая</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Глубины у берега <b>большие</b>, места для разворота немного. Заводите конец на берег.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Порт Гидры</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.312,23.437" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="1" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Висти / Кавури (Гидра)</span><span class="anch-coord">37.318, 23.425</span></div>
+        <div class="anch-type">Якорь · западная оконечность</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Пляжи в соснах на западном мысу Гидры. Красиво, тихо, только с воды.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит; глубоко</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">От северных</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Как и везде на западе Гидры: <b>глубоко, места мало</b>. При сильном севере — тесно.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>Приходить утром</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Порт Гидры</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.318,23.425" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-wild="0" data-backup="1" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Мандраки (Гидра)</span><span class="anch-coord">37.355, 23.481</span></div>
+        <div class="anch-type">Якорь · 1 км от города</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Ближайший запасной вариант к порту Гидры — 1 км, доходите на динги или пешком по берегу.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Приличная</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Первое, куда идти, если <b>в порту Гидры нет места</b>. А место там кончается рано.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>Когда порт полон</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Порт Гидры</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.355,23.481" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="0" data-melt="1">
       <div class="anch-head top">
         <div class="anch-name-row"><span class="anch-name">⭐ о. Докос</span><span class="anch-coord">37.334, 23.331</span></div>
         <div class="anch-type">Якорь · ночёвка в тишине</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Необитаемый остров. Широкая природная бухта, <strong>отличное укрытие</strong>. Ни зданий, ни огней — только море, холмы и звёзды. Одна из самых запоминающихся ночёвок маршрута, детям точно понравится.</div>
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Необитаемый остров. Ни зданий, ни огней — только море, холмы и звёзды. Одна из самых запоминающихся ночёвок. У берега лежит древнейшее известное кораблекрушение мира (2500–2000 гг. до н.э.).</div>
         <div class="anch-specs">
           <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит отлично</div></div>
           <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая, в т.ч. от Мельтеми</div></div>
         </div>
-        <div class="anch-warn"><b>Учтите</b>Никакой инфраструктуры. Всё своё: вода, еда, свет.</div>
+        <div class="anch-warn"><b>Важно</b>Инфраструктуры нет вообще. Всё своё: вода, еда, свет. В этом и смысл.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Гидра</div>
         <a class="anch-link" href="https://maps.google.com/?q=37.334,23.331" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="sar" data-melt="no">
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="0" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Целевиния (скалы)</span><span class="anch-coord">37.443, 23.505</span></div>
+        <div class="anch-type">Якорь · купание на переходе</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span></div>
+        <div class="anch-desc">Скалы на краю Пелопоннеса между Поросом и Гидрой. Классическая остановка на купание по пути.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песчаные пятна</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Только в штиль</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b><b>Обеденная остановка, не ночёвка.</b> Открыто.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>Днём в штиль</b></div>
+        
+        <a class="anch-link" href="https://maps.google.com/?q=37.443,23.505" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="0" data-melt="0">
       <div class="anch-head top">
         <div class="anch-name-row"><span class="anch-name">⭐ Зогерия (Спецес)</span><span class="anch-coord">37.276, 23.121</span></div>
         <div class="anch-type">Якорь · красивейшая бухта Сароники</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Любимая якорная шкиперов. Сосны до самой воды, изумрудная бухта, таверна на берегу. Отличное купание и снорклинг.</div>
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span></div>
+        <div class="anch-desc">Любимая якорная шкиперов. Сосны до самой воды, изумрудная бухта, таверна на берегу.</div>
         <div class="anch-specs">
           <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок</div></div>
           <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая от северных</div></div>
         </div>
+        <div class="anch-warn"><b>Важно</b>Популярна. Приходить <b>до 14:00</b>, иначе встанете далеко от берега.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 14:00</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.276,23.121" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="sar" data-melt="no">
+    <div class="anch-card" data-reg="sar" data-wild="1" data-backup="1" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Айя Параскеви (Спецес)</span><span class="anch-coord">37.245, 23.117</span></div>
+        <div class="anch-type">Якорь · юг острова</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Тише, чем Зогерия и Хиница: нет ни морских такси, ни огней большого отеля. Просто красивая бухта.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Приличная</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Открыта южным ветрам. При южном — уходить в Зогерию.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Зогерия</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.245,23.117" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="sar" data-wild="0" data-backup="0" data-melt="0">
       <div class="anch-head care">
-        <div class="anch-name-row"><span class="anch-name">Спецес · Старая гавань (Балтиза)</span><span class="anch-coord">37.263, 23.158</span></div>
+        <div class="anch-name-row"><span class="anch-name">Спецес · Старая гавань</span><span class="anch-coord">37.263, 23.158</span></div>
         <div class="anch-type">Якорь + концы на берег</div>
       </div>
       <div class="anch-body">
+        <div class="anch-badges"></div>
         <div class="anch-desc">Историческая гавань с верфями, где до сих пор строят деревянные лодки. Атмосферно, но швартовка нетривиальная.</div>
-        <div class="anch-warn"><b>Особенность</b><strong>Причала как такового нет.</strong> Отдаёте якорь и заводите концы на стены, скалы или между ними. Нужна пара крепких рук и динги.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b><b>Причала как такового нет.</b> Отдаёте якорь и заводите концы на стены, скалы или между ними. Нужна пара крепких рук и динги.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 14:00</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.263,23.158" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="cyc" data-melt="yes">
-      <div class="anch-head top">
-        <div class="anch-name-row"><span class="anch-name">⭐ Сунион (под храмом)</span><span class="anch-coord">37.650, 24.021</span></div>
-        <div class="anch-type">Якорь · обед или ночёвка</div>
+    <div class="anch-card" data-reg="sar" data-wild="0" data-backup="1" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Метана (вулкан)</span><span class="anch-coord">37.577, 23.353</span></div>
+        <div class="anch-type">Порт · горячие источники</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Якорь прямо под храмом Посейдона. Вид снизу вверх сильнее, чем с суши, ночью храм подсвечен. Классическая первая ночь кикладского маршрута.</div>
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Вулканический полуостров: сернистые горячие источники у самой воды. Детям — восторг, взрослым — спина.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Глубина</div><div class="anch-spec-v">6–10 м</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая</div></div>
         </div>
-        <a class="anch-link" href="https://maps.google.com/?q=37.650,24.021" target="_blank">На карте</a>
+        <div class="anch-warn"><b>Важно</b>Пахнет серой — это нормально, это вулкан.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Эгина, Порос</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.577,23.353" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="cyc" data-melt="yes">
+    <div class="anch-card" data-reg="cyc" data-wild="0" data-backup="0" data-melt="1">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Сунион (под храмом)</span><span class="anch-coord">37.65, 24.021</span></div>
+        <div class="anch-type">Якорь · обед или ночёвка</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Якорь прямо под храмом Посейдона. Вид снизу вверх сильнее, чем с суши; ночью храм подсвечен.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок, 6–10 м</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">От северных хорошая</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Классическая первая ночь кикладского маршрута. Место популярное — приходить <b>до 16:00</b>.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 16:00</b></div>
+        
+        <a class="anch-link" href="https://maps.google.com/?q=37.65,24.021" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-wild="0" data-backup="0" data-melt="1">
       <div class="anch-head top">
         <div class="anch-name-row"><span class="anch-name">⭐ Вуркари (Кея)</span><span class="anch-coord">37.663, 24.318</span></div>
         <div class="anch-type">Швартовка кормой · лэйзи-лайны</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Социальный порт Кеи: таверны прямо у причала, любимая стоянка афинских яхтсменов. <strong>Лучшая защита от северного Мельтеми</strong> на острове.</div>
+        <div class="anch-badges"><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Социальный порт Кеи: таверны у причала, любимая стоянка афинских яхтсменов. Лучшая защита от Мельтеми на острове.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Швартовка</div><div class="anch-spec-v">Лэйзи-лайны, небольшая плата</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Лэйзи-лайны</div></div>
           <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Отличная от N</div></div>
         </div>
-        <div class="anch-warn"><b>Альтернатива</b>Причал Кориссии бесплатный, но <strong>открыт при северном ветре свыше 18 узлов</strong>. При Мельтеми — только Вуркари.</div>
+        <div class="anch-warn"><b>Важно</b>Причал Кориссии рядом бесплатный, но <b>открыт при северном свыше 18 узлов</b>, грунт подозрительный, торчат камни. При Мельтеми — только Вуркари.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 14:00</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.663,24.318" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="cyc" data-melt="yes">
+    <div class="anch-card" data-reg="cyc" data-wild="1" data-backup="1" data-melt="1">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐⭐ Полес / Картея (Кея)</span><span class="anch-coord">37.56, 24.33</span></div>
+        <div class="anch-type">Якорь · античный город</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">САМОЕ УНИКАЛЬНОЕ МЕСТО МАРШРУТА. Над бухтой — <b>античный город Картея</b>: храм Афины, античный театр, стены акрополя. Город жил 1300 лет. Дойти можно <b>только пешком с якоря</b> — именно поэтому он так хорошо сохранился и там никого нет. Под водой между бухтами видно затонувший древний мол 160 м длиной.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок за пляжем; держит очень хорошо</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая от N/NE и N/NW</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b><b>В центре бухты — островок с мелким рифом.</b> Заходить внимательно. Открыто на восток и юго-восток. Автор лоции пережил здесь <b>шторм Мельтеми 45+ узлов</b> на хорошо забравшем якоре — это говорит о качестве грунта. По выходным приходят афиняне.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>Будни — пусто. Выходные — до 13:00</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Вуркари</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.56,24.33" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-wild="0" data-backup="1" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Кавия / Кундурос (Кея)</span><span class="anch-coord">37.578, 24.28</span></div>
+        <div class="anch-type">Якорь · таверна на пляже</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Приятная бухта с таверной «Porto Koundouros» на хорошем пляже.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок/трава, 4–7 м</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хороша при NW–ESE</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b><b>Возможны резкие шквалы с северо-востока.</b> Ближе к берегу — каменные плиты, не становитесь вплотную. Лучше восточная и северная бухточки.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>При NW–ESE</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Вуркари</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.578,24.28" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-wild="0" data-backup="0" data-melt="1">
       <div class="anch-head care">
         <div class="anch-name-row"><span class="anch-name">⭐⚠️ Колона / Фикиада (Китнос)</span><span class="anch-coord">37.415, 24.367</span></div>
         <div class="anch-type">Якорь · знаменитая песчаная коса</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Икона Эгеиды: песчаная коса соединяет остров с островком Айос-Лукас, море с обеих сторон. Фикиада (западная сторона) <strong>отлично защищена и от Мельтеми, и от южных ветров</strong>. Купание с обеих сторон косы — детям восторг.</div>
+        <div class="anch-badges"><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Икона Эгеиды: песчаная коса соединяет остров с островком Айос-Лукас, море с обеих сторон. Фикиада (западная сторона) отлично защищена и от Мельтеми, и от южных.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок <strong>с травой</strong></div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Тактика</div><div class="anch-spec-v">По ветру: север или юг косы</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок <b>с травой</b></div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Фикиада — отличная</div></div>
         </div>
-        <div class="anch-warn"><b>🔴 Критично: якорь врёт</b>На дне <strong>трава</strong>. Якорь <strong>выглядит забравшим, но вылетает при первом сильном шквале</strong>. <strong>Обязательно нырните и проверьте глазами.</strong> Со стороны Колоны при северном ветре качает — заводите длинные концы на скалы.</div>
+        <div class="anch-warn"><b>Важно</b><b>🔴 ЯКОРЬ ВРЁТ.</b> На дне трава: якорь <b>выглядит забравшим, но вылетает при первом сильном шквале</b>. Обязательно нырните и проверьте глазами. Со стороны Колоны при северном качает — заводите длинные концы на скалы.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 13:00 — место культовое</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.415,24.367" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="cyc" data-melt="yes">
+    <div class="anch-card" data-reg="cyc" data-wild="0" data-backup="0" data-melt="1">
       <div class="anch-head top">
         <div class="anch-name-row"><span class="anch-name">Лутра (Китнос)</span><span class="anch-coord">37.436, 24.432</span></div>
         <div class="anch-type">Мини-марина · горячие источники</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Термальные источники прямо на пляже — вода 38–52°C стекает в море. <strong>Лучшая защита от Мельтеми на всём острове.</strong> Вода и электричество на причале.</div>
+        <div class="anch-badges"><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Термальные источники прямо на пляже, вода 38–52°C стекает в море. Лучшая защита от Мельтеми на всём острове.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Мест</div><div class="anch-spec-v">Мало — бронировать заранее</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Сервис</div><div class="anch-spec-v">Вода, электричество, таверны</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Лэйзи-лайны</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Лучшая на острове</div></div>
         </div>
+        <div class="anch-warn"><b>Важно</b><b>Мест очень мало</b> — бронировать заранее, особенно в августе.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>Бронировать заранее</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.436,24.432" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="cyc" data-melt="yes">
+    <div class="anch-card" data-reg="cyc" data-wild="0" data-backup="1" data-melt="1">
       <div class="anch-head top">
-        <div class="anch-name-row"><span class="anch-name">Мерихас (Китнос)</span><span class="anch-coord">37.399, 24.400</span></div>
+        <div class="anch-name-row"><span class="anch-name">Мерихас (Китнос)</span><span class="anch-coord">37.399, 24.4</span></div>
         <div class="anch-type">Главный порт · план Б при ветре</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Главный порт острова. По оценке лоций — <strong>лучшее всепогодное укрытие на Китносе</strong>. Топливо, вода, супермаркеты, банк, таверны.</div>
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Главный порт острова. По оценке лоций — лучшее всепогодное укрытие на Китносе. Топливо, вода, супермаркеты, банк, таверны.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Глубина</div><div class="anch-spec-v">2–6 м</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Швартовка</div><div class="anch-spec-v">Кормой к причалу</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">2–6 м, кормой к причалу</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Лучшая всепогодная</div></div>
         </div>
-        <div class="anch-warn"><b>Запасной вариант</b>Если пойдёт западная зыбь — бухта Апокруси в 1 миле севернее спокойнее. Грунт травяной, якорь проверять.</div>
-        <a class="anch-link" href="https://maps.google.com/?q=37.399,24.400" target="_blank">На карте</a>
+        <div class="anch-warn"><b>Важно</b>Если пойдёт западная зыбь — бухта Апокруси в 1 миле севернее спокойнее (грунт травяной, якорь проверять).</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Лутра, Колона</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.399,24.4" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="cyc" data-melt="yes">
+    <div class="anch-card" data-reg="cyc" data-wild="1" data-backup="1" data-melt="1">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐ Фламбурия (Китнос)</span><span class="anch-coord">37.376, 24.383</span></div>
+        <div class="anch-type">Якорь · держит шторм</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Дикая бухта с церковью Панагии на юго-западе. Таверна на берегу. Одно из немногих мест, которое лоции прямо рекомендуют <b>в шторм Мельтеми</b>.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v"><b>Отличный приём</b>, 5 м у северного края пляжа</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Годится в <b>шторма N–NE</b></div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Настоящее убежище. Если задуло всерьёз и до Мерихаса не дойти — сюда.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Колона, Лутра</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.376,24.383" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-wild="1" data-backup="1" data-melt="1">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Айос Иоаннис (Китнос)</span><span class="anch-coord">37.389, 24.464</span></div>
+        <div class="anch-type">Якорь · восточный берег</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Дикие бухты на восточном берегу с песчаным дном. Хорошее укрытие от Мельтеми.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок с крупными пятнами водорослей</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая от Мельтеми</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Из-за травы <b>вставать ближе к берегу</b>. На пляже есть деревья — можно завести конец.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Колона</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.389,24.464" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-wild="1" data-backup="1" data-melt="1">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Мавриану (Китнос)</span><span class="anch-coord">37.362, 24.412</span></div>
+        <div class="anch-type">Якорь · дикое и безлюдное</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Пляж «Стифо» с одинокой купой тамарисков. Совсем в стороне от протоптанных троп — тихо и пусто.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок/трава, надёжно</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Годится в Мельтеми</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Никаких удобств. Только вы и тамариски.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Фламбурия</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.362,24.412" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-wild="0" data-backup="0" data-melt="1">
       <div class="anch-head top">
         <div class="anch-name-row"><span class="anch-name">⭐ Эрмуполис (Сирос)</span><span class="anch-coord">37.442, 24.943</span></div>
         <div class="anch-type">Городской причал · самая лёгкая швартовка</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Шкиперы называют это <strong>самой лёгкой швартовкой на Кикладах</strong>: бесплатно, места много, просторно. Столица Киклад — полноценные супермаркеты, топливо, вода, рынок.</div>
+        <div class="anch-badges"><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Шкиперы называют это самой лёгкой швартовкой на Кикладах: бесплатно, места много, просторно. Столица Киклад.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Стоимость</div><div class="anch-spec-v">Бесплатно</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Мест</div><div class="anch-spec-v">Много даже в сезон</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая</div></div>
         </div>
-        <div class="anch-warn"><b>Тише и уютнее</b>Если хочется ужин на борту в тишине — бухта Финикас на западе острова, песок, 8 м.</div>
+        <div class="anch-warn"><b>Важно</b>Редкий случай — <b>место есть даже в сезон</b>. Полноценные супермаркеты, топливо, вода.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.442,24.943" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="cyc" data-melt="yes">
+    <div class="anch-card" data-reg="cyc" data-wild="1" data-backup="1" data-melt="1">
+      <div class="anch-head top">
+        <div class="anch-name-row"><span class="anch-name">⭐⭐ Граммата (Сирос)</span><span class="anch-coord">37.498, 24.888</span></div>
+        <div class="anch-type">Якорь · святилище моряков</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">МЕСТО С МУРАШКАМИ. На скалах этой бухты <b>две тысячи лет</b> моряки высекали благодарности богам за спасение от шторма — надписи сохранились до сих пор, и языческие, и христианские. Тамариски, вулканические скалы, полное безлюдье. Это буквально древняя штормовая гавань, и она работает по назначению до сих пор.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Скалы с обеих сторон <b>прикрывают от северных</b></div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Гавань-убежище: лоции прямо пишут, что здесь <b>пережидают непогоду</b>. Дойти по суше — час пешком, поэтому людей почти нет.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Эрмуполис</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.498,24.888" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-wild="0" data-backup="1" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Финикас (Сирос)</span><span class="anch-coord">37.407, 24.885</span></div>
+        <div class="anch-type">Якорь · тихая бухта</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Если хочется тихий ужин на борту вместо шумного города — вот сюда.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок, 8 м</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Приличная</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Спокойная альтернатива Эрмуполису.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Эрмуполис</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.407,24.885" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="cyc" data-wild="0" data-backup="0" data-melt="1">
       <div class="anch-head care">
         <div class="anch-name-row"><span class="anch-name">Ливади (Серифос)</span><span class="anch-coord">37.146, 24.522</span></div>
         <div class="anch-type">Единственная гавань острова</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Единственный порт Серифоса. Кормой к южной стороне причала или на якорь в бухте. Наверху — Хора-крепость на скале, лучший закат маршрута.</div>
+        <div class="anch-badges"><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Единственный порт Серифоса. Наверху — Хора-крепость на скале, лучший закат маршрута.</div>
         <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Кормой к южной стороне</div></div>
           <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая от Мельтеми</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Минусы</div><div class="anch-spec-v">Людно и шумно</div></div>
         </div>
-        <div class="anch-warn"><b>Нюансы</b>Защита от Мельтеми хорошая, но <strong>шквалы всё равно сильные</strong>. С северной стороны причала грунт держит хуже — при сильном северном туда не вставать. При юго-восточном в бухту заходит серьёзная зыбь.</div>
+        <div class="anch-warn"><b>Важно</b>Защита есть, но <b>шквалы всё равно сильные</b>. С <b>северной</b> стороны причала грунт держит хуже — при сильном северном туда не вставать. При юго-восточном заходит серьёзная зыбь. Людно и шумно.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>До 14:00</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.146,24.522" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="cyc" data-melt="yes">
+    <div class="anch-card" data-reg="cyc" data-wild="1" data-backup="1" data-melt="1">
       <div class="anch-head care">
-        <div class="anch-name-row"><span class="anch-name">⚠️ Бухта Кутала (Серифос)</span><span class="anch-coord">37.129, 24.462</span></div>
+        <div class="anch-name-row"><span class="anch-name">⚠️ Кутала (Серифос)</span><span class="anch-coord">37.129, 24.462</span></div>
         <div class="anch-type">Якорь · юг острова</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Широкая бухта на юге, <strong>сильная защита от Мельтеми</strong>. Красиво и пусто.</div>
-        <div class="anch-warn"><b>🔴 Катабатические шквалы</b>Главная опасность: ветер срывается с гор и бьёт вниз — <strong>от 0 до 25 узлов за секунды</strong>. Лоции рекомендуют <strong>два якоря</strong>. С детьми на борту — лучше выбрать Ливади.</div>
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Широкая бухта на юге, сильная защита от Мельтеми. Красиво и пусто.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Сильная от Мельтеми</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b><b>🔴 КАТАБАТИЧЕСКИЕ ШКВАЛЫ:</b> ветер срывается с гор и бьёт вниз — <b>от 0 до 25 узлов за секунды</b>. Лоции рекомендуют <b>два якоря</b>. С детьми на борту — лучше Ливади.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>Только при уверенном прогнозе</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Ливади</div>
         <a class="anch-link" href="https://maps.google.com/?q=37.129,24.462" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="arg" data-melt="yes">
+    <div class="anch-card" data-reg="cyc" data-wild="1" data-backup="1" data-melt="0">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Сикамия (Серифос)</span><span class="anch-coord">37.18, 24.494</span></div>
+        <div class="anch-type">Якорь · дикий пляж</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge wild">Дикая</span><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Дикий песчаный пляж на севере острова, безлюдный. Классическая обеденная стоянка на переходе.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">От южных</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Открыта северным — <b>при Мельтеми не подходит</b>. Только в затишье.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В штиль, днём</b></div>
+        
+        <a class="anch-link" href="https://maps.google.com/?q=37.18,24.494" target="_blank">На карте</a>
+      </div>
+    </div>
+
+    <div class="anch-card" data-reg="arg" data-wild="0" data-backup="1" data-melt="1">
       <div class="anch-head top">
         <div class="anch-name-row"><span class="anch-name">⭐ Порто Хели</span><span class="anch-coord">37.323, 23.146</span></div>
         <div class="anch-type">Якорь · закрытая лагуна</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Огромная почти замкнутая бухта — внутри как озеро при любом ветре снаружи. <strong>Идеальное убежище при Мельтеми.</strong> Целый день на якоре: SUP, снорклинг, рыбалка, барбекю.</div>
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Огромная почти замкнутая бухта — внутри как озеро при любом ветре снаружи. Идеальное убежище при Мельтеми. Целый день на якоре: SUP, снорклинг, рыбалка, барбекю.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Круговая, отличная</div></div>
           <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит хорошо</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v"><b>Круговая, отличная</b></div></div>
         </div>
+        <div class="anch-warn"><b>Важно</b>Одно из самых надёжных укрытий всего района. Места хватает всем.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Спецес, Гидра</div>
         <a class="anch-link" href="https://maps.google.com/?q=37.323,23.146" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="arg" data-melt="yes">
+    <div class="anch-card" data-reg="arg" data-wild="0" data-backup="1" data-melt="1">
       <div class="anch-head top">
-        <div class="anch-name-row"><span class="anch-name">Ермиони (Мандракия)</span><span class="anch-coord">37.383, 23.250</span></div>
+        <div class="anch-name-row"><span class="anch-name">Ермиони (Мандракия)</span><span class="anch-coord">37.383, 23.25</span></div>
         <div class="anch-type">Порт + якорь · убежище от севера</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Аутентичный рыбацкий городок, мыс Бисти с пиниями. Южный порт Мандракия <strong>укрыт от северных ветров</strong> — лоции прямо рекомендуют Ермиони как убежище при сильном севере.</div>
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Аутентичный рыбацкий городок. Лучшая кухня Арголиды. Южный порт Мандракия укрыт от северных ветров.</div>
         <div class="anch-specs">
-          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Очень хорошая от N</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Альтернатива</div><div class="anch-spec-v">Якорь в бухте у главного порта</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v"><b>Очень хорошая от N</b></div></div>
         </div>
-        <a class="anch-link" href="https://maps.google.com/?q=37.383,23.250" target="_blank">На карте</a>
+        <div class="anch-warn"><b>Важно</b>Лоции прямо рекомендуют Ермиони как <b>убежище при сильном северном ветре</b>. Если Гидра забита или задуло — сюда.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Гидра, Спецес</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.383,23.25" target="_blank">На карте</a>
       </div>
     </div>
 
-    <div class="anch-card" data-reg="arg" data-melt="no">
+    <div class="anch-card" data-reg="arg" data-wild="0" data-backup="1" data-melt="0">
       <div class="anch-head good">
         <div class="anch-name-row"><span class="anch-name">Палеа-Эпидаврос</span><span class="anch-coord">37.632, 23.156</span></div>
-        <div class="anch-type">Якорь · античный театр + затонувший город</div>
+        <div class="anch-type">Якорь · театр + затонувший город</div>
       </div>
       <div class="anch-body">
-        <div class="anch-desc">Театр Эпидавра — 15 минут на такси. А прямо у пляжа под водой лежит <strong>затонувший римский город</strong> — снорклинг над руинами II века прямо с борта.</div>
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span></div>
+        <div class="anch-desc">Театр Эпидавра — 15 минут на такси. А прямо у пляжа под водой лежит <b>затонувший римский город</b> — снорклинг над руинами II века прямо с борта.</div>
         <div class="anch-specs">
           <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Песок, держит хорошо</div></div>
-          <div class="anch-spec"><div class="anch-spec-l">Бонус</div><div class="anch-spec-v">Снорклинг над руинами</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Приличная</div></div>
         </div>
+        <div class="anch-warn"><b>Важно</b>Уникальное сочетание: вечером античный спектакль, днём снорклинг над затопленными руинами.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        
         <a class="anch-link" href="https://maps.google.com/?q=37.632,23.156" target="_blank">На карте</a>
       </div>
     </div>
 
+    <div class="anch-card" data-reg="arg" data-wild="0" data-backup="1" data-melt="1">
+      <div class="anch-head good">
+        <div class="anch-name-row"><span class="anch-name">Корфос</span><span class="anch-coord">37.767, 23.13</span></div>
+        <div class="anch-type">Якорь · тихая бухта на материке</div>
+      </div>
+      <div class="anch-body">
+        <div class="anch-badges"><span class="anch-badge bk">Запасная</span><span class="anch-badge ml">Держит Мельтеми</span></div>
+        <div class="anch-desc">Тихая защищённая бухта на побережье Пелопоннеса. Почти нет яхт, простые таверны.</div>
+        <div class="anch-specs">
+          <div class="anch-spec"><div class="anch-spec-l">Грунт</div><div class="anch-spec-v">Держит</div></div>
+          <div class="anch-spec"><div class="anch-spec-l">Защита</div><div class="anch-spec-v">Хорошая</div></div>
+        </div>
+        <div class="anch-warn"><b>Важно</b>Хороший запасной вариант на пути в Эпидавр или обратно к Алимосу.</div>
+        <div class="anch-when">🕐 Когда приходить: <b>В любое время</b></div>
+        <div class="anch-bkfor"><b>Запасной вариант для:</b> Эпидавр</div>
+        <a class="anch-link" href="https://maps.google.com/?q=37.767,23.13" target="_blank">На карте</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="alert success" style="margin-top:26px">
+    <strong>🏛 Два места, ради которых стоит менять план:</strong><br><br>
+    <strong>Картея (бухта Полес, Кея)</strong> — над якорной стоянкой стоит античный город, живший 1300 лет: храм Афины, театр, стены акрополя. Дойти можно <strong>только пешком с якоря</strong> — ни дороги, ни туристов, и именно поэтому он так сохранился. Под водой между бухтами видно затонувший древний мол 160 метров длиной. Автор одной из лоций пережил там шторм Мельтеми за 45 узлов на хорошо забравшем якоре.<br><br>
+    <strong>Граммата (Сирос)</strong> — бухта, где <strong>две тысячи лет</strong> моряки, спасшиеся от шторма, высекали в скалах благодарности богам. Надписи сохранились: и языческие, и христианские. Это буквально древняя штормовая гавань, и она до сих пор работает по назначению — скалы прикрывают от северных ветров. По суше идти час, поэтому там пусто.
   </div>
 </div>
 </section>
@@ -3807,29 +4265,7 @@ function initMap(){
   ];
 
   // ---- ANCHORAGES ----
-  var anchorPoints = [
-    {c:[37.748,23.427], n:'Эгина · порт',            d:'Швартовка кормой. Хорошая защита, полная инфраструктура. В сезон забивается — приходить рано.'},
-    {c:[37.700,23.463], n:'Пердика (Эгина)',         d:'Лучше порта: тихо, таверны у воды. Волна от паромов — заводите длинные кормовые концы.'},
-    {c:[37.703,23.430], n:'о. Мони',                 d:'Дневная стоянка. Олени, снорклинг. Ищите ПЕСЧАНЫЕ пятна — на траве не заберёт.'},
-    {c:[37.529,23.437], n:'⭐ Бухта Висти (Порос)',   d:'Лучшая якорная Сароники. Круговая защита, сосны, бирюза. Вход трудно найти — ориентир островок Висти.'},
-    {c:[37.512,23.434], n:'Русская бухта (Порос)',   d:'Обед и купание. Песок, но есть РИФ — заходить внимательно.'},
-    {c:[37.498,23.451], n:'Порос · набережная',      d:'Вода и топливо. Течение в проливе + паромы: якорь готовить заранее.'},
-    {c:[37.350,23.466], n:'⚠️ Гидра · гавань',       d:'Крошечный порт. ЯКОРЯ ПОСТОЯННО ПУТАЮТСЯ — следить весь день. Приходить до 13:00.'},
-    {c:[37.334,23.331], n:'⭐ о. Докос',              d:'Необитаемый. Отличное укрытие, полная тишина, звёзды. Инфраструктуры нет.'},
-    {c:[37.276,23.121], n:'⭐ Зогерия (Спецес)',      d:'Красивейшая бухта Сароники. Сосны, изумрудная вода, таверна на берегу.'},
-    {c:[37.263,23.158], n:'Спецес · Старая гавань',  d:'Причала нет: якорь + концы на скалы и стены.'},
-    {c:[37.650,24.021], n:'⭐ Сунион (под храмом)',   d:'Якорь под храмом Посейдона, песок 6–10 м. Ночью подсветка.'},
-    {c:[37.663,24.318], n:'⭐ Вуркари (Кея)',         d:'Лучшая защита от Мельтеми на Кее. Лэйзи-лайны. Кориссия бесплатна, но открыта при N >18 уз.'},
-    {c:[37.415,24.367], n:'⚠️ Колона/Фикиада',       d:'Икона Эгеиды. НО: трава на дне, якорь ВРЁТ. Обязательно нырнуть и проверить!'},
-    {c:[37.436,24.432], n:'Лутра (Китнос)',          d:'Горячие источники. Лучшая защита от Мельтеми на острове. Мест мало.'},
-    {c:[37.399,24.400], n:'Мерихас (Китнос)',        d:'Лучшее всепогодное укрытие острова. Топливо, вода, супермаркет.'},
-    {c:[37.442,24.943], n:'⭐ Эрмуполис (Сирос)',     d:'Самая лёгкая швартовка на Кикладах: бесплатно, места много.'},
-    {c:[37.146,24.522], n:'Ливади (Серифос)',        d:'Единственная гавань. Защита от Мельтеми есть, но шквалы сильные. Людно.'},
-    {c:[37.129,24.462], n:'⚠️ Кутала (Серифос)',     d:'КАТАБАТИЧЕСКИЕ ШКВАЛЫ: 0→25 узлов за секунды. Нужно два якоря. С детьми — лучше Ливади.'},
-    {c:[37.323,23.146], n:'⭐ Порто Хели',            d:'Закрытая лагуна. Штиль внутри при любом ветре снаружи. Идеально при Мельтеми.'},
-    {c:[37.383,23.250], n:'Ермиони (Мандракия)',     d:'Убежище от северных ветров. Лучшая кухня Арголиды.'},
-    {c:[37.632,23.156], n:'Палеа-Эпидаврос',         d:'Театр 15 мин на такси. Снорклинг над затонувшим римским городом прямо с борта.'}
-  ];
+  var anchorPoints = [{"c": [37.748, 23.427], "n": "Эгина · порт", "d": "<i>Швартовка кормой · город</i><br><br>Первая ночь маршрута. Полная инфраструктура: супермаркеты, банкоматы, рынок, фисташки.<br><br><b>Грунт:</b> Песок/ил, держит хорошо<br><b>Защита:</b> Хорошая, кроме западных<br><b>⚠️ Важно:</b> В сезон забивается. Приходить <b>до 14:00</b> или сразу идти в Пердику.<br><b>🕐 Приходить:</b> До 14:00", "w": 0}, {"c": [37.7, 23.463], "n": "Пердика (юг Эгины)", "d": "<i>Швартовка кормой · рыбацкая деревня</i><br><br>Куда лучше идти вместо порта Эгины: тихо, дружелюбный причал, ряд закатных таверн у воды. 5 минут до Мони.<br><br><b>Грунт:</b> Песок, хорошо держит<br><b>Защита:</b> Хорошая<br><b>⚠️ Важно:</b> Волна от паромов — заводите <b>длинные кормовые концы</b>, они гасят рывки.<br><b>🕐 Приходить:</b> До 15:00<br><b>🔄 Запасная для:</b> Эгина-порт<span class=\"popup-meta\">🔄 запасная</span>", "w": 0}, {"c": [37.703, 23.43], "n": "о. Мони", "d": "<i>Якорь · дневная стоянка</i><br><br>Необитаемый островок: олени, павлины, прозрачная вода. Классика обеда и снорклинга.<br><br><b>Грунт:</b> Песчаные пятна среди травы<br><b>Защита:</b> Дневная; на ночь — в Пердику<br><b>⚠️ Важно:</b> Ищите <b>именно песчаные пятна</b> — на траве не заберёт. Вода прозрачная, всё видно сверху.<br><b>🕐 Приходить:</b> Днём<span class=\"popup-meta\">🏝 дикая</span>", "w": 1}, {"c": [37.686, 23.335], "n": "⭐ Апонисос (Агистри)", "d": "<i>Якорь · дикая бухта</i><br><br>ЖЕМЧУЖИНА. Юго-запад Агистри: изумрудная вода в девственном сосновом лесу, рядом островок Дорусса. Самая экзотическая вода Сароники — и мало кто из афинян о ней знает.<br><br><b>Грунт:</b> Песок среди травы<br><b>Защита:</b> Хорошая от N<br><b>⚠️ Важно:</b> Инфраструктуры нет. Красота стоит того, чтобы прийти пораньше — по выходным приходят афиняне.<br><b>🕐 Приходить:</b> До 13:00 в выходные<br><b>🔄 Запасная для:</b> Порт Эгины, Пердика<span class=\"popup-meta\">🏝 дикая · 🔄 запасная</span>", "w": 1}, {"c": [37.694, 23.32], "n": "Драгонера (Агистри)", "d": "<i>Якорь · галечная бухта в соснах</i><br><br>Тихая галечная бухта в густом сосновом лесу на западе Агистри. Идеально для купания в тишине.<br><br><b>Грунт:</b> Смешанный, 6–14 м; держит по-разному<br><b>Защита:</b> Открыта на ЮВ<br><b>⚠️ Важно:</b> Грунт <b>неоднородный</b> — приём зависит от того, попали ли на песок. Проверяйте.<br><b>🕐 Приходить:</b> Днём или на ночь в штиль<br><b>🔄 Запасная для:</b> Апонисос<span class=\"popup-meta\">🏝 дикая · 🔄 запасная</span>", "w": 1}, {"c": [37.529, 23.437], "n": "⭐ Бухта Висти (Порос)", "d": "<i>Якорь · укрытая бухта</i><br><br>Лучшая якорная Сароники. Тесная бухта в соснах, бирюзовая прозрачная вода, круговая защита почти от всех ветров.<br><br><b>Грунт:</b> Хорошо держит<br><b>Защита:</b> Почти круговая, открыта узко на СВ<br><b>⚠️ Важно:</b> Вход <b>трудно разглядеть</b> с моря. Ориентируйтесь на островок Висти — он выведет вас во вход.<br><b>🕐 Приходить:</b> В любое время<span class=\"popup-meta\">🏝 дикая · 🌬 держит Мельтеми</span>", "w": 1}, {"c": [37.535, 23.45], "n": "⭐ Геролимани (Порос)", "d": "<i>Якорь · круговая защита</i><br><br>Мало кто знает. Круговая защита и <b>чистейшая вода Пороса</b>. Тихо, красиво, никого.<br><br><b>Грунт:</b> Держит хорошо, 5–8 м<br><b>Защита:</b> Круговая<br><b>⚠️ Важно:</b> Становитесь в северо-восточном рукаве, 5–8 м. Можно завести конец на берег.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Висти, набережная Пороса<span class=\"popup-meta\">🏝 дикая · 🔄 запасная · 🌬 держит Мельтеми</span>", "w": 1}, {"c": [37.531, 23.455], "n": "Барбария (Порос)", "d": "<i>Якорь · пляж и таверна</i><br><br>Приятный пляж с итальянскими кипарисами, летом работает таверна. 50 минут пешком до храма Посейдона.<br><br><b>Грунт:</b> Песок/трава, держит хорошо<br><b>Защита:</b> Открыта на север<br><b>⚠️ Важно:</b> Отлично при восточном или западном ветре. <b>При северном — уходить.</b><br><b>🕐 Приходить:</b> При E/W ветре<br><b>🔄 Запасная для:</b> Висти<span class=\"popup-meta\">🔄 запасная</span>", "w": 0}, {"c": [37.512, 23.434], "n": "Русская бухта (Порос)", "d": "<i>Якорь · обед и купание</i><br><br>Бывшая российская военно-морская база XIX века, белая церковь на островке Даскалио. Рядом Love Bay в соснах.<br><br><b>Грунт:</b> Песок; есть травяные пятна<br><b>Защита:</b> Приличная<br><b>⚠️ Важно:</b> В бухте есть <b>риф</b>. Заходите внимательно, можно завести конец на скалы.<br><b>🕐 Приходить:</b> Днём", "w": 0}, {"c": [37.498, 23.451], "n": "Порос · набережная", "d": "<i>Швартовка кормой · вода, топливо</i><br><br>Швартуетесь кормой и выходите прямо в таверну. Вода и топливо — ключевая точка пополнения на маршруте.<br><br><b>Грунт:</b> Держит<br><b>Защита:</b> Хорошая внутри пролива<br><b>⚠️ Важно:</b> Пролив узкий: <b>течение плюс частые паромы</b>. Заходить с положительным углом, якорь готовить заранее.<br><b>🕐 Приходить:</b> До 14:00", "w": 0}, {"c": [37.35, 23.466], "n": "⚠️ Гидра · гавань", "d": "<i>Швартовка · самый сложный порт маршрута</i><br><br>Красивейшая гавань Греции — и самая нервная. Порт крошечный, при сильном ветре встать безопасно почти невозможно.<br><br><b>Грунт:</b> Держит, но тесно<br><b>Защита:</b> Хорошая, если встали<br><b>⚠️ Важно:</b> <b>ЯКОРЯ ПОСТОЯННО ПУТАЮТСЯ.</b> Ваш якорь может выдернуть соседняя лодка, поднимая свой. Следить <b>весь день</b>. Приходить <b>до 13:00</b>, иначе места не будет.<br><b>🕐 Приходить:</b> До 13:00, не позже", "w": 0}, {"c": [37.312, 23.437], "n": "⭐ Агиос Николаос (Гидра)", "d": "<i>Якорь · только с моря</i><br><br>Дикая галечная бухта на юго-западе Гидры, <b>добраться можно только морем</b>. Лесистые холмы, полное уединение. Спасение, когда порт Гидры забит.<br><br><b>Грунт:</b> Держит; глубины большие<br><b>Защита:</b> От северных хорошая<br><b>⚠️ Важно:</b> Глубины у берега <b>большие</b>, места для разворота немного. Заводите конец на берег.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Порт Гидры<span class=\"popup-meta\">🏝 дикая · 🔄 запасная</span>", "w": 1}, {"c": [37.318, 23.425], "n": "Висти / Кавури (Гидра)", "d": "<i>Якорь · западная оконечность</i><br><br>Пляжи в соснах на западном мысу Гидры. Красиво, тихо, только с воды.<br><br><b>Грунт:</b> Держит; глубоко<br><b>Защита:</b> От северных<br><b>⚠️ Важно:</b> Как и везде на западе Гидры: <b>глубоко, места мало</b>. При сильном севере — тесно.<br><b>🕐 Приходить:</b> Приходить утром<br><b>🔄 Запасная для:</b> Порт Гидры<span class=\"popup-meta\">🏝 дикая · 🔄 запасная</span>", "w": 1}, {"c": [37.355, 23.481], "n": "Мандраки (Гидра)", "d": "<i>Якорь · 1 км от города</i><br><br>Ближайший запасной вариант к порту Гидры — 1 км, доходите на динги или пешком по берегу.<br><br><b>Грунт:</b> Держит<br><b>Защита:</b> Приличная<br><b>⚠️ Важно:</b> Первое, куда идти, если <b>в порту Гидры нет места</b>. А место там кончается рано.<br><b>🕐 Приходить:</b> Когда порт полон<br><b>🔄 Запасная для:</b> Порт Гидры<span class=\"popup-meta\">🔄 запасная</span>", "w": 0}, {"c": [37.334, 23.331], "n": "⭐ о. Докос", "d": "<i>Якорь · ночёвка в тишине</i><br><br>Необитаемый остров. Ни зданий, ни огней — только море, холмы и звёзды. Одна из самых запоминающихся ночёвок. У берега лежит древнейшее известное кораблекрушение мира (2500–2000 гг. до н.э.).<br><br><b>Грунт:</b> Держит отлично<br><b>Защита:</b> Хорошая, в т.ч. от Мельтеми<br><b>⚠️ Важно:</b> Инфраструктуры нет вообще. Всё своё: вода, еда, свет. В этом и смысл.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Гидра<span class=\"popup-meta\">🏝 дикая · 🌬 держит Мельтеми</span>", "w": 1}, {"c": [37.443, 23.505], "n": "Целевиния (скалы)", "d": "<i>Якорь · купание на переходе</i><br><br>Скалы на краю Пелопоннеса между Поросом и Гидрой. Классическая остановка на купание по пути.<br><br><b>Грунт:</b> Песчаные пятна<br><b>Защита:</b> Только в штиль<br><b>⚠️ Важно:</b> <b>Обеденная остановка, не ночёвка.</b> Открыто.<br><b>🕐 Приходить:</b> Днём в штиль<span class=\"popup-meta\">🏝 дикая</span>", "w": 1}, {"c": [37.276, 23.121], "n": "⭐ Зогерия (Спецес)", "d": "<i>Якорь · красивейшая бухта Сароники</i><br><br>Любимая якорная шкиперов. Сосны до самой воды, изумрудная бухта, таверна на берегу.<br><br><b>Грунт:</b> Песок<br><b>Защита:</b> Хорошая от северных<br><b>⚠️ Важно:</b> Популярна. Приходить <b>до 14:00</b>, иначе встанете далеко от берега.<br><b>🕐 Приходить:</b> До 14:00<span class=\"popup-meta\">🏝 дикая</span>", "w": 1}, {"c": [37.245, 23.117], "n": "Айя Параскеви (Спецес)", "d": "<i>Якорь · юг острова</i><br><br>Тише, чем Зогерия и Хиница: нет ни морских такси, ни огней большого отеля. Просто красивая бухта.<br><br><b>Грунт:</b> Песок<br><b>Защита:</b> Приличная<br><b>⚠️ Важно:</b> Открыта южным ветрам. При южном — уходить в Зогерию.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Зогерия<span class=\"popup-meta\">🏝 дикая · 🔄 запасная</span>", "w": 1}, {"c": [37.263, 23.158], "n": "Спецес · Старая гавань", "d": "<i>Якорь + концы на берег</i><br><br>Историческая гавань с верфями, где до сих пор строят деревянные лодки. Атмосферно, но швартовка нетривиальная.<br><br><b>Грунт:</b> Держит<br><b>Защита:</b> Хорошая<br><b>⚠️ Важно:</b> <b>Причала как такового нет.</b> Отдаёте якорь и заводите концы на стены, скалы или между ними. Нужна пара крепких рук и динги.<br><b>🕐 Приходить:</b> До 14:00", "w": 0}, {"c": [37.577, 23.353], "n": "Метана (вулкан)", "d": "<i>Порт · горячие источники</i><br><br>Вулканический полуостров: сернистые горячие источники у самой воды. Детям — восторг, взрослым — спина.<br><br><b>Грунт:</b> Держит<br><b>Защита:</b> Хорошая<br><b>⚠️ Важно:</b> Пахнет серой — это нормально, это вулкан.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Эгина, Порос<span class=\"popup-meta\">🔄 запасная</span>", "w": 0}, {"c": [37.65, 24.021], "n": "⭐ Сунион (под храмом)", "d": "<i>Якорь · обед или ночёвка</i><br><br>Якорь прямо под храмом Посейдона. Вид снизу вверх сильнее, чем с суши; ночью храм подсвечен.<br><br><b>Грунт:</b> Песок, 6–10 м<br><b>Защита:</b> От северных хорошая<br><b>⚠️ Важно:</b> Классическая первая ночь кикладского маршрута. Место популярное — приходить <b>до 16:00</b>.<br><b>🕐 Приходить:</b> До 16:00<span class=\"popup-meta\">🌬 держит Мельтеми</span>", "w": 0}, {"c": [37.663, 24.318], "n": "⭐ Вуркари (Кея)", "d": "<i>Швартовка кормой · лэйзи-лайны</i><br><br>Социальный порт Кеи: таверны у причала, любимая стоянка афинских яхтсменов. Лучшая защита от Мельтеми на острове.<br><br><b>Грунт:</b> Лэйзи-лайны<br><b>Защита:</b> Отличная от N<br><b>⚠️ Важно:</b> Причал Кориссии рядом бесплатный, но <b>открыт при северном свыше 18 узлов</b>, грунт подозрительный, торчат камни. При Мельтеми — только Вуркари.<br><b>🕐 Приходить:</b> До 14:00<span class=\"popup-meta\">🌬 держит Мельтеми</span>", "w": 0}, {"c": [37.56, 24.33], "n": "⭐⭐ Полес / Картея (Кея)", "d": "<i>Якорь · античный город</i><br><br>САМОЕ УНИКАЛЬНОЕ МЕСТО МАРШРУТА. Над бухтой — <b>античный город Картея</b>: храм Афины, античный театр, стены акрополя. Город жил 1300 лет. Дойти можно <b>только пешком с якоря</b> — именно поэтому он так хорошо сохранился и там никого нет. Под водой между бухтами видно затонувший древний мол 160 м длиной.<br><br><b>Грунт:</b> Песок за пляжем; держит очень хорошо<br><b>Защита:</b> Хорошая от N/NE и N/NW<br><b>⚠️ Важно:</b> <b>В центре бухты — островок с мелким рифом.</b> Заходить внимательно. Открыто на восток и юго-восток. Автор лоции пережил здесь <b>шторм Мельтеми 45+ узлов</b> на хорошо забравшем якоре — это говорит о качестве грунта. По выходным приходят афиняне.<br><b>🕐 Приходить:</b> Будни — пусто. Выходные — до 13:00<br><b>🔄 Запасная для:</b> Вуркари<span class=\"popup-meta\">🏝 дикая · 🔄 запасная · 🌬 держит Мельтеми</span>", "w": 1}, {"c": [37.578, 24.28], "n": "Кавия / Кундурос (Кея)", "d": "<i>Якорь · таверна на пляже</i><br><br>Приятная бухта с таверной «Porto Koundouros» на хорошем пляже.<br><br><b>Грунт:</b> Песок/трава, 4–7 м<br><b>Защита:</b> Хороша при NW–ESE<br><b>⚠️ Важно:</b> <b>Возможны резкие шквалы с северо-востока.</b> Ближе к берегу — каменные плиты, не становитесь вплотную. Лучше восточная и северная бухточки.<br><b>🕐 Приходить:</b> При NW–ESE<br><b>🔄 Запасная для:</b> Вуркари<span class=\"popup-meta\">🔄 запасная</span>", "w": 0}, {"c": [37.415, 24.367], "n": "⭐⚠️ Колона / Фикиада (Китнос)", "d": "<i>Якорь · знаменитая песчаная коса</i><br><br>Икона Эгеиды: песчаная коса соединяет остров с островком Айос-Лукас, море с обеих сторон. Фикиада (западная сторона) отлично защищена и от Мельтеми, и от южных.<br><br><b>Грунт:</b> Песок <b>с травой</b><br><b>Защита:</b> Фикиада — отличная<br><b>⚠️ Важно:</b> <b>🔴 ЯКОРЬ ВРЁТ.</b> На дне трава: якорь <b>выглядит забравшим, но вылетает при первом сильном шквале</b>. Обязательно нырните и проверьте глазами. Со стороны Колоны при северном качает — заводите длинные концы на скалы.<br><b>🕐 Приходить:</b> До 13:00 — место культовое<span class=\"popup-meta\">🌬 держит Мельтеми</span>", "w": 0}, {"c": [37.436, 24.432], "n": "Лутра (Китнос)", "d": "<i>Мини-марина · горячие источники</i><br><br>Термальные источники прямо на пляже, вода 38–52°C стекает в море. Лучшая защита от Мельтеми на всём острове.<br><br><b>Грунт:</b> Лэйзи-лайны<br><b>Защита:</b> Лучшая на острове<br><b>⚠️ Важно:</b> <b>Мест очень мало</b> — бронировать заранее, особенно в августе.<br><b>🕐 Приходить:</b> Бронировать заранее<span class=\"popup-meta\">🌬 держит Мельтеми</span>", "w": 0}, {"c": [37.399, 24.4], "n": "Мерихас (Китнос)", "d": "<i>Главный порт · план Б при ветре</i><br><br>Главный порт острова. По оценке лоций — лучшее всепогодное укрытие на Китносе. Топливо, вода, супермаркеты, банк, таверны.<br><br><b>Грунт:</b> 2–6 м, кормой к причалу<br><b>Защита:</b> Лучшая всепогодная<br><b>⚠️ Важно:</b> Если пойдёт западная зыбь — бухта Апокруси в 1 миле севернее спокойнее (грунт травяной, якорь проверять).<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Лутра, Колона<span class=\"popup-meta\">🔄 запасная · 🌬 держит Мельтеми</span>", "w": 0}, {"c": [37.376, 24.383], "n": "⭐ Фламбурия (Китнос)", "d": "<i>Якорь · держит шторм</i><br><br>Дикая бухта с церковью Панагии на юго-западе. Таверна на берегу. Одно из немногих мест, которое лоции прямо рекомендуют <b>в шторм Мельтеми</b>.<br><br><b>Грунт:</b> <b>Отличный приём</b>, 5 м у северного края пляжа<br><b>Защита:</b> Годится в <b>шторма N–NE</b><br><b>⚠️ Важно:</b> Настоящее убежище. Если задуло всерьёз и до Мерихаса не дойти — сюда.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Колона, Лутра<span class=\"popup-meta\">🏝 дикая · 🔄 запасная · 🌬 держит Мельтеми</span>", "w": 1}, {"c": [37.389, 24.464], "n": "Айос Иоаннис (Китнос)", "d": "<i>Якорь · восточный берег</i><br><br>Дикие бухты на восточном берегу с песчаным дном. Хорошее укрытие от Мельтеми.<br><br><b>Грунт:</b> Песок с крупными пятнами водорослей<br><b>Защита:</b> Хорошая от Мельтеми<br><b>⚠️ Важно:</b> Из-за травы <b>вставать ближе к берегу</b>. На пляже есть деревья — можно завести конец.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Колона<span class=\"popup-meta\">🏝 дикая · 🔄 запасная · 🌬 держит Мельтеми</span>", "w": 1}, {"c": [37.362, 24.412], "n": "Мавриану (Китнос)", "d": "<i>Якорь · дикое и безлюдное</i><br><br>Пляж «Стифо» с одинокой купой тамарисков. Совсем в стороне от протоптанных троп — тихо и пусто.<br><br><b>Грунт:</b> Песок/трава, надёжно<br><b>Защита:</b> Годится в Мельтеми<br><b>⚠️ Важно:</b> Никаких удобств. Только вы и тамариски.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Фламбурия<span class=\"popup-meta\">🏝 дикая · 🔄 запасная · 🌬 держит Мельтеми</span>", "w": 1}, {"c": [37.442, 24.943], "n": "⭐ Эрмуполис (Сирос)", "d": "<i>Городской причал · самая лёгкая швартовка</i><br><br>Шкиперы называют это самой лёгкой швартовкой на Кикладах: бесплатно, места много, просторно. Столица Киклад.<br><br><b>Грунт:</b> Держит<br><b>Защита:</b> Хорошая<br><b>⚠️ Важно:</b> Редкий случай — <b>место есть даже в сезон</b>. Полноценные супермаркеты, топливо, вода.<br><b>🕐 Приходить:</b> В любое время<span class=\"popup-meta\">🌬 держит Мельтеми</span>", "w": 0}, {"c": [37.498, 24.888], "n": "⭐⭐ Граммата (Сирос)", "d": "<i>Якорь · святилище моряков</i><br><br>МЕСТО С МУРАШКАМИ. На скалах этой бухты <b>две тысячи лет</b> моряки высекали благодарности богам за спасение от шторма — надписи сохранились до сих пор, и языческие, и христианские. Тамариски, вулканические скалы, полное безлюдье. Это буквально древняя штормовая гавань, и она работает по назначению до сих пор.<br><br><b>Грунт:</b> Держит<br><b>Защита:</b> Скалы с обеих сторон <b>прикрывают от северных</b><br><b>⚠️ Важно:</b> Гавань-убежище: лоции прямо пишут, что здесь <b>пережидают непогоду</b>. Дойти по суше — час пешком, поэтому людей почти нет.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Эрмуполис<span class=\"popup-meta\">🏝 дикая · 🔄 запасная · 🌬 держит Мельтеми</span>", "w": 1}, {"c": [37.407, 24.885], "n": "Финикас (Сирос)", "d": "<i>Якорь · тихая бухта</i><br><br>Если хочется тихий ужин на борту вместо шумного города — вот сюда.<br><br><b>Грунт:</b> Песок, 8 м<br><b>Защита:</b> Приличная<br><b>⚠️ Важно:</b> Спокойная альтернатива Эрмуполису.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Эрмуполис<span class=\"popup-meta\">🔄 запасная</span>", "w": 0}, {"c": [37.146, 24.522], "n": "Ливади (Серифос)", "d": "<i>Единственная гавань острова</i><br><br>Единственный порт Серифоса. Наверху — Хора-крепость на скале, лучший закат маршрута.<br><br><b>Грунт:</b> Кормой к южной стороне<br><b>Защита:</b> Хорошая от Мельтеми<br><b>⚠️ Важно:</b> Защита есть, но <b>шквалы всё равно сильные</b>. С <b>северной</b> стороны причала грунт держит хуже — при сильном северном туда не вставать. При юго-восточном заходит серьёзная зыбь. Людно и шумно.<br><b>🕐 Приходить:</b> До 14:00<span class=\"popup-meta\">🌬 держит Мельтеми</span>", "w": 0}, {"c": [37.129, 24.462], "n": "⚠️ Кутала (Серифос)", "d": "<i>Якорь · юг острова</i><br><br>Широкая бухта на юге, сильная защита от Мельтеми. Красиво и пусто.<br><br><b>Грунт:</b> Держит<br><b>Защита:</b> Сильная от Мельтеми<br><b>⚠️ Важно:</b> <b>🔴 КАТАБАТИЧЕСКИЕ ШКВАЛЫ:</b> ветер срывается с гор и бьёт вниз — <b>от 0 до 25 узлов за секунды</b>. Лоции рекомендуют <b>два якоря</b>. С детьми на борту — лучше Ливади.<br><b>🕐 Приходить:</b> Только при уверенном прогнозе<br><b>🔄 Запасная для:</b> Ливади<span class=\"popup-meta\">🏝 дикая · 🔄 запасная · 🌬 держит Мельтеми</span>", "w": 1}, {"c": [37.18, 24.494], "n": "Сикамия (Серифос)", "d": "<i>Якорь · дикий пляж</i><br><br>Дикий песчаный пляж на севере острова, безлюдный. Классическая обеденная стоянка на переходе.<br><br><b>Грунт:</b> Песок<br><b>Защита:</b> От южных<br><b>⚠️ Важно:</b> Открыта северным — <b>при Мельтеми не подходит</b>. Только в затишье.<br><b>🕐 Приходить:</b> В штиль, днём<span class=\"popup-meta\">🏝 дикая · 🔄 запасная</span>", "w": 1}, {"c": [37.323, 23.146], "n": "⭐ Порто Хели", "d": "<i>Якорь · закрытая лагуна</i><br><br>Огромная почти замкнутая бухта — внутри как озеро при любом ветре снаружи. Идеальное убежище при Мельтеми. Целый день на якоре: SUP, снорклинг, рыбалка, барбекю.<br><br><b>Грунт:</b> Держит хорошо<br><b>Защита:</b> <b>Круговая, отличная</b><br><b>⚠️ Важно:</b> Одно из самых надёжных укрытий всего района. Места хватает всем.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Спецес, Гидра<span class=\"popup-meta\">🔄 запасная · 🌬 держит Мельтеми</span>", "w": 0}, {"c": [37.383, 23.25], "n": "Ермиони (Мандракия)", "d": "<i>Порт + якорь · убежище от севера</i><br><br>Аутентичный рыбацкий городок. Лучшая кухня Арголиды. Южный порт Мандракия укрыт от северных ветров.<br><br><b>Грунт:</b> Держит<br><b>Защита:</b> <b>Очень хорошая от N</b><br><b>⚠️ Важно:</b> Лоции прямо рекомендуют Ермиони как <b>убежище при сильном северном ветре</b>. Если Гидра забита или задуло — сюда.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Гидра, Спецес<span class=\"popup-meta\">🔄 запасная · 🌬 держит Мельтеми</span>", "w": 0}, {"c": [37.632, 23.156], "n": "Палеа-Эпидаврос", "d": "<i>Якорь · театр + затонувший город</i><br><br>Театр Эпидавра — 15 минут на такси. А прямо у пляжа под водой лежит <b>затонувший римский город</b> — снорклинг над руинами II века прямо с борта.<br><br><b>Грунт:</b> Песок, держит хорошо<br><b>Защита:</b> Приличная<br><b>⚠️ Важно:</b> Уникальное сочетание: вечером античный спектакль, днём снорклинг над затопленными руинами.<br><b>🕐 Приходить:</b> В любое время<span class=\"popup-meta\">🔄 запасная</span>", "w": 0}, {"c": [37.767, 23.13], "n": "Корфос", "d": "<i>Якорь · тихая бухта на материке</i><br><br>Тихая защищённая бухта на побережье Пелопоннеса. Почти нет яхт, простые таверны.<br><br><b>Грунт:</b> Держит<br><b>Защита:</b> Хорошая<br><b>⚠️ Важно:</b> Хороший запасной вариант на пути в Эпидавр или обратно к Алимосу.<br><b>🕐 Приходить:</b> В любое время<br><b>🔄 Запасная для:</b> Эпидавр<span class=\"popup-meta\">🔄 запасная · 🌬 держит Мельтеми</span>", "w": 0}];
 
   // ---- TAVERNAS ----
   var dinePoints = [
@@ -3849,8 +4285,9 @@ function initMap(){
 
   anchorLayer = L.layerGroup();
   anchorPoints.forEach(function(p){
-    L.marker(p.c, {icon:dot('#1A8FA0', 13)})
-      .bindPopup('<b>⚓ '+p.n+'</b><br>'+p.d)
+    var col = p.w ? '#2E7D52' : '#1A8FA0';
+    L.marker(p.c, {icon:dot(col, 13)})
+      .bindPopup('<b>⚓ '+p.n+'</b><br>'+p.d, {maxWidth:330})
       .addTo(anchorLayer);
   });
 
@@ -3891,8 +4328,10 @@ function filterAnch(el, f){
   el.classList.add('active');
   document.querySelectorAll('.anch-card').forEach(function(c){
     var reg = c.getAttribute('data-reg');
-    var melt = c.getAttribute('data-melt');
-    var show = (f==='all') || (reg===f) || (f==='meltemi' && melt==='yes');
+    var wild = c.getAttribute('data-wild')==='1';
+    var bk   = c.getAttribute('data-backup')==='1';
+    var melt = c.getAttribute('data-melt')==='1';
+    var show = (f==='all') || (reg===f) || (f==='wild'&&wild) || (f==='backup'&&bk) || (f==='meltemi'&&melt);
     c.classList.toggle('hidden', !show);
   });
 }

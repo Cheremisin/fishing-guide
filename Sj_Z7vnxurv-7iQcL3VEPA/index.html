@@ -395,6 +395,65 @@ footer strong{color:var(--aqua);}
     #map{height:400px;}
   }
 
+
+  /* PLAN B */
+  .plan-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px;}
+  .ptab{padding:8px 18px;border-radius:20px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;cursor:pointer;border:2px solid transparent;transition:all .2s;background:var(--sand);color:var(--deep);}
+  .ptab.active{background:var(--sea);color:#fff;}
+  .plan-panel{display:none;}
+  .plan-panel.active{display:block;}
+  .plan-head{border-radius:14px;padding:20px 24px;color:#fff;margin-bottom:20px;}
+  .plan-head.safe{background:linear-gradient(135deg,#2E7D52,#1a4a32);}
+  .plan-head.mid{background:linear-gradient(135deg,#1a4a6a,#0d2d40);}
+  .plan-head.bold{background:linear-gradient(135deg,#8a4a1e,#5c2d0f);}
+  .plan-name{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:900;margin-bottom:6px;}
+  .plan-when{font-size:13.5px;opacity:.9;line-height:1.5;margin-bottom:12px;}
+  .plan-meta{display:flex;flex-wrap:wrap;gap:8px;}
+  .pmeta{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:16px;padding:4px 12px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;}
+
+  /* PROVISIONS */
+  .prov-summary{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
+  .prov-card{border-radius:16px;padding:22px 24px;color:#fff;}
+  .prov-card.w1{background:linear-gradient(135deg,#1a4a6a,#0d2d40);}
+  .prov-card.w2{background:linear-gradient(135deg,#2d1a5c,#1a0d3a);}
+  .prov-week{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.7;margin-bottom:5px;}
+  .prov-crew{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:900;margin-bottom:3px;}
+  .prov-crew-detail{font-size:12.5px;opacity:.8;margin-bottom:16px;line-height:1.45;}
+  .prov-water-big{display:flex;align-items:baseline;gap:8px;margin-bottom:6px;}
+  .prov-water-num{font-family:'Montserrat',sans-serif;font-size:34px;font-weight:900;line-height:1;color:#7fe3ee;}
+  .prov-water-unit{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;opacity:.85;}
+  .prov-water-note{font-size:12.5px;opacity:.8;line-height:1.45;margin-bottom:14px;}
+  .prov-rows{background:rgba(0,0,0,.2);border-radius:10px;padding:12px 14px;}
+  .prov-row{display:flex;justify-content:space-between;gap:12px;padding:4px 0;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .prov-row:last-child{border-bottom:none;}
+  .prov-row b{font-family:'Montserrat',sans-serif;white-space:nowrap;}
+
+  .prov-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.04);margin-bottom:8px;}
+  .prov-table th{background:var(--deep);color:#fff;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:10px 14px;text-align:left;}
+  .prov-table td{padding:10px 14px;font-size:13px;border-bottom:1px solid rgba(0,0,0,.06);vertical-align:top;}
+  .prov-table tr:last-child td{border-bottom:none;}
+  .prov-table tr:nth-child(even){background:rgba(13,79,108,.02);}
+  .prov-table td:first-child{font-weight:700;color:var(--deep);}
+  .prov-qty{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal);white-space:nowrap;}
+
+  .prov-group-title{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--sea);margin:26px 0 12px;display:flex;align-items:center;gap:8px;}
+
+  .refill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:8px;}
+  .refill-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:14px 16px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+  .refill-port{font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;color:var(--deep);margin-bottom:5px;}
+  .refill-what{font-size:12.5px;color:var(--muted);line-height:1.45;}
+  .refill-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;}
+  .rtag{font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:10px;}
+  .rtag.water{background:rgba(62,201,214,.15);color:var(--teal);}
+  .rtag.fuel{background:rgba(200,86,42,.12);color:var(--rust);}
+  .rtag.shop{background:rgba(46,125,82,.12);color:var(--green);}
+
+  @media(max-width:700px){
+    .prov-summary{grid-template-columns:1fr;}
+    .prov-table{font-size:11.5px;}
+    .prov-table th,.prov-table td{padding:8px 9px;}
+  }
+
 </style>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -405,8 +464,10 @@ footer strong{color:var(--aqua);}
   <a href="#yachts" onclick="setActive(this)">⛵ Яхты</a>
   <a href="#weather" onclick="setActive(this)">🌊 Погода</a>
   <a href="#routes" onclick="setActive(this)">🗺 Маршруты</a>
+  <a href="#plans" onclick="setActive(this)">🌬 Запасные планы</a>
   <a href="#map-section" onclick="setActive(this)">🧭 Карта</a>
   <a href="#sights" onclick="setActive(this)">🏛 Что посмотреть</a>
+  <a href="#provisions" onclick="setActive(this)">🛒 Провизия</a>
   <a href="#checklist" onclick="setActive(this)">✅ Чеклист</a>
   <a href="#safety" onclick="setActive(this)">🦺 Безопасность</a>
   <a href="#fish" onclick="setActive(this)">🐟 Рыбы</a>
@@ -982,6 +1043,122 @@ footer strong{color:var(--aqua);}
 
 
 
+
+<section id="plans">
+<div class="container">
+  <div class="sec-eye">Запасные планы</div>
+  <h2 class="sec-h2">Варианты на две недели — включая план при Мельтеми</h2>
+  <p class="sec-sub">Основной план (Сароник + Западные Киклады) хорош, но Мельтеми в конце июля может закрыть Киклады на несколько дней подряд. Здесь — готовые альтернативы, чтобы не импровизировать на месте.</p>
+
+  <div class="alert warn">
+    <strong>🌬 Когда переключаться на план Б:</strong> если утренний прогноз (Windy / PoseidonSea.gr) даёт <strong>F6+ на 3 и более дней подряд</strong> в Кикладах — не идите туда. Чартерные условия прямо запрещают выход при ветре свыше 6 баллов, а с детьми на борту это ещё и просто плохая идея. Саронический залив прикрыт Пелопоннесом и держит F3–4 даже когда в Кикладах воет.
+  </div>
+
+  <div class="plan-tabs">
+    <div class="ptab active" onclick="showPlan(this,'meltemi')">🌬 План Мельтеми · 2 недели в Саронике</div>
+    <div class="ptab" onclick="showPlan(this,'argolic')">🏛 Сароник + Арголида</div>
+    <div class="ptab" onclick="showPlan(this,'hybrid')">🧭 Гибрид с точкой решения</div>
+    <div class="ptab" onclick="showPlan(this,'deep')">🏄 Дальние Киклады (для смелых)</div>
+  </div>
+
+  <div class="plan-panel active" id="plan-meltemi">
+    <div class="plan-head safe">
+      <div class="plan-name">🌬 Две недели в Саронике и Арголиде</div>
+      <div class="plan-when">Когда: устойчивый Мельтеми F6–7, прогноз плохой на всю поездку, или просто хочется спокойного отпуска с детьми без нервов.</div>
+      <div class="plan-meta">
+        <span class="pmeta">~230 миль за 2 недели</span>
+        <span class="pmeta">Переходы 10–25 нм</span>
+        <span class="pmeta">Защита от ветра максимальная</span>
+        <span class="pmeta">Ночёвки в портах и бухтах</span>
+      </div>
+    </div>
+    <div class="week-badge cat">⛵ Неделя 1 · Катамаран · 18–25 июля</div>
+    <div class="day-list">
+      <div class="day-item"><div class="day-num"><div class="day-date">Пт 18</div></div><div class="day-body"><div class="day-route">Алимос → Эгина</div><div class="day-info">Вечерний переход, ночь в порту. Ужин в тавернах набережной.</div><div class="day-tags"><span class="dtag dist">18 нм</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Сб 19</div></div><div class="day-body"><div class="day-route">Эгина: храм Афайи → о. Мони</div><div class="day-info">Утром такси к храму. Днём якорь у Мони: олени, снорклинг. Ночь в Пердике.</div><div class="day-tags"><span class="dtag dist">10 нм</span><span class="dtag kid">Олени, храм</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Вс 20</div></div><div class="day-body"><div class="day-route">Эгина → Агистри → Порос</div><div class="day-info">Агистри — сосны до воды, купание. Вечером Порос.</div><div class="day-tags"><span class="dtag dist">22 нм</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Пн 21</div></div><div class="day-body"><div class="day-route">Порос — день на месте</div><div class="day-info">Русская бухта, Love Bay, водный парк, монастырь. Вода и топливо на набережной.</div><div class="day-tags"><span class="dtag anchor">2 ночи</span><span class="dtag kid">Водный парк</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Вт 22</div></div><div class="day-body"><div class="day-route">Порос → Гидра</div><div class="day-info">Остров без машин. Швартовка в гавани или якорь в Мандраки.</div><div class="day-tags"><span class="dtag dist">14 нм</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Ср 23</div></div><div class="day-body"><div class="day-route">Гидра → Докос → Спецес</div><div class="day-info">Якорь у необитаемого Докоса, снорклинг. Вечером Спецес.</div><div class="day-tags"><span class="dtag dist">25 нм</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Чт 24</div></div><div class="day-body"><div class="day-route">Спецес (Зогерия) → возврат к Алимосу</div><div class="day-info">Утро в Зогерии, затем длинный переход. Швартовка до 18:00.</div><div class="day-tags"><span class="dtag dist">45 нм</span><span class="dtag warn">Возврат до 18:00</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Пт 25</div></div><div class="day-body"><div class="day-route">Сдача катамарана 09:00 · приём монохула 17:00</div><div class="day-info">День в Афинах: Акрополь, обед в Плаке, закупка провизии.</div><div class="day-tags"><span class="dtag warn">Пересадка</span></div></div></div>
+    </div>
+    <div class="week-badge mono" style="margin-top:24px">⛵ Неделя 2 · Монохул · 25 июля — 1 августа · Арголида</div>
+    <div class="day-list">
+      <div class="day-item"><div class="day-num"><div class="day-date">Сб 26</div></div><div class="day-body"><div class="day-route">Алимос → Эпидавр (Палеа-Эпидаврос)</div><div class="day-info">Античный театр ЮНЕСКО, вечерний спектакль. Затонувший город у пляжа — снорклинг прямо с борта.</div><div class="day-tags"><span class="dtag dist">32 нм</span><span class="dtag kid">Театр + затонувший город</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Вс 27</div></div><div class="day-body"><div class="day-route">Эпидавр → Порос</div><div class="day-info">Пополнение воды и топлива. Пролив на закате — рыбалка на луфаря.</div><div class="day-tags"><span class="dtag dist">20 нм</span><span class="dtag fish">Луфарь на течении</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Пн 28</div></div><div class="day-body"><div class="day-route">Порос → Ермиони</div><div class="day-info">Аутентичный рыбацкий городок, мыс Бисти с пиниями. Лучшая кухня Арголиды.</div><div class="day-tags"><span class="dtag dist">18 нм</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Вт 29</div></div><div class="day-body"><div class="day-route">Ермиони → Порто Хели</div><div class="day-info">Огромная закрытая бухта — как озеро. День на якоре: SUP, снорклинг, рыбалка, барбекю.</div><div class="day-tags"><span class="dtag dist">12 нм</span><span class="dtag anchor">Полный штиль в бухте</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Ср 30</div></div><div class="day-body"><div class="day-route">Порто Хели → Спецес → Гидра</div><div class="day-info">Утром Зогерия, вечером Гидра. Или день на Спецесе с велосипедами.</div><div class="day-tags"><span class="dtag dist">25 нм</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Чт 31</div></div><div class="day-body"><div class="day-route">Гидра → Алимос · возврат к 17:00</div><div class="day-info">Длинный финальный переход, троллинг по пути. Швартовка до 17:00 обязательна.</div><div class="day-tags"><span class="dtag dist">42 нм</span><span class="dtag warn">До 17:00!</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Пт 1/8</div></div><div class="day-body"><div class="day-route">Сдача яхты до 09:00</div><div class="day-tags"><span class="dtag warn">Чек-аут</span></div></div></div>
+    </div>
+    <div class="alert success" style="margin-top:16px"><strong>✅ Почему это хороший план, а не «утешительный»:</strong> Сароник и Арголида — это Гидра без машин, театр Эпидавра, необитаемые островки, лучшие таверны Греции и защита от ветра. Дети получат больше, чем от изматывающих переходов в Кикладах. И рыбалка тут ничуть не хуже.</div>
+  </div>
+
+  <div class="plan-panel" id="plan-argolic">
+    <div class="plan-head mid">
+      <div class="plan-name">🏛 Сароник + глубокая Арголида</div>
+      <div class="plan-when">Когда: умеренный Мельтеми (F4–5), хочется истории и гастрономии, а не рекордов по милям.</div>
+      <div class="plan-meta">
+        <span class="pmeta">~260 миль</span>
+        <span class="pmeta">Античность + бухты</span>
+        <span class="pmeta">Максимум таверн</span>
+      </div>
+    </div>
+    <div class="day-list">
+      <div class="day-item"><div class="day-num"><div class="day-date">Нед 1</div></div><div class="day-body"><div class="day-route">Эгина → Агистри → Метана → Порос → Гидра</div><div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.596,23.233" target="_blank">📍 Метана</a> — вулканический полуостров с горячими сернистыми источниками у самой воды. Дети в восторге, взрослые лечат спину. Далее классика Сароники.</div><div class="day-tags"><span class="dtag dist">~110 нм</span><span class="dtag kid">Вулкан + источники</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Нед 2</div></div><div class="day-body"><div class="day-route">Эпидавр → Науплия → Ермиони → Порто Хели → Спецес</div><div class="day-info"><a class="place-link" href="https://maps.google.com/?q=37.567,22.800" target="_blank">📍 Науплия (Нафплион)</a> — первая столица независимой Греции: венецианская крепость Паламиди (999 ступеней), островок-крепость Бурдзи посреди бухты, лучшее мороженое страны. Дальше — Эпидавр и бухты Арголиды.</div><div class="day-tags"><span class="dtag dist">~150 нм</span><span class="dtag kid">⭐ Крепость Паламиди</span></div></div></div>
+    </div>
+    <div class="alert info" style="margin-top:16px"><strong>💎 Изюминка плана:</strong> Науплия — самый красивый город материковой Греции, и туда почти не заходят чартеры из Афин, потому что «далеко». На деле это 55 миль от Алимоса, и оно того стоит. Плюс Микены в часе на такси — гробница Агамемнона, Львиные ворота.</div>
+  </div>
+
+  <div class="plan-panel" id="plan-hybrid">
+    <div class="plan-head mid">
+      <div class="plan-name">🧭 Гибрид с точкой принятия решения</div>
+      <div class="plan-when">Когда: прогноз неопределённый. Не выбираем заранее — держим обе двери открытыми и решаем на месте.</div>
+      <div class="plan-meta">
+        <span class="pmeta">Решение 25–26 июля</span>
+        <span class="pmeta">Гибко</span>
+        <span class="pmeta">Без переигрывания планов</span>
+      </div>
+    </div>
+    <div class="day-list">
+      <div class="day-item"><div class="day-num"><div class="day-date">Нед 1</div><div class="day-name">Фиксировано</div></div><div class="day-body"><div class="day-route">Саронический залив (катамаран)</div><div class="day-info">Эгина → Мони → Агистри → Порос → Гидра → Докос → Спецес. Здесь Мельтеми почти не мешает — катамаран в защищённых водах. Этот кусок не меняем в любом случае.</div><div class="day-tags"><span class="dtag dist">~145 нм</span><span class="dtag anchor">Всегда работает</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">25.07</div><div class="day-name">🔀 РАЗВИЛКА</div></div><div class="day-body"><div class="day-route">Смотрим прогноз на неделю вперёд</div><div class="day-info">В день пересадки на монохул открываем Windy на 7 дней вперёд и честно смотрим на Киклады.<br><br><strong>Ветер ≤ F5 большую часть недели →</strong> идём в Западные Киклады (Кея, Китнос, Сирос, Серифос).<br><strong>Ветер F6+ три дня и более →</strong> уходим в Арголиду: Эпидавр, Науплия, Ермиони, Порто Хели.</div><div class="day-tags"><span class="dtag warn">Точка решения</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Нед 2</div><div class="day-name">Вариативно</div></div><div class="day-body"><div class="day-route">Киклады ИЛИ Арголида — по факту</div><div class="day-info">Оба варианта детально расписаны в других вкладках. Главное — не упираться в план, составленный в марте, когда в июле дует.</div><div class="day-tags"><span class="dtag anchor">План А или план Б</span></div></div></div>
+    </div>
+    <div class="alert success" style="margin-top:16px"><strong>🎯 Почему это самый разумный подход:</strong> первая неделя в Саронике безопасна при любой погоде, и она же даёт время посмотреть на реальный прогноз. Решение принимается за 6 дней до основных переходов, а не за 4 месяца.</div>
+  </div>
+
+  <div class="plan-panel" id="plan-deep">
+    <div class="plan-head bold">
+      <div class="plan-name">🏄 Дальние Киклады — Наксос и Малые Киклады</div>
+      <div class="plan-when">Когда: устойчивый штиль или слабый ветер (F3–4) по прогнозу на всю неделю. Редко, но случается.</div>
+      <div class="plan-meta">
+        <span class="pmeta">~330 миль</span>
+        <span class="pmeta">Переходы 30–50 нм</span>
+        <span class="pmeta">⚠️ Только опытный шкипер</span>
+      </div>
+    </div>
+    <div class="alert warn" style="margin-top:0">
+      <strong>⚠️ Честное предупреждение:</strong> это тот план, который был в первой версии гида, и он <strong>не влезает в календарь</strong> при обычной погоде. Наксос — 100 миль от Алимоса в одну сторону. Возврат обязателен 31.07 к 17:00. Это значит переходы по 40–50 миль почти каждый день, выходы в 06:00, и никакого запаса на день Мельтеми. С детьми 8–15 лет на борту — не рекомендую.
+    </div>
+    <div class="day-list">
+      <div class="day-item"><div class="day-num"><div class="day-date">Сб 26</div></div><div class="day-body"><div class="day-route">Алимос → Кея → Сирос</div><div class="day-info">Двойной переход, выход в 06:00. 55 миль.</div><div class="day-tags"><span class="dtag dist">55 нм</span><span class="dtag warn">Выход 06:00</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Вс 27</div></div><div class="day-body"><div class="day-route">Сирос → Парос</div><div class="day-info">Пляж Колимбитрес — гранитные скалы. Ночью эгинг на кальмара в проливе Антипароса.</div><div class="day-tags"><span class="dtag dist">28 нм</span><span class="dtag fish">⭐ Кальмар ночью</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Пн 28</div></div><div class="day-body"><div class="day-route">Парос → Наксос</div><div class="day-info">Портара на закате. Южный берег укрыт от Мельтеми.</div><div class="day-tags"><span class="dtag dist">18 нм</span><span class="dtag kid">Ворота Аполлона</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Вт 29</div></div><div class="day-body"><div class="day-route">Наксос → Малые Киклады (Ираклия / Кунфунисья)</div><div class="day-info">Дикие острова, лучшая рыбалка Эгея, биолюминесценция ночью. Разворотная точка.</div><div class="day-tags"><span class="dtag dist">25 нм</span><span class="dtag fish">⭐⭐ Лучшая рыбалка</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Ср 30</div></div><div class="day-body"><div class="day-route">Малые Киклады → Сирос (длинный возврат)</div><div class="day-info">50+ миль. Весь день в море. Троллинг.</div><div class="day-tags"><span class="dtag dist">52 нм</span><span class="dtag warn">Тяжёлый день</span></div></div></div>
+      <div class="day-item"><div class="day-num"><div class="day-date">Чт 31</div></div><div class="day-body"><div class="day-route">Сирос → Алимос · возврат к 17:00</div><div class="day-info">65 миль без запаса. Выход в 05:00. Если задует — не успеваем.</div><div class="day-tags"><span class="dtag dist">65 нм</span><span class="dtag warn">⚠️ Нет запаса!</span></div></div></div>
+    </div>
+    <div class="alert warn" style="margin-top:16px"><strong>Риск, который надо принять осознанно:</strong> при развитии Мельтеми на обратном пути вы оказываетесь в 60+ милях от базы против ветра F6–7, с детьми, и с жёстким дедлайном возврата. Штраф за опоздание и, что важнее, реальная опасность. Идти сюда — только при уверенном штилевом прогнозе.</div>
+  </div>
+
+</div>
+</section>
+
+
 <section id="map-section">
 <div class="container">
   <div class="sec-eye">Навигация</div>
@@ -1244,6 +1421,147 @@ footer strong{color:var(--aqua);}
 
   <div class="alert info" style="margin-top:24px">
     <strong>🏛 Акрополь в день пересадки:</strong> 25 июля катамаран сдаём в 09:00, монохул принимаем в 17:00 — есть окно 6–7 часов. Такси от Алимоса до Акрополя ~25 мин. Успеваем Акрополь + музей Акрополя + обед в Плаке и обратно к брифингу.
+  </div>
+</div>
+</section>
+
+
+
+<section id="provisions">
+<div class="container">
+  <div class="sec-eye">Закупка</div>
+  <h2 class="sec-h2">Что купить на яхту: вода и продукты</h2>
+  <p class="sec-sub">Расчёт под реальный состав экипажа. Закупка — в супермаркете у марины Алимос, с доставкой прямо на борт.</p>
+
+  <div class="prov-summary">
+    <div class="prov-card w1">
+      <div class="prov-week">Неделя 1 · 18–25 июля · Катамаран</div>
+      <div class="prov-crew">11 человек</div>
+      <div class="prov-crew-detail">6 взрослых · дети: 8 лет ×1, 10 лет ×2, 15 лет ×2</div>
+      <div class="prov-water-big">
+        <span class="prov-water-num">230</span>
+        <span class="prov-water-unit">литров питьевой воды</span>
+      </div>
+      <div class="prov-water-note">≈ 155 бутылок по 1,5 л (26 упаковок по 6). На старте берём <strong>~140 л</strong>, остальное докупаем в портах — иначе некуда складывать.</div>
+      <div class="prov-rows">
+        <div class="prov-row"><span>Норма на человека</span><b>3 л/день</b></div>
+        <div class="prov-row"><span>Танк технической воды</span><b>~700 л</b></div>
+        <div class="prov-row"><span>Расход из танка</span><b>~200 л/день</b></div>
+        <div class="prov-row"><span>Пополнять танк</span><b>каждые 3 дня</b></div>
+      </div>
+    </div>
+
+    <div class="prov-card w2">
+      <div class="prov-week">Неделя 2 · 25 июля — 1 августа · Монохул</div>
+      <div class="prov-crew">8 человек</div>
+      <div class="prov-crew-detail">6 взрослых · дети: 10 лет ×1, 15 лет ×1</div>
+      <div class="prov-water-big">
+        <span class="prov-water-num">170</span>
+        <span class="prov-water-unit">литров питьевой воды</span>
+      </div>
+      <div class="prov-water-note">≈ 112 бутылок по 1,5 л (19 упаковок по 6). На старте берём <strong>~100 л</strong>, остальное — пополнение в портах маршрута.</div>
+      <div class="prov-rows">
+        <div class="prov-row"><span>Норма на человека</span><b>3 л/день</b></div>
+        <div class="prov-row"><span>Танк технической воды</span><b>~990 л</b></div>
+        <div class="prov-row"><span>Расход из танка</span><b>~145 л/день</b></div>
+        <div class="prov-row"><span>Пополнять танк</span><b>каждые 5–6 дней</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert warn">
+    <strong>💧 Важно про воду:</strong> вода из танков яхты <strong>технически непитьевая</strong> — она для душа, посуды и мытья рук. Пить и готовить — только бутилированная. 3 л/чел/день в июльской Греции это не перестраховка: жара 32–36°, солёный ветер, весь день на солнце. Детям надо напоминать пить, сами они не просят.
+  </div>
+
+  <div class="prov-group-title">🥖 Базовые продукты — закупка на старте (неделя 1, 11 человек)</div>
+  <table class="prov-table">
+    <tr><th>Категория</th><th>Что брать</th><th style="width:110px">Количество</th></tr>
+    <tr><td>Вода питьевая</td><td>Бутылки 1,5 л (упаковками по 6)</td><td class="prov-qty">~140 л</td></tr>
+    <tr><td>Хлеб</td><td>Батоны, лаваш, тосты. Быстро черствеет — брать на 2–3 дня, дальше в портах</td><td class="prov-qty">4–5 шт</td></tr>
+    <tr><td>Яйца</td><td>Завтраки — основа рациона на яхте</td><td class="prov-qty">40–50 шт</td></tr>
+    <tr><td>Сыр</td><td>Фета (в рассоле, хранится), твёрдый для бутербродов, гауда</td><td class="prov-qty">2,5–3 кг</td></tr>
+    <tr><td>Йогурт греческий</td><td>Большие банки + мёд к нему</td><td class="prov-qty">3–4 кг</td></tr>
+    <tr><td>Ветчина / колбаса</td><td>Нарезки для бутербродов</td><td class="prov-qty">1,5–2 кг</td></tr>
+    <tr><td>Макароны, рис</td><td>Спагетти, пенне, рис для быстрого ужина</td><td class="prov-qty">3–4 кг</td></tr>
+    <tr><td>Овощи</td><td>Помидоры, огурцы, перец, лук, картофель — греческий салат каждый день</td><td class="prov-qty">6–8 кг</td></tr>
+    <tr><td>Фрукты</td><td>Арбуз, дыня, персики, яблоки, бананы. Дети едят много на жаре</td><td class="prov-qty">8–10 кг</td></tr>
+    <tr><td>Оливковое масло</td><td>Хорошее греческое — 1 л на неделю с запасом</td><td class="prov-qty">1,5 л</td></tr>
+    <tr><td>Оливки, консервы</td><td>Оливки, тунец, кукуруза, фасоль — быстрые обеды</td><td class="prov-qty">10–12 банок</td></tr>
+    <tr><td>Мясо / курица</td><td>На 2–3 ужина, остальное в тавернах. Морозилка на яхте маленькая!</td><td class="prov-qty">3–4 кг</td></tr>
+    <tr><td>Крупы, хлопья</td><td>Мюсли, овсянка для завтраков</td><td class="prov-qty">2–3 упак</td></tr>
+    <tr><td>Кофе, чай</td><td>Молотый + растворимый (фраппе), чай, сахар</td><td class="prov-qty">по вкусу</td></tr>
+    <tr><td>Молоко</td><td>Долгого хранения (UHT) — холодильник забит</td><td class="prov-qty">6–8 л</td></tr>
+    <tr><td>Перекусы детям</td><td>Печенье, орехи, батончики, сухофрукты, чипсы</td><td class="prov-qty">с запасом</td></tr>
+    <tr><td>Соки, лимонады</td><td>Плюс лимоны для воды и рыбы</td><td class="prov-qty">10–12 л</td></tr>
+    <tr><td>Специи</td><td>Соль, перец, оригано, лимонный сок, чеснок — для рыбы обязательно</td><td class="prov-qty">набор</td></tr>
+    <tr><td>Лёд</td><td>Пакеты льда для улова и напитков. Докупать в каждом порту</td><td class="prov-qty">4–5 кг</td></tr>
+    <tr><td>Алкоголь</td><td>Вино, пиво, узо. В Греции дёшево — брать на месте</td><td class="prov-qty">по вкусу</td></tr>
+  </table>
+  <div class="alert info" style="margin-top:12px"><strong>Неделя 2 (8 человек):</strong> те же позиции, объёмы умножить на <strong>0,73</strong> (8 из 11). Например: вода ~100 л на старте, яйца 30 шт, фрукты 6–7 кг, овощи 5 кг.</div>
+
+  <div class="prov-group-title">🧴 Хозяйственное и расходники</div>
+  <table class="prov-table">
+    <tr><th>Что</th><th>Зачем и сколько</th></tr>
+    <tr><td>Мусорные пакеты</td><td>Большая пачка. На яхте мусор копится быстро, выбрасывать только в портах — <strong>никогда за борт</strong></td></tr>
+    <tr><td>Средство для посуды</td><td>Обязательно биоразлагаемое — моем в морской воде за бортом, экономим танк</td></tr>
+    <tr><td>Губки, тряпки, бумажные полотенца</td><td>2–3 рулона полотенец, губки в запас</td></tr>
+    <tr><td>Туалетная бумага</td><td><strong>Только быстрорастворимая для морских гальюнов!</strong> Обычная забивает систему — это классическая поломка на чартере</td></tr>
+    <tr><td>Фольга, пищевая плёнка, пакеты zip</td><td>Хранение продуктов и улова</td></tr>
+    <tr><td>Влажные салфетки</td><td>Экономят пресную воду, особенно с детьми</td></tr>
+    <tr><td>Спички / зажигалка</td><td>Для газовой плиты</td></tr>
+    <tr><td>Пластиковые контейнеры</td><td>Для хранения улова и остатков еды</td></tr>
+  </table>
+
+  <div class="prov-group-title">⛽ Где пополнять: вода, топливо, магазины</div>
+  <div class="refill-grid">
+    <div class="refill-card">
+      <div class="refill-port">Алимос (база)</div>
+      <div class="refill-what">Крупный супермаркет с доставкой на борт. Основная закупка здесь — закажите заранее онлайн, привезут к яхте.</div>
+      <div class="refill-tags"><span class="rtag water">Вода</span><span class="rtag fuel">Топливо</span><span class="rtag shop">Супермаркет</span></div>
+    </div>
+    <div class="refill-card">
+      <div class="refill-port">Эгина (порт)</div>
+      <div class="refill-what">Супермаркеты в городе, рынок с овощами и фруктами. Знаменитые фисташки. Вода на причале.</div>
+      <div class="refill-tags"><span class="rtag water">Вода</span><span class="rtag shop">Магазины</span></div>
+    </div>
+    <div class="refill-card">
+      <div class="refill-port">Порос (набережная)</div>
+      <div class="refill-what">Вода и топливо прямо у причала, супермаркет в 200 м. Удобная средняя точка маршрута — заправиться полностью.</div>
+      <div class="refill-tags"><span class="rtag water">Вода</span><span class="rtag fuel">Топливо</span><span class="rtag shop">Супермаркет</span></div>
+    </div>
+    <div class="refill-card">
+      <div class="refill-port">Гидра (гавань)</div>
+      <div class="refill-what">Вода на причале, небольшие магазины. Дорого — берите только необходимое. Свежий хлеб отличный.</div>
+      <div class="refill-tags"><span class="rtag water">Вода</span><span class="rtag shop">Мини-маркет</span></div>
+    </div>
+    <div class="refill-card">
+      <div class="refill-port">Спецес (Дапия)</div>
+      <div class="refill-what">Вода, топливо, супермаркеты. Хорошая пекарня у порта.</div>
+      <div class="refill-tags"><span class="rtag water">Вода</span><span class="rtag fuel">Топливо</span><span class="rtag shop">Супермаркет</span></div>
+    </div>
+    <div class="refill-card">
+      <div class="refill-port">Кея (Вуркари)</div>
+      <div class="refill-what">Вода на причале, небольшой магазин. Рыбные таверны прямо у воды.</div>
+      <div class="refill-tags"><span class="rtag water">Вода</span><span class="rtag shop">Мини-маркет</span></div>
+    </div>
+    <div class="refill-card">
+      <div class="refill-port">Китнос (Лутра / Мерихас)</div>
+      <div class="refill-what">Вода на причале Лутры. В Мерихасе — супермаркет и топливо.</div>
+      <div class="refill-tags"><span class="rtag water">Вода</span><span class="rtag fuel">Топливо</span><span class="rtag shop">Магазин</span></div>
+    </div>
+    <div class="refill-card">
+      <div class="refill-port">Сирос (Эрмуполис)</div>
+      <div class="refill-what">Крупнейший порт Киклад: полноценные супермаркеты, рынок, топливо, вода. Лучшая точка пополнения на Кикладах.</div>
+      <div class="refill-tags"><span class="rtag water">Вода</span><span class="rtag fuel">Топливо</span><span class="rtag shop">Супермаркет</span></div>
+    </div>
+  </div>
+
+  <div class="alert success" style="margin-top:24px">
+    <strong>🍽 Стратегия питания, которая работает:</strong> завтраки и обеды — на борту (яйца, йогурт, греческий салат, бутерброды, фрукты). Ужины — примерно половина в тавернах, половина на борту. Так и холодильник не переполняется, и дети видят острова, и готовка не съедает отпуск. На 11 человек ужин в таверне выходит 15–25 € с человека.
+  </div>
+
+  <div class="alert info">
+    <strong>📦 Доставка на борт:</strong> греческие сервисы провизии (например, при марине Алимос) принимают заказ онлайн за 2–3 дня и привозят всё к яхте в день чек-ина. Для 11 человек это сильно проще, чем таскать 140 литров воды из супермаркета. Спросите контакт у чартерной компании при подтверждении брони.
   </div>
 </div>
 </section>
@@ -2300,6 +2618,14 @@ window.addEventListener('scroll',()=>{
 
 
 
+
+
+function showPlan(el, id){
+  document.querySelectorAll('.plan-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.ptab').forEach(function(t){t.classList.remove('active');});
+  document.getElementById('plan-'+id).classList.add('active');
+  el.classList.add('active');
+}
 
 // ============ MAP ============
 var map, w1Layer, w2Layer, fishLayer;

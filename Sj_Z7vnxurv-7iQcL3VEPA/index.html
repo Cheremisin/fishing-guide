@@ -4488,6 +4488,10 @@ function initMap(){
   activeRoutes = ROUTE_SETS['classic'];
   activeRoutes.forEach(function(k){ routeLayers[k].addTo(map); });
 
+  // expose to global scope so inline onclick handlers can reach them
+  window.pickRoute = pickRoute;
+  window.toggleLayer = toggleLayer;
+
 }
 
 
